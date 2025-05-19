@@ -1,6 +1,6 @@
 import React from "react";
-import { useIntl, changeLocale } from "gatsby-plugin-intl";
 import styled from "styled-components";
+import { useLanguage } from "../context/LanguageContext";
 
 const SwitcherContainer = styled.div`
   display: flex;
@@ -24,20 +24,19 @@ const LanguageButton = styled.button`
 `;
 
 const LanguageSwitcher = () => {
-  const intl = useIntl();
-  const currentLocale = intl.locale;
+  const { language, changeLanguage } = useLanguage();
   
   return (
     <SwitcherContainer>
       <LanguageButton
-        active={currentLocale === "en"}
-        onClick={() => changeLocale("en")}
+        active={language === "en"}
+        onClick={() => changeLanguage("en")}
       >
         EN
       </LanguageButton>
       <LanguageButton
-        active={currentLocale === "es"}
-        onClick={() => changeLocale("es")}
+        active={language === "es"}
+        onClick={() => changeLanguage("es")}
       >
         ES
       </LanguageButton>

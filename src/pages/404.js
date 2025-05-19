@@ -1,9 +1,9 @@
 import React from "react";
-import { Link, useIntl } from "gatsby-plugin-intl";
+import { Link } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import styled from "styled-components";
-import translations from "../data/translations";
+import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const NotFoundPage = styled.div`
   min-height: 100vh;
@@ -53,9 +53,10 @@ const BackHomeButton = styled(Link)`
 `;
 
 const NotFound = () => {
-  const intl = useIntl();
-  const locale = intl.locale;
-  const messages = translations[locale];
+  const { messages, language } = useLanguage();
+  
+  // Helper function to create localized paths
+  const localizedLink = (path) => getLocalizedPath(path, language);
   
   return (
     <Layout>
@@ -66,7 +67,7 @@ const NotFound = () => {
           <NotFoundCode>404</NotFoundCode>
           <NotFoundTitle>{messages.notFoundTitle}</NotFoundTitle>
           <NotFoundDescription>{messages.notFoundDesc}</NotFoundDescription>
-          <BackHomeButton to="/">{messages.backHome}</BackHomeButton>
+          <BackHomeButton to={localizedLink("/")}>{messages.backHome}</BackHomeButton>
         </NotFoundContent>
       </NotFoundPage>
     </Layout>

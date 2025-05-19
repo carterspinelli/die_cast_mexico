@@ -4,13 +4,6 @@ module.exports = {
     description: "Professional die casting services in Mexico for automotive, energy, telecommunications, and marine industries.",
     author: "@diecastmexico",
     siteUrl: "https://diecastmexico.com",
-    languages: {
-      defaultLang: "en",
-      langs: ["en", "es"]
-    }
-  },
-  flags: {
-    DEV_SSR: true,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -35,6 +28,15 @@ module.exports = {
         theme_color: "#1e3a8a",
         display: "minimal-ui",
         icon: "src/images/logo.svg",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-intl",
+      options: {
+        path: `${__dirname}/src/data/translations`,
+        languages: ["en", "es"],
+        defaultLanguage: "en",
+        redirect: true,
       },
     },
   ],

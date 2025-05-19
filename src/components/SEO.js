@@ -1,10 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { useIntl } from "gatsby-plugin-intl";
+import { useLanguage } from "../context/LanguageContext";
 
 function SEO({ description, lang, meta = [], title, image }) {
-  const intl = useIntl();
+  const { language } = useLanguage();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +28,7 @@ function SEO({ description, lang, meta = [], title, image }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: lang || intl.locale,
+        lang: lang || language,
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}

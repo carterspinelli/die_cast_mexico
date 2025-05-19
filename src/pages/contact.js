@@ -1,10 +1,9 @@
 import React from "react";
-import { useIntl } from "gatsby-plugin-intl";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import ContactForm from "../components/ContactForm";
 import styled from "styled-components";
-import translations from "../data/translations";
+import { useLanguage } from "../context/LanguageContext";
 
 const ContactPage = styled.div`
   min-height: 100vh;
@@ -109,9 +108,7 @@ const ContactLink = styled.a`
 `;
 
 const Contact = () => {
-  const intl = useIntl();
-  const locale = intl.locale;
-  const messages = translations[locale];
+  const { messages } = useLanguage();
   
   return (
     <Layout>

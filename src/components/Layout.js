@@ -1,9 +1,8 @@
 import React from "react";
-import { useIntl } from "gatsby-plugin-intl";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { usePreferredLanguage, usePageTracking } from "../utils/hooks";
-import translations from "../data/translations";
+import { usePageTracking } from "../utils/hooks";
+import { useLanguage } from "../context/LanguageContext";
 import styled from "styled-components";
 
 const Main = styled.main`
@@ -17,15 +16,11 @@ const Content = styled.div`
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
-  const intl = useIntl();
-  const locale = intl.locale;
-  const messages = translations[locale];
+  // Get language and messages from our custom context
+  const { messages } = useLanguage();
   
   // Track page views
   usePageTracking();
-  
-  // Check user's preferred language
-  usePreferredLanguage();
   
   return (
     <Main>

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby-plugin-intl";
+import { Link } from "gatsby";
 import images from "../data/images";
+import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -99,6 +100,10 @@ const SecondaryButton = styled(Link)`
 const Hero = ({ messages }) => {
   // Select a random background image from the manufacturing plant images
   const backgroundImage = images.manufacturingPlant[0];
+  const { language } = useLanguage();
+  
+  // Helper function to create localized paths
+  const localizedLink = (path) => getLocalizedPath(path, language);
   
   return (
     <HeroSection backgroundImage={backgroundImage}>
@@ -106,8 +111,8 @@ const Hero = ({ messages }) => {
         <HeroTitle>{messages.heroTitle}</HeroTitle>
         <HeroSubtitle>{messages.heroSubtitle}</HeroSubtitle>
         <ButtonContainer>
-          <PrimaryButton to="/contact">{messages.cta}</PrimaryButton>
-          <SecondaryButton to="/#services">{messages.learnMore}</SecondaryButton>
+          <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
+          <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
         </ButtonContainer>
       </HeroContent>
     </HeroSection>

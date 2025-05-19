@@ -1,13 +1,12 @@
 import React from "react";
-import { useIntl } from "gatsby-plugin-intl";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Industries from "../components/Industries";
 import styled from "styled-components";
-import translations from "../data/translations";
 import images from "../data/images";
+import { useLanguage } from "../context/LanguageContext";
 
 const AboutSection = styled.section`
   padding: var(--spacing-2xl) 0;
@@ -149,9 +148,7 @@ const StatDescription = styled.p`
 `;
 
 const IndexPage = () => {
-  const intl = useIntl();
-  const locale = intl.locale;
-  const messages = translations[locale];
+  const { messages } = useLanguage();
   
   return (
     <Layout>

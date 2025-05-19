@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby-plugin-intl";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const NavbarContainer = styled.nav`
   position: fixed;
@@ -115,6 +116,7 @@ const ContactButton = styled(Link)`
 const Navbar = ({ messages }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -139,14 +141,17 @@ const Navbar = ({ messages }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
   
+  // Helper function to create localized paths
+  const localizedLink = (path) => getLocalizedPath(path, language);
+  
   return (
-    <NavbarContainer scrolled={scrolled}>
+    <NavbarContainer scrolled={scrolled ? 1 : 0}>
       <NavbarInner>
         <Logo />
         
         <MobileMenuButton 
           onClick={toggleMobileMenu}
-          scrolled={scrolled}
+          scrolled={scrolled ? 1 : 0}
           aria-label="Toggle Menu"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -154,21 +159,21 @@ const Navbar = ({ messages }) => {
           </svg>
         </MobileMenuButton>
         
-        <NavLinks mobileMenuOpen={mobileMenuOpen}>
-          <NavLink to="/" activeClassName="active" scrolled={scrolled}>
+        <NavLinks mobileMenuOpen={mobileMenuOpen ? 1 : 0}>
+          <NavLink to={localizedLink("/")} activeClassName="active" scrolled={scrolled ? 1 : 0}>
             {messages.home}
           </NavLink>
-          <NavLink to="/#services" activeClassName="active" scrolled={scrolled}>
+          <NavLink to={localizedLink("/#services")} activeClassName="active" scrolled={scrolled ? 1 : 0}>
             {messages.services}
           </NavLink>
-          <NavLink to="/#industries" activeClassName="active" scrolled={scrolled}>
+          <NavLink to={localizedLink("/#industries")} activeClassName="active" scrolled={scrolled ? 1 : 0}>
             {messages.industries}
           </NavLink>
-          <NavLink to="/#about" activeClassName="active" scrolled={scrolled}>
+          <NavLink to={localizedLink("/#about")} activeClassName="active" scrolled={scrolled ? 1 : 0}>
             {messages.about}
           </NavLink>
           
-          <ContactButton to="/contact">
+          <ContactButton to={localizedLink("/contact")}>
             {messages.contact}
           </ContactButton>
         </NavLinks>

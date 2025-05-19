@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby-plugin-intl";
+import { Link } from "gatsby";
 import Logo from "./Logo";
+import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const FooterContainer = styled.footer`
   background-color: var(--gray-dark);
@@ -114,6 +115,10 @@ const FooterBottom = styled.div`
 
 const Footer = ({ messages }) => {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
+  
+  // Helper function to create localized paths
+  const localizedLink = (path) => getLocalizedPath(path, language);
   
   return (
     <FooterContainer>
@@ -144,32 +149,32 @@ const Footer = ({ messages }) => {
         
         <FooterColumn>
           <FooterTitle>{messages.services}</FooterTitle>
-          <FooterNavLink to="/#services">
+          <FooterNavLink to={localizedLink("/#services")}>
             {messages.highPressureTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#services">
+          <FooterNavLink to={localizedLink("/#services")}>
             {messages.moldingTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#services">
+          <FooterNavLink to={localizedLink("/#services")}>
             {messages.finishingTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#services">
+          <FooterNavLink to={localizedLink("/#services")}>
             {messages.qualityTitle}
           </FooterNavLink>
         </FooterColumn>
         
         <FooterColumn>
           <FooterTitle>{messages.industries}</FooterTitle>
-          <FooterNavLink to="/#industries">
+          <FooterNavLink to={localizedLink("/#industries")}>
             {messages.automotiveTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#industries">
+          <FooterNavLink to={localizedLink("/#industries")}>
             {messages.energyTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#industries">
+          <FooterNavLink to={localizedLink("/#industries")}>
             {messages.telecomTitle}
           </FooterNavLink>
-          <FooterNavLink to="/#industries">
+          <FooterNavLink to={localizedLink("/#industries")}>
             {messages.marineTitle}
           </FooterNavLink>
         </FooterColumn>
