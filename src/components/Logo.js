@@ -24,7 +24,7 @@ const Logo = () => {
     <LogoContainer>
       <Link to="/">
         <StaticImage
-          src="../images/die_cast_mx_logo.png"
+          src="../images/good_logo.png"
           alt="Die Cast Mexico Logo"
           placeholder="blurred"
           layout="fixed"
