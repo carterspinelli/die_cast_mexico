@@ -158,7 +158,7 @@ const Industries = ({ messages }) => {
         
         <IndustryGrid>
           <IndustryCard className="fade-in">
-            <IndustryImage imageUrl={images.automotiveManufacturing[0]} />
+            <IndustryImage imageUrl={images.industries.automotive} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
               <IndustryTitle>{messages.automotiveTitle}</IndustryTitle>
@@ -167,7 +167,7 @@ const Industries = ({ messages }) => {
           </IndustryCard>
           
           <IndustryCard className="fade-in">
-            <IndustryImage imageUrl={images.energyComponents[0]} />
+            <IndustryImage imageUrl={images.industries.energy} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
               <IndustryTitle>{messages.energyTitle}</IndustryTitle>
@@ -176,7 +176,7 @@ const Industries = ({ messages }) => {
           </IndustryCard>
           
           <IndustryCard className="fade-in">
-            <IndustryImage imageUrl={images.telecomEquipment[0]} />
+            <IndustryImage imageUrl={images.industries.telecom} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
               <IndustryTitle>{messages.telecomTitle}</IndustryTitle>
@@ -185,7 +185,7 @@ const Industries = ({ messages }) => {
           </IndustryCard>
           
           <IndustryCard className="fade-in">
-            <IndustryImage imageUrl={images.aluminumParts[0]} />
+            <IndustryImage imageUrl={images.industries.marine} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
               <IndustryTitle>{messages.marineTitle}</IndustryTitle>
@@ -195,7 +195,7 @@ const Industries = ({ messages }) => {
         </IndustryGrid>
         
         <SearchServicesContainer className="slide-in-left">
-          <SearchServicesTitle>{messages.searchServices}</SearchServicesTitle>
+          <SearchServicesTitle>{messages.contactTitle}</SearchServicesTitle>
           <SearchServicesButton href="/contact">
             {messages.cta}
           </SearchServicesButton>

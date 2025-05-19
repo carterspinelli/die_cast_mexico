@@ -1,0 +1,116 @@
+npm warn deprecated yurnalist@2.1.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+
+changed 294 packages in 12s
+
+65 packages are looking for funding
+  run `npm fund` for details
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.0
+npm notice To update run: npm install -g npm@11.4.0
+npm notice
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn Found: react@17.0.2
+npm warn node_modules/react
+npm warn   react@"^17.0.2" from the root project
+npm warn   11 more (@gatsbyjs/reach-router, gatsby, gatsby-link, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"0.0.0-experimental-c8b778b7f-20220825" from react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn node_modules/gatsby/node_modules/react-server-dom-webpack
+npm warn   react-server-dom-webpack@"0.0.0-experimental-c8b778b7f-20220825" from gatsby@4.25.9
+npm warn   node_modules/gatsby
+npm warn
+npm warn Conflicting peer dependency: react@0.0.0-experimental-c8b778b7f-20220825
+npm warn node_modules/react
+npm warn   peer react@"0.0.0-experimental-c8b778b7f-20220825" from react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn   node_modules/gatsby/node_modules/react-server-dom-webpack
+npm warn     react-server-dom-webpack@"0.0.0-experimental-c8b778b7f-20220825" from gatsby@4.25.9
+npm warn     node_modules/gatsby
+
+up to date, audited 1505 packages in 10s
+
+270 packages are looking for funding
+  run `npm fund` for details
+
+31 vulnerabilities (1 low, 6 moderate, 24 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+success compile gatsby files - 2.589s
+info The following flags are active:
+- DEV_SSR · (Umbrella Issue (https://gatsby.dev/dev-ssr-feedback)) · Server Side Render (SSR) pages on full reloads
+during develop. Helps you detect SSR bugs and fix them without needing to do full builds.
+
+There are 4 other flags available that you might be interested in:
+- FAST_DEV · Enable all experiments aimed at improving develop server start time.
+- PRESERVE_FILE_DOWNLOAD_CACHE · (Umbrella Issue (https://gatsby.dev/cache-clearing-feedback)) · Don't delete the
+downloaded files cache when changing gatsby-node.js & gatsby-config.js files.
+- PARALLEL_SOURCING · EXPERIMENTAL · (Umbrella Issue (https://gatsby.dev/parallel-sourcing-feedback)) · Run all source
+plugins at the same time instead of serially. For sites with multiple source plugins, this can speedup sourcing and
+transforming considerably.
+- DETECT_NODE_MUTATIONS · Diagnostic mode to log any attempts to mutate node directly. Helpful when debugging missing
+data problems. See https://gatsby.dev/debugging-missing-data for more details.
+
+success load gatsby config - 0.139s
+success load plugins - 0.815s
+warn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying the document head. Learn more at
+https://gatsby.dev/gatsby-head
+success onPreInit - 0.008s
+success initialize cache - 0.037s
+success copy gatsby files - 0.302s
+success Compiling Gatsby Functions - 0.465s
+success onPreBootstrap - 0.494s
+success createSchemaCustomization - 0.005s
+success Checking for changed pages - 0.001s
+success source and transform nodes - 0.155s
+success building schema - 0.390s
+success createPages - 0.004s
+success createPagesStatefully - 0.068s
+info Total nodes: 41, SitePage nodes: 5 (use --verbose for breakdown)
+success Checking for changed pages - 0.001s
+success write out redirect data - 0.002s
+warn The icon(src/images/logo.svg) you provided to 'gatsby-plugin-manifest' is not square.
+The icons we generate will be square and for the best results we recommend you provide a square icon.
+
+success Build manifest and related icons - 0.149s
+success onPostBootstrap - 0.154s
+info bootstrap finished - 10.706s
+success onPreExtractQueries - 0.001s
+success extract queries from components - 4.266s
+success write out requires - 0.014s
+success run page queries - 0.025s - 1/1 39.75/s
+⠹ Building development bundle
+⠀
+You can now view workspace in the browser.
+⠀
+  Local:            http://localhost:5000/
+  On Your Network:  http://172.31.128.55:5000/
+⠀
+View GraphiQL, an in-browser IDE, to explore your site's data and schema
+⠀
+  Local:            http://localhost:5000/___graphql
+  On Your Network:  http://172.31.128.55:5000/___graphql
+⠀
+Note that the development build is not optimized.
+To create a production build, use gatsby build
+⠀
+success Building development bundle - 8.631s
+success Writing page-data.json files to public directory - 0.142s - 3/5 35.22/s
+warn The path "/" errored during SSR.
+Edit its component src/components/Industries.js:161:69 to resolve the error.
+
+ ERROR #11616 
+
+There was an error while trying to create the client-only shell for displaying SSR errors:
+ React.Children.only expected to receive a single React element child.
+
+File: .cache/loader.js:34:10
+
+

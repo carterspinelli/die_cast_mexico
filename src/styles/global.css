@@ -1,262 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap');
-
+/* Base CSS Variables */
 :root {
-  /* Color palette */
-  --primary-dark: #1e3a8a;
-  --primary: #2563eb;
-  --primary-light: #3b82f6;
-  --secondary: #475569;
-  --gray-dark: #1f2937;
-  --gray: #6b7280;
-  --gray-light: #e5e7eb;
+  /* Colors */
+  --primary: #3b82f6;        /* Blue 500 */
+  --primary-light: #60a5fa;  /* Blue 400 */
+  --primary-dark: #1e3a8a;   /* Blue 900 */
+  --secondary: #475569;      /* Slate 600 */
   --white: #ffffff;
-  --black: #000000;
-  --background: #f8fafc;
-  --danger: #dc2626;
-  --success: #16a34a;
-  
-  /* Typography */
-  --font-heading: 'Roboto', sans-serif;
-  --font-body: 'Open Sans', sans-serif;
-  
+  --gray-light: #f1f5f9;     /* Slate 100 */
+  --gray: #94a3b8;           /* Slate 400 */
+  --gray-dark: #1e293b;      /* Slate 800 */
+  --background: #f8fafc;     /* Slate 50 */
+
   /* Spacing */
-  --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
-  
+  --spacing-2xl: 4rem;
+
   /* Container */
-  --container-padding: 1rem;
   --container-max-width: 1200px;
-  
-  /* Border */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-  
-  /* Transitions */
+  --container-padding: 1.5rem;
+
+  /* Border radius */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+
+  /* Animation */
   --transition-duration: 0.3s;
 }
 
+/* Reset & Base Styles */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-html, body {
-  font-family: var(--font-body);
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: var(--gray-dark);
   background-color: var(--background);
-  scroll-behavior: smooth;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-md);
-  color: var(--primary-dark);
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-p {
-  margin-bottom: var(--spacing-md);
 }
 
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: color var(--transition-duration);
+  transition: color var(--transition-duration) ease;
 }
 
 a:hover {
   color: var(--primary-dark);
 }
 
-button, .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1rem;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: var(--border-radius-md);
-  cursor: pointer;
-  transition: all var(--transition-duration);
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background-color: var(--primary-dark);
-  color: var(--white);
-}
-
-.btn-secondary {
-  background-color: var(--secondary);
-  color: var(--white);
-}
-
-.btn-secondary:hover {
-  background-color: var(--gray-dark);
-}
-
-.btn-outline {
-  background-color: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.btn-outline:hover {
-  background-color: var(--primary);
-  color: var(--white);
-}
-
-.container {
-  width: 100%;
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
-.section {
-  padding: var(--spacing-2xl) 0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-}
-
-.section-description {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto var(--spacing-xl);
-}
-
-/* Form styles */
-input, textarea, select {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid var(--gray-light);
-  border-radius: var(--border-radius-md);
-  font-family: var(--font-body);
-  font-size: 1rem;
-  margin-bottom: var(--spacing-md);
-}
-
-label {
-  display: block;
-  margin-bottom: var(--spacing-xs);
-  font-weight: 600;
-}
-
-.form-group {
-  margin-bottom: var(--spacing-md);
-}
-
-.form-error {
-  color: var(--danger);
-  font-size: 0.875rem;
-  margin-top: var(--spacing-xs);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  h1 {
-    font-size: 2.25rem;
-  }
-  
-  h2 {
-    font-size: 1.75rem;
-  }
-  
-  h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem;
-  }
-  
-  h2 {
-    font-size: 1.5rem;
-  }
-  
-  h3 {
-    font-size: 1.25rem;
-  }
-  
-  .section {
-    padding: var(--spacing-xl) 0;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.75rem;
-  }
-  
-  h2 {
-    font-size: 1.25rem;
-  }
-  
-  .btn {
-    padding: 0.5rem 1rem;
-  }
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Animation classes */
 .fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  animation: fadeIn 1s ease-in-out;
 }
 
 .slide-in-left {
-  transform: translateX(-50px);
-  opacity: 0;
-  animation: slideInLeft 0.8s ease-out forwards;
+  animation: slideInLeft 0.8s ease-in-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideInLeft {
@@ -270,12 +99,6 @@ label {
   }
 }
 
-.slide-in-right {
-  transform: translateX(50px);
-  opacity: 0;
-  animation: slideInRight 0.8s ease-out forwards;
-}
-
 @keyframes slideInRight {
   from {
     transform: translateX(50px);
@@ -284,5 +107,24 @@ label {
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: 1rem;
+    --spacing-2xl: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  :root {
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2.5rem;
   }
 }

@@ -175,7 +175,7 @@ const Services = ({ messages }) => {
         </ServiceGrid>
         
         <ServiceImageContainer>
-          <ServiceImage imageUrl={images.dieCastingMachinery[0]} />
+          <ServiceImage imageUrl={images.dieCastingMachinery[0] || images.services.highPressure} />
         </ServiceImageContainer>
         
         <CtaContainer>
