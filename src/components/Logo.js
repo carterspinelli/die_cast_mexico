@@ -7,13 +7,13 @@ const LogoContainer = styled.div`
   align-items: center;
   
   img {
-    height: 60px;
+    height: 70px;
     width: auto;
   }
   
   @media (max-width: 768px) {
     img {
-      height: 50px;
+      height: 55px;
     }
   }
 `;
@@ -22,7 +22,7 @@ const Logo = () => {
   return (
     <LogoContainer>
       <Link to="/">
-        <img src="/images/logo.png" alt="Die Cast Mexico Logo" style={{ height: '60px', width: 'auto' }} />
+        <img src="/images/logo.png" alt="Die Cast Mexico Logo" style={{ height: '70px', width: 'auto' }} />
       </Link>
     </LogoContainer>
   );
