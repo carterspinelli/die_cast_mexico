@@ -21,7 +21,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm install -g gatsby-cli && npm install && gatsby develop -p 5000 -H 0.0.0.0"
+args = "npm install && npx gatsby develop -p 5000 -H 0.0.0.0"
 waitForPort = 5000
 
 [deployment]

@@ -1,13 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#1e3a8a" />
-      <stop offset="100%" stop-color="#3b82f6" />
-    </linearGradient>
-  </defs>
-  <rect x="10" y="15" width="35" height="30" rx="2" fill="url(#gradient)" />
-  <path d="M15 25 L25 20 L35 25 L35 35 L25 40 L15 35 Z" fill="#e5e7eb" stroke="#fff" stroke-width="1" />
-  <circle cx="25" cy="30" r="5" fill="#475569" />
-  <text x="55" y="30" font-family="Roboto, sans-serif" font-size="16" font-weight="700" fill="#1e3a8a">DIE CAST</text>
-  <text x="55" y="45" font-family="Roboto, sans-serif" font-size="16" font-weight="700" fill="#3b82f6">MEXICO</text>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60" viewBox="0 0 400 120">
+  <!-- Blue hexagon -->
+  <path d="M100 10 L175 50 L175 130 L100 170 L25 130 L25 50 Z" fill="#2180de" />
+  
+  <!-- White inner hexagon -->
+  <path d="M100 30 L155 60 L155 120 L100 150 L45 120 L45 60 Z" fill="#ffffff" />
+  
+  <!-- Blue inner hexagon -->
+  <path d="M100 45 L140 67 L140 110 L100 132 L60 110 L60 67 Z" fill="#2180de" />
+  
+  <!-- Sphere wireframe in center -->
+  <circle cx="100" cy="88" r="22" fill="#ffffff" />
+  <path d="M80 88 C80 78, 120 78, 120 88" stroke="#2b4155" fill="none" stroke-width="2" />
+  <path d="M80 88 C80 98, 120 98, 120 88" stroke="#2b4155" fill="none" stroke-width="2" />
+  <path d="M100 68 C90 68, 90 108, 100 108" stroke="#2b4155" fill="none" stroke-width="2" />
+  <path d="M100 68 C110 68, 110 108, 100 108" stroke="#2b4155" fill="none" stroke-width="2" />
+  
+  <!-- Text DIE CAST -->
+  <text x="200" y="70" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#2180de">DIE CAST</text>
+  
+  <!-- Text MEXICO -->
+  <text x="200" y="110" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#2b4155">MEXICO</text>
 </svg>
