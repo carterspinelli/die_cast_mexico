@@ -11,10 +11,11 @@ const NavbarContainer = styled.nav`
   left: 0;
   right: 0;
   background-color: ${props => props.scrolled ? "var(--white)" : "transparent"};
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: ${props => props.scrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"};
+  box-shadow: ${props => props.scrolled ? "0 2px 10px rgba(0, 0, 0, 0.05)" : "none"};
+  width: 100%;
 `;
 
 const NavbarInner = styled.div`
@@ -24,6 +25,11 @@ const NavbarInner = styled.div`
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  width: ${props => props.scrolled ? '90%' : '100%'};
+  background-color: ${props => props.scrolled ? "var(--white)" : "transparent"};
+  border-radius: ${props => props.scrolled ? "12px" : "0"};
+  box-shadow: ${props => props.scrolled ? "0 2px 15px rgba(0, 0, 0, 0.08)" : "none"};
+  ${props => props.scrolled ? 'margin-top: 10px;' : ''}
 `;
 
 const NavLinks = styled.div`
@@ -48,21 +54,17 @@ const NavLink = styled(Link)`
   margin-left: 1.5rem;
   font-weight: 500;
   position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background-color: ${props => props.isActive ? 'rgba(0,0,0,0.05)' : 'transparent'};
+  transition: background-color 0.3s ease;
   
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary);
-    transition: width 0.3s ease;
+  &:hover {
+    background-color: ${props => props.scrolled ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.1)'};
   }
   
-  &:hover:after,
-  &.active:after {
-    width: 100%;
+  &.active {
+    background-color: ${props => props.scrolled ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.1)'};
   }
   
   @media (max-width: 768px) {
@@ -97,15 +99,18 @@ const RightSection = styled.div`
 const ContactButton = styled(Link)`
   background-color: var(--primary);
   color: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-md);
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
   font-weight: 500;
-  margin-left: 1.5rem;
-  transition: background-color 0.3s ease;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
   
   &:hover {
     background-color: var(--primary-dark);
     color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
   }
   
   @media (max-width: 768px) {
@@ -146,7 +151,7 @@ const Navbar = ({ messages }) => {
   
   return (
     <NavbarContainer scrolled={scrolled ? 1 : 0}>
-      <NavbarInner>
+      <NavbarInner scrolled={scrolled ? 1 : 0}>
         <Logo />
         
         <MobileMenuButton 
@@ -172,14 +177,13 @@ const Navbar = ({ messages }) => {
           <NavLink to={localizedLink("/#about")} activeClassName="active" scrolled={scrolled ? 1 : 0}>
             {messages.about}
           </NavLink>
-          
-          <ContactButton to={localizedLink("/contact")}>
-            {messages.contact}
-          </ContactButton>
         </NavLinks>
         
         <RightSection>
           <LanguageSwitcher />
+          <ContactButton to={localizedLink("/contact")}>
+            {messages.contact}
+          </ContactButton>
         </RightSection>
       </NavbarInner>
     </NavbarContainer>
