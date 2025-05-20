@@ -111,27 +111,28 @@ const ReadMoreLink = styled.a`
 const Services = () => {
   const { messages } = useLanguage();
   
+  // Using images from the static folder
   const serviceItems = [
     {
       id: "design",
       title: messages.serviceDesignTitle,
       summary: messages.serviceDesignSummary,
       label: messages.serviceDesignLabel,
-      image: "attached_assets/tool_design.jpg",
+      image: "/images/tool_design.jpg",
     },
     {
       id: "casting",
       title: messages.serviceCastingTitle,
       summary: messages.serviceCastingSummary,
       label: messages.serviceCastingLabel,
-      image: "attached_assets/die_casting_service.jpeg",
+      image: "/images/die_casting_service.jpeg",
     },
     {
       id: "finishing",
       title: messages.serviceFinishingTitle,
       summary: messages.serviceFinishingSummary,
       label: messages.serviceFinishingLabel,
-      image: "attached_assets/surface_finish.webp",
+      image: "/images/surface_finish.webp",
     },
   ];
   
