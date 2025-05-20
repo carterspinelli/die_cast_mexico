@@ -5,7 +5,6 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Capabilities from "../components/Capabilities";
 import IndustrySegments from "../components/IndustrySegments";
-import MachineryShowcase from "../components/MachineryShowcase";
 import styled from "styled-components";
 import images from "../data/images";
 import { useLanguage } from "../context/LanguageContext";
@@ -205,8 +204,6 @@ const IndexPage = () => {
       </FacilitySection>
       
       <Capabilities />
-      
-      <MachineryShowcase />
       
       <IndustrySegments />
       
