@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -30,39 +30,22 @@ const Subtitle = styled.p`
   margin: 0 auto;
 `;
 
-const TabsContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-`;
-
-const Tab = styled.button`
-  padding: 0.8rem 1.5rem;
-  background-color: ${props => props.active ? 'var(--color-primary)' : 'transparent'};
-  color: ${props => props.active ? 'white' : 'var(--color-primary)'};
-  border: 2px solid var(--color-primary);
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 1rem;
-  margin: 0 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: ${props => props.active ? 'var(--color-primary)' : 'var(--color-primary-light)'};
-    color: ${props => props.active ? 'white' : 'var(--color-primary)'};
-  }
-  
-  @media (max-width: 768px) {
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem;
-  }
-`;
-
 const SegmentsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const SegmentCard = styled.div`
@@ -113,7 +96,6 @@ const SegmentDesc = styled.p`
 
 const IndustrySegments = () => {
   const { messages: translations } = useLanguage();
-  const [activeTab, setActiveTab] = useState('industries');
   
   const industries = [
     {
@@ -158,82 +140,16 @@ const IndustrySegments = () => {
     }
   ];
   
-  const segments = [
-    {
-      icon: "/icons/automotive.svg",
-      title: translations.automotiveSegmentTitle,
-      description: translations.automotiveSegmentDesc
-    },
-    {
-      icon: "/icons/telecom.svg",
-      title: translations.telecomSegmentTitle,
-      description: translations.telecomSegmentDesc
-    },
-    {
-      icon: "/icons/instrumentation.svg",
-      title: translations.instrumentationSegmentTitle,
-      description: translations.instrumentationSegmentDesc
-    },
-    {
-      icon: "/icons/marine.svg",
-      title: translations.marineSegmentTitle,
-      description: translations.marineSegmentDesc
-    },
-    {
-      icon: "/icons/automation.svg",
-      title: translations.automationSegmentTitle,
-      description: translations.automationSegmentDesc
-    },
-    {
-      icon: "/icons/powertools.svg",
-      title: translations.powertoolsSegmentTitle,
-      description: translations.powertoolsSegmentDesc
-    },
-    {
-      icon: "/icons/lighting.svg",
-      title: translations.lightingSegmentTitle,
-      description: translations.lightingSegmentDesc
-    },
-    {
-      icon: "/icons/pneumatic.svg",
-      title: translations.pneumaticSegmentTitle,
-      description: translations.pneumaticSegmentDesc
-    }
-  ];
-  
   return (
     <IndustrySegmentsSection>
       <Container>
         <SectionHeader>
-          <Title>
-            {activeTab === 'industries' 
-              ? translations.industriesTitle 
-              : translations.productSegmentsTitle}
-          </Title>
-          <Subtitle>
-            {activeTab === 'industries' 
-              ? translations.industriesSubtitle 
-              : translations.productSegmentsSubtitle}
-          </Subtitle>
+          <Title>{translations.industriesTitle}</Title>
+          <Subtitle>{translations.industriesSubtitle}</Subtitle>
         </SectionHeader>
         
-        <TabsContainer>
-          <Tab 
-            active={activeTab === 'industries'} 
-            onClick={() => setActiveTab('industries')}
-          >
-            {translations.industries}
-          </Tab>
-          <Tab 
-            active={activeTab === 'segments'} 
-            onClick={() => setActiveTab('segments')}
-          >
-            {translations.productSegmentsTitle}
-          </Tab>
-        </TabsContainer>
-        
         <SegmentsGrid>
-          {(activeTab === 'industries' ? industries : segments).map((item, index) => (
+          {industries.map((item, index) => (
             <SegmentCard key={index}>
               <IconContainer>
                 <img 
