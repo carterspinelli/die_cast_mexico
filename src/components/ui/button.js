@@ -1,138 +1,115 @@
 import React from "react";
+import { cva } from "class-variance-authority";
 import styled from "styled-components";
 
-// Styled component for the Button
-const ButtonBase = styled.button`
+const ButtonVariants = cva("inline-flex items-center justify-center", {
+  variants: {
+    variant: {
+      default: "bg-blue-500 text-white hover:bg-blue-600",
+      outline: "border border-gray-300 bg-transparent hover:bg-gray-100",
+      secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
+      ghost: "bg-transparent hover:bg-gray-100",
+      link: "text-blue-500 underline-offset-4 hover:underline",
+    },
+    size: {
+      default: "px-4 py-2",
+      sm: "px-3 py-1 text-sm",
+      lg: "px-6 py-3 text-lg",
+      icon: "w-10 h-10",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+    size: "default",
+  },
+});
+
+const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
-  border-radius: 0.375rem;
-  font-size: 0.875rem;
   font-weight: 500;
+  border-radius: 0.375rem;
   transition: all 0.2s ease;
   cursor: pointer;
   
+  ${props => props.variant === "default" && `
+    background-color: #2563eb;
+    color: white;
+    &:hover {
+      background-color: #1d4ed8;
+    }
+  `}
+  
+  ${props => props.variant === "outline" && `
+    border: 1px solid #e5e7eb;
+    background-color: transparent;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  `}
+  
+  ${props => props.variant === "secondary" && `
+    background-color: #f3f4f6;
+    color: #1f2937;
+    &:hover {
+      background-color: #e5e7eb;
+    }
+  `}
+  
+  ${props => props.variant === "ghost" && `
+    background-color: transparent;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  `}
+  
+  ${props => props.variant === "link" && `
+    background-color: transparent;
+    color: #2563eb;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  `}
+  
+  ${props => props.size === "default" && `
+    padding: 0.5rem 1rem;
+  `}
+  
+  ${props => props.size === "sm" && `
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+  `}
+  
+  ${props => props.size === "lg" && `
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+  `}
+  
+  ${props => props.size === "icon" && `
+    padding: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+  `}
+  
   &:disabled {
     opacity: 0.5;
-    pointer-events: none;
+    cursor: not-allowed;
   }
-  
-  /* Variants */
-  background-color: ${props => {
-    switch (props.variant) {
-      case "default":
-        return "var(--color-primary, #0f172a)";
-      case "destructive":
-        return "var(--color-destructive, #ef4444)";
-      case "outline":
-        return "transparent";
-      case "secondary":
-        return "var(--color-secondary, #64748b)";
-      case "ghost":
-        return "transparent";
-      case "link":
-        return "transparent";
-      default:
-        return "var(--color-primary, #0f172a)";
-    }
-  }};
-  
-  color: ${props => {
-    switch (props.variant) {
-      case "default":
-        return "#ffffff";
-      case "destructive":
-        return "#ffffff";
-      case "outline":
-        return "var(--color-text, #0f172a)";
-      case "secondary":
-        return "#ffffff";
-      case "ghost":
-        return "var(--color-text, #0f172a)";
-      case "link":
-        return "var(--color-primary, #0f172a)";
-      default:
-        return "#ffffff";
-    }
-  }};
-  
-  border: ${props => props.variant === "outline" ? "1px solid var(--color-border, #e2e8f0)" : "none"};
-  
-  &:hover {
-    background-color: ${props => {
-      switch (props.variant) {
-        case "default":
-          return "var(--color-primary-dark, #0c132e)";
-        case "destructive":
-          return "var(--color-destructive-hover, #dc2626)";
-        case "outline":
-          return "var(--color-accent, #f8fafc)";
-        case "secondary":
-          return "var(--color-secondary-hover, #475569)";
-        case "ghost":
-          return "var(--color-accent, #f8fafc)";
-        case "link":
-          return "transparent";
-        default:
-          return "var(--color-primary-dark, #0c132e)";
-      }
-    }};
-    
-    color: ${props => {
-      switch (props.variant) {
-        case "link":
-          return "var(--color-primary-hover, #2563eb)";
-        case "outline":
-        case "ghost":
-          return "var(--color-text-hover, #0f172a)";
-        default:
-          return props.color;
-      }
-    }};
-    
-    text-decoration: ${props => props.variant === "link" ? "underline" : "none"};
-  }
-  
-  /* Sizes */
-  height: ${props => {
-    switch (props.size) {
-      case "default": return "2.5rem";
-      case "sm": return "2.25rem";
-      case "lg": return "2.75rem";
-      case "icon": return "2.5rem";
-      default: return "2.5rem";
-    }
-  }};
-  
-  padding: ${props => {
-    switch (props.size) {
-      case "default": return "0.5rem 1rem";
-      case "sm": return "0.375rem 0.75rem";
-      case "lg": return "0.5rem 2rem";
-      case "icon": return "0";
-      default: return "0.5rem 1rem";
-    }
-  }};
-  
-  width: ${props => props.size === "icon" ? "2.5rem" : "auto"};
 `;
 
-export function Button({
-  className,
-  variant = "default",
-  size = "default",
-  children,
-  ...props
-}) {
-  return (
-    <ButtonBase
-      className={className}
-      variant={variant}
-      size={size}
-      {...props}
-    >
-      {children}
-    </ButtonBase>
-  );
-}
+export const Button = React.forwardRef(
+  ({ className, variant = "default", size = "default", asChild = false, ...props }, ref) => {
+    return (
+      <StyledButton
+        ref={ref}
+        variant={variant}
+        size={size}
+        {...props}
+      />
+    );
+  }
+);
+
+Button.displayName = "Button";
