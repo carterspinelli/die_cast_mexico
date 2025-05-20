@@ -71,25 +71,21 @@ const KeyCollaborations = () => {
     <CollaborationsSection>
       <Container>
         <SectionHeader>
-          <Title>Key Collaborations</Title>
+          <Title>{translations.collaborationsTitle}</Title>
           <Description>
-            Overall, Die Cast Mexico corporate membership in both NADCA and AIAG brings immense value to our company. 
-            We leverage industry knowledge, expertise, and resources provided by these organizations to improve our 
-            manufacturing processes, meet industry standards, and deliver high-quality products to our customers in 
-            different industry segments. This strategic alliance positions Die Cast Mexico as a trusted partner within 
-            the die casting industry, fostering growth and success in this increasingly competitive market.
+            {translations.collaborationsDesc}
           </Description>
         </SectionHeader>
         
         <LogosContainer>
           <Logo>
             <img src={images.collaborations.nadca} alt="NADCA - North American Die Casting Association" />
-            <LogoName>North American Die Casting Association</LogoName>
+            <LogoName>{translations.nadcaTitle}</LogoName>
           </Logo>
           
           <Logo>
             <img src={images.collaborations.aiag} alt="AIAG - Automotive Industry Action Group" />
-            <LogoName>Automotive Industry Action Group</LogoName>
+            <LogoName>{translations.aiagTitle}</LogoName>
           </Logo>
         </LogosContainer>
       </Container>
