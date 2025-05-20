@@ -141,5 +141,18 @@
   "collaborationsTitle": "Key Collaborations",
   "collaborationsDesc": "Overall, Die Cast Mexico corporate membership in both NADCA and AIAG brings immense value to our company. We leverage industry knowledge, expertise, and resources provided by these organizations to improve our manufacturing processes, meet industry standards, and deliver high-quality products to our customers in different industry segments. This strategic alliance positions Die Cast Mexico as a trusted partner within the die casting industry, fostering growth and success in this increasingly competitive market.",
   "nadcaTitle": "North American Die Casting Association",
-  "aiagTitle": "Automotive Industry Action Group"
+  "aiagTitle": "Automotive Industry Action Group",
+  
+  "facilityAboutTitle": "Our Facility & Company Profile",
+  "facilityAboutDescription": "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.",
+  "achievementsTitle": "Our Achievements",
+  "achievementsYearsLabel": "Years in Operation",
+  "achievementsYearsValue": "Since 2018",
+  "achievementsLandLabel": "Total Land Area",
+  "achievementsLandValue": "30,000 m²",
+  "achievementsBuildingLabel": "Building Size",
+  "achievementsBuildingValue": "15,000 m²",
+  "achievementsQualityLabel": "Quality Approval",
+  "achievementsQualityValue": "99.9%",
+  "certificationsTitle": "Industry Certifications"
 }

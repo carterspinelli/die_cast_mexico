@@ -107,49 +107,25 @@ const SecondaryImage = styled.img`
   flex-grow: 1;
   flex-basis: 0;
   border-radius: 0.75rem;
-  object-fit: cover;
+  object-fit: contain;
+  height: 100%;
+  max-height: 200px;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 1rem;
   
   @media (min-width: 768px) {
     width: 50%;
+    max-height: none;
   }
   
   @media (min-width: 992px) {
     min-height: 0;
-    width: auto;
+    width: 100%;
   }
 `;
 
-const CompaniesSection = styled.div`
-  padding: 8rem 0;
-  text-align: center;
-`;
 
-const CompaniesTitle = styled.p`
-  margin-bottom: 2rem;
-`;
-
-const CompaniesGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
-`;
-
-const CompanyLogo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  
-  img {
-    height: 2rem;
-    width: auto;
-    
-    @media (min-width: 768px) {
-      height: 2.5rem;
-    }
-  }
-`;
 
 const AchievementsBox = styled.div`
   background-color: #f8f9fa;
@@ -170,9 +146,10 @@ const AchievementsHeader = styled.div`
   }
 `;
 
-// Helper for handling translations with fallbacks
+// Helper for handling translations with fallbacks for both Spanish and English
 const translate = (messages, key, fallback) => {
-  return messages && messages[key] ? messages[key] : fallback;
+  if (!messages) return fallback;
+  return messages[key] || fallback;
 };
 
 const AchievementsTitle = styled.h3`
@@ -236,28 +213,13 @@ const FacilityAbout = () => {
     }
   ];
   
-  const certifications = [
-    {
-      src: "/images/nadca_diecast.png",
-      alt: "NADCA Certification"
-    },
-    {
-      src: "/images/aiag_diecast.png",
-      alt: "AIAG Certification"
-    },
-    {
-      src: "/images/iso9001_diecast.webp",
-      alt: "ISO 9001 Certification"
-    }
-  ];
-  
   return (
     <Section id="about">
       <Container>
         <HeaderGrid>
-          <Title>{translate(messages, 'facilityTitle', "Our Facility")}</Title>
+          <Title>{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
           <Description>
-            {translate(messages, 'facilityDescription', "Located in the Queretaro region, our state-of-the-art facility sits on 30,000 sqm of land with a 15,000 sqm building. Started operations in Q4 2018, our facility houses the latest die casting technology and quality control systems, allowing us to deliver precision components to exacting standards.")}
+            {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
           </Description>
         </HeaderGrid>
         
@@ -269,16 +231,11 @@ const FacilityAbout = () => {
           
           <SideContent>
             <InfoBox>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <InfoBoxLogo 
-                  src="/images/die_cast_mx_logo_v07.png" 
-                  alt={translate(messages, 'companyLogoAlt', "Die Cast Mexico Logo")}
-                  style={{ height: '2.5rem' }}
-                />
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <InfoBoxLogo 
                   src="/images/iso9001_diecast.webp" 
                   alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
-                  style={{ height: '2.5rem' }}
+                  style={{ height: '3.5rem' }}
                 />
               </div>
               <div>
@@ -299,19 +256,7 @@ const FacilityAbout = () => {
           </SideContent>
         </ContentGrid>
         
-        <CompaniesSection>
-          <CompaniesTitle>{translate(messages, 'certificationsTitle', "Industry Certifications")}</CompaniesTitle>
-          <CompaniesGrid>
-            {certifications.map((certification, idx) => (
-              <CompanyLogo key={certification.alt + idx}>
-                <img
-                  src={certification.src}
-                  alt={certification.alt}
-                />
-              </CompanyLogo>
-            ))}
-          </CompaniesGrid>
-        </CompaniesSection>
+
         
         <AchievementsBox>
           <AchievementsHeader>
