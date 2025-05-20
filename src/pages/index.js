@@ -5,7 +5,7 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Capabilities from "../components/Capabilities";
 import IndustriesTabsSimple from "../components/IndustriesTabsSimple";
-import FacilityHero from "../components/FacilityHero";
+import FacilitySection from "../components/FacilitySection";
 import KeyCollaborations from "../components/KeyCollaborations";
 import styled from "styled-components";
 import images from "../data/images";
@@ -90,65 +90,7 @@ const AboutMission = styled.div`
   color: var(--gray-dark);
 `;
 
-const FacilitySection = styled.section`
-  padding: var(--spacing-2xl) 0;
-  background-color: var(--background);
-  
-  @media (max-width: 768px) {
-    padding: var(--spacing-xl) 0;
-  }
-`;
-
-const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-xl);
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const StatCard = styled.div`
-  background-color: var(--white);
-  padding: var(--spacing-lg);
-  border-radius: var(--border-radius-md);
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const StatIcon = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: var(--primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--spacing-md);
-  color: var(--white);
-  
-  svg {
-    width: 30px;
-    height: 30px;
-  }
-`;
-
-const StatTitle = styled.h3`
-  color: var(--primary-dark);
-  margin-bottom: var(--spacing-sm);
-`;
-
-const StatDescription = styled.p`
-  color: var(--gray);
-`;
+// removed unused components
 
 const IndexPage = () => {
   const { messages } = useLanguage();
@@ -164,7 +106,7 @@ const IndexPage = () => {
       
       <Services messages={messages} />
       
-      <FacilityHero />
+      <FacilitySection />
       
       <Capabilities />
       
