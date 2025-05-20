@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
+import ExpandableIndustryCard from "./ui/ExpandableIndustryCard";
 
 const IndustrySegmentsSection = styled.section`
   padding: 5rem 1rem;
@@ -32,67 +33,84 @@ const Subtitle = styled.p`
 
 const SegmentsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
   @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 576px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const SegmentCard = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  }
-`;
+// Define some common details to be displayed in the expandable part
+const industryDetails = {
+  telecom: [
+    "High precision aluminum die casting for telecommunications components",
+    "Specialized finish and plating options for EMI/RFI shielding",
+    "Tight tolerance components for routers, switches, and base stations",
+    "Secondary operations including CNC machining and assembly",
+    "Quality assurance testing and validation"
+  ],
+  mechatronics: [
+    "Precision components for automation systems",
+    "Complex geometries for mechanical interfaces",
+    "Multi-material solutions for integrated systems",
+    "Heat-dissipating enclosures for electronics",
+    "Robotics components with high reliability standards"
+  ],
+  powertools: [
+    "Lightweight aluminum components for power tool housings",
+    "Vibration-dampening designs for comfort and safety",
+    "Heat sink integration for motor components",
+    "Custom surface finishes for durability and grip",
+    "High strength-to-weight ratio parts"
+  ],
+  automotive: [
+    "IATF 16949 compliant die casting processes",
+    "Engine components with tight tolerances",
+    "Structural parts with validated safety profiles",
+    "Lightweight solutions for improved fuel efficiency",
+    "Specialized coatings for corrosion resistance"
+  ],
+  lighting: [
+    "Heat-dissipating LED fixture housings",
+    "Decorative and functional aluminum profiles",
+    "Custom surface treatments for optical properties",
+    "Integration of mounting and connection features",
+    "Thin-wall casting capabilities for lighting design"
+  ],
+  instrumentation: [
+    "Pressure and flow sensor housings",
+    "High precision measurement device components",
+    "EMI shielded enclosures for sensitive electronics",
+    "Corrosion-resistant materials for harsh environments",
+    "Integration of mounting features and connectors"
+  ],
+  pneumatic: [
+    "High pressure-rated valve bodies and components",
+    "Precision-machined surfaces for air-tight sealing",
+    "Durable manifold blocks with complex internal passages",
+    "Corrosion-resistant treatments for industrial applications",
+    "Custom port configurations and connection interfaces"
+  ],
+  marine: [
+    "Salt-water resistant aluminum alloys",
+    "Special coatings for extreme marine environments",
+    "Propulsion system components with high reliability",
+    "Lightweight structural parts for improved efficiency",
+    "Water-tight enclosures for marine electronics"
+  ]
+};
 
-const IconContainer = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: var(--color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  
-  svg {
-    width: 30px;
-    height: 30px;
-    color: white;
-  }
-`;
-
-const SegmentTitle = styled.h3`
-  font-size: 1.4rem;
-  color: var(--color-secondary);
-  margin-bottom: 1rem;
-`;
-
-const SegmentDesc = styled.p`
-  font-size: 1rem;
-  color: var(--color-text);
-  line-height: 1.6;
-  flex-grow: 1;
-`;
+// SVG icon components for each industry
+const IndustryIcon = ({ iconPath }) => (
+  <img 
+    src={iconPath} 
+    alt="" 
+    width="30" 
+    height="30" 
+    style={{ filter: "brightness(0) invert(1)" }} 
+  />
+);
 
 const IndustrySegments = () => {
   const { messages: translations } = useLanguage();
@@ -101,42 +119,50 @@ const IndustrySegments = () => {
     {
       icon: "/icons/telecom.svg",
       title: translations.telecomTitle,
-      description: translations.telecomDesc
+      description: translations.telecomDesc,
+      details: industryDetails.telecom
     },
     {
       icon: "/icons/automation.svg",
       title: translations.mechatronicsTitle,
-      description: translations.mechatronicsDesc
+      description: translations.mechatronicsDesc,
+      details: industryDetails.mechatronics
     },
     {
       icon: "/icons/powertools.svg",
       title: translations.powertoolsSegmentTitle,
-      description: translations.powertoolsSegmentDesc
+      description: translations.powertoolsSegmentDesc,
+      details: industryDetails.powertools
     },
     {
       icon: "/icons/automotive.svg",
       title: translations.automotiveTitle,
-      description: translations.automotiveDesc
+      description: translations.automotiveDesc,
+      details: industryDetails.automotive
     },
     {
       icon: "/icons/lighting.svg",
       title: translations.lightingSegmentTitle,
-      description: translations.lightingSegmentDesc
+      description: translations.lightingSegmentDesc,
+      details: industryDetails.lighting
     },
     {
       icon: "/icons/instrumentation.svg",
       title: translations.instrumentationSegmentTitle,
-      description: translations.instrumentationSegmentDesc
+      description: translations.instrumentationSegmentDesc,
+      details: industryDetails.instrumentation
     },
     {
       icon: "/icons/pneumatic.svg",
       title: translations.pneumaticSegmentTitle,
-      description: translations.pneumaticSegmentDesc
+      description: translations.pneumaticSegmentDesc,
+      details: industryDetails.pneumatic
     },
     {
       icon: "/icons/marine.svg",
       title: translations.marineTitle,
-      description: translations.marineDesc
+      description: translations.marineDesc,
+      details: industryDetails.marine
     }
   ];
   
@@ -150,19 +176,13 @@ const IndustrySegments = () => {
         
         <SegmentsGrid>
           {industries.map((item, index) => (
-            <SegmentCard key={index}>
-              <IconContainer>
-                <img 
-                  src={item.icon} 
-                  alt={item.title} 
-                  width="30" 
-                  height="30" 
-                  style={{ filter: "brightness(0) invert(1)" }} 
-                />
-              </IconContainer>
-              <SegmentTitle>{item.title}</SegmentTitle>
-              <SegmentDesc>{item.description}</SegmentDesc>
-            </SegmentCard>
+            <ExpandableIndustryCard 
+              key={index}
+              title={item.title}
+              icon={<IndustryIcon iconPath={item.icon} />}
+              description={item.description}
+              details={item.details}
+            />
           ))}
         </SegmentsGrid>
       </Container>
