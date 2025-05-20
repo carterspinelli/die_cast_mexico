@@ -124,7 +124,7 @@ const Footer = ({ messages }) => {
     <FooterContainer>
       <FooterContent>
         <FooterColumn>
-          <img src="/images/footer_logo_dcmx.png" alt="Die Cast Mexico" style={{ height: '70px', marginBottom: '1rem' }} />
+          <img src="/images/new_footer_logo.png" alt="Die Cast Mexico" style={{ height: '70px', marginBottom: '1rem' }} />
           <FooterText>
             Die Cast Mexico - {messages.footerRights} © {currentYear}
           </FooterText>
