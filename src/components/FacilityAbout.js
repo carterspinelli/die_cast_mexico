@@ -214,16 +214,16 @@ const FacilityAbout = () => {
   
   const achievements = [
     {
-      label: messages.achievementsYearsLabel || "Years of Experience",
-      value: "+25"
+      label: messages.achievementsYearsLabel || "Years in Operation",
+      value: "Since 2018"
     },
     {
-      label: messages.achievementsClientsLabel || "Satisfied Clients",
-      value: "500+"
+      label: messages.achievementsClientsLabel || "Total Land Area",
+      value: "30,000 m²"
     },
     {
-      label: messages.achievementsPartsLabel || "Parts Produced",
-      value: "1M+"
+      label: messages.achievementsPartsLabel || "Building Size",
+      value: "15,000 m²"
     },
     {
       label: messages.achievementsQualityLabel || "Quality Approval",
@@ -252,7 +252,7 @@ const FacilityAbout = () => {
         <HeaderGrid>
           <Title>{messages.facilityTitle || "Our Facility"}</Title>
           <Description>
-            {messages.facilityDescription || "Located in the Queretaro region, our 45,000 sq ft state-of-the-art facility houses the latest in die casting technology and quality control systems, allowing us to deliver precision components to exacting standards."}
+            {messages.facilityDescription || "Located in the Queretaro region, our state-of-the-art facility sits on 30,000 sqm of land with a 15,000 sqm building. Started operations in Q4 2018, our facility houses the latest die casting technology and quality control systems, allowing us to deliver precision components to exacting standards."}
           </Description>
         </HeaderGrid>
         
