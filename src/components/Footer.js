@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import Logo from "./Logo";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
+import images from "../data/images";
 
 const FooterContainer = styled.footer`
   background-color: var(--gray-dark);
@@ -221,7 +222,10 @@ const Footer = ({ messages }) => {
       </FooterContent>
       
       <FooterBottom>
-        <p>© {currentYear} Die Cast Mexico. {messages.footerRights}.</p>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
+          <img src={images.certification} alt="ISO 9001:2015 Certified" style={{ height: '70px', marginRight: '1rem' }} />
+          <p>© {currentYear} Die Cast Mexico. {messages.footerRights}.</p>
+        </div>
       </FooterBottom>
     </FooterContainer>
   );

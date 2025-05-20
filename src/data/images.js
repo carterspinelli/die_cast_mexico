@@ -1,6 +1,6 @@
-// Define placeholder image URLs for different sections of the website
+// Define image URLs for different sections of the website
 const images = {
-  // Logo - can be replaced with actual logo when available
+  // Logo
   logo: "/images/logo.svg",
   
   // Manufacturing plant images
@@ -11,9 +11,12 @@ const images = {
   
   // Die casting machinery images
   dieCastingMachinery: [
-    "https://images.unsplash.com/photo-1613662499047-e87d8d809d62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    "https://images.unsplash.com/photo-1614064703472-9c116d3e3133?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    "/images/die_cast_02.png",
+    "/images/die_cast_cnc.png"
   ],
+  
+  // ISO certification
+  certification: "/images/iso9001_diecast.webp",
   
   // Industry-specific images
   industries: {
