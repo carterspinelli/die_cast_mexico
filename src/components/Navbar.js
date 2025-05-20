@@ -28,7 +28,7 @@ const NavbarInner = styled.div`
   justify-content: space-between;
   align-items: center;
   background-color: ${props => props.scrolled ? "var(--white)" : "rgba(255, 255, 255, 0.9)"};
-  border-radius: 9999px;
+  border-radius: var(--border-radius-md);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 0.75rem 1.5rem;
   width: 100%;
@@ -97,7 +97,7 @@ const ContactButton = styled(Link)`
   background-color: var(--primary);
   color: var(--white);
   padding: 0.6rem 1.25rem;
-  border-radius: 9999px;
+  border-radius: var(--border-radius-md);
   font-weight: 600;
   font-size: 0.9rem;
   margin-left: 1rem;
@@ -214,7 +214,7 @@ const MobileCTAButton = styled(Link)`
   background-color: var(--primary);
   color: var(--white);
   padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
+  border-radius: var(--border-radius-md);
   font-weight: 600;
   text-align: center;
   transition: all 0.3s ease;
