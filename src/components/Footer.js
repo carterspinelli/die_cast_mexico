@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 import images from "../data/images";
 
@@ -53,22 +52,6 @@ const Description = styled.p`
   line-height: 1.5;
   margin-bottom: 1.5rem;
   max-width: 300px;
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-const SocialIconLink = styled.a`
-  color: #a1a1aa;
-  transition: color 0.2s;
-  display: flex;
-  align-items: center;
-  
-  &:hover {
-    color: #60a5fa;
-  }
 `;
 
 const LinksSection = styled.div`
@@ -197,12 +180,6 @@ const Footer = ({ messages }) => {
     { name: "Pneumatic & Hydraulic", path: "/#industries" },
     { name: "Marine Products", path: "/#industries" },
   ];
-  
-  const socialLinks = [
-    { icon: <FaInstagram size={20} />, href: "https://instagram.com/diecastmx", label: "Instagram" },
-    { icon: <FaFacebook size={20} />, href: "https://facebook.com/diecastmx", label: "Facebook" },
-    { icon: <FaLinkedin size={20} />, href: "https://linkedin.com/company/diecastmx", label: "LinkedIn" },
-  ];
 
   const legalLinks = [
     { name: messages.termsConditions || "Terms and Conditions", href: "#" },
@@ -222,13 +199,6 @@ const Footer = ({ messages }) => {
             <Description>
               {messages.footerDescription || "High-quality die casting solutions for automotive, telecommunications, and industrial applications. Precision manufacturing in Guadalajara, Mexico."}
             </Description>
-            <SocialIcons>
-              {socialLinks.map((social, idx) => (
-                <SocialIconLink key={idx} href={social.href} aria-label={social.label}>
-                  {social.icon}
-                </SocialIconLink>
-              ))}
-            </SocialIcons>
           </CompanySection>
           
           <LinksSection>
