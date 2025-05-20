@@ -21,7 +21,7 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(${props => props.backgroundImage});
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${props => props.backgroundImage});
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -98,8 +98,8 @@ const SecondaryButton = styled(Link)`
 `;
 
 const Hero = ({ messages }) => {
-  // Select a random background image from the manufacturing plant images
-  const backgroundImage = images.manufacturingPlant[0];
+  // Use the die_cast_cnc.png image as the background
+  const backgroundImage = "/images/die_cast_cnc.png";
   const { language } = useLanguage();
   
   // Helper function to create localized paths
