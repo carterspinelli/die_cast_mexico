@@ -108,7 +108,8 @@ const InfoBoxText = styled.p`
 
 
 const AchievementsBox = styled.div`
-  background-color: #f8f9fa;
+  background-color: #172b49;
+  color: white;
   border-radius: 0.75rem;
   padding: 2.5rem 4rem;
   position: relative;
@@ -136,11 +137,12 @@ const AchievementsTitle = styled.h3`
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
+  color: white;
 `;
 
 const AchievementsDescription = styled.p`
   max-width: 768px;
-  color: #64748b;
+  color: #b4c6e0;
   font-size: 0.95rem;
 `;
 
@@ -160,13 +162,14 @@ const Achievement = styled.div`
 `;
 
 const AchievementLabel = styled.p`
-  color: #64748b;
+  color: #b4c6e0;
   font-size: 0.9rem;
 `;
 
 const AchievementValue = styled.span`
   font-size: 1.75rem;
   font-weight: 600;
+  color: white;
   
   @media (min-width: 768px) {
     font-size: 2rem;
