@@ -123,11 +123,10 @@ const Footer = ({ messages }) => {
   return (
     <FooterContainer>
       <FooterContent>
-        <FooterColumn>
-          <img src="/images/new_footer_logo.png" alt="Die Cast Mexico" style={{ height: '70px', marginBottom: '1rem' }} />
-          <FooterText>
-            Die Cast Mexico - {messages.footerRights} © {currentYear}
-          </FooterText>
+        <FooterColumn style={{ paddingRight: '2rem' }}>
+          <div style={{ marginLeft: '-1rem' }}>
+            <img src="/images/new_footer_logo.png" alt="Die Cast Mexico" style={{ height: '90px', marginBottom: '1rem' }} />
+          </div>
         </FooterColumn>
         
         <FooterColumn>
