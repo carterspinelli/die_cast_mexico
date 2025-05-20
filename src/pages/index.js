@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import Capabilities from "../components/Capabilities";
 import IndustriesTabsSimple from "../components/IndustriesTabsSimple";
 import FacilityAbout from "../components/FacilityAbout";
+import SupplyChainValues from "../components/SupplyChainValues";
 import KeyCollaborations from "../components/KeyCollaborations";
 import styled from "styled-components";
 import images from "../data/images";
@@ -165,6 +166,8 @@ const IndexPage = () => {
       <Services messages={messages} />
       
       <FacilityAbout />
+      
+      <SupplyChainValues />
       
       <Capabilities />
       
