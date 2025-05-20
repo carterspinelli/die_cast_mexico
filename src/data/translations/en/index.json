@@ -201,5 +201,8 @@
   "valueLabel": "Value",
   
   "iso9001Title": "ISO 9001:2015 Certified",
-  "iso9001Description": "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes."
+  "iso9001Description": "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.",
+  "contactUsBtn": "Contact Us",
+  "requiredField": "This field is required",
+  "invalidEmail": "Please enter a valid email address"
 }

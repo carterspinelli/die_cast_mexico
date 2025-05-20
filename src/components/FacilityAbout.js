@@ -225,7 +225,7 @@ const FacilityAbout = () => {
                   {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
                 </InfoBoxText>
               </div>
-              <Button variant="outline" as="a" href="#contact">
+              <Button variant="outline" as="a" href="/contact">
                 {translate(messages, 'contactUsBtn', "Contact Us")}
               </Button>
             </InfoBox>

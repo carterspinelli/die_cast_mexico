@@ -181,10 +181,8 @@ const Footer = ({ messages }) => {
     { name: "Marine Products", path: "/#industries" },
   ];
 
-  const legalLinks = [
-    { name: messages.termsConditions || "Terms and Conditions", href: "#" },
-    { name: messages.privacyPolicy || "Privacy Policy", href: "#" },
-  ];
+  // Removed terms and conditions and privacy policy links as requested
+  const legalLinks = [];
   
   return (
     <FooterContainer>
