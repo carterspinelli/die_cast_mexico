@@ -106,8 +106,8 @@ const IndustryIcon = ({ iconPath }) => (
   <img 
     src={iconPath} 
     alt="" 
-    width="30" 
-    height="30" 
+    width="20" 
+    height="20" 
     style={{ filter: "brightness(0) invert(1)" }} 
   />
 );
