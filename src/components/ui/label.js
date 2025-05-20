@@ -1,18 +1,24 @@
 import React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
-import { cn } from "../../utils/classNames";
+import styled from "styled-components";
 
-export const Label = React.forwardRef(
-  ({ className, ...props }, ref) => (
-    <LabelPrimitive.Root
-      ref={ref}
-      className={cn(
-        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
-        className
-      )}
-      {...props}
-    />
-  )
-);
+const StyledLabel = styled(LabelPrimitive.Root)`
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  
+  &[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+`;
+
+export const Label = React.forwardRef(({ className, ...props }, ref) => (
+  <StyledLabel
+    ref={ref}
+    className={className}
+    {...props}
+  />
+));
 
 Label.displayName = LabelPrimitive.Root.displayName;

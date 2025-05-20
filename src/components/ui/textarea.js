@@ -1,19 +1,39 @@
 import React from "react";
-import { cn } from "../../utils/classNames";
+import styled from "styled-components";
 
-export const Textarea = React.forwardRef(
-  ({ className, ...props }, ref) => {
-    return (
-      <textarea
-        className={cn(
-          "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
-        )}
-        ref={ref}
-        {...props}
-      />
-    );
+const StyledTextarea = styled.textarea`
+  display: flex;
+  min-height: 5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
   }
-);
+  
+  &::placeholder {
+    color: #a0aec0;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+`;
+
+export const Textarea = React.forwardRef(({ className, ...props }, ref) => {
+  return (
+    <StyledTextarea
+      className={className}
+      ref={ref}
+      {...props}
+    />
+  );
+});
 
 Textarea.displayName = "Textarea";
