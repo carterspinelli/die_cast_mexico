@@ -83,7 +83,7 @@ const TabButton = styled.button`
 `;
 
 const ContentContainer = styled.div`
-  background-color: rgba(23, 43, 73, 0.85);
+  background-color: var(--color-light-bg, #f8fafc);
   border-radius: 1rem;
   padding: 1.5rem;
   
@@ -124,7 +124,7 @@ const Badge = styled.div`
 const ContentTitle = styled.h3`
   font-size: 2rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #172b49;
   margin: 0;
   
   @media (min-width: 992px) {
@@ -133,7 +133,7 @@ const ContentTitle = styled.h3`
 `;
 
 const ContentDescription = styled.p`
-  color: #94a3b8;
+  color: #64748b;
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
