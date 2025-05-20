@@ -167,11 +167,11 @@ const IndexPage = () => {
       
       <FacilityAbout />
       
-      <SupplyChainValues />
-      
       <Capabilities />
       
       <IndustriesTabsSimple />
+      
+      <SupplyChainValues />
       
       <KeyCollaborations />
     </Layout>

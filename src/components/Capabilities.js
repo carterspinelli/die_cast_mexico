@@ -70,22 +70,22 @@ const Capabilities = () => {
     [translations.tonnageCapacity]: {
       type: translations.tonnageRange,
       description: "The clamping force of the die casting machine determines the maximum size and complexity of parts that can be produced.",
-      default: "50-1200t"
+      default: "180-850t"
     },
     [translations.shotWeight]: {
       type: translations.shotWeightRange,
       description: "The maximum amount of aluminum that can be injected per cycle, affecting part size and production efficiency.",
-      default: "0.5-20kg"
+      default: "1.2-16kg"
     },
     [translations.partWeight]: {
       type: translations.partWeightRange,
       description: "The weight range of final parts that can be efficiently produced with our equipment.",
-      default: "0.01-15kg"
+      default: "0.05-12kg"
     },
     [translations.dieSize]: {
       type: translations.dieSizeRange,
       description: "The physical dimensions of the die that can be accommodated by our machines, determining maximum part size.",
-      default: "150×150mm - 900×700mm"
+      default: "200×200mm - 850×650mm"
     }
   };
   
@@ -95,24 +95,24 @@ const Capabilities = () => {
       type: translations.dimensionalToleranceValue,
       description: "The accuracy of dimensions that can be achieved in our die casting process, crucial for precision parts.",
       typeDescription: "Tighter tolerances may be achieved with additional machining operations.",
-      default: "±0.1mm"
+      default: "±0.05mm"
     },
     [translations.surfaceFinish]: {
       type: translations.surfaceFinishValue,
       description: "The surface quality that can be achieved directly from the die casting process before any finishing operations.",
-      default: "Ra 1.6-3.2"
+      default: "Ra 1.2-3.2"
     },
     [translations.wallThickness]: {
       type: translations.wallThicknessValue,
       description: "The minimum wall thickness that can be reliably produced with our die casting process.",
       typeDescription: "Thinner walls can reduce weight and material costs but may affect structural integrity.",
-      default: "0.8-2.5mm"
+      default: "1.0-3.0mm"
     },
     [translations.materialPurity]: {
       type: translations.materialPurityValue,
       description: "The level of purity we can maintain in the aluminum alloys used in our die casting process.",
       typeDescription: "Higher purity levels can improve mechanical properties and surface finish.",
-      default: "99.5-99.9%"
+      default: "99.7-99.95%"
     }
   };
   
