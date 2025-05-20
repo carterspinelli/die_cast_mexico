@@ -3,9 +3,8 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-import Industries from "../components/Industries";
 import Capabilities from "../components/Capabilities";
-import ProductSegments from "../components/ProductSegments";
+import IndustrySegments from "../components/IndustrySegments";
 import styled from "styled-components";
 import images from "../data/images";
 import { useLanguage } from "../context/LanguageContext";
@@ -204,11 +203,9 @@ const IndexPage = () => {
         </Container>
       </FacilitySection>
       
-      <Industries messages={messages} />
-      
       <Capabilities />
       
-      <ProductSegments />
+      <IndustrySegments />
       
       <AboutSection id="about">
         <Container>
