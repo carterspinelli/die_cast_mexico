@@ -63,111 +63,81 @@ const SpecsTitle = styled.h3`
   }
 `;
 
-const FacilityGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const FacilityCard = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 2rem;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  }
 `;
 
-const CardHeader = styled.div`
-  padding: 1.2rem;
+const TableHead = styled.thead`
   background-color: var(--color-primary);
   color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-align: center;
-  border-bottom: 3px solid var(--color-accent);
-`;
-
-const CardContent = styled.div`
-  padding: 1.5rem;
-`;
-
-const CardValue = styled.div`
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-primary-dark);
-  margin-bottom: 0.5rem;
   
-  span {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: normal;
-    color: var(--color-text);
-    margin-top: 0.25rem;
+  th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    
+    &:first-child {
+      border-top-left-radius: 8px;
+    }
+    
+    &:last-child {
+      border-top-right-radius: 8px;
+    }
   }
 `;
 
-const ProcessTable = styled.div`
+const TableBody = styled.tbody`
+  background-color: white;
+  
+  tr {
+    transition: background-color 0.2s ease;
+    
+    &:hover {
+      background-color: var(--color-primary-light, rgba(0, 102, 204, 0.05));
+    }
+    
+    &:not(:last-child) {
+      border-bottom: 1px solid #edf2f7;
+    }
+  }
+  
+  td {
+    padding: 1rem;
+    
+    &:first-child {
+      font-weight: 600;
+      color: var(--color-primary);
+      width: 30%;
+    }
+  }
+`;
+
+const TableSection = styled.div`
   margin-top: 2rem;
 `;
 
-const ProcessGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  @media (max-width: 576px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ProcessCard = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid var(--color-border, #e2e8f0);
-  padding: 1rem;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: var(--color-primary-light, #f0f7ff);
-    border-color: var(--color-primary, #0066cc);
-  }
-`;
-
-const ProcessName = styled.div`
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
-`;
-
-const ProcessDescription = styled.div`
-  font-size: 0.9rem;
-  color: var(--color-text);
-`;
-
-const CapabilityGroupTitle = styled.h4`
-  font-size: 1.2rem;
+const SectionTitle = styled.h4`
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--color-primary-dark);
-  margin: 2rem 0 1rem;
-  border-left: 3px solid var(--color-accent);
-  padding-left: 0.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1rem;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--color-accent);
+    border-radius: 4px;
+  }
 `;
 
 const Capabilities = () => {
@@ -224,59 +194,27 @@ const Capabilities = () => {
     }
   };
   
-  // Key facility metrics for card display
-  const facilityMetrics = [
-    {
-      label: "Workforce",
-      value: "125",
-      description: "Skilled employees"
-    },
-    {
-      label: "Material Capacity",
-      value: "250ton/month",
-      description: "Aluminum ingots"
-    },
-    {
-      label: "Aluminum Alloys",
-      value: "AlSi12(Fe), A380, A360, A413, ADC12",
-      description: "Industry-standard materials"
-    }
+  // Facility overview data
+  const facilityOverview = [
+    { attribute: "Workforce", value: "125 skilled employees" },
+    { attribute: "Material Capacity", value: "Up to 250ton/month aluminum ingots" },
+    { attribute: "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
   ];
   
-  // Production capabilities
-  const productionCapabilities = [
-    {
-      name: "Die Casting",
-      description: "8 full automatic manufacturing cells"
-    },
-    {
-      name: "CNC Machining",
-      description: "19 horizontal 4 axis machines"
-    },
-    {
-      name: "Mechanical Assembly",
-      description: "Dowel pins, labels, helicoils, plugs, etc."
-    },
-    {
-      name: "FIP Gasket",
-      description: "Precision gasket application"
-    },
-    {
-      name: "Powder Painting",
-      description: "Akzo Nobel, Cardinal, Sherwin Williams, etc."
-    },
-    {
-      name: "Liquid Painting",
-      description: "Custom color solutions"
-    },
-    {
-      name: "Nickel Plating",
-      description: "High-quality surface finish"
-    },
-    {
-      name: "Surface Treatment",
-      description: "Tri-chrome passivation on Aluminum: Surtec 650®"
-    }
+  // Manufacturing capabilities data
+  const manufacturingCapabilities = [
+    { attribute: "Die Casting", value: "8 full automatic manufacturing cells" },
+    { attribute: "CNC Machining", value: "19 horizontal 4 axis machines" },
+    { attribute: "Mechanical Assembly", value: "Dowel pins, labels, helicoils, plugs, etc." }
+  ];
+  
+  // Surface finishing capabilities data
+  const surfaceFinishingCapabilities = [
+    { attribute: "FIP Gasket", value: "Precision gasket application" },
+    { attribute: "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
+    { attribute: "Liquid Painting", value: "Custom color solutions" },
+    { attribute: "Nickel Plating", value: "High-quality surface finish" },
+    { attribute: "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
   ];
   
   return (
@@ -287,33 +225,70 @@ const Capabilities = () => {
           <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
         
-        {/* Facility Overview with Cards */}
-        <FacilityGrid>
-          {facilityMetrics.map((metric, index) => (
-            <FacilityCard key={index}>
-              <CardHeader>{metric.label}</CardHeader>
-              <CardContent>
-                <CardValue>
-                  {metric.value}
-                  <span>{metric.description}</span>
-                </CardValue>
-              </CardContent>
-            </FacilityCard>
-          ))}
-        </FacilityGrid>
-        
-        {/* Production Capabilities */}
-        <ProcessTable>
-          <CapabilityGroupTitle>Production Capabilities</CapabilityGroupTitle>
-          <ProcessGrid>
-            {productionCapabilities.map((process, index) => (
-              <ProcessCard key={index}>
-                <ProcessName>{process.name}</ProcessName>
-                <ProcessDescription>{process.description}</ProcessDescription>
-              </ProcessCard>
-            ))}
-          </ProcessGrid>
-        </ProcessTable>
+        {/* Facility Overview */}
+        <SpecsCard>
+          <SpecsTitle>Facility Overview</SpecsTitle>
+          
+          <TableSection>
+            <SectionTitle>Resources & Materials</SectionTitle>
+            <StyledTable>
+              <TableHead>
+                <tr>
+                  <th>Resource</th>
+                  <th>Capacity</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                {facilityOverview.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.attribute}</td>
+                    <td>{item.value}</td>
+                  </tr>
+                ))}
+              </TableBody>
+            </StyledTable>
+          </TableSection>
+          
+          <TableSection>
+            <SectionTitle>Manufacturing Processes</SectionTitle>
+            <StyledTable>
+              <TableHead>
+                <tr>
+                  <th>Process</th>
+                  <th>Capabilities</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                {manufacturingCapabilities.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.attribute}</td>
+                    <td>{item.value}</td>
+                  </tr>
+                ))}
+              </TableBody>
+            </StyledTable>
+          </TableSection>
+          
+          <TableSection>
+            <SectionTitle>Surface Finishing</SectionTitle>
+            <StyledTable>
+              <TableHead>
+                <tr>
+                  <th>Process</th>
+                  <th>Specifications</th>
+                </tr>
+              </TableHead>
+              <TableBody>
+                {surfaceFinishingCapabilities.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.attribute}</td>
+                    <td>{item.value}</td>
+                  </tr>
+                ))}
+              </TableBody>
+            </StyledTable>
+          </TableSection>
+        </SpecsCard>
         
         {/* Technical Specifications */}
         <SpecsGrid>
