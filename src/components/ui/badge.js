@@ -1,24 +1,58 @@
 import React from "react";
-import { cn } from "../../utils/classNames";
+import styled from "styled-components";
 
-const badgeVariants = {
-  default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-  secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-  destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-  outline: "text-foreground border-border",
-};
+// Styled components for the Badge
+const BadgeContainer = styled.div`
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid ${props => props.variant === "outline" ? "var(--color-border, #e2e8f0)" : "transparent"};
+  padding: 0.25rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  background-color: ${props => {
+    switch (props.variant) {
+      case "default":
+        return "var(--color-primary, #3b82f6)";
+      case "secondary":
+        return "var(--color-secondary, #64748b)";
+      case "destructive":
+        return "var(--color-destructive, #ef4444)";
+      case "outline":
+        return "transparent";
+      default:
+        return "var(--color-primary, #3b82f6)";
+    }
+  }};
+  color: ${props => props.variant === "outline" ? "var(--color-text, #1e293b)" : "#ffffff"};
+  
+  &:hover {
+    background-color: ${props => {
+      if (props.variant === "outline") return "transparent";
+      
+      switch (props.variant) {
+        case "default":
+          return "var(--color-primary-hover, #2563eb)";
+        case "secondary":
+          return "var(--color-secondary-hover, #475569)";
+        case "destructive":
+          return "var(--color-destructive-hover, #dc2626)";
+        default:
+          return "var(--color-primary-hover, #2563eb)";
+      }
+    }};
+  }
+`;
 
-function Badge({ className, variant = "default", ...props }) {
+export function Badge({ className, variant = "default", children, ...props }) {
   return (
-    <div 
-      className={cn(
-        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none",
-        badgeVariants[variant],
-        className
-      )} 
-      {...props} 
-    />
+    <BadgeContainer
+      className={className}
+      variant={variant}
+      {...props}
+    >
+      {children}
+    </BadgeContainer>
   );
 }
-
-export { Badge, badgeVariants };
