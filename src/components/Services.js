@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Cog, Monitor, Layers } from "lucide-react";
+import { Monitor, Layers } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const ServicesSection = styled.section`
@@ -159,7 +159,7 @@ const Services = () => {
   
   const serviceItems = [
     {
-      icon: <Cog />,
+      icon: <img src="/icons/hp_die_cast_icon.png" alt="High Pressure Die Casting" style={{ width: "24px", height: "24px", filter: "brightness(0) invert(1)" }} />,
       title: messages.highPressureTitle,
       description: messages.highPressureDesc
     },
