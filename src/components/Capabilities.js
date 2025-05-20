@@ -65,28 +65,27 @@ const SpecsTitle = styled.h3`
 
 const StyledTable = styled.table`
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
   margin-bottom: 2rem;
   overflow: hidden;
 `;
 
 const TableHead = styled.thead`
-  background-color: var(--color-primary);
-  color: white;
+  background-color: #f0f7ff;
+  color: #4a5568;
+  border-bottom: 1px solid #e2e8f0;
   
   th {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-align: left;
     font-weight: 600;
-    
-    &:first-child {
-      border-top-left-radius: 8px;
-    }
-    
-    &:last-child {
-      border-top-right-radius: 8px;
-    }
+    font-size: 1rem;
+  }
+
+  th:first-child {
+    width: 40%;
   }
 `;
 
@@ -94,26 +93,38 @@ const TableBody = styled.tbody`
   background-color: white;
   
   tr {
-    transition: background-color 0.2s ease;
-    
-    &:hover {
-      background-color: var(--color-primary-light, rgba(0, 102, 204, 0.05));
-    }
-    
     &:not(:last-child) {
-      border-bottom: 1px solid #edf2f7;
+      border-bottom: 1px solid #e2e8f0;
     }
   }
   
   td {
-    padding: 1rem;
+    padding: 1.25rem 1.5rem;
+    vertical-align: middle;
     
     &:first-child {
-      font-weight: 600;
-      color: var(--color-primary);
-      width: 30%;
+      width: 40%;
     }
   }
+`;
+
+const CapabilityName = styled.span`
+  background-color: #ebf5ff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #3182ce;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 500;
+`;
+
+const CapabilityValue = styled.span`
+  background-color: #f7fafc;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: #4a5568;
+  display: inline-block;
+  font-size: 0.95rem;
 `;
 
 const TableSection = styled.div`
@@ -125,19 +136,6 @@ const SectionTitle = styled.h4`
   font-weight: 600;
   color: var(--color-primary-dark);
   margin-bottom: 1.5rem;
-  position: relative;
-  padding-left: 1rem;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 4px;
-    background-color: var(--color-accent);
-    border-radius: 4px;
-  }
 `;
 
 const Capabilities = () => {
@@ -241,8 +239,8 @@ const Capabilities = () => {
               <TableBody>
                 {facilityOverview.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.attribute}</td>
-                    <td>{item.value}</td>
+                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
+                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
                   </tr>
                 ))}
               </TableBody>
@@ -261,8 +259,8 @@ const Capabilities = () => {
               <TableBody>
                 {manufacturingCapabilities.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.attribute}</td>
-                    <td>{item.value}</td>
+                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
+                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
                   </tr>
                 ))}
               </TableBody>
@@ -281,8 +279,8 @@ const Capabilities = () => {
               <TableBody>
                 {surfaceFinishingCapabilities.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.attribute}</td>
-                    <td>{item.value}</td>
+                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
+                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
                   </tr>
                 ))}
               </TableBody>
