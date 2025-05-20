@@ -103,27 +103,7 @@ const InfoBoxText = styled.p`
   color: #64748b;
 `;
 
-const SecondaryImage = styled.img`
-  flex-grow: 1;
-  flex-basis: 0;
-  border-radius: 0.75rem;
-  object-fit: contain;
-  height: 100%;
-  max-height: 200px;
-  width: 100%;
-  background-color: #f8f9fa;
-  padding: 1rem;
-  
-  @media (min-width: 768px) {
-    width: 50%;
-    max-height: none;
-  }
-  
-  @media (min-width: 992px) {
-    min-height: 0;
-    width: 100%;
-  }
-`;
+
 
 
 
@@ -230,7 +210,7 @@ const FacilityAbout = () => {
           />
           
           <SideContent>
-            <InfoBox>
+            <InfoBox style={{ height: '100%' }}>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <InfoBoxLogo 
                   src="/images/iso9001_diecast.webp" 
@@ -248,33 +228,28 @@ const FacilityAbout = () => {
                 {translate(messages, 'contactUsBtn', "Contact Us")}
               </Button>
             </InfoBox>
-            
-            <SecondaryImage 
-              src="/images/die_cast_02.png" 
-              alt={translate(messages, 'manufacturingImageAlt', "Die Cast Manufacturing Process")}
-            />
           </SideContent>
         </ContentGrid>
         
-
-        
-        <AchievementsBox>
-          <AchievementsHeader>
-            <AchievementsTitle>{translate(messages, 'achievementsTitle', "Our Achievements")}</AchievementsTitle>
-            <AchievementsDescription>
-              {translate(messages, 'achievementsDesc', "With decades of experience in high-pressure die casting, we've built a reputation for excellence in delivering precision components across multiple industries.")}
-            </AchievementsDescription>
-          </AchievementsHeader>
-          
-          <AchievementsGrid>
-            {achievements.map((achievement, idx) => (
-              <Achievement key={achievement.label + idx}>
-                <AchievementLabel>{achievement.label}</AchievementLabel>
-                <AchievementValue>{achievement.value}</AchievementValue>
-              </Achievement>
-            ))}
-          </AchievementsGrid>
-        </AchievementsBox>
+        <div style={{ marginTop: '4rem' }}>
+          <AchievementsBox>
+            <AchievementsHeader>
+              <AchievementsTitle>{translate(messages, 'achievementsTitle', "Our Achievements")}</AchievementsTitle>
+              <AchievementsDescription>
+                {translate(messages, 'achievementsDesc', "With decades of experience in high-pressure die casting, we've built a reputation for excellence in delivering precision components across multiple industries.")}
+              </AchievementsDescription>
+            </AchievementsHeader>
+            
+            <AchievementsGrid>
+              {achievements.map((achievement, idx) => (
+                <Achievement key={achievement.label + idx}>
+                  <AchievementLabel>{achievement.label}</AchievementLabel>
+                  <AchievementValue>{achievement.value}</AchievementValue>
+                </Achievement>
+              ))}
+            </AchievementsGrid>
+          </AchievementsBox>
+        </div>
       </Container>
     </Section>
   );
