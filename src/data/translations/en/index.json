@@ -44,13 +44,13 @@
   "automotiveTitle": "Automotive",
   "automotiveDesc": "Engine components, transmission parts, structural components, and decorative trim.",
   
-  "energyTitle": "Energy & Power",
-  "energyDesc": "Housings for solar inverters, heat sinks, and components for power distribution systems.",
-  
   "telecomTitle": "Telecommunications",
   "telecomDesc": "Enclosures for communication equipment, antenna housings, and structural components.",
   
-  "marineTitle": "Marine & Watercraft",
+  "mechatronicsTitle": "Mechatronics and Automation",
+  "mechatronicsDesc": "Robotic components, actuator housings, and industrial automation parts requiring high dimensional stability.",
+  
+  "marineTitle": "Marine Products",
   "marineDesc": "Corrosion-resistant components for marine engines, propellers, and deck equipment.",
   
   "capabilitiesTitle": "Our Technical Capabilities",

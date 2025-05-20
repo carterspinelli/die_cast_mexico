@@ -44,13 +44,13 @@
   "automotiveTitle": "Automotriz",
   "automotiveDesc": "Componentes de motor, piezas de transmisión, componentes estructurales y acabados decorativos.",
   
-  "energyTitle": "Energía y Electricidad",
-  "energyDesc": "Carcasas para inversores solares, disipadores de calor y componentes para sistemas de distribución de energía.",
-  
   "telecomTitle": "Telecomunicaciones",
   "telecomDesc": "Enclosures para equipos de comunicación, carcasas de antenas y componentes estructurales.",
   
-  "marineTitle": "Marina y Embarcaciones",
+  "mechatronicsTitle": "Mecatrónica y Automatización",
+  "mechatronicsDesc": "Componentes robóticos, carcasas de actuadores y piezas de automatización industrial que requieren alta estabilidad dimensional.",
+  
+  "marineTitle": "Productos Marinos",
   "marineDesc": "Componentes resistentes a la corrosión para motores marinos, hélices y equipos de cubierta.",
   
   "capabilitiesTitle": "Nuestras Capacidades Técnicas",

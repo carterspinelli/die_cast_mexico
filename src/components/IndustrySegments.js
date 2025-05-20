@@ -117,19 +117,39 @@ const IndustrySegments = () => {
   
   const industries = [
     {
-      icon: "/icons/automotive.svg",
-      title: translations.automotiveTitle,
-      description: translations.automotiveDesc
-    },
-    {
       icon: "/icons/telecom.svg",
       title: translations.telecomTitle,
       description: translations.telecomDesc
     },
     {
+      icon: "/icons/automation.svg",
+      title: translations.mechatronicsTitle,
+      description: translations.mechatronicsDesc
+    },
+    {
+      icon: "/icons/powertools.svg",
+      title: translations.powertoolsSegmentTitle,
+      description: translations.powertoolsSegmentDesc
+    },
+    {
+      icon: "/icons/automotive.svg",
+      title: translations.automotiveTitle,
+      description: translations.automotiveDesc
+    },
+    {
+      icon: "/icons/lighting.svg",
+      title: translations.lightingSegmentTitle,
+      description: translations.lightingSegmentDesc
+    },
+    {
       icon: "/icons/instrumentation.svg",
-      title: translations.energyTitle,
-      description: translations.energyDesc
+      title: translations.instrumentationSegmentTitle,
+      description: translations.instrumentationSegmentDesc
+    },
+    {
+      icon: "/icons/pneumatic.svg",
+      title: translations.pneumaticSegmentTitle,
+      description: translations.pneumaticSegmentDesc
     },
     {
       icon: "/icons/marine.svg",
