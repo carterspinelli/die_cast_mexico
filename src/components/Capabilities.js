@@ -35,6 +35,7 @@ const SpecsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
+  margin-top: 3rem;
 `;
 
 const SpecsCard = styled.div`
@@ -62,40 +63,111 @@ const SpecsTitle = styled.h3`
   }
 `;
 
-// Spacing for Facility section
-const SectionSpacing = styled.div`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-`;
-
-const CapabilityList = styled.ul`
-  list-style: none;
+const FacilityGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem 2rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
-const CapabilityItem = styled.li`
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.05rem;
-  color: var(--color-text);
-  line-height: 1.5;
+const FacilityCard = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
-  &:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: var(--color-primary);
-    font-size: 1.2rem;
-    font-weight: bold;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   }
+`;
+
+const CardHeader = styled.div`
+  padding: 1.2rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  border-bottom: 3px solid var(--color-accent);
+`;
+
+const CardContent = styled.div`
+  padding: 1.5rem;
+`;
+
+const CardValue = styled.div`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+  
+  span {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: var(--color-text);
+    margin-top: 0.25rem;
+  }
+`;
+
+const ProcessTable = styled.div`
+  margin-top: 2rem;
+`;
+
+const ProcessGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ProcessCard = styled.div`
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #e2e8f0);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: var(--color-primary-light, #f0f7ff);
+    border-color: var(--color-primary, #0066cc);
+  }
+`;
+
+const ProcessName = styled.div`
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+`;
+
+const ProcessDescription = styled.div`
+  font-size: 0.9rem;
+  color: var(--color-text);
+`;
+
+const CapabilityGroupTitle = styled.h4`
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin: 2rem 0 1rem;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 0.75rem;
 `;
 
 const Capabilities = () => {
@@ -152,19 +224,59 @@ const Capabilities = () => {
     }
   };
   
-  // Facility capabilities and resources
-  const facilityCapabilities = [
-    "Employees ≅ 125",
-    "Aluminum ingots ≅ up to 250ton/month",
-    "Alloys: AlSi12(Fe) & A380, A360, A413, ADC12",
-    "Die casting: 8 full automatic manufacturing cells",
-    "CNCs: 19 horizontal 4 axis machines",
-    "Mechanical Assembly: dowel pins, labels, helicoils, plugs, etc.",
-    "FIP Gasket application",
-    "Powder painting: Akzo Nobel, Cardinal, Sherwin Williams, etc.",
-    "Liquid painting",
-    "Nickel Plating surface finish",
-    "Tri-chrome passivation on Aluminum: Surtec 650®"
+  // Key facility metrics for card display
+  const facilityMetrics = [
+    {
+      label: "Workforce",
+      value: "125",
+      description: "Skilled employees"
+    },
+    {
+      label: "Material Capacity",
+      value: "250ton/month",
+      description: "Aluminum ingots"
+    },
+    {
+      label: "Aluminum Alloys",
+      value: "AlSi12(Fe), A380, A360, A413, ADC12",
+      description: "Industry-standard materials"
+    }
+  ];
+  
+  // Production capabilities
+  const productionCapabilities = [
+    {
+      name: "Die Casting",
+      description: "8 full automatic manufacturing cells"
+    },
+    {
+      name: "CNC Machining",
+      description: "19 horizontal 4 axis machines"
+    },
+    {
+      name: "Mechanical Assembly",
+      description: "Dowel pins, labels, helicoils, plugs, etc."
+    },
+    {
+      name: "FIP Gasket",
+      description: "Precision gasket application"
+    },
+    {
+      name: "Powder Painting",
+      description: "Akzo Nobel, Cardinal, Sherwin Williams, etc."
+    },
+    {
+      name: "Liquid Painting",
+      description: "Custom color solutions"
+    },
+    {
+      name: "Nickel Plating",
+      description: "High-quality surface finish"
+    },
+    {
+      name: "Surface Treatment",
+      description: "Tri-chrome passivation on Aluminum: Surtec 650®"
+    }
   ];
   
   return (
@@ -175,15 +287,35 @@ const Capabilities = () => {
           <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
         
-        <SpecsCard>
-          <SpecsTitle>Facility Overview</SpecsTitle>
-          <CapabilityList>
-            {facilityCapabilities.map((capability, index) => (
-              <CapabilityItem key={index}>{capability}</CapabilityItem>
-            ))}
-          </CapabilityList>
-        </SpecsCard>
+        {/* Facility Overview with Cards */}
+        <FacilityGrid>
+          {facilityMetrics.map((metric, index) => (
+            <FacilityCard key={index}>
+              <CardHeader>{metric.label}</CardHeader>
+              <CardContent>
+                <CardValue>
+                  {metric.value}
+                  <span>{metric.description}</span>
+                </CardValue>
+              </CardContent>
+            </FacilityCard>
+          ))}
+        </FacilityGrid>
         
+        {/* Production Capabilities */}
+        <ProcessTable>
+          <CapabilityGroupTitle>Production Capabilities</CapabilityGroupTitle>
+          <ProcessGrid>
+            {productionCapabilities.map((process, index) => (
+              <ProcessCard key={index}>
+                <ProcessName>{process.name}</ProcessName>
+                <ProcessDescription>{process.description}</ProcessDescription>
+              </ProcessCard>
+            ))}
+          </ProcessGrid>
+        </ProcessTable>
+        
+        {/* Technical Specifications */}
         <SpecsGrid>
           <SpecsCard>
             <SpecsTitle>{translations.machineTitle}</SpecsTitle>
