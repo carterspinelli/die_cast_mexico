@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
+import { TypeTable } from "./ui/type-table";
 
 const CapabilitiesSection = styled.section`
   padding: 5rem 1rem;
@@ -32,18 +33,14 @@ const Subtitle = styled.p`
 
 const SpecsGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
-  
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 const SpecsCard = styled.div`
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
   padding: 2rem;
 `;
 
@@ -65,37 +62,85 @@ const SpecsTitle = styled.h3`
   }
 `;
 
-const SpecsList = styled.ul`
-  list-style: none;
-  padding: 0;
-`;
-
-const SpecItem = styled.li`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #eaeaea;
-  
-  &:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-  }
-`;
-
-const SpecLabel = styled.span`
-  font-weight: 500;
-  color: var(--color-text);
-`;
-
-const SpecValue = styled.span`
-  font-weight: 600;
-  color: var(--color-secondary);
-`;
-
 const Capabilities = () => {
   const { messages: translations } = useLanguage();
+  
+  // Machine specifications data
+  const machineSpecs = {
+    [translations.tonnageCapacity]: {
+      type: translations.tonnageRange,
+      description: "The clamping force of the die casting machine determines the maximum size and complexity of parts that can be produced.",
+      default: "50-1200t"
+    },
+    [translations.shotWeight]: {
+      type: translations.shotWeightRange,
+      description: "The maximum amount of aluminum that can be injected per cycle, affecting part size and production efficiency.",
+      default: "0.5-20kg"
+    },
+    [translations.partWeight]: {
+      type: translations.partWeightRange,
+      description: "The weight range of final parts that can be efficiently produced with our equipment.",
+      default: "0.01-15kg"
+    },
+    [translations.dieSize]: {
+      type: translations.dieSizeRange,
+      description: "The physical dimensions of the die that can be accommodated by our machines, determining maximum part size.",
+      default: "150×150mm - 900×700mm"
+    }
+  };
+  
+  // Quality specifications data
+  const qualitySpecs = {
+    [translations.dimensionalTolerance]: {
+      type: translations.dimensionalToleranceValue,
+      description: "The accuracy of dimensions that can be achieved in our die casting process, crucial for precision parts.",
+      typeDescription: "Tighter tolerances may be achieved with additional machining operations.",
+      default: "±0.1mm"
+    },
+    [translations.surfaceFinish]: {
+      type: translations.surfaceFinishValue,
+      description: "The surface quality that can be achieved directly from the die casting process before any finishing operations.",
+      default: "Ra 1.6-3.2"
+    },
+    [translations.wallThickness]: {
+      type: translations.wallThicknessValue,
+      description: "The minimum wall thickness that can be reliably produced with our die casting process.",
+      typeDescription: "Thinner walls can reduce weight and material costs but may affect structural integrity.",
+      default: "0.8-2.5mm"
+    },
+    [translations.materialPurity]: {
+      type: translations.materialPurityValue,
+      description: "The level of purity we can maintain in the aluminum alloys used in our die casting process.",
+      typeDescription: "Higher purity levels can improve mechanical properties and surface finish.",
+      default: "99.5-99.9%"
+    }
+  };
+  
+  // Additional capabilities
+  const additionalCapabilities = {
+    "CNC Machining": {
+      type: "Secondary Operations",
+      description: "Precision CNC machining for post-casting operations to achieve tighter tolerances and additional features.",
+      default: "3-5 axis"
+    },
+    "Surface Treatments": {
+      type: "Finishing Options",
+      description: "Various surface treatments to enhance appearance, durability, and functionality of die cast parts.",
+      typeDescription: "Includes anodizing, powder coating, e-coating, and more.",
+      default: "Multiple options"
+    },
+    "Design Assistance": {
+      type: "Engineering Services",
+      description: "Expert design support to optimize parts for die casting, reducing costs and improving quality.",
+      default: "Available"
+    },
+    "Quality Testing": {
+      type: "Inspection Methods",
+      description: "Comprehensive quality control using advanced inspection techniques to ensure part integrity.",
+      typeDescription: "Includes X-ray, CMM, hardness testing, and more.",
+      default: "ISO 9001 certified"
+    }
+  };
   
   return (
     <CapabilitiesSection>
@@ -107,45 +152,17 @@ const Capabilities = () => {
         <SpecsGrid>
           <SpecsCard>
             <SpecsTitle>{translations.machineTitle}</SpecsTitle>
-            <SpecsList>
-              <SpecItem>
-                <SpecLabel>{translations.tonnageCapacity}</SpecLabel>
-                <SpecValue>{translations.tonnageRange}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.shotWeight}</SpecLabel>
-                <SpecValue>{translations.shotWeightRange}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.partWeight}</SpecLabel>
-                <SpecValue>{translations.partWeightRange}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.dieSize}</SpecLabel>
-                <SpecValue>{translations.dieSizeRange}</SpecValue>
-              </SpecItem>
-            </SpecsList>
+            <TypeTable type={machineSpecs} />
           </SpecsCard>
+          
           <SpecsCard>
             <SpecsTitle>{translations.qualitySpecsTitle}</SpecsTitle>
-            <SpecsList>
-              <SpecItem>
-                <SpecLabel>{translations.dimensionalTolerance}</SpecLabel>
-                <SpecValue>{translations.dimensionalToleranceValue}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.surfaceFinish}</SpecLabel>
-                <SpecValue>{translations.surfaceFinishValue}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.wallThickness}</SpecLabel>
-                <SpecValue>{translations.wallThicknessValue}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.materialPurity}</SpecLabel>
-                <SpecValue>{translations.materialPurityValue}</SpecValue>
-              </SpecItem>
-            </SpecsList>
+            <TypeTable type={qualitySpecs} />
+          </SpecsCard>
+          
+          <SpecsCard>
+            <SpecsTitle>{translations.additionalServicesTitle || "Additional Capabilities"}</SpecsTitle>
+            <TypeTable type={additionalCapabilities} />
           </SpecsCard>
         </SpecsGrid>
       </Container>
