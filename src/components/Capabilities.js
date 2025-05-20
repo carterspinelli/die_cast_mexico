@@ -216,7 +216,7 @@ const Capabilities = () => {
       items: [
         { attribute: translations.dieCasting || "Die Casting", value: translations.language === "es" ? "8 celdas de fabricación automáticas" : "8 full automatic manufacturing cells" },
         { attribute: translations.cncMachining || "CNC Machining", value: translations.language === "es" ? "19 máquinas horizontales de 4 ejes" : "19 horizontal 4 axis machines" },
-        { attribute: translations.mechanicalAssembly || "Mechanical Assembly", value: translations.language === "es" ? "Pasadores, etiquetas, tapones, etc." : "Dowel pins, labels, helicoils, plugs, etc." }
+        { attribute: translations.mechanicalAssembly || "Mechanical Assembly", value: translations.language === "es" ? "Pasadores, etiquetas, helicoides, etc." : "Dowel pins, labels, helicoils, plugs, etc." }
       ]
     },
     {
@@ -227,7 +227,7 @@ const Capabilities = () => {
         { attribute: translations.powderPainting || "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
         { attribute: translations.liquidPainting || "Liquid Painting", value: translations.language === "es" ? "Soluciones de color personalizadas" : "Custom color solutions" },
         { attribute: translations.nickelPlating || "Nickel Plating", value: translations.language === "es" ? "Acabado superficial de alta calidad" : "High-quality surface finish" },
-        { attribute: translations.surfaceTreatment || "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
+        { attribute: translations.surfaceTreatment || "Surface Treatment", value: translations.language === "es" ? "Pasivación de tri-cromo en Aluminio: Surtec 650®" : "Tri-chrome passivation on Aluminum: Surtec 650®" }
       ]
     }
   ];
