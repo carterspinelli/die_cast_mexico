@@ -1,58 +1,71 @@
 import React from "react";
 import styled from "styled-components";
+import { cn } from "../../utils/classNames";
 
-// Styled components for the Badge
-const BadgeContainer = styled.div`
+const BadgeVariants = {
+  default: {
+    background: "var(--color-primary, #0066cc)",
+    color: "#ffffff",
+    hover: "var(--color-primary-hover, #0055aa)",
+  },
+  secondary: {
+    background: "var(--color-secondary, #f1f5f9)",
+    color: "var(--color-primary, #0066cc)",
+    hover: "var(--color-secondary-hover, #e2e8f0)",
+  },
+  destructive: {
+    background: "var(--color-destructive, #ef4444)",
+    color: "#ffffff",
+    hover: "var(--color-destructive-hover, #dc2626)",
+  },
+  outline: {
+    background: "transparent",
+    color: "var(--color-foreground, #1e293b)",
+    borderColor: "var(--color-border, #e2e8f0)",
+    hover: "var(--color-accent, #f1f5f9)",
+  },
+};
+
+const StyledBadge = styled.div`
   display: inline-flex;
   align-items: center;
   border-radius: 9999px;
-  border: 1px solid ${props => props.variant === "outline" ? "var(--color-border, #e2e8f0)" : "transparent"};
-  padding: 0.25rem 0.625rem;
+  padding: 0.125rem 0.625rem;
   font-size: 0.75rem;
   font-weight: 600;
-  transition: all 0.2s ease;
-  background-color: ${props => {
-    switch (props.variant) {
-      case "default":
-        return "var(--color-primary, #3b82f6)";
-      case "secondary":
-        return "var(--color-secondary, #64748b)";
-      case "destructive":
-        return "var(--color-destructive, #ef4444)";
-      case "outline":
-        return "transparent";
-      default:
-        return "var(--color-primary, #3b82f6)";
-    }
-  }};
-  color: ${props => props.variant === "outline" ? "var(--color-text, #1e293b)" : "#ffffff"};
+  transition: background-color 0.2s, color 0.2s;
+  border: 1px solid transparent;
   
-  &:hover {
-    background-color: ${props => {
-      if (props.variant === "outline") return "transparent";
+  ${(props) => {
+    const variant = BadgeVariants[props.$variant || "default"];
+    return `
+      background-color: ${variant.background};
+      color: ${variant.color};
       
-      switch (props.variant) {
-        case "default":
-          return "var(--color-primary-hover, #2563eb)";
-        case "secondary":
-          return "var(--color-secondary-hover, #475569)";
-        case "destructive":
-          return "var(--color-destructive-hover, #dc2626)";
-        default:
-          return "var(--color-primary-hover, #2563eb)";
+      &:hover {
+        background-color: ${variant.hover};
       }
-    }};
-  }
+      
+      ${
+        props.$variant === "outline"
+          ? `
+        border-color: ${variant.borderColor};
+        &:hover {
+          color: var(--color-foreground-hover, #0f172a);
+        }
+      `
+          : ""
+      }
+    `;
+  }}
 `;
 
-export function Badge({ className, variant = "default", children, ...props }) {
+const Badge = ({ className, variant = "default", children, ...props }) => {
   return (
-    <BadgeContainer
-      className={className}
-      variant={variant}
-      {...props}
-    >
+    <StyledBadge className={cn(className)} $variant={variant} {...props}>
       {children}
-    </BadgeContainer>
+    </StyledBadge>
   );
-}
+};
+
+export { Badge, BadgeVariants };

@@ -143,6 +143,22 @@
   "nadcaTitle": "Asociación Norteamericana de Fundición a Presión",
   "aiagTitle": "Grupo de Acción de la Industria Automotriz",
   
+  "servicesTagline": "Soluciones Especializadas",
+  "servicesButtonText": "Solicitar Presupuesto",
+  "serviceReadMore": "Leer Más",
+  
+  "serviceDesignTitle": "Diseño de Herramientas",
+  "serviceDesignSummary": "Nuestro equipo experto de ingeniería crea diseños optimizados de herramientas de fundición a presión que garantizan una producción eficiente, ahorro de material y calidad excepcional de las piezas. Utilizamos software CAD/CAM de última generación para precisión y rendimiento.",
+  "serviceDesignLabel": "Ingeniería",
+  
+  "serviceCastingTitle": "Proceso de Fundición a Presión",
+  "serviceCastingSummary": "Proporcionamos servicios de fundición a presión de aluminio de alta presión con un control meticuloso del proceso, entregando piezas complejas con tolerancias estrictas, excelentes acabados superficiales y calidad consistente para aplicaciones exigentes.",
+  "serviceCastingLabel": "Fabricación",
+  
+  "serviceFinishingTitle": "Acabado de Superficies",
+  "serviceFinishingSummary": "Nuestras amplias capacidades de acabado de superficies mejoran la apariencia, durabilidad y rendimiento de los componentes fundidos a presión mediante mecanizado de precisión, pulido, galvanizado y soluciones de recubrimiento personalizadas.",
+  "serviceFinishingLabel": "Post-Procesamiento",
+  
   "facilityAboutTitle": "Nuestras Instalaciones y Perfil de la Empresa",
   "facilityAboutDescription": "Las instalaciones de vanguardia de Die Cast Mexico, ubicadas en Monterrey, México, abrieron en el cuarto trimestre de 2018. Con 30,000 metros cuadrados de terreno y una instalación de 15,000 metros cuadrados, tenemos la capacidad de manejar grandes lotes de producción manteniendo los más altos estándares de calidad.",
   "achievementsTitle": "Nuestros Logros",

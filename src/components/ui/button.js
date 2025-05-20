@@ -1,115 +1,143 @@
 import React from "react";
-import { cva } from "class-variance-authority";
 import styled from "styled-components";
+import { cn } from "../../utils/classNames";
 
-const ButtonVariants = cva("inline-flex items-center justify-center", {
-  variants: {
-    variant: {
-      default: "bg-blue-500 text-white hover:bg-blue-600",
-      outline: "border border-gray-300 bg-transparent hover:bg-gray-100",
-      secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
-      ghost: "bg-transparent hover:bg-gray-100",
-      link: "text-blue-500 underline-offset-4 hover:underline",
-    },
-    size: {
-      default: "px-4 py-2",
-      sm: "px-3 py-1 text-sm",
-      lg: "px-6 py-3 text-lg",
-      icon: "w-10 h-10",
-    },
+const ButtonVariants = {
+  default: {
+    background: "var(--color-primary, #0066cc)",
+    color: "#ffffff",
+    hover: "var(--color-primary-hover, #0055aa)",
+    active: "var(--color-primary-active, #004499)",
   },
-  defaultVariants: {
-    variant: "default",
-    size: "default",
+  destructive: {
+    background: "var(--color-destructive, #ef4444)",
+    color: "#ffffff",
+    hover: "var(--color-destructive-hover, #dc2626)",
+    active: "var(--color-destructive-active, #b91c1c)",
   },
-});
+  outline: {
+    background: "transparent",
+    color: "var(--color-foreground, #1e293b)",
+    borderColor: "var(--color-border, #e2e8f0)",
+    hover: "var(--color-accent, #f1f5f9)",
+    active: "var(--color-accent-dark, #e2e8f0)",
+  },
+  secondary: {
+    background: "var(--color-secondary, #f1f5f9)",
+    color: "var(--color-secondary-fg, #1e293b)",
+    hover: "var(--color-secondary-hover, #e2e8f0)",
+    active: "var(--color-secondary-active, #cbd5e1)",
+  },
+  ghost: {
+    background: "transparent",
+    color: "var(--color-foreground, #1e293b)",
+    hover: "var(--color-accent, #f1f5f9)",
+    active: "var(--color-accent-dark, #e2e8f0)",
+  },
+  link: {
+    background: "transparent",
+    color: "var(--color-primary, #0066cc)",
+    hover: "transparent",
+    active: "transparent",
+    textDecoration: "underline",
+  },
+};
+
+const SizeVariants = {
+  default: {
+    height: "2.5rem",
+    padding: "0.5rem 1rem",
+  },
+  sm: {
+    height: "2.25rem",
+    padding: "0.375rem 0.75rem",
+    fontSize: "0.875rem",
+  },
+  lg: {
+    height: "2.75rem",
+    padding: "0.625rem 2rem",
+    fontSize: "1.125rem",
+  },
+  icon: {
+    height: "2.5rem",
+    width: "2.5rem",
+    padding: "0.5rem",
+  },
+};
 
 const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
+  white-space: nowrap;
   border-radius: 0.375rem;
-  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 150ms;
   cursor: pointer;
+  border: 1px solid transparent;
   
-  ${props => props.variant === "default" && `
-    background-color: #2563eb;
-    color: white;
-    &:hover {
-      background-color: #1d4ed8;
-    }
-  `}
+  ${(props) => {
+    const variant = ButtonVariants[props.$variant || "default"];
+    const size = SizeVariants[props.$size || "default"];
+    
+    return `
+      background-color: ${variant.background};
+      color: ${variant.color};
+      height: ${size.height};
+      ${size.width ? `width: ${size.width};` : ""}
+      padding: ${size.padding};
+      ${size.fontSize ? `font-size: ${size.fontSize};` : ""}
+      ${variant.borderColor ? `border-color: ${variant.borderColor};` : ""}
+      ${variant.textDecoration ? `text-decoration: ${variant.textDecoration};` : ""}
+      
+      &:hover:not(:disabled) {
+        background-color: ${variant.hover};
+        ${variant.hoverColor ? `color: ${variant.hoverColor};` : ""}
+        ${variant.textDecoration ? "text-decoration: underline;" : ""}
+      }
+      
+      &:active:not(:disabled) {
+        background-color: ${variant.active};
+      }
+      
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    `;
+  }}
   
-  ${props => props.variant === "outline" && `
-    border: 1px solid #e5e7eb;
-    background-color: transparent;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  `}
-  
-  ${props => props.variant === "secondary" && `
-    background-color: #f3f4f6;
-    color: #1f2937;
-    &:hover {
-      background-color: #e5e7eb;
-    }
-  `}
-  
-  ${props => props.variant === "ghost" && `
-    background-color: transparent;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  `}
-  
-  ${props => props.variant === "link" && `
-    background-color: transparent;
-    color: #2563eb;
+  a& {
     text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  `}
-  
-  ${props => props.size === "default" && `
-    padding: 0.5rem 1rem;
-  `}
-  
-  ${props => props.size === "sm" && `
-    padding: 0.25rem 0.75rem;
-    font-size: 0.875rem;
-  `}
-  
-  ${props => props.size === "lg" && `
-    padding: 0.75rem 1.5rem;
-    font-size: 1.125rem;
-  `}
-  
-  ${props => props.size === "icon" && `
-    padding: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-  `}
-  
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
   }
 `;
 
-export const Button = React.forwardRef(
-  ({ className, variant = "default", size = "default", asChild = false, ...props }, ref) => {
+const Button = React.forwardRef(
+  ({ className, variant = "default", size = "default", children, asChild, ...props }, ref) => {
+    // If we're using asChild, we'll need to clone the children and spread props
+    if (asChild && React.Children.count(children) === 1) {
+      const child = React.Children.only(children);
+      return React.cloneElement(child, {
+        ref,
+        className: cn(className),
+        ...props,
+      });
+    }
+    
     return (
       <StyledButton
+        className={cn(className)}
+        $variant={variant}
+        $size={size}
         ref={ref}
-        variant={variant}
-        size={size}
         {...props}
-      />
+      >
+        {children}
+      </StyledButton>
     );
   }
 );
-
 Button.displayName = "Button";
+
+export { Button, ButtonVariants };
