@@ -139,7 +139,7 @@ const SectionTitle = styled.h4`
 `;
 
 const Capabilities = () => {
-  const { messages: translations, language } = useLanguage();
+  const { messages: translations } = useLanguage();
   
   // Machine specifications data
   const machineSpecs = {
@@ -274,42 +274,38 @@ const Capabilities = () => {
                     </TableHead>
                     <tbody>
                       {tab.items.map((item, index) => {
-                        let displayValue = item.value;
+                        // Determine the translated value based on the current tab and item
+                        let translatedValue = item.value;
+                        const { language } = useLanguage();
                         
-                        // Set Spanish translations based on the current language
-                        // Using language from the component's useLanguage() call at the top level
-                        const isSpanish = language === "es";
-                        if (isSpanish) {
-                          if (tab.id === "overview") {
-                            // Overview tab translations
-                            if (item.attribute === (translations.workforce || "Workforce")) {
-                              displayValue = "125+";
-                            } else if (item.attribute === (translations.materialCapacity || "Material Capacity")) {
-                              displayValue = "Hasta 250 toneladas/mes de lingotes de aluminio";
-                            } else if (item.attribute === (translations.aluminumAlloys || "Aluminum Alloys")) {
-                              displayValue = "AlSi12(Fe), A380, A360, A413, ADC12";
+                        if (language === 'es') {
+                          if (tab.id === 'overview') {
+                            if (item.attribute === translations.workforce || "Workforce") {
+                              translatedValue = "125+";
+                            } else if (item.attribute === translations.materialCapacity || "Material Capacity") {
+                              translatedValue = "Hasta 250 toneladas/mes de lingotes de aluminio";
+                            } else if (item.attribute === translations.aluminumAlloys || "Aluminum Alloys") {
+                              translatedValue = "AlSi12(Fe), A380, A360, A413, ADC12";
                             }
-                          } else if (tab.id === "manufacturing") {
-                            // Manufacturing tab translations
-                            if (item.attribute === (translations.dieCasting || "Die Casting")) {
-                              displayValue = "8 celdas de fabricación automáticas";
-                            } else if (item.attribute === (translations.cncMachining || "CNC Machining")) {
-                              displayValue = "19 máquinas horizontales de 4 ejes";
-                            } else if (item.attribute === (translations.mechanicalAssembly || "Mechanical Assembly")) {
-                              displayValue = "Pasadores, etiquetas, helicoides, etc.";
+                          } else if (tab.id === 'manufacturing') {
+                            if (item.attribute === translations.dieCasting || "Die Casting") {
+                              translatedValue = "8 celdas de fabricación automáticas";
+                            } else if (item.attribute === translations.cncMachining || "CNC Machining") {
+                              translatedValue = "19 máquinas horizontales de 4 ejes";
+                            } else if (item.attribute === translations.mechanicalAssembly || "Mechanical Assembly") {
+                              translatedValue = "Pasadores, etiquetas, helicoides, etc.";
                             }
-                          } else if (tab.id === "finishing") {
-                            // Surface Finishing tab translations
-                            if (item.attribute === (translations.fipGasket || "FIP Gasket")) {
-                              displayValue = "Aplicación de juntas de precisión";
-                            } else if (item.attribute === (translations.powderPainting || "Powder Painting")) {
-                              displayValue = "Akzo Nobel, Cardinal, Sherwin Williams, etc.";
-                            } else if (item.attribute === (translations.liquidPainting || "Liquid Painting")) {
-                              displayValue = "Soluciones de color personalizadas"; 
-                            } else if (item.attribute === (translations.nickelPlating || "Nickel Plating")) {
-                              displayValue = "Acabado superficial de alta calidad";
-                            } else if (item.attribute === (translations.surfaceTreatment || "Surface Treatment")) {
-                              displayValue = "Pasivación de tri-cromo en Aluminio: Surtec 650®";
+                          } else if (tab.id === 'finishing') {
+                            if (item.attribute === translations.fipGasket || "FIP Gasket") {
+                              translatedValue = "Aplicación de juntas de precisión";
+                            } else if (item.attribute === translations.powderPainting || "Powder Painting") {
+                              translatedValue = "Akzo Nobel, Cardinal, Sherwin Williams, etc.";
+                            } else if (item.attribute === translations.liquidPainting || "Liquid Painting") {
+                              translatedValue = "Soluciones de color personalizadas";
+                            } else if (item.attribute === translations.nickelPlating || "Nickel Plating") {
+                              translatedValue = "Acabado superficial de alta calidad";
+                            } else if (item.attribute === translations.surfaceTreatment || "Surface Treatment") {
+                              translatedValue = "Pasivación de tri-cromo en Aluminio: Surtec 650®";
                             }
                           }
                         }
@@ -336,7 +332,7 @@ const Capabilities = () => {
                                 alignItems: 'center', 
                                 gap: '0.25rem' 
                               }}>
-                                <SecondaryCode>{displayValue}</SecondaryCode>
+                                <SecondaryCode>{translatedValue}</SecondaryCode>
                               </div>
                             </td>
                           </tr>
