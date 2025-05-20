@@ -297,11 +297,6 @@ const Capabilities = () => {
             <SpecsTitle>{translations.machineTitle}</SpecsTitle>
             <TypeTable type={machineSpecs} />
           </SpecsCard>
-          
-          <SpecsCard>
-            <SpecsTitle>{translations.qualitySpecsTitle}</SpecsTitle>
-            <TypeTable type={qualitySpecs} />
-          </SpecsCard>
         </SpecsGrid>
       </Container>
     </CapabilitiesSection>

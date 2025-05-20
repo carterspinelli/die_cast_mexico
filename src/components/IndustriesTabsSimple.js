@@ -190,7 +190,7 @@ const IndustriesTabsSimple = () => {
       value: "mechatronics",
       label: messages.mechatronicsTitle || "Mechatronics",
       icon: <Cpu />,
-      imageSrc: "/images/industries/mechatronics.jpg",
+      imageSrc: "/images/mechatronics_automation_02.jpg",
       content: {
         badge: messages.advancedTechLabel || "Advanced Technology",
         title: messages.mechatronicsTitle || "Mechatronics & Automation",

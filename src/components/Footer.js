@@ -129,54 +129,52 @@ const Footer = ({ messages }) => {
           <FooterText>
             Die Cast Mexico - {messages.footerRights} © {currentYear}
           </FooterText>
-          <SocialLinks>
-            <SocialLink href="https://facebook.com" target="_blank" aria-label="Facebook">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
-              </svg>
-            </SocialLink>
-            <SocialLink href="https://twitter.com" target="_blank" aria-label="Twitter">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16-1.9 1.47-4.3 2.35-6.9 2.35-.45 0-.9-.03-1.33-.08 2.46 1.56 5.37 2.47 8.5 2.47 10.2 0 15.75-8.42 15.75-15.75 0-.23 0-.46-.02-.7.9-.67 1.7-1.5 2.3-2.45z"/>
-              </svg>
-            </SocialLink>
-            <SocialLink href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </SocialLink>
-          </SocialLinks>
         </FooterColumn>
         
         <FooterColumn>
           <FooterTitle>{messages.services}</FooterTitle>
           <FooterNavLink to={localizedLink("/#services")}>
-            {messages.highPressureTitle}
+            Die Casting
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#services")}>
-            {messages.moldingTitle}
+            Mould & Fixture Design
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#services")}>
-            {messages.finishingTitle}
+            CNC Precision Machining
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#services")}>
-            {messages.qualityTitle}
+            Surface Treatment
+          </FooterNavLink>
+          <FooterNavLink to={localizedLink("/#services")}>
+            Testing & Assembly
           </FooterNavLink>
         </FooterColumn>
         
         <FooterColumn>
           <FooterTitle>{messages.industries}</FooterTitle>
           <FooterNavLink to={localizedLink("/#industries")}>
-            {messages.automotiveTitle}
+            Telecommunications
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#industries")}>
-            {messages.energyTitle}
+            Mechatronics & Automation
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#industries")}>
-            {messages.telecomTitle}
+            Power Tools
           </FooterNavLink>
           <FooterNavLink to={localizedLink("/#industries")}>
-            {messages.marineTitle}
+            Automotive
+          </FooterNavLink>
+          <FooterNavLink to={localizedLink("/#industries")}>
+            Lighting
+          </FooterNavLink>
+          <FooterNavLink to={localizedLink("/#industries")}>
+            Instrumentation
+          </FooterNavLink>
+          <FooterNavLink to={localizedLink("/#industries")}>
+            Pneumatic & Hydraulic
+          </FooterNavLink>
+          <FooterNavLink to={localizedLink("/#industries")}>
+            Marine Products
           </FooterNavLink>
         </FooterColumn>
         
@@ -191,7 +189,7 @@ const Footer = ({ messages }) => {
             </ContactIcon>
             <ContactText>
               <strong>{messages.footerAddress}:</strong><br />
-              {messages.footerAddressValue}
+              Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
             </ContactText>
           </FooterContactItem>
           
@@ -203,7 +201,7 @@ const Footer = ({ messages }) => {
             </ContactIcon>
             <ContactText>
               <strong>{messages.footerPhone}:</strong><br />
-              +52 (81) 8123-4567
+              +52 33 3968 3660
             </ContactText>
           </FooterContactItem>
           
@@ -223,6 +221,7 @@ const Footer = ({ messages }) => {
       
       <FooterBottom>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
+          <img src="/images/footer_logo_dcmx.png" alt="Die Cast Mexico" style={{ height: '70px', marginRight: '1rem' }} />
           <img src={images.certification} alt="ISO 9001:2015 Certified" style={{ height: '70px', marginRight: '1rem' }} />
           <p>© {currentYear} Die Cast Mexico. {messages.footerRights}.</p>
         </div>
