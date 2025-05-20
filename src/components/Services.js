@@ -117,21 +117,21 @@ const Services = () => {
       title: messages.serviceDesignTitle,
       summary: messages.serviceDesignSummary,
       label: messages.serviceDesignLabel,
-      image: "/attached_assets/tool_design.jpg",
+      image: "attached_assets/tool_design.jpg",
     },
     {
       id: "casting",
       title: messages.serviceCastingTitle,
       summary: messages.serviceCastingSummary,
       label: messages.serviceCastingLabel,
-      image: "/attached_assets/die_casting_service.jpeg",
+      image: "attached_assets/die_casting_service.jpeg",
     },
     {
       id: "finishing",
       title: messages.serviceFinishingTitle,
       summary: messages.serviceFinishingSummary,
       label: messages.serviceFinishingLabel,
-      image: "/attached_assets/surface_finish.webp",
+      image: "attached_assets/surface_finish.webp",
     },
   ];
   
@@ -181,12 +181,7 @@ const Services = () => {
                   {service.summary}
                 </p>
               </CardContent>
-              <CardFooter>
-                <ReadMoreLink href="/contact">
-                  {messages.serviceReadMore}
-                  <ArrowRight />
-                </ReadMoreLink>
-              </CardFooter>
+              {/* Footer removed as requested */}
             </Card>
           ))}
         </ServiceGrid>
