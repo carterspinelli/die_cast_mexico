@@ -64,68 +64,67 @@ const SpecsTitle = styled.h3`
   }
 `;
 
+const TableContainer = styled.div`
+  margin: 1.5rem 0;
+  overflow: auto;
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 0.75rem;
+  background-color: white;
+`;
+
 const StyledTable = styled.table`
   width: 100%;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  color: var(--color-text, #64748b);
   border-collapse: collapse;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  overflow: hidden;
 `;
 
 const TableHead = styled.thead`
-  background-color: #f0f7ff;
-  color: #4a5568;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  background-color: var(--color-light-bg, #f8fafc);
   
   th {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
     text-align: left;
     font-weight: 600;
-    font-size: 1rem;
-  }
-
-  th:first-child {
-    width: 40%;
-  }
-`;
-
-const TableBody = styled.tbody`
-  background-color: white;
-  
-  tr {
-    &:not(:last-child) {
-      border-bottom: 1px solid #e2e8f0;
-    }
-  }
-  
-  td {
-    padding: 1.25rem 1.5rem;
-    vertical-align: middle;
     
-    &:first-child {
-      width: 40%;
+    &:not(:first-child) {
+      border-left: 1px solid var(--color-border, #e2e8f0);
     }
   }
 `;
 
-const CapabilityName = styled.span`
-  background-color: #ebf5ff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: #3182ce;
-  display: inline-block;
-  font-size: 0.95rem;
-  font-weight: 500;
+const TableRow = styled.tr`
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  
+  &:last-child {
+    border-bottom: none;
+  }
 `;
 
-const CapabilityValue = styled.span`
-  background-color: #f7fafc;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  color: #4a5568;
-  display: inline-block;
-  font-size: 0.95rem;
+const TableCell = styled.td`
+  padding: 1rem;
+  
+  &:not(:first-child) {
+    border-left: 1px solid var(--color-border, #e2e8f0);
+  }
+`;
+
+const PrimaryCode = styled.code`
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-family: sans-serif;
+  background-color: rgba(var(--color-primary-rgb, 59, 130, 246), 0.1);
+  color: var(--color-primary, #3b82f6);
+`;
+
+const SecondaryCode = styled.code`
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-family: sans-serif;
+  background-color: var(--color-secondary-light, #f1f5f9);
+  color: var(--color-secondary, #475569);
 `;
 
 const TableSection = styled.div`
@@ -258,28 +257,34 @@ const Capabilities = () => {
             
             {facilityTabs.map(tab => (
               <TabsContent key={tab.id} value={tab.id}>
-                <StyledTable>
-                  <TableHead>
-                    <tr>
-                      <th>
-                        {tab.id === 'overview' ? 'Resource' : 
-                         tab.id === 'manufacturing' ? 'Process' : 'Process'}
-                      </th>
-                      <th>
-                        {tab.id === 'overview' ? 'Capacity' : 
-                         tab.id === 'manufacturing' ? 'Capabilities' : 'Specifications'}
-                      </th>
-                    </tr>
-                  </TableHead>
-                  <TableBody>
-                    {tab.items.map((item, index) => (
-                      <tr key={index}>
-                        <td><CapabilityName>{item.attribute}</CapabilityName></td>
-                        <td><CapabilityValue>{item.value}</CapabilityValue></td>
+                <TableContainer>
+                  <StyledTable>
+                    <TableHead>
+                      <tr>
+                        <th width="45%">
+                          {tab.id === 'overview' ? 'Specification' : 
+                           tab.id === 'manufacturing' ? 'Process' : 'Process'}
+                        </th>
+                        <th width="55%">
+                          {tab.id === 'overview' ? 'Value' : 
+                           tab.id === 'manufacturing' ? 'Value' : 'Value'}
+                        </th>
                       </tr>
-                    ))}
-                  </TableBody>
-                </StyledTable>
+                    </TableHead>
+                    <tbody>
+                      {tab.items.map((item, index) => (
+                        <tr key={index} style={{ borderBottom: index !== tab.items.length - 1 ? '1px solid #e2e8f0' : 'none' }}>
+                          <td style={{ padding: '1rem', borderRight: '1px solid #e2e8f0' }}>
+                            <PrimaryCode>{item.attribute}</PrimaryCode>
+                          </td>
+                          <td style={{ padding: '1rem' }}>
+                            <SecondaryCode>{item.value}</SecondaryCode>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </StyledTable>
+                </TableContainer>
               </TabsContent>
             ))}
           </Tabs>
