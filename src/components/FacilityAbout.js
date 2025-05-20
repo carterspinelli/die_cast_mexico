@@ -170,6 +170,11 @@ const AchievementsHeader = styled.div`
   }
 `;
 
+// Helper for handling translations with fallbacks
+const translate = (messages, key, fallback) => {
+  return messages && messages[key] ? messages[key] : fallback;
+};
+
 const AchievementsTitle = styled.h3`
   font-size: 2.5rem;
   font-weight: 600;
@@ -214,20 +219,20 @@ const FacilityAbout = () => {
   
   const achievements = [
     {
-      label: messages.achievementsYearsLabel || "Years in Operation",
-      value: "Since 2018"
+      label: translate(messages, 'achievementsYearsLabel', "Years in Operation"),
+      value: translate(messages, 'achievementsYearsValue', "Since 2018")
     },
     {
-      label: messages.achievementsClientsLabel || "Total Land Area",
-      value: "30,000 m²"
+      label: translate(messages, 'achievementsLandLabel', "Total Land Area"),
+      value: translate(messages, 'achievementsLandValue', "30,000 m²")
     },
     {
-      label: messages.achievementsPartsLabel || "Building Size",
-      value: "15,000 m²"
+      label: translate(messages, 'achievementsBuildingLabel', "Building Size"),
+      value: translate(messages, 'achievementsBuildingValue', "15,000 m²")
     },
     {
-      label: messages.achievementsQualityLabel || "Quality Approval",
-      value: "99.9%"
+      label: translate(messages, 'achievementsQualityLabel', "Quality Approval"),
+      value: translate(messages, 'achievementsQualityValue', "99.9%")
     }
   ];
   
@@ -250,44 +255,52 @@ const FacilityAbout = () => {
     <Section id="about">
       <Container>
         <HeaderGrid>
-          <Title>{messages.facilityTitle || "Our Facility"}</Title>
+          <Title>{translate(messages, 'facilityTitle', "Our Facility")}</Title>
           <Description>
-            {messages.facilityDescription || "Located in the Queretaro region, our state-of-the-art facility sits on 30,000 sqm of land with a 15,000 sqm building. Started operations in Q4 2018, our facility houses the latest die casting technology and quality control systems, allowing us to deliver precision components to exacting standards."}
+            {translate(messages, 'facilityDescription', "Located in the Queretaro region, our state-of-the-art facility sits on 30,000 sqm of land with a 15,000 sqm building. Started operations in Q4 2018, our facility houses the latest die casting technology and quality control systems, allowing us to deliver precision components to exacting standards.")}
           </Description>
         </HeaderGrid>
         
         <ContentGrid>
           <MainImage 
-            src="/images/die_cast_cnc.png" 
-            alt="Die Cast Mexico Facility"
+            src="/images/plant_2_diecast.png" 
+            alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
           />
           
           <SideContent>
             <InfoBox>
-              <InfoBoxLogo 
-                src="/images/die_cast_mx_logo_v07.png" 
-                alt="Die Cast Mexico Logo"
-              />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <InfoBoxLogo 
+                  src="/images/die_cast_mx_logo_v07.png" 
+                  alt={translate(messages, 'companyLogoAlt', "Die Cast Mexico Logo")}
+                  style={{ height: '2.5rem' }}
+                />
+                <InfoBoxLogo 
+                  src="/images/iso9001_diecast.webp" 
+                  alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
+                  style={{ height: '2.5rem' }}
+                />
+              </div>
               <div>
-                <InfoBoxTitle>{messages.certifiedTitle || "ISO 9001 Certified"}</InfoBoxTitle>
+                <InfoBoxTitle>{translate(messages, 'certifiedTitle', "ISO 9001 Certified")}</InfoBoxTitle>
                 <InfoBoxText>
-                  {messages.certifiedDesc || "We maintain the highest standards of quality and reliability, delivering premium die casting services tailored to your specifications."}
+                  {translate(messages, 'certifiedDesc', "We maintain the highest standards of quality and reliability, delivering premium die casting services tailored to your specifications.")}
                 </InfoBoxText>
               </div>
               <Button variant="outline" as="a" href="#contact">
-                {messages.contactUsBtn || "Contact Us"}
+                {translate(messages, 'contactUsBtn', "Contact Us")}
               </Button>
             </InfoBox>
             
             <SecondaryImage 
               src="/images/die_cast_02.png" 
-              alt="Die Cast Manufacturing Process"
+              alt={translate(messages, 'manufacturingImageAlt', "Die Cast Manufacturing Process")}
             />
           </SideContent>
         </ContentGrid>
         
         <CompaniesSection>
-          <CompaniesTitle>{messages.certificationsTitle || "Industry Certifications"}</CompaniesTitle>
+          <CompaniesTitle>{translate(messages, 'certificationsTitle', "Industry Certifications")}</CompaniesTitle>
           <CompaniesGrid>
             {certifications.map((certification, idx) => (
               <CompanyLogo key={certification.alt + idx}>
@@ -302,9 +315,9 @@ const FacilityAbout = () => {
         
         <AchievementsBox>
           <AchievementsHeader>
-            <AchievementsTitle>{messages.achievementsTitle || "Our Achievements"}</AchievementsTitle>
+            <AchievementsTitle>{translate(messages, 'achievementsTitle', "Our Achievements")}</AchievementsTitle>
             <AchievementsDescription>
-              {messages.achievementsDesc || "With decades of experience in high-pressure die casting, we've built a reputation for excellence in delivering precision components across multiple industries."}
+              {translate(messages, 'achievementsDesc', "With decades of experience in high-pressure die casting, we've built a reputation for excellence in delivering precision components across multiple industries.")}
             </AchievementsDescription>
           </AchievementsHeader>
           
