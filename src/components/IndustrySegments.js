@@ -4,31 +4,60 @@ import { useLanguage } from "../context/LanguageContext";
 import ExpandableIndustryCard from "./ui/ExpandableIndustryCard";
 
 const IndustrySegmentsSection = styled.section`
-  padding: 5rem 1rem;
-  background-color: var(--color-light-bg);
+  padding: 6rem 1rem;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+`;
+
+const BackgroundPattern = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.4;
+  z-index: 0;
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 
 const SectionHeader = styled.div`
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primary);
+  }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
   color: var(--color-text);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 `;
 
 const SegmentsGrid = styled.div`
@@ -167,11 +196,12 @@ const IndustrySegments = () => {
   ];
   
   return (
-    <IndustrySegmentsSection>
+    <IndustrySegmentsSection id="industries">
+      <BackgroundPattern />
       <Container>
         <SectionHeader>
-          <Title>{translations.industriesTitle}</Title>
-          <Subtitle>{translations.industriesSubtitle}</Subtitle>
+          <Title className="slide-in-left">{translations.industriesTitle}</Title>
+          <Subtitle className="slide-in-right">{translations.industriesSubtitle}</Subtitle>
         </SectionHeader>
         
         <SegmentsGrid>
@@ -182,6 +212,7 @@ const IndustrySegments = () => {
               icon={<IndustryIcon iconPath={item.icon} />}
               description={item.description}
               details={item.details}
+              className="fade-in"
             />
           ))}
         </SegmentsGrid>
