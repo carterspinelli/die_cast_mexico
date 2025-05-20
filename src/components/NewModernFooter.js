@@ -1,9 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import { Link } from "gatsby";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import styled from "styled-components";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
-import images from "../data/images";
 
 // Main container
 const FooterContainer = styled.footer`
@@ -60,7 +58,7 @@ const SocialIcons = styled.div`
   gap: 1rem;
 `;
 
-const SocialIconLink = styled.a`
+const SocialLink = styled.a`
   color: #a1a1aa;
   transition: color 0.2s;
   display: flex;
@@ -102,27 +100,16 @@ const LinksList = styled.ul`
 
 const LinkItem = styled.li`
   margin-bottom: 0.75rem;
-`;
-
-const NavLink = styled(Link)`
-  color: #a1a1aa;
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s;
   
-  &:hover {
-    color: #60a5fa;
-  }
-`;
-
-const ExternalLink = styled.a`
-  color: #a1a1aa;
-  text-decoration: none;
-  font-size: 0.875rem;
-  transition: color 0.2s;
-  
-  &:hover {
-    color: #60a5fa;
+  a {
+    color: #a1a1aa;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+    
+    &:hover {
+      color: #60a5fa;
+    }
   }
 `;
 
@@ -172,32 +159,51 @@ const CertificationImage = styled.img`
   height: 40px;
 `;
 
-const Footer = ({ messages }) => {
+const NewModernFooter = () => {
+  const { language, messages } = useLanguage();
   const currentYear = new Date().getFullYear();
-  const { language } = useLanguage();
   
   // Helper function to create localized paths
   const localizedLink = (path) => getLocalizedPath(path, language);
   
-  const services = [
-    { name: "Die Casting", path: "/#services" },
-    { name: "Mould & Fixture Design", path: "/#services" },
-    { name: "CNC Precision Machining", path: "/#services" },
-    { name: "Surface Treatment", path: "/#services" },
-    { name: "Testing & Assembly", path: "/#services" },
+  // Define our sections based on current footer content
+  const sections = [
+    {
+      title: messages.services || "Services",
+      links: [
+        { name: "Die Casting", href: localizedLink("/#services") },
+        { name: "Mould & Fixture Design", href: localizedLink("/#services") },
+        { name: "CNC Precision Machining", href: localizedLink("/#services") },
+        { name: "Surface Treatment", href: localizedLink("/#services") },
+        { name: "Testing & Assembly", href: localizedLink("/#services") },
+      ],
+    },
+    {
+      title: messages.industries || "Industries",
+      links: [
+        { name: "Telecommunications", href: localizedLink("/#industries") },
+        { name: "Mechatronics & Automation", href: localizedLink("/#industries") },
+        { name: "Power Tools", href: localizedLink("/#industries") },
+        { name: "Automotive", href: localizedLink("/#industries") },
+        { name: "Lighting", href: localizedLink("/#industries") },
+        { name: "Instrumentation", href: localizedLink("/#industries") },
+        { name: "Pneumatic & Hydraulic", href: localizedLink("/#industries") },
+        { name: "Marine Products", href: localizedLink("/#industries") },
+      ],
+    },
+    {
+      title: messages.contact || "Contact",
+      links: [
+        { 
+          name: "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.", 
+          href: "https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal."
+        },
+        { name: "+52 33 3968 3660", href: "tel:+523339683660" },
+        { name: messages.footerEmailValue || "info@diecastmexico.com", href: `mailto:${messages.footerEmailValue || "info@diecastmexico.com"}` },
+      ],
+    },
   ];
-  
-  const industries = [
-    { name: "Telecommunications", path: "/#industries" },
-    { name: "Mechatronics & Automation", path: "/#industries" },
-    { name: "Power Tools", path: "/#industries" },
-    { name: "Automotive", path: "/#industries" },
-    { name: "Lighting", path: "/#industries" },
-    { name: "Instrumentation", path: "/#industries" },
-    { name: "Pneumatic & Hydraulic", path: "/#industries" },
-    { name: "Marine Products", path: "/#industries" },
-  ];
-  
+
   const socialLinks = [
     { icon: <FaInstagram size={20} />, href: "https://instagram.com/diecastmx", label: "Instagram" },
     { icon: <FaFacebook size={20} />, href: "https://facebook.com/diecastmx", label: "Facebook" },
@@ -208,7 +214,7 @@ const Footer = ({ messages }) => {
     { name: messages.termsConditions || "Terms and Conditions", href: "#" },
     { name: messages.privacyPolicy || "Privacy Policy", href: "#" },
   ];
-  
+
   return (
     <FooterContainer>
       <Container>
@@ -224,73 +230,35 @@ const Footer = ({ messages }) => {
             </Description>
             <SocialIcons>
               {socialLinks.map((social, idx) => (
-                <SocialIconLink key={idx} href={social.href} aria-label={social.label}>
+                <SocialLink key={idx} href={social.href} aria-label={social.label}>
                   {social.icon}
-                </SocialIconLink>
+                </SocialLink>
               ))}
             </SocialIcons>
           </CompanySection>
           
           <LinksSection>
-            <LinksColumn>
-              <ColumnTitle>{messages.services}</ColumnTitle>
-              <LinksList>
-                {services.map((service, idx) => (
-                  <LinkItem key={idx}>
-                    <NavLink to={localizedLink(service.path)}>
-                      {service.name}
-                    </NavLink>
-                  </LinkItem>
-                ))}
-              </LinksList>
-            </LinksColumn>
-            
-            <LinksColumn>
-              <ColumnTitle>{messages.industries}</ColumnTitle>
-              <LinksList>
-                {industries.map((industry, idx) => (
-                  <LinkItem key={idx}>
-                    <NavLink to={localizedLink(industry.path)}>
-                      {industry.name}
-                    </NavLink>
-                  </LinkItem>
-                ))}
-              </LinksList>
-            </LinksColumn>
-            
-            <LinksColumn>
-              <ColumnTitle>{messages.contact}</ColumnTitle>
-              <LinksList>
-                <LinkItem>
-                  <ExternalLink 
-                    href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
-                  </ExternalLink>
-                </LinkItem>
-                <LinkItem>
-                  <ExternalLink href="tel:+523339683660">
-                    +52 33 3968 3660
-                  </ExternalLink>
-                </LinkItem>
-                <LinkItem>
-                  <ExternalLink href={`mailto:${messages.footerEmailValue}`}>
-                    {messages.footerEmailValue}
-                  </ExternalLink>
-                </LinkItem>
-              </LinksList>
-            </LinksColumn>
+            {sections.map((section, idx) => (
+              <LinksColumn key={idx}>
+                <ColumnTitle>{section.title}</ColumnTitle>
+                <LinksList>
+                  {section.links.map((link, linkIdx) => (
+                    <LinkItem key={linkIdx}>
+                      <a href={link.href}>{link.name}</a>
+                    </LinkItem>
+                  ))}
+                </LinksList>
+              </LinksColumn>
+            ))}
           </LinksSection>
         </TopSection>
         
         <Divider />
         
         <BottomSection>
-          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
+          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights || "All rights reserved."}</Copyright>
           <LegalLinks>
-            <CertificationImage src={images.certification} alt="ISO 9001:2015 Certified" />
+            <CertificationImage src="/images/iso9001_diecast.webp" alt="ISO 9001:2015 Certified" />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
                 {link.name}
@@ -303,4 +271,4 @@ const Footer = ({ messages }) => {
   );
 };
 
-export default Footer;
+export default NewModernFooter;
