@@ -70,9 +70,14 @@ const ServiceGrid = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
   
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+  }
+  
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
   }
 `;
 
@@ -114,25 +119,39 @@ const Services = () => {
   // Using images from the static folder
   const serviceItems = [
     {
-      id: "design",
-      title: messages.serviceDesignTitle,
-      summary: messages.serviceDesignSummary,
-      label: messages.serviceDesignLabel,
-      image: "/images/tool_design.jpg",
-    },
-    {
       id: "casting",
-      title: messages.serviceCastingTitle,
-      summary: messages.serviceCastingSummary,
-      label: messages.serviceCastingLabel,
+      title: "Die Casting",
+      summary: "Die Cast Mexico deploys automatic cold chamber die-casting machines ranging from 400 ton to 1900 ton dedicated to aluminum and magnesium alloy.",
+      label: "Manufacturing",
       image: "/images/die_casting_service.jpeg",
     },
     {
-      id: "finishing",
-      title: messages.serviceFinishingTitle,
-      summary: messages.serviceFinishingSummary,
-      label: messages.serviceFinishingLabel,
-      image: "/images/surface_finish.webp",
+      id: "mould",
+      title: "Mould & Fixture Design",
+      summary: "With professional design engineering and modernized machining technology, Die Cast Mexico can design and manufacture all kinds of complicated moulds for customers; including soft moulding solutions for rapid prototyping and develop high efficiency CNC machining fixtures.",
+      label: "Design & Engineering",
+      image: "/images/tool_design.jpg",
+    },
+    {
+      id: "cnc",
+      title: "CNC Precision Machining",
+      summary: "Die Cast Mexico has an extremely competent CNC machining ability, with higher machining precision and advanced process quality control, which can meet customer's processing requirement from simple to most complicated and challenging. Our horizontal CNC centers maintain high levels of precision on high volumes.",
+      label: "Precision Manufacturing",
+      image: "/images/cnc_diecast.webp",
+    },
+    {
+      id: "surface",
+      title: "Surface Treatment",
+      summary: "Die Cast Mexico is able to further treat the components with surface KLT, anodizing or other treatments according to client demands.",
+      label: "Finishing",
+      image: "/images/surface_treatment_diecast.jpg",
+    },
+    {
+      id: "testing",
+      title: "Testing & Assembly",
+      summary: "Die Cast Mexico participates in customer support actions from the initial stage, considering customer needs, and establishes product solutions. We utilize various test equipment like admeasuring apparatus and power balancing equipment, with experienced test engineers and advanced systems.",
+      label: "Quality Assurance",
+      image: "/images/assembly_testing.webp",
     },
   ];
   
