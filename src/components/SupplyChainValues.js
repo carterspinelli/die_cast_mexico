@@ -13,25 +13,19 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
   font-weight: 600;
-  color: #255e4e;
-  margin-right: 1rem;
-  
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
-`;
-
-const ArrowIcon = styled.span`
-  color: #255e4e;
-  font-size: 2.5rem;
+  color: #1e293b;
+  margin-bottom: 1rem;
   
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -39,18 +33,20 @@ const ArrowIcon = styled.span`
 `;
 
 const Description = styled.p`
-  color: #1e293b;
+  color: #64748b;
   font-size: 1.125rem;
   line-height: 1.75;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   max-width: 900px;
+  
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
 `;
 
-const HighlightText = styled.a`
-  color: #255e4e;
+const HighlightText = styled.span`
+  color: #0066cc;
   font-weight: 600;
-  text-decoration: underline;
-  cursor: pointer;
 `;
 
 const ImagesGrid = styled.div`
@@ -91,9 +87,8 @@ const SupplyChainValues = () => {
       <Container>
         <Header>
           <Title>
-            {translate(messages, 'supplyChainTitle', "SUPPLY CHAIN ADDED VALUES")}
+            {translate(messages, 'supplyChainTitle', "Supply Chain Added Values")}
           </Title>
-          <ArrowIcon>➔</ArrowIcon>
         </Header>
         
         <Description>
