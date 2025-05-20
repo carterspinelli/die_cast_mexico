@@ -127,7 +127,7 @@ const Services = () => {
     },
     {
       id: "mould",
-      title: messages.serviceDesignTitle || "Mould & Fixture Design",
+      title: messages.serviceDesignTitle || "Mould & fixture design and fabrication",
       summary: messages.serviceDesignSummary || "Die Cast Mexico designs and manufactures complex molds using professional engineering and modern technology, offering both rapid prototyping solutions and high-efficiency CNC machining fixtures.",
       label: messages.serviceDesignLabel || "Design & Engineering",
       image: "/images/tool_design.jpg",
@@ -144,7 +144,7 @@ const Services = () => {
       title: messages.serviceFinishingTitle || "Surface Treatment",
       summary: messages.serviceFinishingSummary || "Die Cast Mexico is able to further treat the components with surface KLT, anodizing or other treatments according to client demands.",
       label: messages.serviceFinishingLabel || "Finishing",
-      image: "/images/surface_treatment_diecast.jpg",
+      image: "/images/surface_treatment_diecast_mx.jpg",
     },
     {
       id: "testing",

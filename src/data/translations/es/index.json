@@ -147,16 +147,16 @@
   "servicesButtonText": "Solicitar Presupuesto",
   "serviceReadMore": "Leer Más",
   
-  "serviceDesignTitle": "Diseño de Herramientas",
+  "serviceDesignTitle": "Diseño y fabricación de moldes y accesorios",
   "serviceDesignSummary": "Nuestro equipo experto de ingeniería crea diseños optimizados de herramientas de fundición a presión que garantizan una producción eficiente, ahorro de material y calidad excepcional de las piezas. Utilizamos software CAD/CAM de última generación para precisión y rendimiento.",
   "serviceDesignLabel": "Ingeniería",
   
-  "serviceCastingTitle": "Proceso de Fundición a Presión",
+  "serviceCastingTitle": "Fundición a Presión",
   "serviceCastingSummary": "Proporcionamos servicios de fundición a presión de aluminio de alta presión con un control meticuloso del proceso, entregando piezas complejas con tolerancias estrictas, excelentes acabados superficiales y calidad consistente para aplicaciones exigentes.",
   "serviceCastingLabel": "Fabricación",
   
-  "serviceFinishingTitle": "Acabado de Superficies",
-  "serviceFinishingSummary": "Nuestras amplias capacidades de acabado de superficies mejoran la apariencia, durabilidad y rendimiento de los componentes fundidos a presión mediante mecanizado de precisión, pulido, galvanizado y soluciones de recubrimiento personalizadas.",
+  "serviceFinishingTitle": "Tratamiento de Superficie",
+  "serviceFinishingSummary": "Die Cast Mexico puede tratar adicionalmente los componentes con superficie KLT, anodizado u otros tratamientos según las demandas del cliente.",
   "serviceFinishingLabel": "Post-Procesamiento",
   
   "serviceCncTitle": "Mecanizado CNC de Precisión",
