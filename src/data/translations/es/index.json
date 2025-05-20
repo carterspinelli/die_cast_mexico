@@ -154,5 +154,17 @@
   "achievementsBuildingValue": "15,000 m²",
   "achievementsQualityLabel": "Aprobación de Calidad",
   "achievementsQualityValue": "99.9%",
-  "certificationsTitle": "Certificaciones de la Industria"
+  "certificationsTitle": "Certificaciones de la Industria",
+  
+  "supplyChainTitle": "Valores Añadidos en la Cadena de Suministro",
+  "supplyChainIntro": "En Die Cast Mexico, priorizamos el desarrollo de proveedores calificados para pintura líquida, acabados superficiales como el niquelado para agregar valor a nuestra cadena de suministro y satisfacer las necesidades de nuestros clientes.",
+  "supplyChainExpertise1": "Confiamos en la ",
+  "supplyChainExpertiseHighlight": "experiencia",
+  "supplyChainExpertise2": " de nuestros proveedores, aseguramos estándares de calidad excepcionales y un rendimiento mejorado del producto. Nuestro compromiso con proveedores calificados fortalece nuestra cadena de suministro, reduce los tiempos de entrega y fomenta relaciones a largo plazo basadas en la confianza y la colaboración, superando finalmente las expectativas de nuestros clientes.",
+  "supplyImageAlt1": "Proceso de galvanizado de fundición a presión",
+  "supplyImageAlt2": "Proceso de pintura de fundición a presión",
+  
+  "specification": "Especificación",
+  "value": "Valor",
+  "range": "Rango"
 }

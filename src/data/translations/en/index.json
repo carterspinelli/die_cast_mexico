@@ -154,5 +154,17 @@
   "achievementsBuildingValue": "15,000 m²",
   "achievementsQualityLabel": "Quality Approval",
   "achievementsQualityValue": "99.9%",
-  "certificationsTitle": "Industry Certifications"
+  "certificationsTitle": "Industry Certifications",
+  
+  "supplyChainTitle": "Supply Chain Added Values",
+  "supplyChainIntro": "At Die Cast Mexico, we prioritize development of skilled suppliers for liquid painting, surface finishes such as nickel plating to add value to our supply chain and meet our clients' needs.",
+  "supplyChainExpertise1": "We rely on our suppliers' ",
+  "supplyChainExpertiseHighlight": "expertise",
+  "supplyChainExpertise2": ", we ensure exceptional quality standards and improved product performance. Our commitment to skilled suppliers strengthens our supply chain, reduces lead times, and fosters long-term partnerships built on trust and collaboration, ultimately exceeding our clients' expectations.",
+  "supplyImageAlt1": "Die casting plating process",
+  "supplyImageAlt2": "Die casting painting process",
+  
+  "specification": "Specification",
+  "value": "Value",
+  "range": "Range"
 }

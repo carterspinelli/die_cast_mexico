@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Info } from "lucide-react";
 import { cn } from "./utils";
+import { useLanguage } from "../../context/LanguageContext";
 import {
   Popover,
   PopoverContent,
@@ -119,14 +120,22 @@ export function TypeTable({
   className, 
   ...props 
 }) {
+  const { messages } = useLanguage();
+  
+  // Helper for handling translations with fallbacks
+  const translate = (key, fallback) => {
+    if (!messages) return fallback;
+    return messages[key] || fallback;
+  };
+  
   return (
     <TableContainer className={cn(className)} {...props}>
       <StyledTable>
         <TableHead>
           <tr>
-            <TableHeaderCell width="45%">Specification</TableHeaderCell>
-            <TableHeaderCell width="30%">Value</TableHeaderCell>
-            <TableHeaderCell width="25%">Range</TableHeaderCell>
+            <TableHeaderCell width="45%">{translate("specification", "Specification")}</TableHeaderCell>
+            <TableHeaderCell width="30%">{translate("value", "Value")}</TableHeaderCell>
+            <TableHeaderCell width="25%">{translate("range", "Range")}</TableHeaderCell>
           </tr>
         </TableHead>
         <tbody>
