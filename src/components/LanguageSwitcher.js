@@ -8,9 +8,9 @@ const SwitcherContainer = styled.div`
 `;
 
 const LanguageButton = styled.button`
-  background: ${props => props.active ? "var(--primary)" : "transparent"};
-  color: ${props => props.active ? "var(--white)" : "var(--primary)"};
-  border: 1px solid var(--primary);
+  background: ${props => props.active ? "#172b49" : "transparent"};
+  color: ${props => props.active ? "var(--white)" : "#172b49"};
+  border: 1px solid #172b49;
   padding: 0.3rem 0.6rem;
   margin-left: 0.5rem;
   font-size: 0.875rem;
@@ -19,7 +19,7 @@ const LanguageButton = styled.button`
   transition: all var(--transition-duration);
   
   &:hover {
-    background: ${props => props.active ? "var(--primary-dark)" : "var(--gray-light)"};
+    background: ${props => props.active ? "#213c69" : "var(--gray-light)"};
   }
 `;
 

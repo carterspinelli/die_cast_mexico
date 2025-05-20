@@ -83,7 +83,7 @@ const TabButton = styled.button`
 `;
 
 const ContentContainer = styled.div`
-  background-color: rgba(15, 23, 42, 0.7);
+  background-color: rgba(23, 43, 73, 0.85);
   border-radius: 1rem;
   padding: 1.5rem;
   
