@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { TypeTable } from "./ui/type-table";
+import { Tabs, TabsTrigger, TabsContent } from "./ui/tabs";
 
 const CapabilitiesSection = styled.section`
   padding: 5rem 1rem;
@@ -199,21 +200,42 @@ const Capabilities = () => {
     { attribute: "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
   ];
   
-  // Manufacturing capabilities data
-  const manufacturingCapabilities = [
-    { attribute: "Die Casting", value: "8 full automatic manufacturing cells" },
-    { attribute: "CNC Machining", value: "19 horizontal 4 axis machines" },
-    { attribute: "Mechanical Assembly", value: "Dowel pins, labels, helicoils, plugs, etc." }
+  // Facility data organized by tabs
+  const facilityTabs = [
+    {
+      id: "overview",
+      label: "Overview",
+      items: [
+        { attribute: "Workforce", value: "125 skilled employees" },
+        { attribute: "Material Capacity", value: "Up to 250ton/month aluminum ingots" },
+        { attribute: "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
+      ]
+    },
+    {
+      id: "manufacturing",
+      label: "Manufacturing",
+      items: [
+        { attribute: "Die Casting", value: "8 full automatic manufacturing cells" },
+        { attribute: "CNC Machining", value: "19 horizontal 4 axis machines" },
+        { attribute: "Mechanical Assembly", value: "Dowel pins, labels, helicoils, plugs, etc." }
+      ]
+    },
+    {
+      id: "finishing",
+      label: "Surface Finishing",
+      items: [
+        { attribute: "FIP Gasket", value: "Precision gasket application" },
+        { attribute: "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
+        { attribute: "Liquid Painting", value: "Custom color solutions" },
+        { attribute: "Nickel Plating", value: "High-quality surface finish" },
+        { attribute: "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
+      ]
+    }
   ];
   
-  // Surface finishing capabilities data
-  const surfaceFinishingCapabilities = [
-    { attribute: "FIP Gasket", value: "Precision gasket application" },
-    { attribute: "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
-    { attribute: "Liquid Painting", value: "Custom color solutions" },
-    { attribute: "Nickel Plating", value: "High-quality surface finish" },
-    { attribute: "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
-  ];
+  // Legacy data structures - keeping for compatibility
+  const manufacturingCapabilities = facilityTabs[1].items;
+  const surfaceFinishingCapabilities = facilityTabs[2].items;
   
   return (
     <CapabilitiesSection>
@@ -223,69 +245,44 @@ const Capabilities = () => {
           <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
         
-        {/* Facility Overview */}
+        {/* Facility Overview with Tabs */}
         <SpecsCard>
           <SpecsTitle>Facility Overview</SpecsTitle>
           
-          <TableSection>
-            <SectionTitle>Resources & Materials</SectionTitle>
-            <StyledTable>
-              <TableHead>
-                <tr>
-                  <th>Resource</th>
-                  <th>Capacity</th>
-                </tr>
-              </TableHead>
-              <TableBody>
-                {facilityOverview.map((item, index) => (
-                  <tr key={index}>
-                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
-                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
-                  </tr>
-                ))}
-              </TableBody>
-            </StyledTable>
-          </TableSection>
-          
-          <TableSection>
-            <SectionTitle>Manufacturing Processes</SectionTitle>
-            <StyledTable>
-              <TableHead>
-                <tr>
-                  <th>Process</th>
-                  <th>Capabilities</th>
-                </tr>
-              </TableHead>
-              <TableBody>
-                {manufacturingCapabilities.map((item, index) => (
-                  <tr key={index}>
-                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
-                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
-                  </tr>
-                ))}
-              </TableBody>
-            </StyledTable>
-          </TableSection>
-          
-          <TableSection>
-            <SectionTitle>Surface Finishing</SectionTitle>
-            <StyledTable>
-              <TableHead>
-                <tr>
-                  <th>Process</th>
-                  <th>Specifications</th>
-                </tr>
-              </TableHead>
-              <TableBody>
-                {surfaceFinishingCapabilities.map((item, index) => (
-                  <tr key={index}>
-                    <td><CapabilityName>{item.attribute}</CapabilityName></td>
-                    <td><CapabilityValue>{item.value}</CapabilityValue></td>
-                  </tr>
-                ))}
-              </TableBody>
-            </StyledTable>
-          </TableSection>
+          <Tabs defaultValue="overview">
+            {facilityTabs.map(tab => (
+              <TabsTrigger key={tab.id} value={tab.id}>
+                {tab.label}
+              </TabsTrigger>
+            ))}
+            
+            {facilityTabs.map(tab => (
+              <TabsContent key={tab.id} value={tab.id}>
+                <StyledTable>
+                  <TableHead>
+                    <tr>
+                      <th>
+                        {tab.id === 'overview' ? 'Resource' : 
+                         tab.id === 'manufacturing' ? 'Process' : 'Process'}
+                      </th>
+                      <th>
+                        {tab.id === 'overview' ? 'Capacity' : 
+                         tab.id === 'manufacturing' ? 'Capabilities' : 'Specifications'}
+                      </th>
+                    </tr>
+                  </TableHead>
+                  <TableBody>
+                    {tab.items.map((item, index) => (
+                      <tr key={index}>
+                        <td><CapabilityName>{item.attribute}</CapabilityName></td>
+                        <td><CapabilityValue>{item.value}</CapabilityValue></td>
+                      </tr>
+                    ))}
+                  </TableBody>
+                </StyledTable>
+              </TabsContent>
+            ))}
+          </Tabs>
         </SpecsCard>
         
         {/* Technical Specifications */}
