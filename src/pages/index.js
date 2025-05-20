@@ -4,7 +4,7 @@ import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Capabilities from "../components/Capabilities";
-import IndustriesStickyScroll from "../components/ui/IndustriesStickyScroll";
+import IndustriesGrid from "../components/IndustriesGrid";
 import KeyCollaborations from "../components/KeyCollaborations";
 import styled from "styled-components";
 import images from "../data/images";
@@ -206,7 +206,7 @@ const IndexPage = () => {
       
       <Capabilities />
       
-      <IndustriesStickyScroll />
+      <IndustriesGrid />
       
       <KeyCollaborations />
       
