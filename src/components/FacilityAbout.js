@@ -219,9 +219,9 @@ const FacilityAbout = () => {
                 />
               </div>
               <div>
-                <InfoBoxTitle>{translate(messages, 'certifiedTitle', "ISO 9001 Certified")}</InfoBoxTitle>
+                <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
                 <InfoBoxText>
-                  {translate(messages, 'certifiedDesc', "We maintain the highest standards of quality and reliability, delivering premium die casting services tailored to your specifications.")}
+                  {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
                 </InfoBoxText>
               </div>
               <Button variant="outline" as="a" href="#contact">

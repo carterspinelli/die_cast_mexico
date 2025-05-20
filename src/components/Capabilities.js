@@ -246,12 +246,14 @@ const Capabilities = () => {
         
         {/* Facility Overview with Tabs */}
         <SpecsCard>
-          <SpecsTitle>Facility Overview</SpecsTitle>
+          <SpecsTitle>{translations.facilityOverviewTitle || "Facility Overview"}</SpecsTitle>
           
           <Tabs defaultValue="overview">
             {facilityTabs.map(tab => (
               <TabsTrigger key={tab.id} value={tab.id}>
-                {tab.label}
+                {tab.id === 'overview' ? translations.overviewTabLabel || "Overview" : 
+                 tab.id === 'manufacturing' ? translations.manufacturingTabLabel || "Manufacturing" : 
+                 translations.finishingTabLabel || "Surface Finishing"}
               </TabsTrigger>
             ))}
             
@@ -262,12 +264,11 @@ const Capabilities = () => {
                     <TableHead>
                       <tr>
                         <th width="45%">
-                          {tab.id === 'overview' ? 'Specification' : 
-                           tab.id === 'manufacturing' ? 'Process' : 'Process'}
+                          {tab.id === 'overview' ? translations.specificationLabel || 'Specification' : 
+                           translations.processLabel || 'Process'}
                         </th>
                         <th width="55%">
-                          {tab.id === 'overview' ? 'Value' : 
-                           tab.id === 'manufacturing' ? 'Value' : 'Value'}
+                          {translations.valueLabel || 'Value'}
                         </th>
                       </tr>
                     </TableHead>

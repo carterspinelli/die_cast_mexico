@@ -159,9 +159,17 @@
   "serviceFinishingSummary": "Our comprehensive surface finishing capabilities enhance the appearance, durability, and performance of die cast components through precision machining, polishing, plating, and custom coating solutions.",
   "serviceFinishingLabel": "Post-Processing",
   
-  "facilityAboutTitle": "Our Facility & Company Profile",
-  "facilityAboutDescription": "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.",
-  "achievementsTitle": "Our Achievements",
+  "serviceCncTitle": "CNC Precision Machining",
+  "serviceCncSummary": "Die Cast Mexico offers precise CNC machining from simple to complex projects with advanced quality control. Our horizontal CNC centers deliver high precision at volume.",
+  "serviceCncLabel": "Precision Manufacturing",
+  
+  "serviceTestingTitle": "Testing & Assembly",
+  "serviceTestingSummary": "Die Cast Mexico provides early-stage support, creating solutions based on customer needs. We employ experienced engineers and advanced testing equipment for quality assurance.",
+  "serviceTestingLabel": "Quality Assurance",
+  
+  "facilityAboutTitle": "About us",
+  "facilityAboutDescription": "Die Cast Mexico's state-of-the-art facility located in Guadalajara, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.",
+  "achievementsTitle": "Facility Highlights",
   "achievementsYearsLabel": "Years in Operation",
   "achievementsYearsValue": "Since 2018",
   "achievementsLandLabel": "Total Land Area",
@@ -182,5 +190,16 @@
   
   "specification": "Specification",
   "value": "Value",
-  "range": "Range"
+  "range": "Range",
+  
+  "facilityOverviewTitle": "Facility Overview",
+  "overviewTabLabel": "Overview",
+  "manufacturingTabLabel": "Manufacturing",
+  "finishingTabLabel": "Surface Finishing",
+  "specificationLabel": "Specification",
+  "processLabel": "Process",
+  "valueLabel": "Value",
+  
+  "iso9001Title": "ISO 9001:2015 Certified",
+  "iso9001Description": "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes."
 }
