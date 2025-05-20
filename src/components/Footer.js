@@ -6,7 +6,7 @@ import images from "../data/images";
 
 // Main container
 const FooterContainer = styled.footer`
-  background-color: #0d2b4b;
+  background-color: #0c1220;
   color: #fff;
   padding: 5rem 0 2rem;
 `;
@@ -193,7 +193,7 @@ const Footer = ({ messages }) => {
           <CompanySection>
             <Logo>
               <a href={localizedLink("/")}>
-                <LogoImg src="/images/updated_footer_logo.png" alt="Die Cast Mexico" />
+                <LogoImg src="/images/die_cast_mx_footer_logo.png" alt="Die Cast Mexico" />
               </a>
             </Logo>
             <Description>
