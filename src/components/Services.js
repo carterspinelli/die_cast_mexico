@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ArrowRight } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import {
@@ -114,7 +114,7 @@ const ReadMoreLink = styled.a`
 `;
 
 const Services = () => {
-  const { messages } = useLanguage();
+  const { messages, language } = useLanguage();
   
   // Using images from the static folder
   const serviceItems = [
@@ -164,7 +164,7 @@ const Services = () => {
           </Badge>
           <Title>{messages.servicesTitle}</Title>
           <Description>{messages.servicesSubtitle}</Description>
-          <Button variant="default" as="a" href="/contact">
+          <Button variant="default" as="a" href={`/${language === 'es' ? 'es/' : ''}contact`}>
             {messages.servicesButtonText}
             <ArrowRight style={{ marginLeft: "0.5rem", width: "1rem", height: "1rem" }} />
           </Button>
