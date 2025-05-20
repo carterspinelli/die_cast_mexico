@@ -141,19 +141,5 @@
   "collaborationsTitle": "Colaboraciones Clave",
   "collaborationsDesc": "En general, la membresía corporativa de Die Cast Mexico en NADCA y AIAG aporta un inmenso valor a nuestra empresa. Aprovechamos el conocimiento, la experiencia y los recursos proporcionados por estas organizaciones para mejorar nuestros procesos de fabricación, cumplir con los estándares de la industria y entregar productos de alta calidad a nuestros clientes en diferentes segmentos industriales. Esta alianza estratégica posiciona a Die Cast Mexico como un socio confiable dentro de la industria de fundición a presión, fomentando el crecimiento y el éxito en este mercado cada vez más competitivo.",
   "nadcaTitle": "Asociación Norteamericana de Fundición a Presión",
-  "aiagTitle": "Grupo de Acción de la Industria Automotriz",
-  
-  "productionMetricsTitle": "Métricas de Producción",
-  "productionEfficiency": "Eficiencia de Producción",
-  "cycleTime": "Tiempo de Ciclo",
-  "cycleTimeValue": "15-60 seg",
-  "uptime": "Tiempo de Actividad",
-  "uptimeValue": "97.5%",
-  
-  "performanceTitle": "Estándares de Rendimiento",
-  "qualityStandards": "Estándares de Calidad",
-  "defectRate": "Tasa de Defectos",
-  "defectRateValue": "< 0.5%",
-  "leadTime": "Tiempo de Entrega",
-  "leadTimeValue": "3-6 semanas"
+  "aiagTitle": "Grupo de Acción de la Industria Automotriz"
 }

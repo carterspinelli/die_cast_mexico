@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 const CapabilitiesSection = styled.section`
   padding: 5rem 1rem;
-  background-color: white;
+  background-color: var(--color-light-bg);
 `;
 
 const Container = styled.div`
@@ -32,76 +32,50 @@ const Subtitle = styled.p`
 
 const SpecsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   
-  @media (max-width: 960px) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
 const SpecsCard = styled.div`
-  border-radius: 12px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  transition: transform 0.3s ease;
+`;
+
+const SpecsTitle = styled.h3`
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
   
-  &:hover {
-    transform: translateY(-5px);
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-accent);
   }
-`;
-
-const MachineSpecsCard = styled(SpecsCard)`
-  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-`;
-
-const QualitySpecsCard = styled(SpecsCard)`
-  background: linear-gradient(135deg, #F0F8FF 0%, #E6E6FA 100%);
-`;
-
-const MetricsCard = styled(SpecsCard)`
-  background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
-`;
-
-const PerformanceCard = styled(SpecsCard)`
-  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-`;
-
-const CardTitle = styled.h3`
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-`;
-
-const CardValue = styled.div`
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0.5rem;
-`;
-
-const CardDescription = styled.div`
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
 `;
 
 const SpecsList = styled.ul`
   list-style: none;
   padding: 0;
-  margin-top: 1rem;
 `;
 
 const SpecItem = styled.li`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eaeaea;
   
   &:last-child {
     margin-bottom: 0;
@@ -112,12 +86,12 @@ const SpecItem = styled.li`
 
 const SpecLabel = styled.span`
   font-weight: 500;
-  color: #555;
+  color: var(--color-text);
 `;
 
 const SpecValue = styled.span`
   font-weight: 600;
-  color: #333;
+  color: var(--color-secondary);
 `;
 
 const Capabilities = () => {
@@ -131,12 +105,13 @@ const Capabilities = () => {
           <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
         <SpecsGrid>
-          {/* Machine Specifications Card */}
-          <MachineSpecsCard>
-            <CardTitle>{translations.machineTitle}</CardTitle>
-            <CardValue>400T</CardValue>
-            <CardDescription>{translations.tonnageCapacity}: {translations.tonnageRange}</CardDescription>
+          <SpecsCard>
+            <SpecsTitle>{translations.machineTitle}</SpecsTitle>
             <SpecsList>
+              <SpecItem>
+                <SpecLabel>{translations.tonnageCapacity}</SpecLabel>
+                <SpecValue>{translations.tonnageRange}</SpecValue>
+              </SpecItem>
               <SpecItem>
                 <SpecLabel>{translations.shotWeight}</SpecLabel>
                 <SpecValue>{translations.shotWeightRange}</SpecValue>
@@ -150,14 +125,14 @@ const Capabilities = () => {
                 <SpecValue>{translations.dieSizeRange}</SpecValue>
               </SpecItem>
             </SpecsList>
-          </MachineSpecsCard>
-          
-          {/* Quality Specifications Card */}
-          <QualitySpecsCard>
-            <CardTitle>{translations.qualitySpecsTitle}</CardTitle>
-            <CardValue>ISO 9001</CardValue>
-            <CardDescription>{translations.dimensionalTolerance}: {translations.dimensionalToleranceValue}</CardDescription>
+          </SpecsCard>
+          <SpecsCard>
+            <SpecsTitle>{translations.qualitySpecsTitle}</SpecsTitle>
             <SpecsList>
+              <SpecItem>
+                <SpecLabel>{translations.dimensionalTolerance}</SpecLabel>
+                <SpecValue>{translations.dimensionalToleranceValue}</SpecValue>
+              </SpecItem>
               <SpecItem>
                 <SpecLabel>{translations.surfaceFinish}</SpecLabel>
                 <SpecValue>{translations.surfaceFinishValue}</SpecValue>
@@ -171,41 +146,7 @@ const Capabilities = () => {
                 <SpecValue>{translations.materialPurityValue}</SpecValue>
               </SpecItem>
             </SpecsList>
-          </QualitySpecsCard>
-          
-          {/* Production Metrics Card */}
-          <MetricsCard>
-            <CardTitle>{translations.productionMetricsTitle}</CardTitle>
-            <CardValue>97.5%</CardValue>
-            <CardDescription>{translations.productionEfficiency}</CardDescription>
-            <SpecsList>
-              <SpecItem>
-                <SpecLabel>{translations.cycleTime}</SpecLabel>
-                <SpecValue>{translations.cycleTimeValue}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.uptime}</SpecLabel>
-                <SpecValue>{translations.uptimeValue}</SpecValue>
-              </SpecItem>
-            </SpecsList>
-          </MetricsCard>
-          
-          {/* Performance Standards Card */}
-          <PerformanceCard>
-            <CardTitle>{translations.performanceTitle}</CardTitle>
-            <CardValue>NADCA</CardValue>
-            <CardDescription>{translations.qualityStandards}</CardDescription>
-            <SpecsList>
-              <SpecItem>
-                <SpecLabel>{translations.defectRate}</SpecLabel>
-                <SpecValue>{translations.defectRateValue}</SpecValue>
-              </SpecItem>
-              <SpecItem>
-                <SpecLabel>{translations.leadTime}</SpecLabel>
-                <SpecValue>{translations.leadTimeValue}</SpecValue>
-              </SpecItem>
-            </SpecsList>
-          </PerformanceCard>
+          </SpecsCard>
         </SpecsGrid>
       </Container>
     </CapabilitiesSection>
