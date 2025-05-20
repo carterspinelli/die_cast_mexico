@@ -235,9 +235,9 @@ const FacilityAbout = () => {
         <div style={{ marginTop: '4rem' }}>
           <AchievementsBox>
             <AchievementsHeader>
-              <AchievementsTitle>{translate(messages, 'achievementsTitle', "Our Achievements")}</AchievementsTitle>
+              <AchievementsTitle>{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
               <AchievementsDescription>
-                {translate(messages, 'achievementsDesc', "With decades of experience in high-pressure die casting, we've built a reputation for excellence in delivering precision components across multiple industries.")}
+                {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
               </AchievementsDescription>
             </AchievementsHeader>
             
