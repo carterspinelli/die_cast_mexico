@@ -53,6 +53,56 @@
   "marineTitle": "Marina y Embarcaciones",
   "marineDesc": "Componentes resistentes a la corrosión para motores marinos, hélices y equipos de cubierta.",
   
+  "capabilitiesTitle": "Nuestras Capacidades Técnicas",
+  "capabilitiesSubtitle": "Equipos de última generación e ingeniería de precisión",
+  
+  "machineTitle": "Especificaciones de Máquinas",
+  "tonnageCapacity": "Capacidad de Tonelaje",
+  "tonnageRange": "400 - 1600 toneladas",
+  "shotWeight": "Peso de Inyección",
+  "shotWeightRange": "0.5 - 15 kg",
+  "partWeight": "Peso de Piezas",
+  "partWeightRange": "0.1 - 12 kg",
+  "dieSize": "Tamaño del Molde",
+  "dieSizeRange": "Hasta 1250 × 1250 mm",
+  
+  "qualitySpecsTitle": "Especificaciones de Calidad",
+  "dimensionalTolerance": "Tolerancia Dimensional",
+  "dimensionalToleranceValue": "±0.05 mm",
+  "surfaceFinish": "Acabado Superficial",
+  "surfaceFinishValue": "Ra 0.8 - 3.2 μm",
+  "wallThickness": "Espesor Mínimo de Pared",
+  "wallThicknessValue": "0.5 mm",
+  "materialPurity": "Pureza del Material",
+  "materialPurityValue": "99.7%",
+  
+  "productSegmentsTitle": "Segmentos de Productos",
+  "productSegmentsSubtitle": "Soluciones de fundición a presión específicas para cada industria",
+  
+  "automotiveSegmentTitle": "Componentes Automotrices",
+  "automotiveSegmentDesc": "Soportes de motor, carcasas de transmisión, componentes de dirección y piezas estructurales con altas propiedades mecánicas.",
+  
+  "telecomSegmentTitle": "Hardware de Telecomunicaciones",
+  "telecomSegmentDesc": "Disipadores de calor, enclosures, soportes de montaje y carcasas de conectores con propiedades precisas de blindaje electromagnético.",
+  
+  "instrumentationSegmentTitle": "Instrumentación",
+  "instrumentationSegmentDesc": "Carcasas de sensores, cajas de medidores, paneles de control y componentes de instrumentos de precisión con tolerancias ajustadas.",
+  
+  "marineSegmentTitle": "Aplicaciones Marinas",
+  "marineSegmentDesc": "Componentes de hélices resistentes a la corrosión, piezas de motor y hardware para entornos marinos severos.",
+  
+  "automationSegmentTitle": "Automatización",
+  "automationSegmentDesc": "Componentes robóticos, carcasas de actuadores y piezas de automatización industrial que requieren alta estabilidad dimensional.",
+  
+  "powertoolsSegmentTitle": "Herramientas Eléctricas",
+  "powertoolsSegmentDesc": "Carcasas y componentes para herramientas eléctricas que requieren alta resistencia e impacto.",
+  
+  "lightingSegmentTitle": "Accesorios de Iluminación",
+  "lightingSegmentDesc": "Disipadores de calor LED, carcasas de luminarias y elementos decorativos con acabado superficial premium.",
+  
+  "pneumaticSegmentTitle": "Sistemas Neumáticos",
+  "pneumaticSegmentDesc": "Cuerpos de válvulas, componentes de cilindros y accesorios para sistemas de control neumático que requieren estanqueidad.",
+  
   "aboutTitle": "Acerca de Die Cast Mexico",
   "aboutSubtitle": "Ofreciendo soluciones de fundición a presión de calidad desde 2005",
   "aboutDesc": "Die Cast Mexico es un proveedor líder de servicios de fundición a presión ubicado en Monterrey, México. Con más de 15 años de experiencia, nos especializamos en fundición a presión de aluminio de alta presión para diversas industrias. Nuestras instalaciones de vanguardia combinan tecnología de punta con artesanía especializada para entregar productos de calidad excepcional que cumplen con las especificaciones exactas de nuestros clientes.",

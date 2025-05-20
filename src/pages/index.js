@@ -4,6 +4,8 @@ import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Industries from "../components/Industries";
+import Capabilities from "../components/Capabilities";
+import ProductSegments from "../components/ProductSegments";
 import styled from "styled-components";
 import images from "../data/images";
 import { useLanguage } from "../context/LanguageContext";
@@ -203,6 +205,10 @@ const IndexPage = () => {
       </FacilitySection>
       
       <Industries messages={messages} />
+      
+      <Capabilities />
+      
+      <ProductSegments />
       
       <AboutSection id="about">
         <Container>

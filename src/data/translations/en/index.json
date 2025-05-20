@@ -53,6 +53,56 @@
   "marineTitle": "Marine & Watercraft",
   "marineDesc": "Corrosion-resistant components for marine engines, propellers, and deck equipment.",
   
+  "capabilitiesTitle": "Our Technical Capabilities",
+  "capabilitiesSubtitle": "State-of-the-art equipment and precision engineering",
+  
+  "machineTitle": "Machine Specifications",
+  "tonnageCapacity": "Tonnage Capacity",
+  "tonnageRange": "400 - 1600 tons",
+  "shotWeight": "Shot Weight",
+  "shotWeightRange": "0.5 - 15 kg",
+  "partWeight": "Part Weight",
+  "partWeightRange": "0.1 - 12 kg",
+  "dieSize": "Die Size",
+  "dieSizeRange": "Up to 1250 × 1250 mm",
+  
+  "qualitySpecsTitle": "Quality Specifications",
+  "dimensionalTolerance": "Dimensional Tolerance",
+  "dimensionalToleranceValue": "±0.05 mm",
+  "surfaceFinish": "Surface Finish",
+  "surfaceFinishValue": "Ra 0.8 - 3.2 μm",
+  "wallThickness": "Minimum Wall Thickness",
+  "wallThicknessValue": "0.5 mm",
+  "materialPurity": "Material Purity",
+  "materialPurityValue": "99.7%",
+  
+  "productSegmentsTitle": "Product Segments",
+  "productSegmentsSubtitle": "Industry-specific die casting solutions",
+  
+  "automotiveSegmentTitle": "Automotive Components",
+  "automotiveSegmentDesc": "Engine brackets, transmission housings, steering components, and structural parts with high mechanical properties.",
+  
+  "telecomSegmentTitle": "Telecom Hardware",
+  "telecomSegmentDesc": "Heat sinks, enclosures, mounting brackets, and connector housings with precise electromagnetic shielding properties.",
+  
+  "instrumentationSegmentTitle": "Instrumentation",
+  "instrumentationSegmentDesc": "Sensor housings, meter cases, control panels, and precision instrument components with tight tolerances.",
+  
+  "marineSegmentTitle": "Marine Applications",
+  "marineSegmentDesc": "Corrosion-resistant propeller components, engine parts, and hardware for harsh marine environments.",
+  
+  "automationSegmentTitle": "Automation",
+  "automationSegmentDesc": "Robotic components, actuator housings, and industrial automation parts requiring high dimensional stability.",
+  
+  "powertoolsSegmentTitle": "Power Tools",
+  "powertoolsSegmentDesc": "Housings and components for power tools that require high strength and impact resistance.",
+  
+  "lightingSegmentTitle": "Lighting Fixtures",
+  "lightingSegmentDesc": "LED heat sinks, fixture housings, and decorative elements with premium surface finish.",
+  
+  "pneumaticSegmentTitle": "Pneumatic Systems",
+  "pneumaticSegmentDesc": "Valve bodies, cylinder components, and fittings for pneumatic control systems requiring pressure tightness.",
+  
   "aboutTitle": "About Die Cast Mexico",
   "aboutSubtitle": "Delivering quality die casting solutions since 2005",
   "aboutDesc": "Die Cast Mexico is a leading provider of die casting services located in Monterrey, Mexico. With over 15 years of experience, we specialize in high-pressure aluminum die casting for various industries. Our state-of-the-art facility combines cutting-edge technology with skilled craftsmanship to deliver exceptional quality products that meet our clients' exact specifications.",
