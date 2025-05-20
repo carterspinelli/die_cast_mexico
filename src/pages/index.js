@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import Services from "../components/Services";
 import Capabilities from "../components/Capabilities";
 import IndustrySegments from "../components/IndustrySegments";
+import KeyCollaborations from "../components/KeyCollaborations";
 import styled from "styled-components";
 import images from "../data/images";
 import { useLanguage } from "../context/LanguageContext";
@@ -206,6 +207,8 @@ const IndexPage = () => {
       <Capabilities />
       
       <IndustrySegments />
+      
+      <KeyCollaborations />
       
       <AboutSection id="about">
         <Container>

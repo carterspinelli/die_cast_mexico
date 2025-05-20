@@ -15,8 +15,12 @@ const images = {
     "/images/die_cast_cnc.png"
   ],
   
-  // ISO certification
+  // Certifications and collaborations
   certification: "/images/iso9001_diecast.webp",
+  collaborations: {
+    aiag: "/images/aiag_diecast.png",
+    nadca: "/images/nadca_diecast.png"
+  },
   
   // Industry-specific images
   industries: {
