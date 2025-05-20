@@ -133,7 +133,7 @@ const translate = (messages, key, fallback) => {
 };
 
 const AchievementsTitle = styled.h3`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   margin: 0;
 `;
@@ -141,6 +141,7 @@ const AchievementsTitle = styled.h3`
 const AchievementsDescription = styled.p`
   max-width: 768px;
   color: #64748b;
+  font-size: 0.95rem;
 `;
 
 const AchievementsGrid = styled.div`
@@ -155,19 +156,20 @@ const AchievementsGrid = styled.div`
 const Achievement = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
 `;
 
 const AchievementLabel = styled.p`
   color: #64748b;
+  font-size: 0.9rem;
 `;
 
 const AchievementValue = styled.span`
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   font-weight: 600;
   
   @media (min-width: 768px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 
@@ -186,10 +188,6 @@ const FacilityAbout = () => {
     {
       label: translate(messages, 'achievementsBuildingLabel', "Building Size"),
       value: translate(messages, 'achievementsBuildingValue', "15,000 m²")
-    },
-    {
-      label: translate(messages, 'achievementsQualityLabel', "Quality Approval"),
-      value: translate(messages, 'achievementsQualityValue', "99.9%")
     }
   ];
   

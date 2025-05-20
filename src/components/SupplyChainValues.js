@@ -22,25 +22,25 @@ const Header = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #1e293b;
   margin-bottom: 1rem;
   
   @media (min-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.25rem;
   }
 `;
 
 const Description = styled.p`
   color: #64748b;
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-size: 0.95rem;
+  line-height: 1.6;
   margin-bottom: 1.5rem;
   max-width: 900px;
   
   @media (min-width: 768px) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 `;
 
