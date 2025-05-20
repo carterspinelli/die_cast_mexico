@@ -11,6 +11,8 @@
   "description": "",
   "dependencies": {
     "@radix-ui/react-popover": "^1.1.13",
+    "@radix-ui/react-slot": "^1.2.2",
+    "@radix-ui/react-tabs": "^1.1.11",
     "babel-plugin-styled-components": "^2.1.4",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^4.1.17",
