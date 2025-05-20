@@ -128,14 +128,14 @@ const Services = () => {
     {
       id: "mould",
       title: "Mould & Fixture Design",
-      summary: "With professional design engineering and modernized machining technology, Die Cast Mexico can design and manufacture all kinds of complicated moulds for customers; including soft moulding solutions for rapid prototyping and develop high efficiency CNC machining fixtures.",
+      summary: "Die Cast Mexico designs and manufactures complex molds using professional engineering and modern technology, offering both rapid prototyping solutions and high-efficiency CNC machining fixtures.",
       label: "Design & Engineering",
       image: "/images/tool_design.jpg",
     },
     {
       id: "cnc",
       title: "CNC Precision Machining",
-      summary: "Die Cast Mexico has an extremely competent CNC machining ability, with higher machining precision and advanced process quality control, which can meet customer's processing requirement from simple to most complicated and challenging. Our horizontal CNC centers maintain high levels of precision on high volumes.",
+      summary: "Die Cast Mexico offers precise CNC machining from simple to complex projects with advanced quality control. Our horizontal CNC centers deliver high precision at volume.",
       label: "Precision Manufacturing",
       image: "/images/cnc_diecast.webp",
     },
@@ -149,7 +149,7 @@ const Services = () => {
     {
       id: "testing",
       title: "Testing & Assembly",
-      summary: "Die Cast Mexico participates in customer support actions from the initial stage, considering customer needs, and establishes product solutions. We utilize various test equipment like admeasuring apparatus and power balancing equipment, with experienced test engineers and advanced systems.",
+      summary: "Die Cast Mexico provides early-stage support, creating solutions based on customer needs. We employ experienced engineers and advanced testing equipment for quality assurance.",
       label: "Quality Assurance",
       image: "/images/assembly_testing.webp",
     },
