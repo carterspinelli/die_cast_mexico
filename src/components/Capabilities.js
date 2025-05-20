@@ -205,29 +205,29 @@ const Capabilities = () => {
       id: "overview",
       label: "Overview",
       items: [
-        { attribute: "Workforce", value: "125 skilled employees" },
-        { attribute: "Material Capacity", value: "Up to 250ton/month aluminum ingots" },
-        { attribute: "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
+        { attribute: translations.workforce || "Workforce", value: "125+" },
+        { attribute: translations.materialCapacity || "Material Capacity", value: translations.language === "es" ? "Hasta 250 toneladas/mes de lingotes de aluminio" : "Up to 250ton/month aluminum ingots" },
+        { attribute: translations.aluminumAlloys || "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
       ]
     },
     {
       id: "manufacturing",
       label: "Manufacturing",
       items: [
-        { attribute: "Die Casting", value: "8 full automatic manufacturing cells" },
-        { attribute: "CNC Machining", value: "19 horizontal 4 axis machines" },
-        { attribute: "Mechanical Assembly", value: "Dowel pins, labels, helicoils, plugs, etc." }
+        { attribute: translations.dieCasting || "Die Casting", value: translations.language === "es" ? "8 celdas de fabricación automáticas" : "8 full automatic manufacturing cells" },
+        { attribute: translations.cncMachining || "CNC Machining", value: translations.language === "es" ? "19 máquinas horizontales de 4 ejes" : "19 horizontal 4 axis machines" },
+        { attribute: translations.mechanicalAssembly || "Mechanical Assembly", value: translations.language === "es" ? "Pasadores, etiquetas, tapones, etc." : "Dowel pins, labels, helicoils, plugs, etc." }
       ]
     },
     {
       id: "finishing",
       label: "Surface Finishing",
       items: [
-        { attribute: "FIP Gasket", value: "Precision gasket application" },
-        { attribute: "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
-        { attribute: "Liquid Painting", value: "Custom color solutions" },
-        { attribute: "Nickel Plating", value: "High-quality surface finish" },
-        { attribute: "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
+        { attribute: translations.fipGasket || "FIP Gasket", value: translations.language === "es" ? "Aplicación de juntas de precisión" : "Precision gasket application" },
+        { attribute: translations.powderPainting || "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
+        { attribute: translations.liquidPainting || "Liquid Painting", value: translations.language === "es" ? "Soluciones de color personalizadas" : "Custom color solutions" },
+        { attribute: translations.nickelPlating || "Nickel Plating", value: translations.language === "es" ? "Acabado superficial de alta calidad" : "High-quality surface finish" },
+        { attribute: translations.surfaceTreatment || "Surface Treatment", value: "Tri-chrome passivation on Aluminum: Surtec 650®" }
       ]
     }
   ];
@@ -274,12 +274,29 @@ const Capabilities = () => {
                     </TableHead>
                     <tbody>
                       {tab.items.map((item, index) => (
-                        <tr key={index} style={{ borderBottom: index !== tab.items.length - 1 ? '1px solid #e2e8f0' : 'none' }}>
-                          <td style={{ padding: '1rem', borderRight: '1px solid #e2e8f0' }}>
-                            <PrimaryCode>{item.attribute}</PrimaryCode>
+                        <tr key={index} style={{ 
+                          borderBottom: index !== tab.items.length - 1 ? '1px solid #e2e8f0' : 'none'
+                        }}>
+                          <td style={{ 
+                            padding: '1rem', 
+                            borderRight: '1px solid #e2e8f0'
+                          }}>
+                            <div style={{ 
+                              display: 'inline-flex', 
+                              alignItems: 'center', 
+                              gap: '0.25rem' 
+                            }}>
+                              <PrimaryCode>{item.attribute}</PrimaryCode>
+                            </div>
                           </td>
                           <td style={{ padding: '1rem' }}>
-                            <SecondaryCode>{item.value}</SecondaryCode>
+                            <div style={{ 
+                              display: 'inline-flex', 
+                              alignItems: 'center', 
+                              gap: '0.25rem' 
+                            }}>
+                              <SecondaryCode>{item.value}</SecondaryCode>
+                            </div>
                           </td>
                         </tr>
                       ))}
