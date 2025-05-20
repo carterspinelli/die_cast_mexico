@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import Logo from "./Logo";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 import images from "../data/images";
 
@@ -125,7 +124,7 @@ const Footer = ({ messages }) => {
     <FooterContainer>
       <FooterContent>
         <FooterColumn>
-          <Logo />
+          <img src="/images/footer_logo_dcmx.png" alt="Die Cast Mexico" style={{ height: '70px', marginBottom: '1rem' }} />
           <FooterText>
             Die Cast Mexico - {messages.footerRights} © {currentYear}
           </FooterText>
@@ -221,7 +220,6 @@ const Footer = ({ messages }) => {
       
       <FooterBottom>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
-          <img src="/images/footer_logo_dcmx.png" alt="Die Cast Mexico" style={{ height: '70px', marginRight: '1rem' }} />
           <img src={images.certification} alt="ISO 9001:2015 Certified" style={{ height: '70px', marginRight: '1rem' }} />
           <p>© {currentYear} Die Cast Mexico. {messages.footerRights}.</p>
         </div>
