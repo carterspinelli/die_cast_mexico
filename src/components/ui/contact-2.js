@@ -150,7 +150,15 @@ export const Contact2 = ({
   email,
   web,
 }) => {
-  const { messages } = useLanguage();
+  let messages = {};
+  try {
+    // Try to use the language context, but provide a fallback if it's not available
+    const langContext = useLanguage();
+    messages = langContext?.messages || {};
+  } catch (error) {
+    // Fallback if the context is not available (e.g., during SSR)
+    console.warn("Language context not available, using default text");
+  }
   
   return (
     <Section>

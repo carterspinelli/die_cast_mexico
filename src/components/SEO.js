@@ -4,7 +4,16 @@ import { useStaticQuery, graphql } from "gatsby";
 import { useLanguage } from "../context/LanguageContext";
 
 function SEO({ description, lang, meta = [], title, image }) {
-  const { language } = useLanguage();
+  let language = 'en';
+  try {
+    // Try to use the language context, but provide a fallback if it's not available
+    const langContext = useLanguage();
+    language = langContext?.language || 'en';
+  } catch (error) {
+    // Fallback if the context is not available (e.g., during SSR)
+    console.warn("Language context not available, using default language");
+  }
+  
   const { site } = useStaticQuery(
     graphql`
       query {
