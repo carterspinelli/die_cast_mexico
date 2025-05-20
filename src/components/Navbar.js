@@ -63,7 +63,7 @@ const NavLinks = styled.div`
 
 // Individual nav link styling
 const NavLink = styled(Link)`
-  color: var(--color-secondary);
+  color: var(--gray-dark);
   font-weight: 500;
   text-decoration: none;
   position: relative;
@@ -77,12 +77,12 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-primary);
+    background-color: var(--primary);
     transition: width 0.3s ease;
   }
   
   &:hover {
-    color: var(--color-primary);
+    color: var(--primary);
     transform: translateY(-1px);
   }
   
@@ -94,21 +94,21 @@ const NavLink = styled(Link)`
 
 // CTA Button styling
 const ContactButton = styled(Link)`
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 0.6rem 1.25rem;
-  border-radius: 0.375rem;
+  border-radius: var(--border-radius-md);
   font-weight: 600;
   font-size: 0.9rem;
   margin-left: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(0, 118, 255, 0.25);
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
   
   &:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 118, 255, 0.35);
-    color: white;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.25);
+    color: var(--white);
   }
   
   @media (max-width: 768px) {

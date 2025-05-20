@@ -4,31 +4,13 @@ import { useLanguage } from "../context/LanguageContext";
 import { TypeTable } from "./ui/type-table";
 
 const CapabilitiesSection = styled.section`
-  padding: 6rem 1rem;
-  background-color: #f8f9fc;
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
-                      linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
-    background-size: 80px 80px;
-    opacity: 0.3;
-    z-index: 0;
-  }
+  padding: 5rem 1rem;
+  background-color: var(--color-light-bg);
 `;
 
 const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 `;
 
 const SectionHeader = styled.div`
@@ -38,28 +20,15 @@ const SectionHeader = styled.div`
 
 const Title = styled.h2`
   font-size: 2.5rem;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background-color: var(--color-primary);
-  }
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
   color: var(--color-text);
   max-width: 700px;
-  margin: 2rem auto 0;
+  margin: 0 auto;
 `;
 
 const SpecsGrid = styled.div`
@@ -70,20 +39,14 @@ const SpecsGrid = styled.div`
 
 const SpecsCard = styled.div`
   background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  padding: 2.5rem;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  }
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 2rem;
 `;
 
 const SpecsTitle = styled.h3`
   font-size: 1.8rem;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: 2rem;
   position: relative;
   padding-bottom: 1rem;
@@ -95,7 +58,7 @@ const SpecsTitle = styled.h3`
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
   }
 `;
 
