@@ -62,6 +62,42 @@ const SpecsTitle = styled.h3`
   }
 `;
 
+// Spacing for Facility section
+const SectionSpacing = styled.div`
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+`;
+
+const CapabilityList = styled.ul`
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+  margin-top: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const CapabilityItem = styled.li`
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  
+  &:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+`;
+
 const Capabilities = () => {
   const { messages: translations } = useLanguage();
   
@@ -116,7 +152,20 @@ const Capabilities = () => {
     }
   };
   
-  // Additional capabilities are available but not shown in the interface
+  // Facility capabilities and resources
+  const facilityCapabilities = [
+    "Employees ≅ 125",
+    "Aluminum ingots ≅ up to 250ton/month",
+    "Alloys: AlSi12(Fe) & A380, A360, A413, ADC12",
+    "Die casting: 8 full automatic manufacturing cells",
+    "CNCs: 19 horizontal 4 axis machines",
+    "Mechanical Assembly: dowel pins, labels, helicoils, plugs, etc.",
+    "FIP Gasket application",
+    "Powder painting: Akzo Nobel, Cardinal, Sherwin Williams, etc.",
+    "Liquid painting",
+    "Nickel Plating surface finish",
+    "Tri-chrome passivation on Aluminum: Surtec 650®"
+  ];
   
   return (
     <CapabilitiesSection>
@@ -125,6 +174,16 @@ const Capabilities = () => {
           <Title>{translations.capabilitiesTitle}</Title>
           <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
+        
+        <SpecsCard>
+          <SpecsTitle>Facility Overview</SpecsTitle>
+          <CapabilityList>
+            {facilityCapabilities.map((capability, index) => (
+              <CapabilityItem key={index}>{capability}</CapabilityItem>
+            ))}
+          </CapabilityList>
+        </SpecsCard>
+        
         <SpecsGrid>
           <SpecsCard>
             <SpecsTitle>{translations.machineTitle}</SpecsTitle>
