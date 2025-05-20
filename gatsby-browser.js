@@ -1,11 +1,41 @@
 import React from "react";
-import { LanguageProvider } from "./src/context/LanguageContext";
 import "./src/styles/global.css";
 
+// Adding custom styles for animations in a client-side hook that Gatsby supports
+export const onInitialClientRender = () => {
+  // Create the style element
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes background-gradient {
+      0%, 100% {
+        transform: translate(0, 0);
+        animation-delay: var(--background-gradient-delay, 0s);
+      }
+      20% {
+        transform: translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)));
+      }
+      40% {
+        transform: translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)));
+      }
+      60% {
+        transform: translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)));
+      }
+      80% {
+        transform: translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)));
+      }
+    }
+
+    .animate-background-gradient {
+      animation: background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
 export const wrapRootElement = ({ element }) => {
-  return <LanguageProvider>{element}</LanguageProvider>;
+  return <>{element}</>;
 };
 
 export const onClientEntry = () => {
-  // Initialize site-wide JavaScript functionality here
+  // Any client-side initialization
 };

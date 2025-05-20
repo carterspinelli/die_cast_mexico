@@ -27,16 +27,19 @@
   "qualityDesc": "Nuestros rigurosos procesos de inspección garantizan que todos los productos cumplan con estrictos estándares y especificaciones de calidad.",
   
   "facilityTitle": "Nuestras Instalaciones",
-  "facilitySubtitle": "Equipamiento de última generación y profesionales con experiencia",
+  "facilitySubtitle": "Capacidades de fabricación de última generación",
   
-  "capacityTitle": "Capacidad de Producción",
-  "capacityDesc": "Instalación de fabricación de más de 2,300 m² con capacidad para manejar grandes series de producción.",
+  "productionAreaTitle": "Área de Producción",
+  "productionAreaSubtitle": "Espacio de fábrica de última generación",
   
-  "technologyTitle": "Tecnología Avanzada",
-  "technologyDesc": "Equipo que va desde máquinas de 400 a 1600 toneladas para una amplia variedad de tamaños de piezas.",
+  "machineCountTitle": "Máquinas de Fundición",
+  "machineCountSubtitle": "Equipos de alta precisión",
   
-  "staffTitle": "Equipo Experto",
-  "staffDesc": "Ingenieros y técnicos experimentados con más de 20 años en la industria de la fundición a presión.",
+  "experienceTitle": "Años de Experiencia",
+  "experienceSubtitle": "Expertise en la industria desde 1998",
+  
+  "qualityRatingTitle": "Calificación de Calidad",
+  "qualityRatingSubtitle": "Procesos certificados ISO 9001",
   
   "industriesTitle": "Industrias que Atendemos",
   "industriesSubtitle": "Entregando soluciones de fundición a presión de calidad en múltiples sectores",
