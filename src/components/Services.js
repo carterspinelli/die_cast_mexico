@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Cog, Monitor, Layers } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const ServicesSection = styled.section`
@@ -55,7 +54,7 @@ const ServiceGrid = styled.div`
 `;
 
 const Card = styled.div`
-  background-color: var(--color-light-bg);
+  background-color: #f8f9fc;
   border: none;
   padding: 1.5rem;
   text-align: center;
@@ -67,16 +66,6 @@ const Card = styled.div`
   }
 `;
 
-const CardHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 0.75rem;
-`;
-
-const CardContent = styled.div`
-  padding: 0 1rem;
-`;
-
 const CardTitle = styled.h3`
   margin-top: 1.5rem;
   font-size: 1.25rem;
@@ -85,12 +74,13 @@ const CardTitle = styled.h3`
 `;
 
 const CardDescription = styled.p`
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   color: var(--color-text);
   line-height: 1.5;
+  margin-top: 0.75rem;
 `;
 
-const CardDecoratorContainer = styled.div`
+const IconGrid = styled.div`
   position: relative;
   width: 9rem;
   height: 9rem;
@@ -100,32 +90,27 @@ const CardDecoratorContainer = styled.div`
     content: "";
     position: absolute;
     inset: 0;
-    background-image: linear-gradient(to right, var(--color-border) 1px, transparent 1px), 
-                      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+    background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px), 
+                      linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
     background-size: 24px 24px;
-    opacity: 0.1;
+    opacity: 0.6;
     mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 70%, transparent 100%);
   }
 `;
 
-const IconContainer = styled.div`
+const IconBox = styled.div`
   position: absolute;
-  inset: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background-color: var(--color-primary);
-  border-top: 1px solid var(--color-primary-dark);
-  border-left: 1px solid var(--color-primary-dark);
-  
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    color: white;
-  }
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  z-index: 1;
 `;
 
 const CtaContainer = styled.div`
@@ -148,10 +133,41 @@ const CtaButton = styled.a`
   }
 `;
 
-const CardDecorator = ({ children }) => (
-  <CardDecoratorContainer>
-    <IconContainer>{children}</IconContainer>
-  </CardDecoratorContainer>
+// SVG icons
+const CogIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+    <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+    <path d="M12 2v2" />
+    <path d="M12 22v-2" />
+    <path d="m17 20.66-1-1.73" />
+    <path d="M11 10.27 7 3.34" />
+    <path d="m20.66 17-1.73-1" />
+    <path d="m3.34 7 1.73 1" />
+    <path d="M14 12h8" />
+    <path d="M2 12h2" />
+    <path d="m20.66 7-1.73 1" />
+    <path d="m3.34 17 1.73-1" />
+    <path d="m17 3.34-1 1.73" />
+    <path d="m11 13.73-4 6.93" />
+  </svg>
+);
+
+const ComputerIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <line x1="8" x2="16" y1="21" y2="21" />
+    <line x1="12" x2="12" y1="17" y2="21" />
+  </svg>
+);
+
+const CubeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m21 16-9 5-9-5V8l9-5 9 5v8z" />
+    <path d="m12 21v-8" />
+    <path d="M12 3v8" />
+    <path d="m3 8 9 5 9-5" />
+  </svg>
 );
 
 const Services = () => {
@@ -159,17 +175,17 @@ const Services = () => {
   
   const serviceItems = [
     {
-      icon: <Cog />,
+      icon: <CogIcon />,
       title: messages.highPressureTitle,
       description: messages.highPressureDesc
     },
     {
-      icon: <Monitor />,
+      icon: <ComputerIcon />,
       title: messages.moldingTitle,
       description: messages.moldingDesc
     },
     {
-      icon: <Layers />,
+      icon: <CubeIcon />,
       title: messages.finishingTitle,
       description: messages.finishingDesc
     }
@@ -186,15 +202,13 @@ const Services = () => {
         <ServiceGrid>
           {serviceItems.map((service, index) => (
             <Card key={index} className="fade-in">
-              <CardHeader>
-                <CardDecorator>
+              <IconGrid>
+                <IconBox>
                   {service.icon}
-                </CardDecorator>
-                <CardTitle>{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{service.description}</CardDescription>
-              </CardContent>
+                </IconBox>
+              </IconGrid>
+              <CardTitle>{service.title}</CardTitle>
+              <CardDescription>{service.description}</CardDescription>
             </Card>
           ))}
         </ServiceGrid>
