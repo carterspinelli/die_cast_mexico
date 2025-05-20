@@ -108,7 +108,7 @@ const InfoBoxText = styled.p`
 
 
 const AchievementsBox = styled.div`
-  background-color: #172b49;
+  background-color: #0c1220;
   color: white;
   border-radius: 0.75rem;
   padding: 2.5rem 4rem;

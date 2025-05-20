@@ -4,9 +4,9 @@ import { cn } from "../../utils/classNames";
 
 const ButtonVariants = {
   default: {
-    background: "var(--color-primary, #172b49)",
+    background: "var(--color-primary, #0c1220)",
     color: "#ffffff",
-    hover: "var(--color-primary-hover, #213c69)",
+    hover: "var(--color-primary-hover, #172b49)",
     active: "var(--color-primary-active, #0d1a29)",
   },
   destructive: {
@@ -36,7 +36,7 @@ const ButtonVariants = {
   },
   link: {
     background: "transparent",
-    color: "var(--color-primary, #172b49)",
+    color: "var(--color-primary, #0c1220)",
     hover: "transparent",
     active: "transparent",
     textDecoration: "underline",

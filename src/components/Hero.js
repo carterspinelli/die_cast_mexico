@@ -67,7 +67,7 @@ const ButtonContainer = styled.div`
 `;
 
 const PrimaryButton = styled(Link)`
-  background-color: #172b49;
+  background-color: #0c1220;
   color: var(--white);
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius-md);
@@ -75,7 +75,7 @@ const PrimaryButton = styled(Link)`
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: #213c69;
+    background-color: #172b49;
     transform: translateY(-2px);
     color: var(--white);
   }

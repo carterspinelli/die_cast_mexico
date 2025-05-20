@@ -77,12 +77,12 @@ const NavLink = styled(Link)`
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #172b49;
+    background-color: #0c1220;
     transition: width 0.3s ease;
   }
   
   &:hover {
-    color: #172b49;
+    color: #0c1220;
     transform: translateY(-1px);
   }
   
@@ -94,7 +94,7 @@ const NavLink = styled(Link)`
 
 // CTA Button styling
 const ContactButton = styled(Link)`
-  background-color: #172b49;
+  background-color: #0c1220;
   color: var(--white);
   padding: 0.6rem 1.25rem;
   border-radius: var(--border-radius-md);
@@ -102,12 +102,12 @@ const ContactButton = styled(Link)`
   font-size: 0.9rem;
   margin-left: 1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(23, 43, 73, 0.2);
+  box-shadow: 0 2px 10px rgba(12, 18, 32, 0.2);
   
   &:hover {
-    background-color: #213c69;
+    background-color: #172b49;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(23, 43, 73, 0.25);
+    box-shadow: 0 4px 12px rgba(12, 18, 32, 0.25);
     color: var(--white);
   }
   
@@ -204,14 +204,14 @@ const MobileNavLink = styled(Link)`
   transition: color 0.3s ease;
   
   &:hover {
-    color: #172b49;
+    color: #0c1220;
   }
 `;
 
 // Mobile CTA Button
 const MobileCTAButton = styled(Link)`
   margin-top: 2rem;
-  background-color: #172b49;
+  background-color: #0c1220;
   color: var(--white);
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius-md);
@@ -220,7 +220,7 @@ const MobileCTAButton = styled(Link)`
   transition: all 0.3s ease;
   
   &:hover {
-    background-color: #213c69;
+    background-color: #172b49;
     color: var(--white);
   }
 `;
