@@ -47,6 +47,11 @@ export const useLanguage = () => {
 
 // Helper function to construct localized paths
 export const getLocalizedPath = (path, language) => {
+  // For hash links, don't add language prefix - this helps with anchor navigation
+  if (path.includes('#')) {
+    return path;
+  }
+  
   if (language === "en") {
     return path;
   }
