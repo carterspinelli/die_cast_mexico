@@ -36,56 +36,64 @@ const Subtitle = styled.p`
   text-align: center;
 `;
 
-// Facility Stats Components
-const StatsContainer = styled.div`
+// Main facility stats container styled to match the reference image exactly
+const FacilityCard = styled.div`
   position: relative;
   width: 100%;
-  height: auto;
-  overflow: hidden;
-  border-radius: 12px;
+  min-height: 550px;
   background-color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 `;
 
-const GradientBackground = styled.div`
+// The diagonal gradient background overlay
+const DiagonalGradient = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #a78bfa 0%, #3b82f6 50%, #34d399 100%);
-  clip-path: polygon(30% 0, 100% 0, 100% 100%, 100% 100%);
-  z-index: 1;
+  background: linear-gradient(135deg, #9c6eff 0%, #3c7cf6 50%, #34d399 100%);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 0;
 `;
 
+// Content container with padding
 const StatsContent = styled.div`
   position: relative;
-  z-index: 2;
-  padding: 2rem;
+  z-index: 1;
+  padding: 2.5rem;
+  width: 100%;
+  height: 100%;
 `;
 
-const StatGroup = styled.div`
-  margin-bottom: 1.5rem;
+// Individual stat item 
+const StatItem = styled.div`
+  margin-bottom: 1.75rem;
 `;
 
+// Stat title (smaller text)
 const StatTitle = styled.h3`
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
-  margin: 0 0 0.25rem 0;
-  color: #1F2937;
+  margin: 0;
+  color: #1f2937;
 `;
 
+// Stat value (large number)
 const StatValue = styled.p`
   font-size: 2.5rem;
   font-weight: 700;
-  margin: 0 0 0.25rem 0;
-  color: #1F2937;
+  margin: 0.25rem 0;
+  color: #111827;
 `;
 
+// Description text
 const StatDescription = styled.p`
   font-size: 0.875rem;
   margin: 0;
-  color: rgba(31, 41, 55, 0.8);
+  color: #4b5563;
 `;
 
 const OurFacility = () => {
@@ -95,46 +103,46 @@ const OurFacility = () => {
     <FacilitySection id="facility">
       <Container>
         <SectionHeader>
-          <Title className="slide-in-left">{messages.facilityTitle || "Our Facility"}</Title>
-          <Subtitle className="slide-in-right">
+          <Title>{messages.facilityTitle || "Our Facility"}</Title>
+          <Subtitle>
             {messages.facilitySubtitle || "State-of-the-art equipment and experienced professionals"}
           </Subtitle>
         </SectionHeader>
         
-        <StatsContainer>
-          <GradientBackground />
+        <FacilityCard>
+          <DiagonalGradient />
           <StatsContent>
-            <StatGroup>
+            <StatItem>
               <StatTitle>Manufacturing Capacity</StatTitle>
               <StatValue>35,000 m²</StatValue>
               <StatDescription>Total facility size serving North America</StatDescription>
-            </StatGroup>
+            </StatItem>
             
-            <StatGroup>
+            <StatItem>
               <StatTitle>Die Cast Machines</StatTitle>
               <StatValue>24</StatValue>
               <StatDescription>High pressure casting machines</StatDescription>
-            </StatGroup>
+            </StatItem>
             
-            <StatGroup>
+            <StatItem>
               <StatTitle>Capacity Utilization</StatTitle>
               <StatValue>85%</StatValue>
               <StatDescription>Average monthly utilization</StatDescription>
-            </StatGroup>
+            </StatItem>
             
-            <StatGroup>
+            <StatItem>
               <StatTitle>CNC Machining Centers</StatTitle>
               <StatValue>18</StatValue>
               <StatDescription>Precision machining equipment</StatDescription>
-            </StatGroup>
+            </StatItem>
             
-            <StatGroup>
+            <StatItem>
               <StatTitle>On-Time Delivery Rate</StatTitle>
               <StatValue>99.7%</StatValue>
               <StatDescription>Based on over 1,200 shipments annually to automotive and industrial clients</StatDescription>
-            </StatGroup>
+            </StatItem>
           </StatsContent>
-        </StatsContainer>
+        </FacilityCard>
       </Container>
     </FacilitySection>
   );
