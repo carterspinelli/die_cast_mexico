@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Zap, Settings2, BarChart, ShieldCheck } from "lucide-react";
-import images from "../data/images";
+import { Cog, Monitor, Layers } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const ServicesSection = styled.section`
@@ -118,14 +117,14 @@ const IconContainer = styled.div`
   justify-content: center;
   width: 3rem;
   height: 3rem;
-  background-color: white;
-  border-top: 1px solid var(--color-border);
-  border-left: 1px solid var(--color-border);
+  background-color: var(--color-primary);
+  border-top: 1px solid var(--color-primary-dark);
+  border-left: 1px solid var(--color-primary-dark);
   
   svg {
     width: 1.5rem;
     height: 1.5rem;
-    color: var(--color-primary);
+    color: white;
   }
 `;
 
@@ -160,24 +159,19 @@ const Services = () => {
   
   const serviceItems = [
     {
-      icon: <Zap />,
+      icon: <Cog />,
       title: messages.highPressureTitle,
       description: messages.highPressureDesc
     },
     {
-      icon: <Settings2 />,
+      icon: <Monitor />,
       title: messages.moldingTitle,
       description: messages.moldingDesc
     },
     {
-      icon: <BarChart />,
+      icon: <Layers />,
       title: messages.finishingTitle,
       description: messages.finishingDesc
-    },
-    {
-      icon: <ShieldCheck />,
-      title: messages.qualityTitle,
-      description: messages.qualityDesc
     }
   ];
   

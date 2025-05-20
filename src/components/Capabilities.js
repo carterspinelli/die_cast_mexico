@@ -116,31 +116,7 @@ const Capabilities = () => {
     }
   };
   
-  // Additional capabilities
-  const additionalCapabilities = {
-    "CNC Machining": {
-      type: "Secondary Operations",
-      description: "Precision CNC machining for post-casting operations to achieve tighter tolerances and additional features.",
-      default: "3-5 axis"
-    },
-    "Surface Treatments": {
-      type: "Finishing Options",
-      description: "Various surface treatments to enhance appearance, durability, and functionality of die cast parts.",
-      typeDescription: "Includes anodizing, powder coating, e-coating, and more.",
-      default: "Multiple options"
-    },
-    "Design Assistance": {
-      type: "Engineering Services",
-      description: "Expert design support to optimize parts for die casting, reducing costs and improving quality.",
-      default: "Available"
-    },
-    "Quality Testing": {
-      type: "Inspection Methods",
-      description: "Comprehensive quality control using advanced inspection techniques to ensure part integrity.",
-      typeDescription: "Includes X-ray, CMM, hardness testing, and more.",
-      default: "ISO 9001 certified"
-    }
-  };
+  // Additional capabilities are available but not shown in the interface
   
   return (
     <CapabilitiesSection>
@@ -158,11 +134,6 @@ const Capabilities = () => {
           <SpecsCard>
             <SpecsTitle>{translations.qualitySpecsTitle}</SpecsTitle>
             <TypeTable type={qualitySpecs} />
-          </SpecsCard>
-          
-          <SpecsCard>
-            <SpecsTitle>{translations.additionalServicesTitle || "Additional Capabilities"}</SpecsTitle>
-            <TypeTable type={additionalCapabilities} />
           </SpecsCard>
         </SpecsGrid>
       </Container>
