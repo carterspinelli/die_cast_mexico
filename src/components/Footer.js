@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
-import images from "../data/images";
 
 // Main container
 const FooterContainer = styled.footer`
   background-color: #0c1220;
   color: #fff;
-  padding: 5rem 0 2rem;
+  padding: 5rem 0 3rem;
+  margin-bottom: 0;
 `;
 
 const Container = styled.div`
@@ -118,8 +118,9 @@ const Divider = styled.div`
 const BottomSection = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
+  margin-top: 1rem;
   
   @media (min-width: 768px) {
     flex-direction: row;
@@ -130,8 +131,13 @@ const BottomSection = styled.div`
 
 const Copyright = styled.p`
   color: #a1a1aa;
-  font-size: 0.875rem;
+  font-size: 1rem;
   margin: 0;
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;
 
 const LegalLinks = styled.div`
@@ -139,6 +145,11 @@ const LegalLinks = styled.div`
   flex-wrap: wrap;
   gap: 1.5rem;
   align-items: center;
+  justify-content: center;
+  
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
 `;
 
 const LegalLink = styled.a`
@@ -152,7 +163,13 @@ const LegalLink = styled.a`
 `;
 
 const CertificationImage = styled.img`
-  height: 40px;
+  height: 70px;
+  margin-right: 1rem;
+  opacity: 0.9;
+  
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Footer = ({ messages }) => {
@@ -263,9 +280,9 @@ const Footer = ({ messages }) => {
         <Divider data-aos="fade-up" data-aos-delay="650" />
         
         <BottomSection>
-          <Copyright data-aos="fade-up" data-aos-delay="700">© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
-          <LegalLinks data-aos="fade-up" data-aos-delay="750">
-            <CertificationImage src={images.certification} alt="ISO 9001:2015 Certified" data-aos="zoom-in" data-aos-delay="800" />
+          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights || "All rights reserved"}.</Copyright>
+          <LegalLinks>
+            <CertificationImage src="/images/iso9001_diecast.webp" alt="ISO 9001:2015 Certified" />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
                 {link.name}

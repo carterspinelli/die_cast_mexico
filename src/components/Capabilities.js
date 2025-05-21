@@ -239,18 +239,23 @@ const Capabilities = () => {
   return (
     <CapabilitiesSection>
       <Container>
-        <SectionHeader>
-          <Title>{translations.capabilitiesTitle}</Title>
-          <Subtitle>{translations.capabilitiesSubtitle}</Subtitle>
+        <SectionHeader data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">{translations.capabilitiesTitle}</Title>
+          <Subtitle data-aos="fade-up" data-aos-delay="200">{translations.capabilitiesSubtitle}</Subtitle>
         </SectionHeader>
         
         {/* Facility Overview with Tabs */}
-        <SpecsCard>
-          <SpecsTitle>{translations.facilityOverviewTitle || "Facility Overview"}</SpecsTitle>
+        <SpecsCard data-aos="fade-up" data-aos-delay="300">
+          <SpecsTitle data-aos="fade-up" data-aos-delay="400">{translations.facilityOverviewTitle || "Facility Overview"}</SpecsTitle>
           
           <Tabs defaultValue="overview">
-            {facilityTabs.map(tab => (
-              <TabsTrigger key={tab.id} value={tab.id}>
+            {facilityTabs.map((tab, index) => (
+              <TabsTrigger 
+                key={tab.id} 
+                value={tab.id}
+                data-aos="fade-up" 
+                data-aos-delay={500 + (index * 50)}
+              >
                 {tab.id === 'overview' ? translations.overviewTabLabel || "Overview" : 
                  tab.id === 'manufacturing' ? translations.manufacturingTabLabel || "Manufacturing" : 
                  translations.finishingTabLabel || "Surface Finishing"}
@@ -258,8 +263,8 @@ const Capabilities = () => {
             ))}
             
             {facilityTabs.map(tab => (
-              <TabsContent key={tab.id} value={tab.id}>
-                <TableContainer>
+              <TabsContent key={tab.id} value={tab.id} data-aos="fade-up" data-aos-delay="600">
+                <TableContainer data-aos="fade-up" data-aos-delay="650">
                   <StyledTable>
                     <TableHead>
                       <tr>
@@ -315,9 +320,14 @@ const Capabilities = () => {
                         }
                         
                         return (
-                          <tr key={index} style={{ 
-                            borderBottom: index !== tab.items.length - 1 ? '1px solid #e2e8f0' : 'none'
-                          }}>
+                          <tr 
+                            key={index} 
+                            style={{ 
+                              borderBottom: index !== tab.items.length - 1 ? '1px solid #e2e8f0' : 'none'
+                            }}
+                            data-aos="fade-up" 
+                            data-aos-delay={700 + (index * 50)}
+                          >
                             <td style={{ 
                               padding: '1rem', 
                               borderRight: '1px solid #e2e8f0'
@@ -351,10 +361,10 @@ const Capabilities = () => {
         </SpecsCard>
         
         {/* Technical Specifications */}
-        <SpecsGrid>
-          <SpecsCard>
-            <SpecsTitle>{translations.machineTitle}</SpecsTitle>
-            <TypeTable type={machineSpecs} />
+        <SpecsGrid data-aos="fade-up" data-aos-delay="800">
+          <SpecsCard data-aos="fade-up" data-aos-delay="900">
+            <SpecsTitle data-aos="fade-up" data-aos-delay="950">{translations.machineTitle}</SpecsTitle>
+            <TypeTable type={machineSpecs} data-aos="fade-up" data-aos-delay="1000" />
           </SpecsCard>
         </SpecsGrid>
       </Container>
