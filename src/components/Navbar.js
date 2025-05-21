@@ -87,7 +87,8 @@ const NavLink = styled(Link)`
   }
   
   &:hover:after,
-  &.active:after {
+  &.active:after,
+  &[aria-current="page"]:after {
     width: 100%;
   }
 `;
@@ -268,13 +269,31 @@ const Navbar = () => {
             <NavLink to={localizedLink("/")} activeClassName="active">
               {messages.home}
             </NavLink>
-            <NavLink to={localizedLink("/#services")} activeClassName="active">
+            <NavLink 
+              to={localizedLink("/#services")} 
+              activeClassName="active"
+              getProps={({ isPartiallyCurrent }) => {
+                return { className: isPartiallyCurrent ? "active" : "" };
+              }}
+            >
               {messages.services}
             </NavLink>
-            <NavLink to={localizedLink("/#industries")} activeClassName="active">
+            <NavLink 
+              to={localizedLink("/#industries")} 
+              activeClassName="active"
+              getProps={({ isPartiallyCurrent }) => {
+                return { className: isPartiallyCurrent ? "active" : "" };
+              }}
+            >
               {messages.industries}
             </NavLink>
-            <NavLink to={localizedLink("/#about")} activeClassName="active">
+            <NavLink 
+              to={localizedLink("/#about")} 
+              activeClassName="active"
+              getProps={({ isPartiallyCurrent }) => {
+                return { className: isPartiallyCurrent ? "active" : "" };
+              }}
+            >
               {messages.about}
             </NavLink>
           </NavLinks>
