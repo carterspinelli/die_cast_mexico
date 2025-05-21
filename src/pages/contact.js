@@ -7,11 +7,11 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO 
-        title="Contact Us | Die Cast Mexico" 
+        title="Contact us | Die Cast Mexico" 
         description="Get in touch with our team for inquiries, quotes, or support"
       />
       <Contact2 
-        title="Contact Us"
+        title="Contact us"
         description="Get in touch with our team for inquiries, quotes, or support"
         phone="+52 33 3968 3660"
         email="info@diecastmexico.com"
@@ -28,7 +28,7 @@ export default ContactPage;
 
 export const Head = () => (
   <SEO 
-    title="Contact Us | Die Cast Mexico" 
+    title="Contact us | Die Cast Mexico" 
     description="Get in touch with our team for inquiries, quotes, or support"
   />
 );
