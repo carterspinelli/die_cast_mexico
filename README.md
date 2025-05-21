@@ -37,9 +37,9 @@ A bilingual (Spanish/English) Gatsby.js website for Die Cast Mexico, delivering 
 
 3. Start the development server:
    ```bash
-   npm run develop
-   # or
-   yarn develop
+   npx gatsby develop
+   # or if using yarn
+   yarn gatsby develop
    ```
 
 4. Open your browser and navigate to:
@@ -52,17 +52,17 @@ A bilingual (Spanish/English) Gatsby.js website for Die Cast Mexico, delivering 
 To create a production build:
 
 ```bash
-npm run build
+npx gatsby build
 # or
-yarn build
+yarn gatsby build
 ```
 
 To preview the production build locally:
 
 ```bash
-npm run serve
+npx gatsby serve
 # or
-yarn serve
+yarn gatsby serve
 ```
 
 ## Folder Structure
