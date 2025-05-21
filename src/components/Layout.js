@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import TubelightNavbar from "./ui/tubelight-navbar";
 import Footer from "./Footer";
 import { usePageTracking } from "../utils/hooks";
 import { useLanguage } from "../context/LanguageContext";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Main = styled.main`
   min-height: 100vh;
@@ -20,6 +22,17 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   // Get language and messages from our custom context
   const { messages } = useLanguage();
   const [useModernNav, setUseModernNav] = useState(true);
+  
+  // Initialize AOS animation library
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+      offset: 120,
+      easing: 'ease-in-out'
+    });
+  }, []);
   
   // Track page views
   usePageTracking();

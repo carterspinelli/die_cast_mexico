@@ -107,9 +107,9 @@ const Hero = () => {
   return (
     <HeroSection backgroundImage={backgroundImage}>
       <HeroContent className="fade-in">
-        <HeroTitle>{messages.heroTitle}</HeroTitle>
-        <HeroSubtitle>{messages.heroSubtitle}</HeroSubtitle>
-        <ButtonContainer>
+        <HeroTitle data-aos="fade-down" data-aos-delay="200">{messages.heroTitle}</HeroTitle>
+        <HeroSubtitle data-aos="fade-up" data-aos-delay="400">{messages.heroSubtitle}</HeroSubtitle>
+        <ButtonContainer data-aos="fade-up" data-aos-delay="600">
           <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
           <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
         </ButtonContainer>

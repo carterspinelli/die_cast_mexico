@@ -197,9 +197,9 @@ const FacilityAbout = () => {
   return (
     <Section id="about">
       <Container>
-        <HeaderGrid>
-          <Title>{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
-          <Description>
+        <HeaderGrid data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
+          <Description data-aos="fade-up" data-aos-delay="200">
             {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
           </Description>
         </HeaderGrid>
@@ -208,42 +208,56 @@ const FacilityAbout = () => {
           <MainImage 
             src="/images/plant_2_diecast.png" 
             alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
+            data-aos="fade-right"
+            data-aos-delay="300"
           />
           
-          <SideContent>
+          <SideContent data-aos="fade-left" data-aos-delay="400">
             <InfoBox style={{ height: '100%' }}>
               <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <InfoBoxLogo 
                   src="/images/iso9001_diecast.webp" 
                   alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
                   style={{ height: '3.5rem' }}
+                  data-aos="zoom-in"
+                  data-aos-delay="500"
                 />
               </div>
               <div>
-                <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
-                <InfoBoxText>
+                <InfoBoxTitle data-aos="fade-up" data-aos-delay="600">{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
+                <InfoBoxText data-aos="fade-up" data-aos-delay="700">
                   {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
                 </InfoBoxText>
               </div>
-              <Button variant="outline" as="a" href="/contact">
+              <Button 
+                variant="outline" 
+                as="a" 
+                href="/contact"
+                data-aos="fade-up"
+                data-aos-delay="800"
+              >
                 {translate(messages, 'contactUsBtn', "Contact Us")}
               </Button>
             </InfoBox>
           </SideContent>
         </ContentGrid>
         
-        <div style={{ marginTop: '4rem' }}>
+        <div style={{ marginTop: '4rem' }} data-aos="fade-up" data-aos-delay="200">
           <AchievementsBox>
             <AchievementsHeader>
-              <AchievementsTitle>{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
-              <AchievementsDescription>
+              <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
+              <AchievementsDescription data-aos="fade-up" data-aos-delay="400">
                 {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
               </AchievementsDescription>
             </AchievementsHeader>
             
             <AchievementsGrid>
               {achievements.map((achievement, idx) => (
-                <Achievement key={achievement.label + idx}>
+                <Achievement 
+                  key={achievement.label + idx}
+                  data-aos="fade-up" 
+                  data-aos-delay={500 + (idx * 100)}
+                >
                   <AchievementLabel>{achievement.label}</AchievementLabel>
                   <AchievementValue>{achievement.value}</AchievementValue>
                 </Achievement>

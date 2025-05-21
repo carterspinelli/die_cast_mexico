@@ -164,29 +164,29 @@ export const Contact2 = ({
     <Section>
       <Container>
         <FlexContainer>
-          <InfoContainer>
+          <InfoContainer data-aos="fade-right" data-aos-delay="100">
             <TextCenter>
-              <Title>{title || messages?.contactTitle || "Contact Us"}</Title>
-              <Description>
+              <Title data-aos="fade-up" data-aos-delay="200">{title || messages?.contactTitle || "Contact Us"}</Title>
+              <Description data-aos="fade-up" data-aos-delay="300">
                 {description || messages?.contactSubtitle || "Get in touch with our team for inquiries, quotes, or support"}
               </Description>
             </TextCenter>
-            <ContactDetails>
+            <ContactDetails data-aos="fade-up" data-aos-delay="400">
               <ContactHeading>
                 {messages?.contactDetailTitle || "Contact Details"}
               </ContactHeading>
               <ContactList>
-                <ContactItem>
+                <ContactItem data-aos="fade-up" data-aos-delay="500">
                   <ContactLabel>Phone: </ContactLabel>
                   {phone || "+52 33 3968 3660"}
                 </ContactItem>
-                <ContactItem>
+                <ContactItem data-aos="fade-up" data-aos-delay="550">
                   <ContactLabel>Email: </ContactLabel>
                   <Link href={`mailto:${email || "info@diecastmexico.com"}`}>
                     {email || "info@diecastmexico.com"}
                   </Link>
                 </ContactItem>
-                <ContactItem>
+                <ContactItem data-aos="fade-up" data-aos-delay="600">
                   <ContactLabel>Address: </ContactLabel>
                   <Link 
                     href={web?.url || "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal."} 
@@ -199,8 +199,8 @@ export const Contact2 = ({
             </ContactDetails>
           </InfoContainer>
           
-          <FormContainer>
-            <FormRow>
+          <FormContainer data-aos="fade-left" data-aos-delay="100">
+            <FormRow data-aos="fade-up" data-aos-delay="200">
               <FormGroup>
                 <Label htmlFor="firstname">{messages?.formFirstNameLabel || "First Name"}</Label>
                 <Input 
@@ -219,7 +219,7 @@ export const Contact2 = ({
               </FormGroup>
             </FormRow>
             
-            <FormGroup>
+            <FormGroup data-aos="fade-up" data-aos-delay="300">
               <Label htmlFor="email">{messages?.formEmailLabel || "Email"}</Label>
               <Input 
                 type="email" 
@@ -228,7 +228,7 @@ export const Contact2 = ({
               />
             </FormGroup>
             
-            <FormGroup>
+            <FormGroup data-aos="fade-up" data-aos-delay="400">
               <Label htmlFor="subject">{messages?.formSubjectLabel || "Subject"}</Label>
               <Input 
                 type="text" 
@@ -237,7 +237,7 @@ export const Contact2 = ({
               />
             </FormGroup>
             
-            <FormGroup>
+            <FormGroup data-aos="fade-up" data-aos-delay="500">
               <Label htmlFor="message">{messages?.formProjectLabel || "Message"}</Label>
               <Textarea 
                 id="message" 
@@ -245,7 +245,7 @@ export const Contact2 = ({
               />
             </FormGroup>
             
-            <Button>{messages?.formSubmit || "Send Message"}</Button>
+            <Button data-aos="fade-up" data-aos-delay="600">{messages?.formSubmit || "Send Message"}</Button>
           </FormContainer>
         </FlexContainer>
       </Container>

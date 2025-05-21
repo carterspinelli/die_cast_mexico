@@ -158,21 +158,32 @@ const Services = () => {
   return (
     <ServicesSection id="services">
       <Container>
-        <HeaderContent>
+        <HeaderContent data-aos="fade-up">
           <Badge variant="secondary" style={{ marginBottom: "1.5rem" }}>
             {messages.servicesTagline}
           </Badge>
-          <Title>{messages.servicesTitle}</Title>
-          <Description>{messages.servicesSubtitle}</Description>
-          <Button variant="default" as="a" href={`/${language === 'es' ? 'es/' : ''}contact`}>
+          <Title data-aos="fade-up" data-aos-delay="100">{messages.servicesTitle}</Title>
+          <Description data-aos="fade-up" data-aos-delay="200">{messages.servicesSubtitle}</Description>
+          <Button 
+            variant="default" 
+            as="a" 
+            href={`/${language === 'es' ? 'es/' : ''}contact`}
+            data-aos="fade-up" 
+            data-aos-delay="300"
+          >
             {messages.servicesButtonText}
             <ArrowRight style={{ marginLeft: "0.5rem", width: "1rem", height: "1rem" }} />
           </Button>
         </HeaderContent>
         
         <ServiceGrid>
-          {serviceItems.map((service) => (
-            <Card key={service.id} style={{ display: "grid", gridTemplateRows: "auto auto 1fr auto" }}>
+          {serviceItems.map((service, index) => (
+            <Card 
+              key={service.id} 
+              style={{ display: "grid", gridTemplateRows: "auto auto 1fr auto" }}
+              data-aos="fade-up" 
+              data-aos-delay={200 + (index * 100)}
+            >
               <ImageContainer>
                 <ServiceImage 
                   src={service.image} 
@@ -201,7 +212,6 @@ const Services = () => {
                   {service.summary}
                 </p>
               </CardContent>
-              {/* Footer removed as requested */}
             </Card>
           ))}
         </ServiceGrid>

@@ -151,13 +151,13 @@ const Industries = ({ messages }) => {
   return (
     <IndustriesSection id="industries">
       <Container>
-        <SectionHeader>
-          <Title className="slide-in-left">{messages.industriesTitle}</Title>
-          <Subtitle className="slide-in-right">{messages.industriesSubtitle}</Subtitle>
+        <SectionHeader data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">{messages.industriesTitle}</Title>
+          <Subtitle data-aos="fade-up" data-aos-delay="200">{messages.industriesSubtitle}</Subtitle>
         </SectionHeader>
         
         <IndustryGrid>
-          <IndustryCard className="fade-in">
+          <IndustryCard data-aos="fade-up" data-aos-delay="300">
             <IndustryImage imageUrl={images.industries.automotive} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
@@ -166,7 +166,7 @@ const Industries = ({ messages }) => {
             </IndustryContent>
           </IndustryCard>
           
-          <IndustryCard className="fade-in">
+          <IndustryCard data-aos="fade-up" data-aos-delay="400">
             <IndustryImage imageUrl={images.industries.energy} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
@@ -175,7 +175,7 @@ const Industries = ({ messages }) => {
             </IndustryContent>
           </IndustryCard>
           
-          <IndustryCard className="fade-in">
+          <IndustryCard data-aos="fade-up" data-aos-delay="500">
             <IndustryImage imageUrl={images.industries.telecom} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
@@ -184,7 +184,7 @@ const Industries = ({ messages }) => {
             </IndustryContent>
           </IndustryCard>
           
-          <IndustryCard className="fade-in">
+          <IndustryCard data-aos="fade-up" data-aos-delay="600">
             <IndustryImage imageUrl={images.industries.marine} />
             <IndustryOverlay className="industry-overlay" />
             <IndustryContent className="industry-content">
@@ -194,9 +194,9 @@ const Industries = ({ messages }) => {
           </IndustryCard>
         </IndustryGrid>
         
-        <SearchServicesContainer className="slide-in-left">
+        <SearchServicesContainer data-aos="fade-up" data-aos-delay="700">
           <SearchServicesTitle>{messages.contactTitle}</SearchServicesTitle>
-          <SearchServicesButton href="/contact">
+          <SearchServicesButton href="/contact" data-aos="zoom-in" data-aos-delay="800">
             {messages.cta}
           </SearchServicesButton>
         </SearchServicesContainer>

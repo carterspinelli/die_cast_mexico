@@ -190,7 +190,7 @@ const Footer = ({ messages }) => {
     <FooterContainer>
       <Container>
         <TopSection>
-          <CompanySection>
+          <CompanySection data-aos="fade-right" data-aos-delay="100">
             <Logo>
               <a href={localizedLink("/")}>
                 <LogoImg src="/images/die_cast_mx_footer_logo.png" alt="Die Cast Mexico" />
@@ -202,11 +202,11 @@ const Footer = ({ messages }) => {
           </CompanySection>
           
           <LinksSection>
-            <LinksColumn>
+            <LinksColumn data-aos="fade-up" data-aos-delay="200">
               <ColumnTitle>{messages.services}</ColumnTitle>
               <LinksList>
                 {services.map((service, idx) => (
-                  <LinkItem key={idx}>
+                  <LinkItem key={idx} data-aos="fade-up" data-aos-delay={250 + (idx * 50)}>
                     <NavLink to={localizedLink(service.path)}>
                       {service.name}
                     </NavLink>
@@ -215,11 +215,11 @@ const Footer = ({ messages }) => {
               </LinksList>
             </LinksColumn>
             
-            <LinksColumn>
+            <LinksColumn data-aos="fade-up" data-aos-delay="300">
               <ColumnTitle>{messages.industries}</ColumnTitle>
               <LinksList>
                 {industries.map((industry, idx) => (
-                  <LinkItem key={idx}>
+                  <LinkItem key={idx} data-aos="fade-up" data-aos-delay={350 + (idx * 50)}>
                     <NavLink to={localizedLink(industry.path)}>
                       {industry.name}
                     </NavLink>
@@ -228,15 +228,15 @@ const Footer = ({ messages }) => {
               </LinksList>
             </LinksColumn>
             
-            <LinksColumn>
+            <LinksColumn data-aos="fade-up" data-aos-delay="400">
               <ColumnTitle>{messages.contact}</ColumnTitle>
               <LinksList>
-                <LinkItem>
+                <LinkItem data-aos="fade-up" data-aos-delay="450">
                   <NavLink to={localizedLink("/contact")}>
                     {messages.contactTitle || "Contact Us"}
                   </NavLink>
                 </LinkItem>
-                <LinkItem>
+                <LinkItem data-aos="fade-up" data-aos-delay="500">
                   <ExternalLink 
                     href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
                     target="_blank" 
@@ -245,12 +245,12 @@ const Footer = ({ messages }) => {
                     Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
                   </ExternalLink>
                 </LinkItem>
-                <LinkItem>
+                <LinkItem data-aos="fade-up" data-aos-delay="550">
                   <ExternalLink href="tel:+523339683660">
                     +52 33 3968 3660
                   </ExternalLink>
                 </LinkItem>
-                <LinkItem>
+                <LinkItem data-aos="fade-up" data-aos-delay="600">
                   <ExternalLink href={`mailto:${messages.footerEmailValue}`}>
                     {messages.footerEmailValue}
                   </ExternalLink>
@@ -260,12 +260,12 @@ const Footer = ({ messages }) => {
           </LinksSection>
         </TopSection>
         
-        <Divider />
+        <Divider data-aos="fade-up" data-aos-delay="650" />
         
         <BottomSection>
-          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
-          <LegalLinks>
-            <CertificationImage src={images.certification} alt="ISO 9001:2015 Certified" />
+          <Copyright data-aos="fade-up" data-aos-delay="700">© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
+          <LegalLinks data-aos="fade-up" data-aos-delay="750">
+            <CertificationImage src={images.certification} alt="ISO 9001:2015 Certified" data-aos="zoom-in" data-aos-delay="800" />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
                 {link.name}

@@ -103,11 +103,6 @@
   "pneumaticSegmentTitle": "Sistemas Neumáticos",
   "pneumaticSegmentDesc": "Cuerpos de válvulas, componentes de cilindros y accesorios para sistemas de control neumático que requieren estanqueidad.",
 
-  "aboutTitle": "Acerca de Die Cast Mexico",
-  "aboutSubtitle": "Ofreciendo soluciones de fundición a presión de calidad desde 2005",
-  "aboutDesc": "Die Cast Mexico es un proveedor líder de servicios de fundición a presión ubicado en Monterrey, México. Con más de 15 años de experiencia, nos especializamos en fundición a presión de aluminio de alta presión para diversas industrias. Nuestras instalaciones de vanguardia combinan tecnología de punta con artesanía especializada para entregar productos de calidad excepcional que cumplen con las especificaciones exactas de nuestros clientes.",
-  "mission": "Nuestra misión es ser el socio preferido para soluciones de fundición a presión al entregar consistentemente calidad superior, precios competitivos y servicio al cliente excepcional, mientras mantenemos la responsabilidad ambiental en todas nuestras operaciones.",
-
   "contactTitle": "Contáctanos",
   "contactSubtitle": "Ponte en contacto con nuestro equipo para consultas, cotizaciones o soporte",
   "contactFormTitle": "Envíenos un Mensaje",
@@ -155,11 +150,11 @@
   "serviceReadMore": "Leer Más",
 
   "serviceDesignTitle": "Diseño y fabricación de moldes y accesorios",
-  "serviceDesignSummary": "Utilizando diseño experto y maquinado moderno, Marchesi crea moldes complejos, soluciones de prototipado rápido y accesorios CNC de alta eficiencia para los clientes.",
+  "serviceDesignSummary": "Utilizando diseño experto y maquinado moderno, Die Cast Mexico crea moldes complejos, soluciones de prototipado rápido y accesorios CNC de alta eficiencia para los clientes.",
   "serviceDesignLabel": "Ingeniería",
 
   "serviceCastingTitle": "Fundición a Presión",
-  "serviceCastingSummary": "Die Casting Mexico implementa máquinas automáticas de fundición a presión de cámara fría que van desde 400 toneladas a 1900 toneladas dedicadas a aleaciones de aluminio y magnesio.",
+  "serviceCastingSummary": "Die Cast Mexico implementa máquinas automáticas de fundición a presión de cámara fría que van desde 400 toneladas a 1900 toneladas dedicadas a aleaciones de aluminio y magnesio.",
   "serviceCastingLabel": "Fabricación",
 
   "serviceFinishingTitle": "Tratamiento de Superficie",
