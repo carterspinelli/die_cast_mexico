@@ -194,7 +194,7 @@ const TubelightNavbar = () => {
                     <div 
                       style={{
                         position: "absolute",
-                        bottom: "-2px",
+                        top: "-4px",
                         left: "50%",
                         transform: "translateX(-50%)",
                         width: "16px",
@@ -211,7 +211,7 @@ const TubelightNavbar = () => {
                           backgroundColor: "rgba(12, 18, 32, 0.2)",
                           borderRadius: "9999px",
                           filter: "blur(6px)",
-                          bottom: "-3px",
+                          top: "-3px",
                           left: "-8px"
                         }}
                       />
