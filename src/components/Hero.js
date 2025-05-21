@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
+import LazyComponent from "./LazyComponent";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -106,14 +107,16 @@ const Hero = () => {
   
   return (
     <HeroSection backgroundImage={backgroundImage}>
-      <HeroContent className="fade-in">
-        <HeroTitle>{messages.heroTitle}</HeroTitle>
-        <HeroSubtitle>{messages.heroSubtitle}</HeroSubtitle>
-        <ButtonContainer>
-          <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
-          <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
-        </ButtonContainer>
-      </HeroContent>
+      <LazyComponent>
+        <HeroContent className="fade-in">
+          <HeroTitle>{messages.heroTitle}</HeroTitle>
+          <HeroSubtitle>{messages.heroSubtitle}</HeroSubtitle>
+          <ButtonContainer>
+            <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
+            <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
+          </ButtonContainer>
+        </HeroContent>
+      </LazyComponent>
     </HeroSection>
   );
 };
