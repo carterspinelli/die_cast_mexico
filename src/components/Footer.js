@@ -162,23 +162,25 @@ const Footer = ({ messages }) => {
   // Helper function to create localized paths
   const localizedLink = (path) => getLocalizedPath(path, language);
   
+  // Use services from the translation to get proper localization
   const services = [
-    { name: "Die Casting", path: "/#services" },
-    { name: "Mould & Fixture Design", path: "/#services" },
-    { name: "CNC Precision Machining", path: "/#services" },
-    { name: "Surface Treatment", path: "/#services" },
-    { name: "Testing & Assembly", path: "/#services" },
+    { name: messages.dieCasting || "Die Casting", path: "/#services" },
+    { name: messages.mouldFixture || "Mould & Fixture Design", path: "/#services" },
+    { name: messages.cncMachining || "CNC Precision Machining", path: "/#services" },
+    { name: messages.surfaceTreatment || "Surface Treatment", path: "/#services" },
+    { name: messages.testingAssembly || "Testing & Assembly", path: "/#services" },
   ];
   
+  // Use industries from the translation to get proper localization
   const industries = [
-    { name: "Telecommunications", path: "/#industries" },
-    { name: "Mechatronics & Automation", path: "/#industries" },
-    { name: "Power Tools", path: "/#industries" },
-    { name: "Automotive", path: "/#industries" },
-    { name: "Lighting", path: "/#industries" },
-    { name: "Instrumentation", path: "/#industries" },
-    { name: "Pneumatic & Hydraulic", path: "/#industries" },
-    { name: "Marine Products", path: "/#industries" },
+    { name: messages.telecom || "Telecommunications", path: "/#industries" },
+    { name: messages.mechatronics || "Mechatronics & Automation", path: "/#industries" },
+    { name: messages.powerTools || "Power Tools", path: "/#industries" },
+    { name: messages.automotive || "Automotive", path: "/#industries" },
+    { name: messages.lighting || "Lighting", path: "/#industries" },
+    { name: messages.instrumentation || "Instrumentation", path: "/#industries" },
+    { name: messages.pneumatic || "Pneumatic & Hydraulic", path: "/#industries" },
+    { name: messages.marine || "Marine Products", path: "/#industries" },
   ];
 
   // Removed terms and conditions and privacy policy links as requested
@@ -229,6 +231,11 @@ const Footer = ({ messages }) => {
             <LinksColumn>
               <ColumnTitle>{messages.contact}</ColumnTitle>
               <LinksList>
+                <LinkItem>
+                  <NavLink to={localizedLink("/contact")}>
+                    {messages.contactTitle || "Contact Us"}
+                  </NavLink>
+                </LinkItem>
                 <LinkItem>
                   <ExternalLink 
                     href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
