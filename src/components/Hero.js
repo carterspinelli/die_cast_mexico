@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import images from "../data/images";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const HeroSection = styled.section`
@@ -97,10 +96,10 @@ const SecondaryButton = styled(Link)`
   }
 `;
 
-const Hero = ({ messages }) => {
+const Hero = () => {
   // Use the die_cast_cnc.png image as the background
   const backgroundImage = "/images/die_cast_cnc.png";
-  const { language } = useLanguage();
+  const { language, messages } = useLanguage();
   
   // Helper function to create localized paths
   const localizedLink = (path) => getLocalizedPath(path, language);

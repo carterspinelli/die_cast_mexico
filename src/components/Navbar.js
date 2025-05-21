@@ -225,10 +225,10 @@ const MobileCTAButton = styled(Link)`
   }
 `;
 
-const Navbar = ({ messages }) => {
+const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { language } = useLanguage();
+  const { language, messages } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
