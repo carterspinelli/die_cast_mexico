@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
-import LazyComponent from "./LazyComponent";
-import LazyImage from "./LazyImage";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -49,7 +47,13 @@ const ContentGrid = styled.div`
   }
 `;
 
-// Replaced with LazyImage component
+const MainImage = styled.img`
+  width: 100%;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+`;
 
 const SideContent = styled.div`
   display: flex;
@@ -193,69 +197,59 @@ const FacilityAbout = () => {
   return (
     <Section id="about">
       <Container>
-        <LazyComponent>
-          <HeaderGrid>
-            <Title>{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
-            <Description>
-              {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
-            </Description>
-          </HeaderGrid>
-        </LazyComponent>
+        <HeaderGrid>
+          <Title>{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
+          <Description>
+            {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
+          </Description>
+        </HeaderGrid>
         
         <ContentGrid>
-          <LazyComponent>
-            <LazyImage 
-              src="/images/plant_2_diecast.png" 
-              alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
-              height="620px"
-              borderRadius="0.75rem"
-            />
-          </LazyComponent>
+          <MainImage 
+            src="/images/plant_2_diecast.png" 
+            alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
+          />
           
           <SideContent>
-            <LazyComponent>
-              <InfoBox style={{ height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                  <InfoBoxLogo 
-                    src="/images/iso9001_diecast.webp" 
-                    alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
-                    style={{ height: '3.5rem' }}
-                  />
-                </div>
-                <div>
-                  <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
-                  <InfoBoxText>
-                    {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
-                  </InfoBoxText>
-                </div>
-                <Button variant="outline" as="a" href="/contact">
-                  {translate(messages, 'contactUsBtn', "Contact Us")}
-                </Button>
-              </InfoBox>
-            </LazyComponent>
+            <InfoBox style={{ height: '100%' }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                <InfoBoxLogo 
+                  src="/images/iso9001_diecast.webp" 
+                  alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
+                  style={{ height: '3.5rem' }}
+                />
+              </div>
+              <div>
+                <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
+                <InfoBoxText>
+                  {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
+                </InfoBoxText>
+              </div>
+              <Button variant="outline" as="a" href="/contact">
+                {translate(messages, 'contactUsBtn', "Contact Us")}
+              </Button>
+            </InfoBox>
           </SideContent>
         </ContentGrid>
         
         <div style={{ marginTop: '4rem' }}>
-          <LazyComponent>
-            <AchievementsBox>
-              <AchievementsHeader>
-                <AchievementsTitle>{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
-                <AchievementsDescription>
-                  {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
-                </AchievementsDescription>
-              </AchievementsHeader>
-              
-              <AchievementsGrid>
-                {achievements.map((achievement, idx) => (
-                  <Achievement key={achievement.label + idx}>
-                    <AchievementLabel>{achievement.label}</AchievementLabel>
-                    <AchievementValue>{achievement.value}</AchievementValue>
-                  </Achievement>
-                ))}
-              </AchievementsGrid>
-            </AchievementsBox>
-          </LazyComponent>
+          <AchievementsBox>
+            <AchievementsHeader>
+              <AchievementsTitle>{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
+              <AchievementsDescription>
+                {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
+              </AchievementsDescription>
+            </AchievementsHeader>
+            
+            <AchievementsGrid>
+              {achievements.map((achievement, idx) => (
+                <Achievement key={achievement.label + idx}>
+                  <AchievementLabel>{achievement.label}</AchievementLabel>
+                  <AchievementValue>{achievement.value}</AchievementValue>
+                </Achievement>
+              ))}
+            </AchievementsGrid>
+          </AchievementsBox>
         </div>
       </Container>
     </Section>

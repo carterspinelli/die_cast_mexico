@@ -4,8 +4,6 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import LazyComponent from "./LazyComponent";
-import LazyImage from "./LazyImage";
 import {
   Card,
   CardContent,
@@ -89,9 +87,31 @@ const ImageContainer = styled.div`
   overflow: hidden;
 `;
 
-// Replaced with LazyImage component
+const ServiceImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+`;
 
-// Removed as no longer needed
+const ReadMoreLink = styled.a`
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+  
+  svg {
+    margin-left: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+  }
+`;
 
 const Services = () => {
   const { messages, language } = useLanguage();
@@ -138,56 +158,51 @@ const Services = () => {
   return (
     <ServicesSection id="services">
       <Container>
-        <LazyComponent>
-          <HeaderContent>
-            <Badge variant="secondary" style={{ marginBottom: "1.5rem" }}>
-              {messages.servicesTagline}
-            </Badge>
-            <Title>{messages.servicesTitle}</Title>
-            <Description>{messages.servicesSubtitle}</Description>
-            <Button variant="default" as="a" href={`/${language === 'es' ? 'es/' : ''}contact`}>
-              {messages.servicesButtonText}
-              <ArrowRight style={{ marginLeft: "0.5rem", width: "1rem", height: "1rem" }} />
-            </Button>
-          </HeaderContent>
-        </LazyComponent>
+        <HeaderContent>
+          <Badge variant="secondary" style={{ marginBottom: "1.5rem" }}>
+            {messages.servicesTagline}
+          </Badge>
+          <Title>{messages.servicesTitle}</Title>
+          <Description>{messages.servicesSubtitle}</Description>
+          <Button variant="default" as="a" href={`/${language === 'es' ? 'es/' : ''}contact`}>
+            {messages.servicesButtonText}
+            <ArrowRight style={{ marginLeft: "0.5rem", width: "1rem", height: "1rem" }} />
+          </Button>
+        </HeaderContent>
         
         <ServiceGrid>
           {serviceItems.map((service) => (
-            <LazyComponent key={service.id}>
-              <Card style={{ display: "grid", gridTemplateRows: "auto auto 1fr auto" }}>
-                <ImageContainer>
-                  <LazyImage 
-                    src={service.image} 
-                    alt={service.title}
-                    objectFit="cover"
-                  />
-                </ImageContainer>
-                <CardHeader>
-                  <Badge variant="secondary" style={{ marginBottom: "0.75rem" }}>
-                    {service.label}
-                  </Badge>
-                  <h3 style={{ 
-                    fontSize: "1.25rem", 
-                    fontWeight: "600", 
-                    marginBottom: "0.5rem",
-                    color: "var(--color-heading)"
-                  }}>
-                    {service.title}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <p style={{ 
-                    color: "var(--color-text-muted)", 
-                    fontSize: "0.95rem",
-                    lineHeight: "1.6"
-                  }}>
-                    {service.summary}
-                  </p>
-                </CardContent>
-                {/* Footer removed as requested */}
-              </Card>
-            </LazyComponent>
+            <Card key={service.id} style={{ display: "grid", gridTemplateRows: "auto auto 1fr auto" }}>
+              <ImageContainer>
+                <ServiceImage 
+                  src={service.image} 
+                  alt={service.title}
+                />
+              </ImageContainer>
+              <CardHeader>
+                <Badge variant="secondary" style={{ marginBottom: "0.75rem" }}>
+                  {service.label}
+                </Badge>
+                <h3 style={{ 
+                  fontSize: "1.25rem", 
+                  fontWeight: "600", 
+                  marginBottom: "0.5rem",
+                  color: "var(--color-heading)"
+                }}>
+                  {service.title}
+                </h3>
+              </CardHeader>
+              <CardContent>
+                <p style={{ 
+                  color: "var(--color-text-muted)", 
+                  fontSize: "0.95rem",
+                  lineHeight: "1.6"
+                }}>
+                  {service.summary}
+                </p>
+              </CardContent>
+              {/* Footer removed as requested */}
+            </Card>
           ))}
         </ServiceGrid>
       </Container>

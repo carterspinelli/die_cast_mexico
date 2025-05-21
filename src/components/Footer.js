@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 import images from "../data/images";
-import LazyComponent from "./LazyComponent";
-import LazyImage from "./LazyImage";
 
 // Main container
 const FooterContainer = styled.footer`
@@ -43,7 +41,10 @@ const Logo = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-// Replaced with LazyImage component
+const LogoImg = styled.img`
+  height: 60px;
+  display: block;
+`;
 
 const Description = styled.p`
   color: #a1a1aa;
@@ -150,7 +151,9 @@ const LegalLink = styled.a`
   }
 `;
 
-// Replaced with LazyImage component
+const CertificationImage = styled.img`
+  height: 40px;
+`;
 
 const Footer = ({ messages }) => {
   const currentYear = new Date().getFullYear();
@@ -186,94 +189,90 @@ const Footer = ({ messages }) => {
   return (
     <FooterContainer>
       <Container>
-        <LazyComponent>
-          <TopSection>
-            <CompanySection>
-              <Logo>
-                <a href={localizedLink("/")}>
-                  <LazyImage src="/images/die_cast_mx_footer_logo.png" alt="Die Cast Mexico" height="60px" />
-                </a>
-              </Logo>
-              <Description>
-                {messages.footerDescription || "High-quality die casting solutions for automotive, telecommunications, and industrial applications. Precision manufacturing in Guadalajara, Mexico."}
-              </Description>
-            </CompanySection>
-            
-            <LinksSection>
-              <LinksColumn>
-                <ColumnTitle>{messages.services}</ColumnTitle>
-                <LinksList>
-                  {services.map((service, idx) => (
-                    <LinkItem key={idx}>
-                      <NavLink to={localizedLink(service.path)}>
-                        {service.name}
-                      </NavLink>
-                    </LinkItem>
-                  ))}
-                </LinksList>
-              </LinksColumn>
-              
-              <LinksColumn>
-                <ColumnTitle>{messages.industries}</ColumnTitle>
-                <LinksList>
-                  {industries.map((industry, idx) => (
-                    <LinkItem key={idx}>
-                      <NavLink to={localizedLink(industry.path)}>
-                        {industry.name}
-                      </NavLink>
-                    </LinkItem>
-                  ))}
-                </LinksList>
-              </LinksColumn>
-              
-              <LinksColumn>
-                <ColumnTitle>{messages.contact}</ColumnTitle>
-                <LinksList>
-                  <LinkItem>
-                    <NavLink to={localizedLink("/contact")}>
-                      {messages.contactTitle || "Contact Us"}
+        <TopSection>
+          <CompanySection>
+            <Logo>
+              <a href={localizedLink("/")}>
+                <LogoImg src="/images/die_cast_mx_footer_logo.png" alt="Die Cast Mexico" />
+              </a>
+            </Logo>
+            <Description>
+              {messages.footerDescription || "High-quality die casting solutions for automotive, telecommunications, and industrial applications. Precision manufacturing in Guadalajara, Mexico."}
+            </Description>
+          </CompanySection>
+          
+          <LinksSection>
+            <LinksColumn>
+              <ColumnTitle>{messages.services}</ColumnTitle>
+              <LinksList>
+                {services.map((service, idx) => (
+                  <LinkItem key={idx}>
+                    <NavLink to={localizedLink(service.path)}>
+                      {service.name}
                     </NavLink>
                   </LinkItem>
-                  <LinkItem>
-                    <ExternalLink 
-                      href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
-                    </ExternalLink>
+                ))}
+              </LinksList>
+            </LinksColumn>
+            
+            <LinksColumn>
+              <ColumnTitle>{messages.industries}</ColumnTitle>
+              <LinksList>
+                {industries.map((industry, idx) => (
+                  <LinkItem key={idx}>
+                    <NavLink to={localizedLink(industry.path)}>
+                      {industry.name}
+                    </NavLink>
                   </LinkItem>
-                  <LinkItem>
-                    <ExternalLink href="tel:+523339683660">
-                      +52 33 3968 3660
-                    </ExternalLink>
-                  </LinkItem>
-                  <LinkItem>
-                    <ExternalLink href={`mailto:${messages.footerEmailValue}`}>
-                      {messages.footerEmailValue}
-                    </ExternalLink>
-                  </LinkItem>
-                </LinksList>
-              </LinksColumn>
-            </LinksSection>
-          </TopSection>
-        </LazyComponent>
+                ))}
+              </LinksList>
+            </LinksColumn>
+            
+            <LinksColumn>
+              <ColumnTitle>{messages.contact}</ColumnTitle>
+              <LinksList>
+                <LinkItem>
+                  <NavLink to={localizedLink("/contact")}>
+                    {messages.contactTitle || "Contact Us"}
+                  </NavLink>
+                </LinkItem>
+                <LinkItem>
+                  <ExternalLink 
+                    href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
+                  </ExternalLink>
+                </LinkItem>
+                <LinkItem>
+                  <ExternalLink href="tel:+523339683660">
+                    +52 33 3968 3660
+                  </ExternalLink>
+                </LinkItem>
+                <LinkItem>
+                  <ExternalLink href={`mailto:${messages.footerEmailValue}`}>
+                    {messages.footerEmailValue}
+                  </ExternalLink>
+                </LinkItem>
+              </LinksList>
+            </LinksColumn>
+          </LinksSection>
+        </TopSection>
         
         <Divider />
         
-        <LazyComponent>
-          <BottomSection>
-            <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
-            <LegalLinks>
-              <LazyImage src={images.certification} alt="ISO 9001:2015 Certified" height="40px" />
-              {legalLinks.map((link, idx) => (
-                <LegalLink key={idx} href={link.href}>
-                  {link.name}
-                </LegalLink>
-              ))}
-            </LegalLinks>
-          </BottomSection>
-        </LazyComponent>
+        <BottomSection>
+          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights}.</Copyright>
+          <LegalLinks>
+            <CertificationImage src={images.certification} alt="ISO 9001:2015 Certified" />
+            {legalLinks.map((link, idx) => (
+              <LegalLink key={idx} href={link.href}>
+                {link.name}
+              </LegalLink>
+            ))}
+          </LegalLinks>
+        </BottomSection>
       </Container>
     </FooterContainer>
   );

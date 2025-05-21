@@ -11,8 +11,6 @@ import {
   Cog, 
   Anchor 
 } from "lucide-react";
-import LazyComponent from "./LazyComponent";
-import LazyImage from "./LazyImage";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -153,7 +151,6 @@ const ImageContainer = styled.div`
   position: relative;
 `;
 
-// Modified to work with LazyImage
 const IndustryImage = styled.div`
   width: 100%;
   height: 100%;
@@ -274,44 +271,36 @@ const IndustriesTabsSimple = () => {
   return (
     <Section id="industries">
       <Container>
-        <LazyComponent>
-          <Header>
-            <Title className="slide-in-left">{messages.industriesTitle || "Industries We Serve"}</Title>
-            <Subtitle className="slide-in-right">
-              {messages.industriesSubtitle || "Our die casting expertise spans across multiple industries, providing precision components for diverse applications."}
-            </Subtitle>
-          </Header>
-        </LazyComponent>
+        <Header>
+          <Title className="slide-in-left">{messages.industriesTitle || "Industries We Serve"}</Title>
+          <Subtitle className="slide-in-right">
+            {messages.industriesSubtitle || "Our die casting expertise spans across multiple industries, providing precision components for diverse applications."}
+          </Subtitle>
+        </Header>
         
         <TabsContainer>
-          <LazyComponent>
-            <TabsList>
-              {industriesData.map((industry) => (
-                <TabButton
-                  key={industry.value}
-                  active={activeTab === industry.value}
-                  onClick={() => setActiveTab(industry.value)}
-                >
-                  {industry.icon} {industry.label}
-                </TabButton>
-              ))}
-            </TabsList>
-          </LazyComponent>
+          <TabsList>
+            {industriesData.map((industry) => (
+              <TabButton
+                key={industry.value}
+                active={activeTab === industry.value}
+                onClick={() => setActiveTab(industry.value)}
+              >
+                {industry.icon} {industry.label}
+              </TabButton>
+            ))}
+          </TabsList>
           
           <ContentContainer>
             <ContentGrid>
-              <LazyComponent>
-                <ContentText>
-                  <Badge>{activeIndustry.content.badge}</Badge>
-                  <ContentTitle>{activeIndustry.content.title}</ContentTitle>
-                  <ContentDescription>{activeIndustry.content.description}</ContentDescription>
-                </ContentText>
-              </LazyComponent>
+              <ContentText>
+                <Badge>{activeIndustry.content.badge}</Badge>
+                <ContentTitle>{activeIndustry.content.title}</ContentTitle>
+                <ContentDescription>{activeIndustry.content.description}</ContentDescription>
+              </ContentText>
               
               <ImageContainer>
-                <LazyComponent>
-                  <IndustryImage src={activeIndustry.imageSrc} />
-                </LazyComponent>
+                <IndustryImage src={activeIndustry.imageSrc} />
               </ImageContainer>
             </ContentGrid>
           </ContentContainer>

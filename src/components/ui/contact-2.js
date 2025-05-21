@@ -5,7 +5,6 @@ import { Label } from "./label";
 import { Textarea } from "./textarea";
 import styled from "styled-components";
 import { useLanguage } from "../../context/LanguageContext";
-import LazyComponent from "../LazyComponent";
 
 // Styled components for the contact form
 const Section = styled.section`
@@ -165,93 +164,89 @@ export const Contact2 = ({
     <Section>
       <Container>
         <FlexContainer>
-          <LazyComponent>
-            <InfoContainer>
-              <TextCenter>
-                <Title>{title || messages?.contactTitle || "Contact Us"}</Title>
-                <Description>
-                  {description || messages?.contactSubtitle || "Get in touch with our team for inquiries, quotes, or support"}
-                </Description>
-              </TextCenter>
-              <ContactDetails>
-                <ContactHeading>
-                  {messages?.contactDetailTitle || "Contact Details"}
-                </ContactHeading>
-                <ContactList>
-                  <ContactItem>
-                    <ContactLabel>Phone: </ContactLabel>
-                    {phone || "+52 33 3968 3660"}
-                  </ContactItem>
-                  <ContactItem>
-                    <ContactLabel>Email: </ContactLabel>
-                    <Link href={`mailto:${email || "info@diecastmexico.com"}`}>
-                      {email || "info@diecastmexico.com"}
-                    </Link>
-                  </ContactItem>
-                  <ContactItem>
-                    <ContactLabel>Address: </ContactLabel>
-                    <Link 
-                      href={web?.url || "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal."} 
-                      target="_blank"
-                    >
-                      {web?.label || "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal."}
-                    </Link>
-                  </ContactItem>
-                </ContactList>
-              </ContactDetails>
-            </InfoContainer>
-          </LazyComponent>
+          <InfoContainer>
+            <TextCenter>
+              <Title>{title || messages?.contactTitle || "Contact Us"}</Title>
+              <Description>
+                {description || messages?.contactSubtitle || "Get in touch with our team for inquiries, quotes, or support"}
+              </Description>
+            </TextCenter>
+            <ContactDetails>
+              <ContactHeading>
+                {messages?.contactDetailTitle || "Contact Details"}
+              </ContactHeading>
+              <ContactList>
+                <ContactItem>
+                  <ContactLabel>Phone: </ContactLabel>
+                  {phone || "+52 33 3968 3660"}
+                </ContactItem>
+                <ContactItem>
+                  <ContactLabel>Email: </ContactLabel>
+                  <Link href={`mailto:${email || "info@diecastmexico.com"}`}>
+                    {email || "info@diecastmexico.com"}
+                  </Link>
+                </ContactItem>
+                <ContactItem>
+                  <ContactLabel>Address: </ContactLabel>
+                  <Link 
+                    href={web?.url || "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal."} 
+                    target="_blank"
+                  >
+                    {web?.label || "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal."}
+                  </Link>
+                </ContactItem>
+              </ContactList>
+            </ContactDetails>
+          </InfoContainer>
           
-          <LazyComponent>
-            <FormContainer>
-              <FormRow>
-                <FormGroup>
-                  <Label htmlFor="firstname">{messages?.formFirstNameLabel || "First Name"}</Label>
-                  <Input 
-                    type="text" 
-                    id="firstname" 
-                    placeholder={messages?.formFirstNamePlaceholder || "Enter your first name"} 
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="lastname">{messages?.formLastNameLabel || "Last Name"}</Label>
-                  <Input 
-                    type="text" 
-                    id="lastname" 
-                    placeholder={messages?.formLastNamePlaceholder || "Enter your last name"} 
-                  />
-                </FormGroup>
-              </FormRow>
-              
+          <FormContainer>
+            <FormRow>
               <FormGroup>
-                <Label htmlFor="email">{messages?.formEmailLabel || "Email"}</Label>
-                <Input 
-                  type="email" 
-                  id="email" 
-                  placeholder={messages?.formEmailPlaceholder || "Enter your email address"} 
-                />
-              </FormGroup>
-              
-              <FormGroup>
-                <Label htmlFor="subject">{messages?.formSubjectLabel || "Subject"}</Label>
+                <Label htmlFor="firstname">{messages?.formFirstNameLabel || "First Name"}</Label>
                 <Input 
                   type="text" 
-                  id="subject" 
-                  placeholder={messages?.formSubjectPlaceholder || "Enter the subject"} 
+                  id="firstname" 
+                  placeholder={messages?.formFirstNamePlaceholder || "Enter your first name"} 
                 />
               </FormGroup>
-              
               <FormGroup>
-                <Label htmlFor="message">{messages?.formProjectLabel || "Message"}</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder={messages?.formProjectPlaceholder || "Tell us about your project requirements"} 
+                <Label htmlFor="lastname">{messages?.formLastNameLabel || "Last Name"}</Label>
+                <Input 
+                  type="text" 
+                  id="lastname" 
+                  placeholder={messages?.formLastNamePlaceholder || "Enter your last name"} 
                 />
               </FormGroup>
-              
-              <Button>{messages?.formSubmit || "Send Message"}</Button>
-            </FormContainer>
-          </LazyComponent>
+            </FormRow>
+            
+            <FormGroup>
+              <Label htmlFor="email">{messages?.formEmailLabel || "Email"}</Label>
+              <Input 
+                type="email" 
+                id="email" 
+                placeholder={messages?.formEmailPlaceholder || "Enter your email address"} 
+              />
+            </FormGroup>
+            
+            <FormGroup>
+              <Label htmlFor="subject">{messages?.formSubjectLabel || "Subject"}</Label>
+              <Input 
+                type="text" 
+                id="subject" 
+                placeholder={messages?.formSubjectPlaceholder || "Enter the subject"} 
+              />
+            </FormGroup>
+            
+            <FormGroup>
+              <Label htmlFor="message">{messages?.formProjectLabel || "Message"}</Label>
+              <Textarea 
+                id="message" 
+                placeholder={messages?.formProjectPlaceholder || "Tell us about your project requirements"} 
+              />
+            </FormGroup>
+            
+            <Button>{messages?.formSubmit || "Send Message"}</Button>
+          </FormContainer>
         </FlexContainer>
       </Container>
     </Section>
