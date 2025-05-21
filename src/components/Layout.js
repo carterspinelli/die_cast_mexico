@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
+import TubelightNavbar from "./ui/tubelight-navbar";
 import Footer from "./Footer";
 import { usePageTracking } from "../utils/hooks";
 import { useLanguage } from "../context/LanguageContext";
@@ -18,13 +19,16 @@ const Content = styled.div`
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   // Get language and messages from our custom context
   const { messages } = useLanguage();
+  const [useModernNav, setUseModernNav] = useState(true);
   
   // Track page views
   usePageTracking();
   
   return (
     <Main>
-      {!hideNav && <Navbar messages={messages} />}
+      {!hideNav && (
+        useModernNav ? <TubelightNavbar /> : <Navbar messages={messages} />
+      )}
       <Content>{children}</Content>
       {!hideFooter && <Footer messages={messages} />}
     </Main>
