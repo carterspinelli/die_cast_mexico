@@ -70,22 +70,22 @@ const KeyCollaborations = () => {
   return (
     <CollaborationsSection>
       <Container>
-        <SectionHeader>
-          <Title>{translations.collaborationsTitle}</Title>
-          <Description>
+        <SectionHeader data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">{translations.collaborationsTitle}</Title>
+          <Description data-aos="fade-up" data-aos-delay="200">
             {translations.collaborationsDesc}
           </Description>
         </SectionHeader>
         
-        <LogosContainer>
-          <Logo>
+        <LogosContainer data-aos="fade-up" data-aos-delay="300">
+          <Logo data-aos="zoom-in" data-aos-delay="400">
             <img src={images.collaborations.nadca} alt="NADCA - North American Die Casting Association" />
-            <LogoName>{translations.nadcaTitle}</LogoName>
+            <LogoName data-aos="fade-up" data-aos-delay="500">{translations.nadcaTitle}</LogoName>
           </Logo>
           
-          <Logo>
+          <Logo data-aos="zoom-in" data-aos-delay="600">
             <img src={images.collaborations.aiag} alt="AIAG - Automotive Industry Action Group" />
-            <LogoName>{translations.aiagTitle}</LogoName>
+            <LogoName data-aos="fade-up" data-aos-delay="700">{translations.aiagTitle}</LogoName>
           </Logo>
         </LogosContainer>
       </Container>

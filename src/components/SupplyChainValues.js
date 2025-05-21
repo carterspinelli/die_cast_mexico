@@ -85,32 +85,32 @@ const SupplyChainValues = () => {
   return (
     <Section id="supply-chain">
       <Container>
-        <Header>
-          <Title>
+        <Header data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">
             {translate(messages, 'supplyChainTitle', "Supply Chain Added Values")}
           </Title>
         </Header>
         
-        <Description>
+        <Description data-aos="fade-up" data-aos-delay="200">
           {translate(messages, 'supplyChainIntro', "At Die Cast Mexico, we prioritize development of skilled suppliers for liquid painting, surface finishes such as nickel plating to add value to our supply chain and meet our clients' needs.")}
         </Description>
         
-        <Description>
+        <Description data-aos="fade-up" data-aos-delay="300">
           {translate(messages, 'supplyChainExpertise1', "We rely on our suppliers' ")}
-          <HighlightText>
+          <HighlightText data-aos="fade-up" data-aos-delay="350">
             {translate(messages, 'supplyChainExpertiseHighlight', "expertise")}
           </HighlightText>
           {translate(messages, 'supplyChainExpertise2', ", we ensure exceptional quality standards and improved product performance. Our commitment to skilled suppliers strengthens our supply chain, reduces lead times, and fosters long-term partnerships built on trust and collaboration, ultimately exceeding our clients' expectations.")}
         </Description>
         
-        <ImagesGrid>
-          <ImageContainer>
+        <ImagesGrid data-aos="fade-up" data-aos-delay="400">
+          <ImageContainer data-aos="fade-right" data-aos-delay="500">
             <Image 
               src="/images/die_cast_add_value.png" 
               alt={translate(messages, 'supplyImageAlt1', "Die casting plating process")}
             />
           </ImageContainer>
-          <ImageContainer>
+          <ImageContainer data-aos="fade-left" data-aos-delay="600">
             <Image 
               src="/images/die_cast_add_value_02.png" 
               alt={translate(messages, 'supplyImageAlt2', "Die casting painting process")}

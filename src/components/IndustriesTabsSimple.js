@@ -271,35 +271,37 @@ const IndustriesTabsSimple = () => {
   return (
     <Section id="industries">
       <Container>
-        <Header>
-          <Title className="slide-in-left">{messages.industriesTitle || "Industries We Serve"}</Title>
-          <Subtitle className="slide-in-right">
+        <Header data-aos="fade-up">
+          <Title data-aos="fade-up" data-aos-delay="100">{messages.industriesTitle || "Industries We Serve"}</Title>
+          <Subtitle data-aos="fade-up" data-aos-delay="200">
             {messages.industriesSubtitle || "Our die casting expertise spans across multiple industries, providing precision components for diverse applications."}
           </Subtitle>
         </Header>
         
         <TabsContainer>
           <TabsList>
-            {industriesData.map((industry) => (
+            {industriesData.map((industry, index) => (
               <TabButton
                 key={industry.value}
                 active={activeTab === industry.value}
                 onClick={() => setActiveTab(industry.value)}
+                data-aos="fade-up"
+                data-aos-delay={300 + (index * 50)}
               >
                 {industry.icon} {industry.label}
               </TabButton>
             ))}
           </TabsList>
           
-          <ContentContainer>
+          <ContentContainer data-aos="fade-up" data-aos-delay="700">
             <ContentGrid>
               <ContentText>
-                <Badge>{activeIndustry.content.badge}</Badge>
-                <ContentTitle>{activeIndustry.content.title}</ContentTitle>
-                <ContentDescription>{activeIndustry.content.description}</ContentDescription>
+                <Badge data-aos="fade-right" data-aos-delay="800">{activeIndustry.content.badge}</Badge>
+                <ContentTitle data-aos="fade-right" data-aos-delay="900">{activeIndustry.content.title}</ContentTitle>
+                <ContentDescription data-aos="fade-right" data-aos-delay="1000">{activeIndustry.content.description}</ContentDescription>
               </ContentText>
               
-              <ImageContainer>
+              <ImageContainer data-aos="fade-left" data-aos-delay="800">
                 <IndustryImage src={activeIndustry.imageSrc} />
               </ImageContainer>
             </ContentGrid>
