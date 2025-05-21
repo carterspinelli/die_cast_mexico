@@ -162,25 +162,25 @@ const Footer = ({ messages }) => {
   // Helper function to create localized paths
   const localizedLink = (path) => getLocalizedPath(path, language);
   
-  // Use services from the translation to get proper localization
+  // Use services from the translation files
   const services = [
-    { name: messages.dieCasting || "Die Casting", path: "/#services" },
-    { name: messages.mouldFixture || "Mould & Fixture Design", path: "/#services" },
-    { name: messages.cncMachining || "CNC Precision Machining", path: "/#services" },
-    { name: messages.surfaceTreatment || "Surface Treatment", path: "/#services" },
-    { name: messages.testingAssembly || "Testing & Assembly", path: "/#services" },
+    { name: language === 'es' ? "Fundición a Presión" : "Die Casting", path: "/#services" },
+    { name: language === 'es' ? "Diseño de Moldes y Accesorios" : "Mould & Fixture Design", path: "/#services" },
+    { name: language === 'es' ? "Mecanizado CNC de Precisión" : "CNC Precision Machining", path: "/#services" },
+    { name: language === 'es' ? "Tratamiento de Superficie" : "Surface Treatment", path: "/#services" },
+    { name: language === 'es' ? "Pruebas y Ensamblaje" : "Testing & Assembly", path: "/#services" },
   ];
   
-  // Use industries from the translation to get proper localization
+  // Use industries from the translation files
   const industries = [
-    { name: messages.telecom || "Telecommunications", path: "/#industries" },
-    { name: messages.mechatronics || "Mechatronics & Automation", path: "/#industries" },
-    { name: messages.powerTools || "Power Tools", path: "/#industries" },
-    { name: messages.automotive || "Automotive", path: "/#industries" },
-    { name: messages.lighting || "Lighting", path: "/#industries" },
-    { name: messages.instrumentation || "Instrumentation", path: "/#industries" },
-    { name: messages.pneumatic || "Pneumatic & Hydraulic", path: "/#industries" },
-    { name: messages.marine || "Marine Products", path: "/#industries" },
+    { name: language === 'es' ? "Telecomunicaciones" : "Telecommunications", path: "/#industries" },
+    { name: language === 'es' ? "Mecatrónica y Automatización" : "Mechatronics & Automation", path: "/#industries" },
+    { name: language === 'es' ? "Herramientas Eléctricas" : "Power Tools", path: "/#industries" },
+    { name: language === 'es' ? "Automotriz" : "Automotive", path: "/#industries" },
+    { name: language === 'es' ? "Iluminación" : "Lighting", path: "/#industries" },
+    { name: language === 'es' ? "Instrumentación" : "Instrumentation", path: "/#industries" },
+    { name: language === 'es' ? "Neumática e Hidráulica" : "Pneumatic & Hydraulic", path: "/#industries" },
+    { name: language === 'es' ? "Productos Marinos" : "Marine Products", path: "/#industries" },
   ];
 
   // Removed terms and conditions and privacy policy links as requested
