@@ -302,18 +302,18 @@ const Navbar = () => {
               {messages.services}
             </NavLink>
             <NavLink 
-              to={localizedLink("/#industries")} 
-              className={activeSection === "industries" ? "active" : ""}
-              onClick={() => setActiveSection("industries")}
-            >
-              {messages.industries}
-            </NavLink>
-            <NavLink 
               to={localizedLink("/#about")} 
               className={activeSection === "about" ? "active" : ""}
               onClick={() => setActiveSection("about")}
             >
               {messages.about}
+            </NavLink>
+            <NavLink 
+              to={localizedLink("/#industries")} 
+              className={activeSection === "industries" ? "active" : ""}
+              onClick={() => setActiveSection("industries")}
+            >
+              {messages.industries}
             </NavLink>
           </NavLinks>
           

@@ -148,8 +148,8 @@ const TubelightNavbar = () => {
   const navItems = [
     { name: "home", label: messages.home, url: localizedLink("/") },
     { name: "services", label: messages.services, url: localizedLink("/#services") },
-    { name: "industries", label: messages.industries, url: localizedLink("/#industries") },
     { name: "about", label: messages.about, url: localizedLink("/#about") },
+    { name: "industries", label: messages.industries, url: localizedLink("/#industries") },
   ];
 
   return (
@@ -172,74 +172,24 @@ const TubelightNavbar = () => {
               >
                 {item.label}
                 {isActive && (
-                  <>
-                    {/* Underline effect */}
-                    <motion.div
-                      layoutId="lamp-underline"
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                      style={{
-                        position: "absolute",
-                        bottom: "-4px",
-                        left: 0,
-                        width: "100%",
-                        height: "2px",
-                        backgroundColor: "#0c1220",
-                        zIndex: 1
-                      }}
-                    />
-                    
-                    {/* Top light effect */}
-                    <motion.div
-                      layoutId="lamp-light"
-                      initial={false}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 30,
-                      }}
-                      style={{
-                        position: "absolute",
-                        top: "-8px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "24px",
-                        height: "4px",
-                        backgroundColor: "#0c1220",
-                        borderRadius: "9999px",
-                        zIndex: 2
-                      }}
-                    >
-                      <div 
-                        style={{
-                          position: "absolute",
-                          width: "32px",
-                          height: "16px",
-                          backgroundColor: "rgba(12, 18, 32, 0.2)",
-                          borderRadius: "9999px",
-                          filter: "blur(6px)",
-                          top: "-10px",
-                          left: "-4px"
-                        }}
-                      />
-                      <div 
-                        style={{
-                          position: "absolute",
-                          width: "16px",
-                          height: "16px",
-                          backgroundColor: "rgba(12, 18, 32, 0.15)",
-                          borderRadius: "9999px",
-                          filter: "blur(4px)",
-                          top: "-8px",
-                          left: "4px"
-                        }}
-                      />
-                    </motion.div>
-                  </>
+                  <motion.div
+                    layoutId="underline"
+                    initial={false}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                    style={{
+                      position: "absolute",
+                      bottom: "-4px",
+                      left: 0,
+                      width: "100%",
+                      height: "2px",
+                      backgroundColor: "#0c1220",
+                      zIndex: 1
+                    }}
+                  />
                 )}
               </NavItem>
             );
