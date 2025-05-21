@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { useLanguage, getLocalizedPath } from "../../context/LanguageContext";
@@ -92,9 +91,24 @@ const NavItem = styled(Link)`
   color: var(--gray-dark);
   text-decoration: none;
   
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0c1220;
+    transition: width 0.3s ease;
+  }
+  
   &:hover {
     color: #0c1220;
     transform: translateY(-1px);
+  }
+  
+  &:hover:after {
+    width: 100%;
   }
 `;
 
@@ -171,26 +185,7 @@ const TubelightNavbar = () => {
                 className={isActive ? "active" : ""}
               >
                 {item.label}
-                {isActive && (
-                  <motion.div
-                    layoutId="underline"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                    style={{
-                      position: "absolute",
-                      bottom: "-4px",
-                      left: 0,
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "#0c1220",
-                      zIndex: 1
-                    }}
-                  />
-                )}
+{/* No permanent underline anymore, only on hover */}
               </NavItem>
             );
           })}

@@ -86,9 +86,7 @@ const NavLink = styled(Link)`
     transform: translateY(-1px);
   }
   
-  &:hover:after,
-  &.active:after,
-  &[aria-current="page"]:after {
+  &:hover:after {
     width: 100%;
   }
 `;
