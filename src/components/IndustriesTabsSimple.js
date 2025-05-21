@@ -279,14 +279,12 @@ const IndustriesTabsSimple = () => {
         </Header>
         
         <TabsContainer>
-          <TabsList>
+          <TabsList data-aos="fade-up" data-aos-delay="300">
             {industriesData.map((industry, index) => (
               <TabButton
                 key={industry.value}
                 active={activeTab === industry.value}
                 onClick={() => setActiveTab(industry.value)}
-                data-aos="fade-up"
-                data-aos-delay={300 + (index * 50)}
               >
                 {industry.icon} {industry.label}
               </TabButton>
