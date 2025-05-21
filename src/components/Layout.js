@@ -27,8 +27,8 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: false,
-      mirror: true,
+      once: true,  // Set to true to make animations occur only once
+      mirror: false,
       offset: 120,
       easing: 'ease-in-out'
     });
