@@ -172,51 +172,74 @@ const TubelightNavbar = () => {
               >
                 {item.label}
                 {isActive && (
-                  <motion.div
-                    layoutId="lamp"
-                    className="lamp"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                    style={{
-                      position: "absolute",
-                      bottom: "-4px",
-                      left: 0,
-                      width: "100%",
-                      height: "2px",
-                      backgroundColor: "#0c1220",
-                      zIndex: 1
-                    }}
-                  >
-                    <div 
+                  <>
+                    {/* Underline effect */}
+                    <motion.div
+                      layoutId="lamp-underline"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
                       style={{
                         position: "absolute",
-                        top: "-4px",
+                        bottom: "-4px",
+                        left: 0,
+                        width: "100%",
+                        height: "2px",
+                        backgroundColor: "#0c1220",
+                        zIndex: 1
+                      }}
+                    />
+                    
+                    {/* Top light effect */}
+                    <motion.div
+                      layoutId="lamp-light"
+                      initial={false}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 30,
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: "-8px",
                         left: "50%",
                         transform: "translateX(-50%)",
-                        width: "16px",
+                        width: "24px",
                         height: "4px",
                         backgroundColor: "#0c1220",
-                        borderRadius: "9999px"
+                        borderRadius: "9999px",
+                        zIndex: 2
                       }}
                     >
                       <div 
                         style={{
                           position: "absolute",
                           width: "32px",
-                          height: "8px",
+                          height: "16px",
                           backgroundColor: "rgba(12, 18, 32, 0.2)",
                           borderRadius: "9999px",
                           filter: "blur(6px)",
-                          top: "-3px",
-                          left: "-8px"
+                          top: "-10px",
+                          left: "-4px"
                         }}
                       />
-                    </div>
-                  </motion.div>
+                      <div 
+                        style={{
+                          position: "absolute",
+                          width: "16px",
+                          height: "16px",
+                          backgroundColor: "rgba(12, 18, 32, 0.15)",
+                          borderRadius: "9999px",
+                          filter: "blur(4px)",
+                          top: "-8px",
+                          left: "4px"
+                        }}
+                      />
+                    </motion.div>
+                  </>
                 )}
               </NavItem>
             );
