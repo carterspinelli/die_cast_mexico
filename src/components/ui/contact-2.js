@@ -56,12 +56,12 @@ const TextCenter = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
   
   @media (min-width: 1024px) {
-    font-size: 3.75rem;
+    font-size: 2.5rem;
     margin-bottom: 0.25rem;
   }
 `;
@@ -187,7 +187,7 @@ export const Contact2 = ({
                   </Link>
                 </ContactItem>
                 <ContactItem>
-                  <ContactLabel>Web: </ContactLabel>
+                  <ContactLabel>Address: </ContactLabel>
                   <Link 
                     href={web?.url || "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal."} 
                     target="_blank"
