@@ -7,55 +7,55 @@
   "contact": "Contact",
   "cta": "Get a Quote",
   "learnMore": "Learn More",
-  
+
   "heroTitle": "Professional Die Casting Solutions in Mexico",
   "heroSubtitle": "High-quality aluminum die casting services for automotive, energy, telecommunications, marine industries, and more.",
-  
+
   "servicesTitle": "Our Services",
   "servicesSubtitle": "We provide comprehensive die casting solutions tailored to your needs",
-  
+
   "highPressureTitle": "High Pressure Die Casting",
   "highPressureDesc": "Our advanced HPDC process ensures high-quality castings with excellent surface finish and dimensional accuracy.",
-  
+
   "moldingTitle": "Tool & Die Design",
   "moldingDesc": "We design and manufacture custom molds and tools tailored to your specific product requirements.",
-  
+
   "finishingTitle": "Surface Finishing",
   "finishingDesc": "We offer a variety of surface treatments including polishing, powder coating, and anodizing to enhance appearance and performance.",
-  
+
   "qualityTitle": "Quality Control",
   "qualityDesc": "Our rigorous inspection processes ensure all products meet strict quality standards and specifications.",
-  
+
   "facilityTitle": "Our Facility",
   "facilitySubtitle": "State-of-the-art equipment and experienced professionals",
-  
+
   "capacityTitle": "Production Capacity",
   "capacityDesc": "Over 25,000 sq. ft. manufacturing facility with capacity to handle large production runs.",
-  
+
   "technologyTitle": "Advanced Technology",
   "technologyDesc": "Equipment ranging from 400 to 1600 ton machines for a wide variety of part sizes.",
-  
+
   "staffTitle": "Expert Team",
   "staffDesc": "Experienced engineers and technicians with over 20 years in die casting industry.",
-  
+
   "industriesTitle": "Industries We Serve",
   "industriesSubtitle": "Delivering quality die casting solutions across multiple sectors",
-  
+
   "automotiveTitle": "Automotive",
   "automotiveDesc": "Engine components, transmission parts, structural components, and decorative trim.",
-  
+
   "telecomTitle": "Telecommunications",
   "telecomDesc": "Enclosures for communication equipment, antenna housings, and structural components.",
-  
+
   "mechatronicsTitle": "Mechatronics and Automation",
   "mechatronicsDesc": "Robotic components, actuator housings, and industrial automation parts requiring high dimensional stability.",
-  
+
   "marineTitle": "Marine Products",
   "marineDesc": "Corrosion-resistant components for marine engines, propellers, and deck equipment.",
-  
+
   "capabilitiesTitle": "Our Technical Capabilities",
   "capabilitiesSubtitle": "State-of-the-art equipment and precision engineering",
-  
+
   "machineTitle": "Machine Specifications",
   "tonnageCapacity": "Tonnage Capacity",
   "tonnageRange": "400 - 1600 tons",
@@ -65,7 +65,7 @@
   "partWeightRange": "0.1 - 12 kg",
   "dieSize": "Die Size",
   "dieSizeRange": "Up to 1250 × 1250 mm",
-  
+
   "qualitySpecsTitle": "Quality Specifications",
   "dimensionalTolerance": "Dimensional Tolerance",
   "dimensionalToleranceValue": "±0.05 mm",
@@ -75,44 +75,44 @@
   "wallThicknessValue": "0.5 mm",
   "materialPurity": "Material Purity",
   "materialPurityValue": "99.7%",
-  
+
   "productSegmentsTitle": "Product Segments",
   "productSegmentsSubtitle": "Industry-specific die casting solutions",
-  
+
   "automotiveSegmentTitle": "Automotive Components",
   "automotiveSegmentDesc": "Engine brackets, transmission housings, steering components, and structural parts with high mechanical properties.",
-  
+
   "telecomSegmentTitle": "Telecom Hardware",
   "telecomSegmentDesc": "Heat sinks, enclosures, mounting brackets, and connector housings with precise electromagnetic shielding properties.",
-  
+
   "instrumentationSegmentTitle": "Instrumentation",
   "instrumentationSegmentDesc": "Sensor housings, meter cases, control panels, and precision instrument components with tight tolerances.",
-  
+
   "marineSegmentTitle": "Marine Applications",
   "marineSegmentDesc": "Corrosion-resistant propeller components, engine parts, and hardware for harsh marine environments.",
-  
+
   "automationSegmentTitle": "Automation",
   "automationSegmentDesc": "Robotic components, actuator housings, and industrial automation parts requiring high dimensional stability.",
-  
+
   "powertoolsSegmentTitle": "Power Tools",
   "powertoolsSegmentDesc": "Housings and components for power tools that require high strength and impact resistance.",
-  
+
   "lightingSegmentTitle": "Lighting Fixtures",
   "lightingSegmentDesc": "LED heat sinks, fixture housings, and decorative elements with premium surface finish.",
-  
+
   "pneumaticSegmentTitle": "Pneumatic Systems",
   "pneumaticSegmentDesc": "Valve bodies, cylinder components, and fittings for pneumatic control systems requiring pressure tightness.",
-  
+
   "aboutTitle": "About Die Cast Mexico",
   "aboutSubtitle": "Delivering quality die casting solutions since 2005",
   "aboutDesc": "Die Cast Mexico is a leading provider of die casting services located in Monterrey, Mexico. With over 15 years of experience, we specialize in high-pressure aluminum die casting for various industries. Our state-of-the-art facility combines cutting-edge technology with skilled craftsmanship to deliver exceptional quality products that meet our clients' exact specifications.",
   "mission": "Our mission is to be the preferred partner for die casting solutions by consistently delivering superior quality, competitive pricing, and exceptional customer service while maintaining environmental responsibility in all our operations.",
-  
+
   "contactTitle": "Contact Us",
   "contactSubtitle": "Get in touch with our team for inquiries, quotes, or support",
   "contactFormTitle": "Send Us a Message",
   "contactFormSubtitle": "Fill out the form below and we'll get back to you within 24 hours",
-  
+
   "formNameLabel": "Your Name",
   "formNamePlaceholder": "Enter your full name",
   "formFirstNameLabel": "First Name",
@@ -133,47 +133,47 @@
   "contactDetailTitle": "Contact Details",
   "formSuccess": "Thank you! Your message has been sent successfully.",
   "formError": "There was an error sending your message. Please try again.",
-  
+
   "footerAddress": "Address",
   "footerAddressValue": "Parque Industrial Monterrey, Av. Industria 1200, Monterrey, NL, Mexico",
   "footerPhone": "Phone",
   "footerEmail": "Email",
   "footerEmailValue": "info@diecastmexico.com",
   "footerRights": "All rights reserved",
-  
+
   "notFoundTitle": "Page Not Found",
   "notFoundDesc": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
   "backHome": "Back to Home",
-  
+
   "collaborationsTitle": "Key Collaborations",
   "collaborationsDesc": "Overall, Die Cast Mexico corporate membership in both NADCA and AIAG brings immense value to our company. We leverage industry knowledge, expertise, and resources provided by these organizations to improve our manufacturing processes, meet industry standards, and deliver high-quality products to our customers in different industry segments. This strategic alliance positions Die Cast Mexico as a trusted partner within the die casting industry, fostering growth and success in this increasingly competitive market.",
   "nadcaTitle": "North American Die Casting Association",
   "aiagTitle": "Automotive Industry Action Group",
-  
+
   "servicesTagline": "Expert Solutions",
-  "servicesButtonText": "Request a Quote",
+  "servicesButtonText": "Get a Quote",
   "serviceReadMore": "Learn More",
-  
+
   "serviceDesignTitle": "Mould & fixture design and fabrication",
   "serviceDesignSummary": "Using expert design and modern machining, Marchesi creates complex molds, rapid prototyping solutions, and high-efficiency CNC fixtures for customers.",
   "serviceDesignLabel": "Engineering",
-  
+
   "serviceCastingTitle": "Die Casting",
   "serviceCastingSummary": "Die Casting Mexico deploys automatic cold chamber die-casting machines ranging from 400 ton to 1900 ton dedicated to aluminum and magnesium alloy.",
   "serviceCastingLabel": "Manufacturing",
-  
+
   "serviceFinishingTitle": "Surface Treatment",
   "serviceFinishingSummary": "Die Cast Mexico is able to further treat the components with surface KLT, anodizing or other treatments according to client demands.",
   "serviceFinishingLabel": "Post-Processing",
-  
+
   "serviceCncTitle": "CNC Precision Machining",
   "serviceCncSummary": "Die Cast Mexico offers precise CNC machining from simple to complex projects with advanced quality control. Our horizontal CNC centers deliver high precision at volume.",
   "serviceCncLabel": "Precision Manufacturing",
-  
+
   "serviceTestingTitle": "Testing & Assembly",
   "serviceTestingSummary": "Die Cast Mexico provides early-stage support, creating solutions based on customer needs. We employ experienced engineers and advanced testing equipment for quality assurance.",
   "serviceTestingLabel": "Quality Assurance",
-  
+
   "facilityAboutTitle": "About Us",
   "facilityAboutDescription": "Die Cast Mexico's state-of-the-art facility located in Guadalajara, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.",
   "achievementsTitle": "Facility",
@@ -186,7 +186,7 @@
   "achievementsQualityLabel": "Quality Approval",
   "achievementsQualityValue": "99.9%",
   "certificationsTitle": "Industry Certifications",
-  
+
   "supplyChainTitle": "Supply Chain Added Values",
   "supplyChainIntro": "At Die Cast Mexico, we prioritize development of skilled suppliers for liquid painting, surface finishes such as nickel plating to add value to our supply chain and meet our clients' needs.",
   "supplyChainExpertise1": "We rely on our suppliers' ",
@@ -194,11 +194,11 @@
   "supplyChainExpertise2": ", we ensure exceptional quality standards and improved product performance. Our commitment to skilled suppliers strengthens our supply chain, reduces lead times, and fosters long-term partnerships built on trust and collaboration, ultimately exceeding our clients' expectations.",
   "supplyImageAlt1": "Die casting plating process",
   "supplyImageAlt2": "Die casting painting process",
-  
+
   "specification": "Specification",
   "value": "Value",
   "range": "Range",
-  
+
   "facilityOverviewTitle": "Facility Overview",
   "overviewTabLabel": "Overview",
   "manufacturingTabLabel": "Manufacturing",
@@ -206,7 +206,7 @@
   "specificationLabel": "Specification",
   "processLabel": "Process",
   "valueLabel": "Value",
-  
+
   "iso9001Title": "ISO 9001:2015 Certified",
   "iso9001Description": "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.",
   "contactUsBtn": "Contact Us",
