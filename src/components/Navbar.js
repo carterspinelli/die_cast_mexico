@@ -229,13 +229,34 @@ const MobileCTAButton = styled(Link)`
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const { language, messages } = useLanguage();
   
   useEffect(() => {
     const handleScroll = () => {
+      // Update scroll state
       const isScrolled = window.scrollY > 30;
       if (isScrolled !== scrolled) {
         setScrolled(isScrolled);
+      }
+      
+      // Update active section based on scroll position
+      if (typeof window !== "undefined") {
+        const servicesSection = document.getElementById("services");
+        const industriesSection = document.getElementById("industries");
+        const aboutSection = document.getElementById("about");
+        
+        const scrollPosition = window.scrollY + 200; // Add offset for better detection
+        
+        if (aboutSection && scrollPosition >= aboutSection.offsetTop) {
+          setActiveSection("about");
+        } else if (industriesSection && scrollPosition >= industriesSection.offsetTop) {
+          setActiveSection("industries");
+        } else if (servicesSection && scrollPosition >= servicesSection.offsetTop) {
+          setActiveSection("services");
+        } else {
+          setActiveSection("home");
+        }
       }
     };
     
@@ -266,33 +287,31 @@ const Navbar = () => {
           </LogoWrapper>
           
           <NavLinks>
-            <NavLink to={localizedLink("/")} activeClassName="active">
+            <NavLink 
+              to={localizedLink("/")} 
+              className={activeSection === "home" ? "active" : ""}
+              onClick={() => setActiveSection("home")}
+            >
               {messages.home}
             </NavLink>
             <NavLink 
               to={localizedLink("/#services")} 
-              activeClassName="active"
-              getProps={({ isPartiallyCurrent }) => {
-                return { className: isPartiallyCurrent ? "active" : "" };
-              }}
+              className={activeSection === "services" ? "active" : ""}
+              onClick={() => setActiveSection("services")}
             >
               {messages.services}
             </NavLink>
             <NavLink 
               to={localizedLink("/#industries")} 
-              activeClassName="active"
-              getProps={({ isPartiallyCurrent }) => {
-                return { className: isPartiallyCurrent ? "active" : "" };
-              }}
+              className={activeSection === "industries" ? "active" : ""}
+              onClick={() => setActiveSection("industries")}
             >
               {messages.industries}
             </NavLink>
             <NavLink 
               to={localizedLink("/#about")} 
-              activeClassName="active"
-              getProps={({ isPartiallyCurrent }) => {
-                return { className: isPartiallyCurrent ? "active" : "" };
-              }}
+              className={activeSection === "about" ? "active" : ""}
+              onClick={() => setActiveSection("about")}
             >
               {messages.about}
             </NavLink>
