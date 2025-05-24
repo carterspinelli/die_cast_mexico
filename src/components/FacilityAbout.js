@@ -146,6 +146,100 @@ const AchievementsDescription = styled.p`
   font-size: 0.95rem;
 `;
 
+const CapabilitiesGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+`;
+
+const CapabilityBox = styled.div`
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const CapabilityHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+`;
+
+const CapabilityIcon = styled.div`
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CapabilityTitle = styled.h4`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+`;
+
+const CapabilityContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+const CapabilityItem = styled.div`
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.75rem;
+  
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+`;
+
+const CapabilityLabel = styled.div`
+  font-size: 0.9rem;
+  color: #b4c6e0;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+`;
+
+const CapabilityValue = styled.div`
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.4;
+`;
+
+const BasicInfoGrid = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+`;
+
 const AchievementsGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -245,24 +339,97 @@ const FacilityAbout = () => {
         <div style={{ marginTop: '4rem' }} data-aos="fade-up" data-aos-delay="200">
           <AchievementsBox>
             <AchievementsHeader>
-              <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Facility")}</AchievementsTitle>
+              <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Manufacturing Capabilities")}</AchievementsTitle>
               <AchievementsDescription data-aos="fade-up" data-aos-delay="400">
                 {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
               </AchievementsDescription>
             </AchievementsHeader>
             
-            <AchievementsGrid>
+            <CapabilitiesGrid>
+              <CapabilityBox data-aos="fade-up" data-aos-delay="500">
+                <CapabilityHeader>
+                  <CapabilityIcon>📊</CapabilityIcon>
+                  <CapabilityTitle>Overview</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>Workforce</CapabilityLabel>
+                    <CapabilityValue>125+</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Material Capacity</CapabilityLabel>
+                    <CapabilityValue>Up to 250ton/month aluminum ingots</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Aluminum Alloys</CapabilityLabel>
+                    <CapabilityValue>AlSi12(Fe), A380, A360, A413, ADC12</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+
+              <CapabilityBox data-aos="fade-up" data-aos-delay="600">
+                <CapabilityHeader>
+                  <CapabilityIcon>⚙️</CapabilityIcon>
+                  <CapabilityTitle>Manufacturing</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>Die Casting</CapabilityLabel>
+                    <CapabilityValue>8 full automatic manufacturing cells</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>CNC Machining</CapabilityLabel>
+                    <CapabilityValue>19 horizontal 4 axis machines</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Mechanical Assembly</CapabilityLabel>
+                    <CapabilityValue>Dowel pins, labels, helicoils, plugs, etc.</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+
+              <CapabilityBox data-aos="fade-up" data-aos-delay="700">
+                <CapabilityHeader>
+                  <CapabilityIcon>✨</CapabilityIcon>
+                  <CapabilityTitle>Surface Finishing</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>FIP Gasket</CapabilityLabel>
+                    <CapabilityValue>Precision gasket application</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Powder Painting</CapabilityLabel>
+                    <CapabilityValue>Akzo Nobel, Cardinal, Sherwin Williams</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Liquid Painting</CapabilityLabel>
+                    <CapabilityValue>Custom color solutions</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Nickel Plating</CapabilityLabel>
+                    <CapabilityValue>High-quality surface finish</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>Surface Treatment</CapabilityLabel>
+                    <CapabilityValue>Tri-chrome passivation on Aluminum: Surtec 650®</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+            </CapabilitiesGrid>
+            
+            <BasicInfoGrid>
               {achievements.map((achievement, idx) => (
                 <Achievement 
                   key={achievement.label + idx}
                   data-aos="fade-up" 
-                  data-aos-delay={500 + (idx * 100)}
+                  data-aos-delay={800 + (idx * 100)}
                 >
                   <AchievementLabel>{achievement.label}</AchievementLabel>
                   <AchievementValue>{achievement.value}</AchievementValue>
                 </Achievement>
               ))}
-            </AchievementsGrid>
+            </BasicInfoGrid>
           </AchievementsBox>
         </div>
       </Container>
