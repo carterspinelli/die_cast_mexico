@@ -125,8 +125,8 @@
   "formPhonePlaceholder": "Enter your phone number (optional)",
   "formCompanyLabel": "Company",
   "formCompanyPlaceholder": "Enter your company name",
-  "formSubjectLabel": "Subject",
-  "formSubjectPlaceholder": "Enter the subject",
+  "formSubjectLabel": "Company",
+  "formSubjectPlaceholder": "Enter your company's name",
   "formProjectLabel": "Project Details",
   "formProjectPlaceholder": "Tell us about your project requirements",
   "formSubmit": "Submit Inquiry",
@@ -154,7 +154,7 @@
   "servicesButtonText": "Get a Quote",
   "serviceReadMore": "Learn More",
 
-  "serviceDesignTitle": "Mould & fixture design and fabrication",
+  "serviceDesignTitle": "Mould & Fixture Design and Fabrication",
   "serviceDesignSummary": "Using expert design and modern machining, Marchesi creates complex molds, rapid prototyping solutions, and high-efficiency CNC fixtures for customers.",
   "serviceDesignLabel": "Engineering",
 
@@ -175,7 +175,7 @@
   "serviceTestingLabel": "Quality Assurance",
 
   "facilityAboutTitle": "About Us",
-  "facilityAboutDescription": "Die Cast Mexico's state-of-the-art facility located in Guadalajara, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.",
+  "facilityAboutDescription": "At Die Cast México, we have state-of-the-art facilities, located in Jalisco, México, which opened in the fourth quarter of 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production lots while maintaining the highest quality standards.",
   "achievementsTitle": "Facility",
   "achievementsYearsLabel": "Years in Operation",
   "achievementsYearsValue": "Since 2018",
@@ -209,6 +209,10 @@
 
   "iso9001Title": "ISO 9001:2015 Certified",
   "iso9001Description": "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.",
+  "iatf16949Title": "IATF 16949 Certification",
+  "iatf16949Description": "Our goal is to be certified in IATF 16949 by 1st Quarter 2026",
+  "iatfLogoAlt": "IATF 16949 Certification",
+  "isoLogoAlt": "ISO 9001 Certification",
   "contactUsBtn": "Contact Us",
   "requiredField": "This field is required",
   "invalidEmail": "Please enter a valid email address"

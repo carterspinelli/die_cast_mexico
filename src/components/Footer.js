@@ -282,7 +282,14 @@ const Footer = ({ messages }) => {
         <BottomSection>
           <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights || "All rights reserved"}.</Copyright>
           <LegalLinks>
-            <CertificationImage src="/images/iso9001_diecast.webp" alt="ISO 9001:2015 Certified" />
+            <CertificationImage 
+              src="/images/iso9001_diecast.webp" 
+              alt={messages.isoLogoAlt || "ISO 9001:2015 Certified"} 
+            />
+            <CertificationImage 
+              src="/images/iatf_16949_logo.png" 
+              alt={messages.iatfLogoAlt || "IATF 16949 Certification"} 
+            />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
                 {link.name}

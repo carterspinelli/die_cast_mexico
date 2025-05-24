@@ -9,12 +9,12 @@
   "learnMore": "Más información",
 
   "heroTitle": "Soluciones Profesionales de Die Casting en México",
-  "heroSubtitle": "Servicios de fundición a presión de aluminio de alta calidad para las industrias automotriz, energética, telecomunicaciones, marina, y más.",
+  "heroSubtitle": "Servicios de fundición e inyección a presión de aluminio de alta calidad para las industrias automotriz, energética, telecomunicaciones, náutica, y más.",
 
   "servicesTitle": "Nuestros Servicios",
-  "servicesSubtitle": "Ofrecemos soluciones integrales de fundición a presión adaptadas a sus necesidades",
+  "servicesSubtitle": "Ofrecemos soluciones integrales de fundición e inyección a presión adaptadas a sus necesidades",
 
-  "highPressureTitle": "Fundición a Alta Presión",
+  "highPressureTitle": "Fundición e inyección a Alta Presión",
   "highPressureDesc": "Nuestro avanzado proceso HPDC garantiza piezas fundidas de alta calidad con excelente acabado superficial y precisión dimensional.",
 
   "moldingTitle": "Diseño de Herramientas y Moldes",
@@ -36,10 +36,10 @@
   "technologyDesc": "Equipo que va desde máquinas de 400 a 1600 toneladas para una amplia variedad de tamaños de piezas.",
 
   "staffTitle": "Equipo Experto",
-  "staffDesc": "Ingenieros y técnicos experimentados con más de 20 años en la industria de la fundición a presión.",
+  "staffDesc": "Ingenieros y técnicos experimentados con más de 20 años en la industria de la fundición e inyección a presión.",
 
   "industriesTitle": "Industrias que Atendemos",
-  "industriesSubtitle": "Entregando soluciones de fundición a presión de calidad en múltiples sectores",
+  "industriesSubtitle": "Entregando soluciones de fundición e inyección a presión de calidad en múltiples sectores",
 
   "automotiveTitle": "Automotriz",
   "automotiveDesc": "Componentes de motor, piezas de transmisión, componentes estructurales y acabados decorativos.",
@@ -50,8 +50,8 @@
   "mechatronicsTitle": "Mecatrónica y Automatización",
   "mechatronicsDesc": "Componentes robóticos, carcasas de actuadores y piezas de automatización industrial que requieren alta estabilidad dimensional.",
 
-  "marineTitle": "Productos Marinos",
-  "marineDesc": "Componentes resistentes a la corrosión para motores marinos, hélices y equipos de cubierta.",
+  "marineTitle": "Productos Naúticos",
+  "marineDesc": "Componentes resistentes a la corrosión para motores náuticos, hélices y equipos de cubierta.",
 
   "capabilitiesTitle": "Nuestras Capacidades Técnicas",
   "capabilitiesSubtitle": "Equipos de última generación e ingeniería de precisión",
@@ -77,7 +77,7 @@
   "materialPurityValue": "99.7%",
 
   "productSegmentsTitle": "Segmentos de Productos",
-  "productSegmentsSubtitle": "Soluciones de fundición a presión específicas para cada industria",
+  "productSegmentsSubtitle": "Soluciones de fundición e inyección a presión específicas para cada industria",
 
   "automotiveSegmentTitle": "Componentes Automotrices",
   "automotiveSegmentDesc": "Soportes de motor, carcasas de transmisión, componentes de dirección y piezas estructurales con altas propiedades mecánicas.",
@@ -88,8 +88,8 @@
   "instrumentationSegmentTitle": "Instrumentación",
   "instrumentationSegmentDesc": "Carcasas de sensores, cajas de medidores, paneles de control y componentes de instrumentos de precisión con tolerancias ajustadas.",
 
-  "marineSegmentTitle": "Aplicaciones Marinas",
-  "marineSegmentDesc": "Componentes de hélices resistentes a la corrosión, piezas de motor y hardware para entornos marinos severos.",
+  "marineSegmentTitle": "Aplicaciones Náuticas",
+  "marineSegmentDesc": "Componentes de hélices resistentes a la corrosión, piezas de motor y hardware para entornos náuticos.",
 
   "automationSegmentTitle": "Automatización",
   "automationSegmentDesc": "Componentes robóticos, carcasas de actuadores y piezas de automatización industrial que requieren alta estabilidad dimensional.",
@@ -120,8 +120,8 @@
   "formPhonePlaceholder": "Ingrese su número de teléfono (opcional)",
   "formCompanyLabel": "Empresa",
   "formCompanyPlaceholder": "Ingrese el nombre de su empresa",
-  "formSubjectLabel": "Asunto",
-  "formSubjectPlaceholder": "Ingrese el asunto",
+  "formSubjectLabel": "Empresa",
+  "formSubjectPlaceholder": "Ingrese el nombre de su empresa",
   "formProjectLabel": "Detalles del Proyecto",
   "formProjectPlaceholder": "Cuéntenos sobre los requisitos de su proyecto",
   "formSubmit": "Enviar Consulta",
@@ -141,7 +141,7 @@
   "backHome": "Volver al Inicio",
 
   "collaborationsTitle": "Colaboraciones Clave",
-  "collaborationsDesc": "En general, la membresía corporativa de Die Cast Mexico en NADCA y AIAG aporta un inmenso valor a nuestra empresa. Aprovechamos el conocimiento, la experiencia y los recursos proporcionados por estas organizaciones para mejorar nuestros procesos de fabricación, cumplir con los estándares de la industria y entregar productos de alta calidad a nuestros clientes en diferentes segmentos industriales. Esta alianza estratégica posiciona a Die Cast Mexico como un socio confiable dentro de la industria de fundición a presión, fomentando el crecimiento y el éxito en este mercado cada vez más competitivo.",
+  "collaborationsDesc": "En general, la membresía corporativa de Die Cast Mexico en NADCA y AIAG aporta un inmenso valor a nuestra empresa. Aprovechamos el conocimiento, la experiencia y los recursos proporcionados por estas organizaciones para mejorar nuestros procesos de fabricación, cumplir con los estándares de la industria y entregar productos de alta calidad a nuestros clientes en diferentes segmentos industriales. Esta alianza estratégica posiciona a Die Cast Mexico como un socio confiable dentro de la industria de fundición e inyección a presión, fomentando el crecimiento y el éxito en este mercado cada vez más competitivo.",
   "nadcaTitle": "Asociación Norteamericana de Fundición a Presión",
   "aiagTitle": "Grupo de Acción de la Industria Automotriz",
 
@@ -149,30 +149,30 @@
   "servicesButtonText": "Solicitar Cotización",
   "serviceReadMore": "Leer Más",
 
-  "serviceDesignTitle": "Diseño y fabricación de moldes y accesorios",
+  "serviceDesignTitle": "Diseño y Fabricación de Moldes y Accesorios",
   "serviceDesignSummary": "Utilizando diseño experto y maquinado moderno, Die Cast Mexico crea moldes complejos, soluciones de prototipado rápido y accesorios CNC de alta eficiencia para los clientes.",
   "serviceDesignLabel": "Ingeniería",
 
-  "serviceCastingTitle": "Fundición a Presión",
-  "serviceCastingSummary": "Die Cast Mexico implementa máquinas automáticas de fundición a presión de cámara fría que van desde 400 toneladas a 1900 toneladas dedicadas a aleaciones de aluminio y magnesio.",
+  "serviceCastingTitle": "Fundición e Inyección a Presión",
+  "serviceCastingSummary": "Die Cast Mexico implementa máquinas automáticas de fundición e inyección a presión de cámara fría que van desde 400 toneladas a 1900 toneladas dedicadas a aleaciones de aluminio y magnesio.",
   "serviceCastingLabel": "Fabricación",
 
   "serviceFinishingTitle": "Tratamiento de Superficie",
   "serviceFinishingSummary": "Die Cast Mexico puede tratar adicionalmente los componentes con superficie KLT, anodizado u otros tratamientos según las demandas del cliente.",
   "serviceFinishingLabel": "Post-Procesamiento",
 
-  "serviceCncTitle": "Mecanizado CNC de Precisión",
-  "serviceCncSummary": "Die Cast Mexico ofrece mecanizado CNC preciso desde proyectos simples hasta complejos con control de calidad avanzado. Nuestros centros CNC horizontales entregan alta precisión en volumen.",
+  "serviceCncTitle": "Maquinado CNC de Precisión",
+  "serviceCncSummary": "Die Cast Mexico ofrece maquinado CNC preciso desde proyectos simples hasta complejos con control de calidad avanzado. Nuestros centros CNC horizontales entregan alta precisión en volumen.",
   "serviceCncLabel": "Fabricación de Precisión",
 
-  "serviceTestingTitle": "Pruebas y Ensamblaje",
+  "serviceTestingTitle": "Pruebas y Ensamble",
   "serviceTestingSummary": "Die Cast Mexico proporciona soporte en etapas tempranas, creando soluciones basadas en las necesidades del cliente. Empleamos ingenieros experimentados y equipos de prueba avanzados para garantizar la calidad.",
   "serviceTestingLabel": "Garantía de Calidad",
 
   "facilityAboutTitle": "Acerca de Nosotros",
-  "facilityAboutDescription": "Las instalaciones de vanguardia de Die Cast Mexico, ubicadas en Guadalajara, México, abrieron en el cuarto trimestre de 2018. Con 30,000 metros cuadrados de terreno y una instalación de 15,000 metros cuadrados, tenemos la capacidad de manejar grandes lotes de producción manteniendo los más altos estándares de calidad.",
+  "facilityAboutDescription": "En Die Cast México contamos con instalaciones de vanguardia, ubicadas en Jalisco, México, que abrieron en el cuarto trimestre de 2018. Con 30,000 metros cuadrados de terreno y una instalación de 15,000 metros cuadrados, tenemos la capacidad de manejar grandes lotes de producción manteniendo los más altos estándares de calidad.",
   "achievementsTitle": "Instalación",
-  "achievementsDesc": "Desde nuestra fundación en 2018, hemos establecido rápidamente una reputación de excelencia en fundición a presión, entregando componentes de precisión en múltiples industrias.",
+  "achievementsDesc": "Desde nuestra fundación en 2018, hemos establecido rápidamente una reputación de excelencia en fundición e inyección a presión, entregando componentes de precisión en múltiples industrias.",
   "achievementsYearsLabel": "Años en Operación",
   "achievementsYearsValue": "Desde 2018",
   "achievementsLandLabel": "Área Total del Terreno",
@@ -188,8 +188,8 @@
   "supplyChainExpertise1": "Confiamos en la ",
   "supplyChainExpertiseHighlight": "experiencia",
   "supplyChainExpertise2": " de nuestros proveedores, aseguramos estándares de calidad excepcionales y un rendimiento mejorado del producto. Nuestro compromiso con proveedores calificados fortalece nuestra cadena de suministro, reduce los tiempos de entrega y fomenta relaciones a largo plazo basadas en la confianza y la colaboración, superando finalmente las expectativas de nuestros clientes.",
-  "supplyImageAlt1": "Proceso de galvanizado de fundición a presión",
-  "supplyImageAlt2": "Proceso de pintura de fundición a presión",
+  "supplyImageAlt1": "Proceso de galvanizado de fundición e inyección a presión",
+  "supplyImageAlt2": "Proceso de pintura de fundición e inyección a presión",
 
   "specification": "Especificación",
   "value": "Valor",
@@ -206,9 +206,9 @@
   "workforce": "Personal",
   "materialCapacity": "Capacidad de Material",
   "aluminumAlloys": "Aleaciones de Aluminio",
-  "dieCasting": "Fundición a Presión",
-  "cncMachining": "Mecanizado CNC",
-  "mechanicalAssembly": "Ensamble Mecánico",
+  "dieCasting": "Fundición e inyección a Presión",
+  "cncMachining": "Maquinado CNC",
+  "mechanicalAssembly": "Ensamble",
   "fipGasket": "Junta FIP",
   "powderPainting": "Pintura en Polvo",
   "liquidPainting": "Pintura Líquida",
@@ -217,6 +217,10 @@
 
   "iso9001Title": "Certificado ISO 9001:2015",
   "iso9001Description": "Nuestro sistema de gestión de calidad está certificado según los estándares ISO 9001:2015, garantizando una calidad consistente y una mejora continua en todos nuestros procesos.",
+  "iatf16949Title": "Certificación IATF 16949",
+  "iatf16949Description": "Nuestra meta es obtener la certificación IATF 16949 para el primer trimestre de 2026",
+  "iatfLogoAlt": "Certificación IATF 16949",
+  "isoLogoAlt": "Certificación ISO 9001",
   "contactUsBtn": "Contáctanos",
   "requiredField": "Este campo es obligatorio",
   "invalidEmail": "Por favor, ingrese una dirección de correo electrónico válida"

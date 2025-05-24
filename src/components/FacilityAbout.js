@@ -107,6 +107,34 @@ const InfoBoxText = styled.p`
 
 
 
+const CertificationLogos = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+`;
+
+const CertificationContent = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const CertificationItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+const CertificationDivider = styled.div`
+  width: 100%;
+  height: 1px;
+  background-color: #e2e8f0;
+  margin: 0.5rem 0;
+`;
+
 const AchievementsBox = styled.div`
   background-color: #0c1220;
   color: white;
@@ -308,7 +336,7 @@ const FacilityAbout = () => {
           
           <SideContent data-aos="fade-left" data-aos-delay="400">
             <InfoBox style={{ height: '100%' }}>
-              <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+              <CertificationLogos>
                 <InfoBoxLogo 
                   src="/images/iso9001_diecast.webp" 
                   alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
@@ -316,13 +344,31 @@ const FacilityAbout = () => {
                   data-aos="zoom-in"
                   data-aos-delay="500"
                 />
-              </div>
-              <div>
-                <InfoBoxTitle data-aos="fade-up" data-aos-delay="600">{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
-                <InfoBoxText data-aos="fade-up" data-aos-delay="700">
-                  {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
-                </InfoBoxText>
-              </div>
+                <InfoBoxLogo 
+                  src="/images/iatf_16949_logo.png" 
+                  alt={translate(messages, 'iatfLogoAlt', "IATF 16949 Certification")}
+                  style={{ height: '3.5rem' }}
+                  data-aos="zoom-in"
+                  data-aos-delay="550"
+                />
+              </CertificationLogos>
+              <CertificationContent>
+                <CertificationItem data-aos="fade-up" data-aos-delay="600">
+                  <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
+                  <InfoBoxText>
+                    {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
+                  </InfoBoxText>
+                </CertificationItem>
+                
+                <CertificationDivider />
+                
+                <CertificationItem data-aos="fade-up" data-aos-delay="700">
+                  <InfoBoxTitle>{translate(messages, 'iatf16949Title', "IATF 16949 Certification")}</InfoBoxTitle>
+                  <InfoBoxText>
+                    {translate(messages, 'iatf16949Description', "Our goal is to be certified in IATF 16949 by 1st Quarter 2026")}
+                  </InfoBoxText>
+                </CertificationItem>
+              </CertificationContent>
               <Button 
                 variant="outline" 
                 as="a" 
