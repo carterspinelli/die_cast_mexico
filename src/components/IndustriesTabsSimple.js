@@ -61,24 +61,33 @@ const TabsList = styled.div`
 const TabButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 0.875rem;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
   font-weight: 600;
   border: none;
-  background-color: ${props => props.active ? "rgba(255, 255, 255, 0.1)" : "transparent"};
+  background-color: ${props => props.active ? "rgba(255, 255, 255, 0.15)" : "transparent"};
   color: ${props => props.active ? "#ffffff" : "#94a3b8"};
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  justify-content: center;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1rem 1.5rem;
+    min-width: 160px;
   }
 `;
 
