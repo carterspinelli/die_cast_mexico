@@ -3,14 +3,14 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
+import FacilityAbout from "../components/FacilityAbout";
 import Capabilities from "../components/Capabilities";
 import IndustriesTabsSimple from "../components/IndustriesTabsSimple";
-import FacilityAbout from "../components/FacilityAbout";
 import SupplyChainValues from "../components/SupplyChainValues";
 import KeyCollaborations from "../components/KeyCollaborations";
-import styled from "styled-components";
-import images from "../data/images";
 import { useLanguage } from "../context/LanguageContext";
+import styled from "styled-components";
+import { images } from "../data/images";
 
 const AboutSection = styled.section`
   padding: var(--spacing-2xl) 0;
