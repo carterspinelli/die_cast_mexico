@@ -437,6 +437,10 @@ const FacilityAbout = () => {
                     <CapabilityValue>19 horizontal 4 axis machines</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
+                    <CapabilityLabel>FIP Gasket</CapabilityLabel>
+                    <CapabilityValue>Precision gasket application</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
                     <CapabilityLabel>Mechanical Assembly</CapabilityLabel>
                     <CapabilityValue>Dowel pins, labels, helicoils, plugs, etc.</CapabilityValue>
                   </CapabilityItem>
@@ -453,10 +457,6 @@ const FacilityAbout = () => {
                   <CapabilityTitle>Surface Finishing</CapabilityTitle>
                 </CapabilityHeader>
                 <CapabilityContent>
-                  <CapabilityItem>
-                    <CapabilityLabel>FIP Gasket</CapabilityLabel>
-                    <CapabilityValue>Precision gasket application</CapabilityValue>
-                  </CapabilityItem>
                   <CapabilityItem>
                     <CapabilityLabel>Powder Painting</CapabilityLabel>
                     <CapabilityValue>Akzo Nobel, Cardinal, Sherwin Williams</CapabilityValue>
