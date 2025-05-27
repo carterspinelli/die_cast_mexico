@@ -399,20 +399,20 @@ const FacilityAbout = () => {
                       <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/>
                     </svg>
                   </CapabilityIcon>
-                  <CapabilityTitle>Overview</CapabilityTitle>
+                  <CapabilityTitle>{translate(messages, 'overviewTitle', 'Overview')}</CapabilityTitle>
                 </CapabilityHeader>
                 <CapabilityContent>
                   <CapabilityItem>
-                    <CapabilityLabel>Workforce</CapabilityLabel>
-                    <CapabilityValue>125+</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'workforceLabel', 'Workforce')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'workforceValue', '125+')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Material Capacity</CapabilityLabel>
-                    <CapabilityValue>Up to 250ton/month aluminum ingots</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'materialCapacityLabel', 'Material Capacity')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'materialCapacityValue', 'Up to 250ton/month aluminum ingots')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Aluminum Alloys</CapabilityLabel>
-                    <CapabilityValue>AlSi12(Fe), A380, A360, A413, ADC12</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'aluminumAlloysLabel', 'Aluminum Alloys')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'aluminumAlloysValue', 'AlSi12(Fe), A380, A360, A413, ADC12')}</CapabilityValue>
                   </CapabilityItem>
                 </CapabilityContent>
               </CapabilityBox>
@@ -425,24 +425,24 @@ const FacilityAbout = () => {
                       <path d="M9 12l2 2 4-4"/>
                     </svg>
                   </CapabilityIcon>
-                  <CapabilityTitle>Manufacturing</CapabilityTitle>
+                  <CapabilityTitle>{translate(messages, 'manufacturingTitle', 'Manufacturing')}</CapabilityTitle>
                 </CapabilityHeader>
                 <CapabilityContent>
                   <CapabilityItem>
-                    <CapabilityLabel>Die Casting</CapabilityLabel>
-                    <CapabilityValue>8 full automatic manufacturing cells</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'dieCastingLabel', 'Die Casting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'dieCastingValue', '8 full automatic manufacturing cells')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>CNC Machining</CapabilityLabel>
-                    <CapabilityValue>19 horizontal 4 axis machines</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'cncMachiningLabel', 'CNC Machining')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'cncMachiningValue', '19 horizontal 4 axis machines')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>FIP Gasket</CapabilityLabel>
-                    <CapabilityValue>Precision gasket application</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'fipGasketLabel', 'FIP Gasket')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'fipGasketValue', 'Precision gasket application')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Mechanical Assembly</CapabilityLabel>
-                    <CapabilityValue>Dowel pins, labels, helicoils, plugs, etc.</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'mechanicalAssemblyLabel', 'Mechanical Assembly')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'mechanicalAssemblyValue', 'Dowel pins, labels, helicoils, plugs, etc.')}</CapabilityValue>
                   </CapabilityItem>
                 </CapabilityContent>
               </CapabilityBox>
@@ -454,24 +454,24 @@ const FacilityAbout = () => {
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
                   </CapabilityIcon>
-                  <CapabilityTitle>Surface Finishing</CapabilityTitle>
+                  <CapabilityTitle>{translate(messages, 'surfaceFinishingTitle', 'Surface Finishing')}</CapabilityTitle>
                 </CapabilityHeader>
                 <CapabilityContent>
                   <CapabilityItem>
-                    <CapabilityLabel>Powder Painting</CapabilityLabel>
-                    <CapabilityValue>Akzo Nobel, Cardinal, Sherwin Williams, and more</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'powderPaintingLabel', 'Powder Painting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'powderPaintingValue', 'Akzo Nobel, Cardinal, Sherwin Williams, and more')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Liquid Painting</CapabilityLabel>
-                    <CapabilityValue>Custom color solutions</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'liquidPaintingLabel', 'Liquid Painting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'liquidPaintingValue', 'Custom color solutions')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Nickel Plating</CapabilityLabel>
-                    <CapabilityValue>High-quality surface finish</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'nickelPlatingLabel', 'Nickel Plating')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'nickelPlatingValue', 'High-quality surface finish')}</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
-                    <CapabilityLabel>Surface Treatment</CapabilityLabel>
-                    <CapabilityValue>Tri-chrome passivation on Aluminum: Surtec 650®</CapabilityValue>
+                    <CapabilityLabel>{translate(messages, 'surfaceTreatmentLabel', 'Surface Treatment')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'surfaceTreatmentValue', 'Tri-chrome passivation on Aluminum: Surtec 650®')}</CapabilityValue>
                   </CapabilityItem>
                 </CapabilityContent>
               </CapabilityBox>

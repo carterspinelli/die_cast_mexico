@@ -228,5 +228,34 @@
   "tonnageCapacity": "Capacidad de Tonelaje",
   "tonnageUnit": "Toneladas",
   "partWeight": "Peso de Pieza",
-  "partWeightUnit": "kg"
+  "partWeightUnit": "kg",
+  
+  "overviewTitle": "Resumen",
+  "manufacturingTitle": "Fabricación",
+  "surfaceFinishingTitle": "Acabado de Superficies",
+  
+  "workforceLabel": "Personal",
+  "workforceValue": "125+",
+  "materialCapacityLabel": "Capacidad de Material",
+  "materialCapacityValue": "Hasta 250ton/mes lingotes de aluminio",
+  "aluminumAlloysLabel": "Aleaciones de Aluminio",
+  "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
+  
+  "dieCastingLabel": "Fundición a Presión",
+  "dieCastingValue": "8 células de fabricación completamente automáticas",
+  "cncMachiningLabel": "Maquinado CNC",
+  "cncMachiningValue": "19 máquinas horizontales de 4 ejes",
+  "fipGasketLabel": "Junta FIP",
+  "fipGasketValue": "Aplicación de juntas de precisión",
+  "mechanicalAssemblyLabel": "Ensamble Mecánico",
+  "mechanicalAssemblyValue": "Pasadores, etiquetas, helicoils, tapones, etc.",
+  
+  "powderPaintingLabel": "Pintura en Polvo",
+  "powderPaintingValue": "Akzo Nobel, Cardinal, Sherwin Williams, y más",
+  "liquidPaintingLabel": "Pintura Líquida",
+  "liquidPaintingValue": "Soluciones de color personalizadas",
+  "nickelPlatingLabel": "Chapado de Níquel",
+  "nickelPlatingValue": "Acabado de superficie de alta calidad",
+  "surfaceTreatmentLabel": "Tratamiento de Superficie",
+  "surfaceTreatmentValue": "Pasivación tricromática en Aluminio: Surtec 650®"
 }

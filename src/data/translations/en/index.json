@@ -215,5 +215,34 @@
   "isoLogoAlt": "ISO 9001 Certification",
   "contactUsBtn": "Contact Us",
   "requiredField": "This field is required",
-  "invalidEmail": "Please enter a valid email address"
+  "invalidEmail": "Please enter a valid email address",
+  
+  "overviewTitle": "Overview",
+  "manufacturingTitle": "Manufacturing",
+  "surfaceFinishingTitle": "Surface Finishing",
+  
+  "workforceLabel": "Workforce",
+  "workforceValue": "125+",
+  "materialCapacityLabel": "Material Capacity",
+  "materialCapacityValue": "Up to 250ton/month aluminum ingots",
+  "aluminumAlloysLabel": "Aluminum Alloys",
+  "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
+  
+  "dieCastingLabel": "Die Casting",
+  "dieCastingValue": "8 full automatic manufacturing cells",
+  "cncMachiningLabel": "CNC Machining",
+  "cncMachiningValue": "19 horizontal 4 axis machines",
+  "fipGasketLabel": "FIP Gasket",
+  "fipGasketValue": "Precision gasket application",
+  "mechanicalAssemblyLabel": "Mechanical Assembly",
+  "mechanicalAssemblyValue": "Dowel pins, labels, helicoils, plugs, etc.",
+  
+  "powderPaintingLabel": "Powder Painting",
+  "powderPaintingValue": "Akzo Nobel, Cardinal, Sherwin Williams, and more",
+  "liquidPaintingLabel": "Liquid Painting",
+  "liquidPaintingValue": "Custom color solutions",
+  "nickelPlatingLabel": "Nickel Plating",
+  "nickelPlatingValue": "High-quality surface finish",
+  "surfaceTreatmentLabel": "Surface Treatment",
+  "surfaceTreatmentValue": "Tri-chrome passivation on Aluminum: Surtec 650®"
 }
