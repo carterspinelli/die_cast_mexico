@@ -254,7 +254,7 @@ const Footer = ({ messages }) => {
                   </NavLink>
                 </LinkItem>
                 <LinkItem data-aos="fade-up" data-aos-delay="500">
-                  <span>
+                  <span style={{ color: '#a1a1aa', fontSize: '0.875rem', textDecoration: 'none' }}>
                     Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
                   </span>
                 </LinkItem>

@@ -263,7 +263,11 @@ const ModernFooter = () => {
                 <LinksList>
                   {section.links.map((link, linkIdx) => (
                     <LinkItem key={linkIdx}>
-                      <a href={link.href}>{link.name}</a>
+                      {link.href ? (
+                        <a href={link.href}>{link.name}</a>
+                      ) : (
+                        <span style={{ color: '#a1a1aa', fontSize: '0.875rem' }}>{link.name}</span>
+                      )}
                     </LinkItem>
                   ))}
                 </LinksList>
