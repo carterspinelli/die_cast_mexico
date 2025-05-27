@@ -33,7 +33,7 @@
   "capacityDesc": "Over 25,000 sq. ft. manufacturing facility with capacity to handle large production runs.",
 
   "technologyTitle": "Advanced Technology",
-  "technologyDesc": "Equipment ranging from 400 to 1600 ton machines for a wide variety of part sizes.",
+  "technologyDesc": "Equipment ranging from 350 to 2000 ton machines for a wide variety of part sizes.",
 
   "staffTitle": "Expert Team",
   "staffDesc": "Experienced engineers and technicians with over 20 years in die casting industry.",
@@ -58,7 +58,7 @@
 
   "machineTitle": "Machine Specifications",
   "tonnageCapacity": "Tonnage Capacity",
-  "tonnageRange": "400 - 1600 tons",
+  "tonnageRange": "350 - 2000 tons",
   "shotWeight": "Shot Weight",
   "shotWeightRange": "0.5 - 15 kg",
   "partWeight": "Part Weight",
@@ -159,7 +159,7 @@
   "serviceDesignLabel": "Engineering",
 
   "serviceCastingTitle": "Die Casting",
-  "serviceCastingSummary": "Die Casting Mexico deploys automatic cold chamber die-casting machines ranging from 400 ton to 1900 ton dedicated to aluminum and magnesium alloy.",
+  "serviceCastingSummary": "Die Casting Mexico deploys automatic cold chamber die-casting machines ranging from 350 ton to 2000 ton dedicated to aluminum and magnesium alloy.",
   "serviceCastingLabel": "Manufacturing",
 
   "serviceFinishingTitle": "Surface Treatment",
