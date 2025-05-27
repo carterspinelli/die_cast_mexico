@@ -22,7 +22,7 @@ const Logo = () => {
   return (
     <LogoContainer>
       <Link to="/">
-        <img src="/images/logo.png" alt="Die Cast Mexico Logo" style={{ width: '220px', height: 'auto' }} />
+        <img src="/images/die_cast_mx_logo_v07.png" alt="Die Cast Mexico Logo" style={{ width: '220px', height: 'auto' }} />
       </Link>
     </LogoContainer>
   );
