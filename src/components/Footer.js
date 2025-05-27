@@ -286,10 +286,6 @@ const Footer = ({ messages }) => {
               src="/images/iso9001_diecast.webp" 
               alt={messages.isoLogoAlt || "ISO 9001:2015 Certified"} 
             />
-            <CertificationImage 
-              src="/images/iatf_16949_logo.png" 
-              alt={messages.iatfLogoAlt || "IATF 16949 Certification"} 
-            />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
                 {link.name}

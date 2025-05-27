@@ -33,9 +33,11 @@ const Title = styled.h2`
 `;
 
 const Description = styled.p`
-  color: #64748b;
-  font-size: 1rem;
+  color: #1e293b;
+  font-size: 1.125rem;
+  font-weight: 600;
   line-height: 1.5;
+  margin: 0;
 `;
 
 const ContentGrid = styled.div`
