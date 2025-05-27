@@ -188,12 +188,9 @@ export const Contact2 = ({
                 </ContactItem>
                 <ContactItem data-aos="fade-up" data-aos-delay="600">
                   <ContactLabel>Address: </ContactLabel>
-                  <Link 
-                    href={web?.url || "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal."} 
-                    target="_blank"
-                  >
+                  <span>
                     {web?.label || "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal."}
-                  </Link>
+                  </span>
                 </ContactItem>
               </ContactList>
             </ContactDetails>

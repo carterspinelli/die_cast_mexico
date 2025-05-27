@@ -196,7 +196,7 @@ const NewModernFooter = () => {
       links: [
         { 
           name: "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.", 
-          href: "https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal."
+          href: null
         },
         { name: "+52 33 3968 3660", href: "tel:+523339683660" },
         { name: messages.footerEmailValue || "info@diecastmexico.com", href: `mailto:${messages.footerEmailValue || "info@diecastmexico.com"}` },

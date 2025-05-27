@@ -254,13 +254,9 @@ const Footer = ({ messages }) => {
                   </NavLink>
                 </LinkItem>
                 <LinkItem data-aos="fade-up" data-aos-delay="500">
-                  <ExternalLink 
-                    href="https://maps.google.com/?q=Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal." 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                  <span>
                     Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
-                  </ExternalLink>
+                  </span>
                 </LinkItem>
                 <LinkItem data-aos="fade-up" data-aos-delay="550">
                   <ExternalLink href="tel:+523339683660">

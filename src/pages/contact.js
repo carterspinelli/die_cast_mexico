@@ -20,7 +20,7 @@ const ContactPage = () => {
         email="info@diecastmexico.com"
         web={{ 
           label: "Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.", 
-          url: "https://maps.google.com/?q=Av. Aviación 4376, Jardín Real, 45136 Zapopan, Jal." 
+          url: null 
         }}
       />
     </Layout>
