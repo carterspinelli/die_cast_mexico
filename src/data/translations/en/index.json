@@ -215,8 +215,5 @@
   "isoLogoAlt": "ISO 9001 Certification",
   "contactUsBtn": "Contact Us",
   "requiredField": "This field is required",
-  "invalidEmail": "Please enter a valid email address",
-  "technicalStatsTitle": "Technical Capabilities",
-  "tonnageCapacity": "Tonnage Capacity",
-  "partWeight": "Part Weight"
+  "invalidEmail": "Please enter a valid email address"
 }

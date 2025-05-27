@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 import Hero from "../components/Hero";
 import Services from "../components/Services";
-import TechnicalStats from "../components/TechnicalStats";
+import Capabilities from "../components/Capabilities";
 import IndustriesTabsSimple from "../components/IndustriesTabsSimple";
 import FacilityAbout from "../components/FacilityAbout";
 import SupplyChainValues from "../components/SupplyChainValues";
@@ -167,7 +167,7 @@ const IndexPage = () => {
       
       <FacilityAbout />
       
-      <TechnicalStats />
+      <Capabilities />
       
       <IndustriesTabsSimple />
       
