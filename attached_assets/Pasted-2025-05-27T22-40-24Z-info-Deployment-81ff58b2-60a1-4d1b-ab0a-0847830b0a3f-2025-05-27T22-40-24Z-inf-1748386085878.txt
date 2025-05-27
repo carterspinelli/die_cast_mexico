@@ -1,0 +1,205 @@
+2025-05-27T22:40:24Z info: Deployment: 81ff58b2-60a1-4d1b-ab0a-0847830b0a3f
+2025-05-27T22:40:24Z info: Build: 584f7aef-a2c5-45f5-9220-bf983782576c
+2025-05-27T22:40:24Z info: Connecting to builder
+2025-05-27T22:40:27Z info: Builder connected
+2025-05-27T22:40:28Z info: Installing packages
+2025-05-27T22:40:28Z info: Starting Build
+
+removed 3 packages, and audited 1569 packages in 13s
+
+271 packages are looking for funding
+
+  run `npm fund` for details
+
+
+26 vulnerabilities (1 low, 6 moderate, 19 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+npm notice To update run: npm install -g npm@11.4.1
+npm notice
+
+success compile gatsby files - 7.156s
+
+success load gatsby config - 0.337s
+
+success load plugins - 1.559s
+
+warn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying
+the document head. Learn more at https://gatsby.dev/gatsby-head
+success onPreInit - 0.313s
+
+success initialize cache - 0.034s
+
+
+success copy gatsby files - 0.174s
+success Compiling Gatsby Functions - 0.499s
+
+success onPreBootstrap - 0.524s
+
+success createSchemaCustomization - 0.029s
+success Checking for changed pages - 0.001s
+success source and transform nodes - 0.296s
+
+info Writing GraphQL type definitions to
+/home/runner/workspace/.cache/schema.gql
+
+success building schema - 0.413s
+
+success createPages - 0.003s
+
+
+success createPagesStatefully - 0.558s
+
+info Total nodes: 46, SitePage nodes: 7 (use --verbose for breakdown)
+
+success Checking for changed pages - 0.001s
+
+success Cleaning up stale page-data - 0.017s
+
+success onPreExtractQueries - 0.000s
+success extract queries from components - 4.274s
+
+success write out redirect data - 0.001s
+
+warn The icon(src/images/icon.png) you provided to 'gatsby-plugin-manifest' is
+not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+success Build manifest and related icons - 0.128s
+
+success onPostBootstrap - 0.137s
+info bootstrap finished - 24.094s
+
+success write out requires - 0.006s
+
+warn `isModuleDeclaration` has been deprecated, please migrate to
+`isImportOrExportDeclaration`
+    at isModuleDeclaration (/home/runner/workspace/node_modules/@babel/types/lib
+/validators/generated/index.js:2766:35)
+    at PluginPass.Program
+(/home/runner/workspace/node_modules/babel-plugin-lodash/lib/index.js:102:44)
+
+success Building production JavaScript and CSS bundles - 9.653s
+
+success Building HTML renderer - 14.538s
+success Execute page configs - 0.052s
+
+success Caching Webpack compilations - 0.001s
+success run queries in workers - 0.024s - 5/5 210.11/s
+
+success Merge worker state - 0.001s
+
+success Rewriting compilation hashes - 0.002s
+
+success Writing page-data.json files to public directory - 0.004s - 6/7
+1559.29/s
+
+warn Language context not available, using default language
+
+warn Language context not available, using default language
+
+warn Language context not available, using default language
+
+success Building static HTML for pages - 2.812s - 6/6 2.13/s
+
+success Delete previous page data - 0.001s
+
+success onPostBuild - 0.000s
+
+
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+info Done building in 55.225704367 sec
+
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/contact.js
+│ └   /contact/
+├ src/pages/index.js
+│ └   /
+├ src/pages/es/contact.js
+│ └   /es/contact/
+└ src/pages/es/index.js
+  └   /es/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+
+
+2025-05-27T22:41:38Z info: Pushing pid1 binary layer...
+2025-05-27T22:41:39Z info: Pushing hosting layer...
+2025-05-27T22:41:39Z info: Pushing Repl layer...
+2025-05-27T22:41:39Z info: Retrieved cached nix layer
+2025-05-27T22:41:40Z info: Created hosting layer
+2025-05-27T22:41:47Z info: Created pid1 binary layer
+2025-05-27T22:42:28Z info: Created Repl layer
+2025-05-27T22:42:28Z info: Pushed image manifest
+2025-05-27T22:42:29Z info: Pushed soci index manifest
+2025-05-27T22:42:35Z info: Creating virtual machine
+2025-05-27T22:43:00Z info: Virtual machine created
+2025-05-27T22:43:00Z info: Waiting for deployment to be ready
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+main done, exiting
+command finished successfully with exit code 0
+main done, exiting
+command finished successfully with exit code 0
+forwarding local port 5000 to external port 80 (mapped as 1104)
+starting up user application
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+command finished successfully with exit code 0
+main done, exiting
+command finished successfully with exit code 0
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+main done, exiting
+forwarding local port 5000 to external port 80 (mapped as 1104)
+command finished successfully with exit code 0
+main done, exiting
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+starting up user application
+main done, exiting
+command finished successfully with exit code 0
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+command finished successfully with exit code 0
+main done, exiting
+command finished successfully with exit code 0
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+main done, exiting
+main done, exiting
+forwarding local port 5000 to external port 80 (mapped as 1104)
+starting up user application
+command finished successfully with exit code 0
+starting up user application
+forwarding local port 5000 to external port 80 (mapped as 1104)
+command finished successfully with exit code 0
+main done, exiting
+2025-05-27T22:47:08Z error: The deployment failed to initialize due to a configuration or code error. Check the logs tab for more information. For additional support, contact us at support@replit.com. 

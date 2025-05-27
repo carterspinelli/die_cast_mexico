@@ -1,0 +1,173 @@
+2025-05-27T22:34:55Z info: Deployment: 81ff58b2-60a1-4d1b-ab0a-0847830b0a3f
+2025-05-27T22:34:55Z info: Build: 973e0872-0300-45eb-a872-e61afb1047f2
+2025-05-27T22:34:55Z info: Connecting to builder
+2025-05-27T22:34:58Z info: Builder connected
+2025-05-27T22:34:58Z info: Installing packages
+2025-05-27T22:34:59Z info: Starting Build
+
+removed 3 packages, and audited 1569 packages in 11s
+
+  run `npm fund` for details
+
+
+26 vulnerabilities (1 low, 6 moderate, 19 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+npm notice To update run: npm install -g npm@11.4.1
+npm notice
+
+success compile gatsby files - 7.283s
+success load gatsby config - 0.224s
+success load plugins - 1.438s
+
+warn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying
+the document head. Learn more at https://gatsby.dev/gatsby-head
+
+
+success onPreInit - 0.246s
+
+info One or more of your plugins have changed since the last time you ran
+Gatsby. As
+a precaution, we're deleting your site's cache to ensure there's no stale data.
+
+success initialize cache - 0.273s
+success copy gatsby files - 0.162s
+
+success Compiling Gatsby Functions - 0.443s
+
+success onPreBootstrap - 0.466s
+
+success createSchemaCustomization - 0.029s
+
+success Checking for changed pages - 0.002s
+
+success source and transform nodes - 0.496s
+info Writing GraphQL type definitions to
+/home/runner/workspace/.cache/schema.gql
+
+success building schema - 0.518s
+
+success createPages - 0.003s
+
+
+success createPagesStatefully - 0.389s
+
+success Checking for changed pages - 0.003s
+
+success Cleaning up stale page-data - 0.015s
+
+success onPreExtractQueries - 0.009s
+success extract queries from components - 4.368s
+
+success write out redirect data - 0.001s
+
+
+warn The icon(src/images/icon.png) you provided to 'gatsby-plugin-manifest' is
+not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+success Build manifest and related icons - 0.199s
+success onPostBootstrap - 0.202s
+
+info bootstrap finished - 25.396s
+
+success write out requires - 0.005s
+
+warn `isModuleDeclaration` has been deprecated, please migrate to
+`isImportOrExportDeclaration`
+    at isModuleDeclaration (/home/runner/workspace/node_modules/@babel/types/lib
+/validators/generated/index.js:2766:35)
+    at PluginPass.Program
+(/home/runner/workspace/node_modules/babel-plugin-lodash/lib/index.js:102:44)
+
+success Building production JavaScript and CSS bundles - 11.365s
+success Building HTML renderer - 16.811s
+success Execute page configs - 0.049s
+
+success Caching Webpack compilations - 0.001s
+success run queries in workers - 0.030s - 7/7 235.95/s
+
+success Merge worker state - 0.001s
+
+success Rewriting compilation hashes - 0.003s
+
+success Writing page-data.json files to public directory - 0.006s - 6/6 984.98/s
+
+warn Language context not available, using default language
+
+warn Language context not available, using default language
+
+warn Language context not available, using default language
+
+success Building static HTML for pages - 2.779s - 6/6 2.16/s
+
+success Delete previous page data - 0.001s
+
+success onPostBuild - 0.000s
+
+
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+info Done building in 61.325875049 sec
+
+
+Pages
+
+┌ src/pages/404.js
+│ ├   /404/
+│ └   /404.html
+├ src/pages/contact.js
+│ └   /contact/
+├ src/pages/index.js
+│ └   /
+├ src/pages/es/contact.js
+│ └   /es/contact/
+└ src/pages/es/index.js
+  └   /es/
+
+  ╭────────────────────────────────────────────────────────────────╮
+  │                                                                │
+  │   (SSG) Generated at build time                                │
+  │ D (DSG) Deferred static generation - page generated at runtime │
+  │ ∞ (SSR) Server-side renders at runtime (uses getServerData)    │
+  │ λ (Function) Gatsby function                                   │
+  │                                                                │
+  ╰────────────────────────────────────────────────────────────────╯
+
+
+2025-05-27T22:36:14Z info: Pushing pid1 binary layer...
+2025-05-27T22:36:14Z info: Pushing Repl layer...
+2025-05-27T22:36:14Z info: Pushing hosting layer...
+2025-05-27T22:36:14Z info: Created hosting layer
+2025-05-27T22:36:16Z info: Created pid1 binary layer
+2025-05-27T22:36:58Z info: Created Repl layer
+2025-05-27T22:36:59Z info: Pushed image manifest
+2025-05-27T22:37:00Z info: Pushed soci index manifest
+2025-05-27T22:37:06Z info: Creating virtual machine
+2025-05-27T22:37:28Z info: Virtual machine created
+2025-05-27T22:37:29Z info: Waiting for deployment to be ready
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+crash loop detected
+2025-05-27T22:38:18Z error: The deployment is crash looping. This can happen if the run command fails or exits immediately after starting. Check the logs for more information.
