@@ -32,7 +32,8 @@ function SEO({ description, lang, meta = [], title, image }) {
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const siteUrl = site.siteMetadata?.siteUrl;
-  const imageUrl = image ? `${siteUrl}${image}` : null;
+  const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/images/tool_design.jpg`;
+  const ogDescription = "Professional Die Casting Solutions in Mexico";
 
   return (
     <Helmet
@@ -52,7 +53,7 @@ function SEO({ description, lang, meta = [], title, image }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: ogDescription,
         },
         {
           property: `og:type`,
@@ -74,19 +75,27 @@ function SEO({ description, lang, meta = [], title, image }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-        // Add image meta if image is provided
-        ...(imageUrl
-          ? [
-              {
-                property: `og:image`,
-                content: imageUrl,
-              },
-              {
-                name: `twitter:image`,
-                content: imageUrl,
-              },
-            ]
-          : []),
+        // Add OpenGraph image - always include the tool design image
+        {
+          property: `og:image`,
+          content: imageUrl,
+        },
+        {
+          property: `og:image:width`,
+          content: `1200`,
+        },
+        {
+          property: `og:image:height`,
+          content: `630`,
+        },
+        {
+          property: `og:image:alt`,
+          content: `Professional Die Casting Solutions in Mexico`,
+        },
+        {
+          name: `twitter:image`,
+          content: imageUrl,
+        },
         // Concatenate additional meta props
       ].concat(meta)}
     />
