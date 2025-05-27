@@ -32,7 +32,7 @@ function SEO({ description, lang, meta = [], title, image }) {
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const siteUrl = site.siteMetadata?.siteUrl;
-  const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/images/diecast_mx_opengraph.png`;
+  const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/images/og-image.png`;
   const ogDescription = "Professional Die Casting Solutions in Mexico";
 
   return (
@@ -49,7 +49,7 @@ function SEO({ description, lang, meta = [], title, image }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: title || "Die Cast Mexico - Professional Die Casting Solutions",
         },
         {
           property: `og:description`,
@@ -58,6 +58,14 @@ function SEO({ description, lang, meta = [], title, image }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: siteUrl,
+        },
+        {
+          property: `og:site_name`,
+          content: "Die Cast Mexico",
         },
         {
           name: `twitter:card`,
@@ -87,6 +95,10 @@ function SEO({ description, lang, meta = [], title, image }) {
         {
           property: `og:image:height`,
           content: `630`,
+        },
+        {
+          property: `og:image:type`,
+          content: `image/png`,
         },
         {
           property: `og:image:alt`,
