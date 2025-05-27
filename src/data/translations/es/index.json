@@ -33,7 +33,7 @@
   "capacityDesc": "Instalación de fabricación de más de 2,300 m² con capacidad para manejar grandes series de producción.",
 
   "technologyTitle": "Tecnología Avanzada",
-  "technologyDesc": "Equipo que va desde máquinas de 350 a 2000 toneladas para una amplia variedad de tamaños de piezas.",
+  "technologyDesc": "Equipo que va desde máquinas de 400 a 1600 toneladas para una amplia variedad de tamaños de piezas.",
 
   "staffTitle": "Equipo Experto",
   "staffDesc": "Ingenieros y técnicos experimentados con más de 20 años en la industria de la fundición e inyección a presión.",
@@ -58,7 +58,7 @@
 
   "machineTitle": "Especificaciones de Máquinas",
   "tonnageCapacity": "Capacidad de Tonelaje",
-  "tonnageRange": "350 - 2000 toneladas",
+  "tonnageRange": "400 - 1600 toneladas",
   "shotWeight": "Peso de Inyección",
   "shotWeightRange": "0.5 - 15 kg",
   "partWeight": "Peso de Piezas",
@@ -154,7 +154,7 @@
   "serviceDesignLabel": "Ingeniería",
 
   "serviceCastingTitle": "Fundición e Inyección a Presión",
-  "serviceCastingSummary": "Die Cast Mexico implementa máquinas automáticas de fundición e inyección a presión de cámara fría que van desde 350 toneladas a 2000 toneladas dedicadas a aleaciones de aluminio y magnesio.",
+  "serviceCastingSummary": "Die Cast Mexico implementa máquinas automáticas de fundición e inyección a presión de cámara fría que van desde 400 toneladas a 1900 toneladas dedicadas a aleaciones de aluminio y magnesio.",
   "serviceCastingLabel": "Fabricación",
 
   "serviceFinishingTitle": "Tratamiento de Superficie",
@@ -170,7 +170,7 @@
   "serviceTestingLabel": "Garantía de Calidad",
 
   "facilityAboutTitle": "Acerca de Nosotros",
-  "facilityAboutDescription": "Desde nuestra fundación en 2018, hemos establecido rápidamente una reputación de excelencia en fundición a alta presión, entregando componentes de precisión en múltiples industrias",
+  "facilityAboutDescription": "En Die Cast México contamos con instalaciones de vanguardia, ubicadas en Jalisco, México, que abrieron en el cuarto trimestre de 2018. Con 30,000 metros cuadrados de terreno y una instalación de 15,000 metros cuadrados, tenemos la capacidad de manejar grandes lotes de producción manteniendo los más altos estándares de calidad.",
   "achievementsTitle": "Instalación",
   "achievementsDesc": "Desde nuestra fundación en 2018, hemos establecido rápidamente una reputación de excelencia en fundición e inyección a presión, entregando componentes de precisión en múltiples industrias.",
   "achievementsYearsLabel": "Años en Operación",

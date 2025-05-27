@@ -33,7 +33,7 @@
   "capacityDesc": "Over 25,000 sq. ft. manufacturing facility with capacity to handle large production runs.",
 
   "technologyTitle": "Advanced Technology",
-  "technologyDesc": "Equipment ranging from 350 to 2000 ton machines for a wide variety of part sizes.",
+  "technologyDesc": "Equipment ranging from 400 to 1600 ton machines for a wide variety of part sizes.",
 
   "staffTitle": "Expert Team",
   "staffDesc": "Experienced engineers and technicians with over 20 years in die casting industry.",
@@ -58,7 +58,7 @@
 
   "machineTitle": "Machine Specifications",
   "tonnageCapacity": "Tonnage Capacity",
-  "tonnageRange": "350 - 2000 tons",
+  "tonnageRange": "400 - 1600 tons",
   "shotWeight": "Shot Weight",
   "shotWeightRange": "0.5 - 15 kg",
   "partWeight": "Part Weight",
@@ -159,7 +159,7 @@
   "serviceDesignLabel": "Engineering",
 
   "serviceCastingTitle": "Die Casting",
-  "serviceCastingSummary": "Die Casting Mexico deploys automatic cold chamber die-casting machines ranging from 350 ton to 2000 ton dedicated to aluminum and magnesium alloy.",
+  "serviceCastingSummary": "Die Casting Mexico deploys automatic cold chamber die-casting machines ranging from 400 ton to 1900 ton dedicated to aluminum and magnesium alloy.",
   "serviceCastingLabel": "Manufacturing",
 
   "serviceFinishingTitle": "Surface Treatment",
@@ -174,8 +174,8 @@
   "serviceTestingSummary": "Die Cast Mexico provides early-stage support, creating solutions based on customer needs. We employ experienced engineers and advanced testing equipment for quality assurance.",
   "serviceTestingLabel": "Quality Assurance",
 
-  "facilityAboutTitle": "About Us", 
-  "facilityAboutDescription": "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries",
+  "facilityAboutTitle": "About Us",
+  "facilityAboutDescription": "At Die Cast México, we have state-of-the-art facilities, located in Jalisco, México, which opened in the fourth quarter of 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production lots while maintaining the highest quality standards.",
   "achievementsTitle": "Facility",
   "achievementsYearsLabel": "Years in Operation",
   "achievementsYearsValue": "Since 2018",

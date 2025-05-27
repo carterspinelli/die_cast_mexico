@@ -38,24 +38,6 @@ const Description = styled.p`
   line-height: 1.5;
 `;
 
-const EnhancedDescription = styled.h2`
-  color: #1e293b;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.4;
-  text-align: center;
-  margin: 0;
-  
-  @media (min-width: 768px) {
-    font-size: 1.75rem;
-    text-align: left;
-  }
-  
-  @media (min-width: 1024px) {
-    font-size: 2rem;
-  }
-`;
-
 const ContentGrid = styled.div`
   display: grid;
   gap: 1.75rem;
@@ -339,9 +321,9 @@ const FacilityAbout = () => {
       <Container>
         <HeaderGrid data-aos="fade-up">
           <Title data-aos="fade-up" data-aos-delay="100">{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
-          <EnhancedDescription data-aos="fade-up" data-aos-delay="200">
-            {translate(messages, 'facilityAboutDescription', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries")}
-          </EnhancedDescription>
+          <Description data-aos="fade-up" data-aos-delay="200">
+            {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
+          </Description>
         </HeaderGrid>
         
         <ContentGrid>
