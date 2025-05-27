@@ -223,5 +223,10 @@
   "isoLogoAlt": "Certificación ISO 9001",
   "contactUsBtn": "Contáctanos",
   "requiredField": "Este campo es obligatorio",
-  "invalidEmail": "Por favor, ingrese una dirección de correo electrónico válida"
+  "invalidEmail": "Por favor, ingrese una dirección de correo electrónico válida",
+  
+  "tonnageCapacity": "Capacidad de Tonelaje",
+  "tonnageUnit": "Toneladas",
+  "partWeight": "Peso de Pieza",
+  "partWeightUnit": "kg"
 }
