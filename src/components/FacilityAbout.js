@@ -459,7 +459,7 @@ const FacilityAbout = () => {
                 <CapabilityContent>
                   <CapabilityItem>
                     <CapabilityLabel>Powder Painting</CapabilityLabel>
-                    <CapabilityValue>Akzo Nobel, Cardinal, Sherwin Williams</CapabilityValue>
+                    <CapabilityValue>Akzo Nobel, Cardinal, Sherwin Williams, and more</CapabilityValue>
                   </CapabilityItem>
                   <CapabilityItem>
                     <CapabilityLabel>Liquid Painting</CapabilityLabel>

@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
-import { TypeTable } from "./ui/type-table";
-import { Tabs, TabsTrigger, TabsContent } from "./ui/tabs";
 
 const CapabilitiesSection = styled.section`
   padding: 5rem 1rem;
-  background-color: var(--color-light-bg);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 `;
 
 const Container = styled.div`
@@ -21,239 +19,207 @@ const SectionHeader = styled.div`
 
 const Title = styled.h2`
   font-size: 2.5rem;
-  color: var(--color-primary);
+  color: #0c1220;
   margin-bottom: 1rem;
+  font-weight: 700;
 `;
 
 const Subtitle = styled.p`
   font-size: 1.2rem;
-  color: var(--color-text);
+  color: #64748b;
   max-width: 700px;
   margin: 0 auto;
 `;
 
-const SpecsGrid = styled.div`
+const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
-`;
-
-const SpecsCard = styled.div`
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  padding: 2rem;
-`;
-
-const SpecsTitle = styled.h3`
-  font-size: 1.8rem;
-  color: var(--color-primary);
-  margin-bottom: 2rem;
-  position: relative;
-  padding-bottom: 1rem;
+  gap: 2rem;
+  margin-top: 4rem;
   
-  &:after {
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+`;
+
+const StatsCard = styled.div`
+  background: linear-gradient(135deg, #0c1220 0%, #1e293b 100%);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(12, 18, 32, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+  }
+  
+  &::before {
     content: '';
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background-color: var(--color-accent);
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
   }
 `;
 
-const TableContainer = styled.div`
-  margin: 1.5rem 0;
-  overflow: auto;
-  border: 1px solid var(--color-border, #e2e8f0);
-  border-radius: 0.75rem;
-  background-color: white;
+const StatsCardContent = styled.div`
+  position: relative;
+  z-index: 1;
 `;
 
-const StyledTable = styled.table`
-  width: 100%;
-  white-space: nowrap;
-  font-size: 0.875rem;
-  color: var(--color-text, #64748b);
-  border-collapse: collapse;
-`;
-
-const TableHead = styled.thead`
-  border-bottom: 1px solid var(--color-border, #e2e8f0);
-  background-color: var(--color-light-bg, #f8fafc);
-  
-  th {
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-    
-    &:not(:first-child) {
-      border-left: 1px solid var(--color-border, #e2e8f0);
-    }
-  }
-`;
-
-const TableRow = styled.tr`
-  border-bottom: 1px solid var(--color-border, #e2e8f0);
-  
-  &:last-child {
-    border-bottom: none;
-  }
-`;
-
-const TableCell = styled.td`
-  padding: 1rem;
-  
-  &:not(:first-child) {
-    border-left: 1px solid var(--color-border, #e2e8f0);
-  }
-`;
-
-const PrimaryCode = styled.code`
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-  font-family: sans-serif;
-  background-color: rgba(var(--color-primary-rgb, 59, 130, 246), 0.1);
-  color: var(--color-primary, #3b82f6);
-`;
-
-const SecondaryCode = styled.code`
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.375rem;
-  font-family: sans-serif;
-  background-color: var(--color-secondary-light, #f1f5f9);
-  color: var(--color-secondary, #475569);
-`;
-
-const TableSection = styled.div`
-  margin-top: 2rem;
-`;
-
-const SectionTitle = styled.h4`
-  font-size: 1.3rem;
+const StatsLabel = styled.div`
+  color: #94a3b8;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--color-primary-dark);
-  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
 `;
 
-const Capabilities = () => {
-  const { messages: translations, language } = useLanguage();
+const StatsValue = styled.div`
+  color: #ffffff;
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  font-family: 'Arial', sans-serif;
   
-  // Machine specifications data
-  const machineSpecs = {
-    [translations.tonnageCapacity]: {
-      type: translations.tonnageRange,
-      description: "The clamping force of the die casting machine determines the maximum size and complexity of parts that can be produced.",
-      default: "180-850t"
-    },
-    [translations.shotWeight]: {
-      type: translations.shotWeightRange,
-      description: "The maximum amount of aluminum that can be injected per cycle, affecting part size and production efficiency.",
-      default: "1.2-16kg"
-    },
-    [translations.partWeight]: {
-      type: translations.partWeightRange,
-      description: "The weight range of final parts that can be efficiently produced with our equipment.",
-      default: "0.05-12kg"
-    },
-    [translations.dieSize]: {
-      type: translations.dieSizeRange,
-      description: "The physical dimensions of the die that can be accommodated by our machines, determining maximum part size.",
-      default: "200×200mm - 850×650mm"
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+`;
+
+const StatsUnit = styled.div`
+  color: #60a5fa;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`;
+
+// Odometer effect hook
+const useOdometer = (target, duration = 2000, isVisible = false) => {
+  const [current, setCurrent] = useState(0);
+  
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCurrent(target);
+        clearInterval(timer);
+      } else {
+        setCurrent(Math.floor(start));
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [target, duration, isVisible]);
+  
+  return current;
+};
+
+// Intersection Observer hook
+const useIntersectionObserver = (threshold = 0.1) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef();
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold }
+    );
+    
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  };
+    
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [threshold]);
   
-  // Quality specifications data
-  const qualitySpecs = {
-    [translations.dimensionalTolerance]: {
-      type: translations.dimensionalToleranceValue,
-      description: "The accuracy of dimensions that can be achieved in our die casting process, crucial for precision parts.",
-      typeDescription: "Tighter tolerances may be achieved with additional machining operations.",
-      default: "±0.05mm"
-    },
-    [translations.surfaceFinish]: {
-      type: translations.surfaceFinishValue,
-      description: "The surface quality that can be achieved directly from the die casting process before any finishing operations.",
-      default: "Ra 1.2-3.2"
-    },
-    [translations.wallThickness]: {
-      type: translations.wallThicknessValue,
-      description: "The minimum wall thickness that can be reliably produced with our die casting process.",
-      typeDescription: "Thinner walls can reduce weight and material costs but may affect structural integrity.",
-      default: "1.0-3.0mm"
-    },
-    [translations.materialPurity]: {
-      type: translations.materialPurityValue,
-      description: "The level of purity we can maintain in the aluminum alloys used in our die casting process.",
-      typeDescription: "Higher purity levels can improve mechanical properties and surface finish.",
-      default: "99.7-99.95%"
-    }
-  };
+  return [ref, isVisible];
+};
+
+// Helper function to handle translations
+const translate = (messages, key, fallback) => {
+  if (!messages) return fallback;
+  return messages[key] || fallback;
+};
+
+const TechnicalCapabilities = () => {
+  const { messages } = useLanguage();
+  const [ref, isVisible] = useIntersectionObserver(0.3);
   
-  // Facility overview data
-  const facilityOverview = [
-    { attribute: "Workforce", value: "125 skilled employees" },
-    { attribute: "Material Capacity", value: "Up to 250ton/month aluminum ingots" },
-    { attribute: "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
-  ];
-  
-  // Facility data organized by tabs
-  const facilityTabs = [
-    {
-      id: "overview",
-      label: "Overview",
-      items: [
-        { attribute: translations.workforce || "Workforce", value: "125+" },
-        { attribute: translations.materialCapacity || "Material Capacity", value: translations.language === "es" ? "Hasta 250 toneladas/mes de lingotes de aluminio" : "Up to 250ton/month aluminum ingots" },
-        { attribute: translations.aluminumAlloys || "Aluminum Alloys", value: "AlSi12(Fe), A380, A360, A413, ADC12" }
-      ]
-    },
-    {
-      id: "manufacturing",
-      label: "Manufacturing",
-      items: [
-        { attribute: translations.dieCasting || "Die Casting", value: translations.language === "es" ? "8 celdas de fabricación automáticas" : "8 full automatic manufacturing cells" },
-        { attribute: translations.cncMachining || "CNC Machining", value: translations.language === "es" ? "19 máquinas horizontales de 4 ejes" : "19 horizontal 4 axis machines" },
-        { attribute: translations.mechanicalAssembly || "Mechanical Assembly", value: translations.language === "es" ? "Pasadores, etiquetas, helicoides, etc." : "Dowel pins, labels, helicoils, plugs, etc." }
-      ]
-    },
-    {
-      id: "finishing",
-      label: "Surface Finishing",
-      items: [
-        { attribute: translations.fipGasket || "FIP Gasket", value: translations.language === "es" ? "Aplicación de juntas de precisión" : "Precision gasket application" },
-        { attribute: translations.powderPainting || "Powder Painting", value: "Akzo Nobel, Cardinal, Sherwin Williams, etc." },
-        { attribute: translations.liquidPainting || "Liquid Painting", value: translations.language === "es" ? "Soluciones de color personalizadas" : "Custom color solutions" },
-        { attribute: translations.nickelPlating || "Nickel Plating", value: translations.language === "es" ? "Acabado superficial de alta calidad" : "High-quality surface finish" },
-        { attribute: translations.surfaceTreatment || "Surface Treatment", value: translations.language === "es" ? "Pasivación de tri-cromo en Aluminio: Surtec 650®" : "Tri-chrome passivation on Aluminum: Surtec 650®" }
-      ]
-    }
-  ];
-  
-  // Legacy data structures - keeping for compatibility
-  const manufacturingCapabilities = facilityTabs[1].items;
-  const surfaceFinishingCapabilities = facilityTabs[2].items;
-  
+  // Odometer values
+  const tonnageMin = useOdometer(350, 2000, isVisible);
+  const tonnageMax = useOdometer(2000, 2500, isVisible);
+  const partWeightMin = useOdometer(0.1, 1500, isVisible);
+  const partWeightMax = useOdometer(12, 2000, isVisible);
+
   return (
     <CapabilitiesSection>
       <Container>
         <SectionHeader data-aos="fade-up">
-          <Title data-aos="fade-up" data-aos-delay="100">Technical Capabilities</Title>
-          <Subtitle data-aos="fade-up" data-aos-delay="200">{translations.capabilitiesSubtitle}</Subtitle>
+          <Title>
+            {translate(messages, 'capabilitiesTitle', 'Our Technical Capabilities')}
+          </Title>
+          <Subtitle>
+            {translate(messages, 'capabilitiesSubtitle', 'State-of-the-art equipment and precision engineering')}
+          </Subtitle>
         </SectionHeader>
         
-        {/* Technical Specifications */}
-        <SpecsGrid data-aos="fade-up" data-aos-delay="800">
-          <SpecsCard data-aos="fade-up" data-aos-delay="900">
-            <SpecsTitle data-aos="fade-up" data-aos-delay="950">{translations.machineTitle}</SpecsTitle>
-            <TypeTable type={machineSpecs} data-aos="fade-up" data-aos-delay="1000" />
-          </SpecsCard>
-        </SpecsGrid>
+        <StatsGrid ref={ref}>
+          <StatsCard data-aos="fade-up" data-aos-delay="200">
+            <StatsCardContent>
+              <StatsLabel>
+                {translate(messages, 'tonnageCapacity', 'Tonnage Capacity')}
+              </StatsLabel>
+              <StatsValue>
+                {tonnageMin} - {tonnageMax.toLocaleString()}
+              </StatsValue>
+              <StatsUnit>
+                {translate(messages, 'tonnageUnit', 'Tons')}
+              </StatsUnit>
+            </StatsCardContent>
+          </StatsCard>
+          
+          <StatsCard data-aos="fade-up" data-aos-delay="400">
+            <StatsCardContent>
+              <StatsLabel>
+                {translate(messages, 'partWeight', 'Part Weight')}
+              </StatsLabel>
+              <StatsValue>
+                {partWeightMin} - {partWeightMax}
+              </StatsValue>
+              <StatsUnit>
+                {translate(messages, 'partWeightUnit', 'kg')}
+              </StatsUnit>
+            </StatsCardContent>
+          </StatsCard>
+        </StatsGrid>
       </Container>
     </CapabilitiesSection>
   );
 };
 
-export default Capabilities;
+export default TechnicalCapabilities;
