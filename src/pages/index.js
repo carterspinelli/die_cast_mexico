@@ -15,7 +15,7 @@ import { useLanguage } from "../context/LanguageContext";
 const AboutSection = styled.section`
   padding: var(--spacing-2xl) 0;
   background-color: var(--white);
-  
+
   @media (max-width: 768px) {
     padding: var(--spacing-xl) 0;
   }
@@ -49,7 +49,7 @@ const AboutContent = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -62,7 +62,7 @@ const AboutImage = styled.div`
   background-position: center;
   border-radius: var(--border-radius-md);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  
+
   @media (max-width: 768px) {
     height: 300px;
     margin-bottom: var(--spacing-lg);
@@ -94,7 +94,7 @@ const AboutMission = styled.div`
 const FacilitySection = styled.section`
   padding: var(--spacing-2xl) 0;
   background-color: var(--background);
-  
+
   @media (max-width: 768px) {
     padding: var(--spacing-xl) 0;
   }
@@ -105,7 +105,7 @@ const StatsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
-  
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -118,7 +118,7 @@ const StatCard = styled.div`
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -135,7 +135,7 @@ const StatIcon = styled.div`
   justify-content: center;
   margin: 0 auto var(--spacing-md);
   color: var(--white);
-  
+
   svg {
     width: 30px;
     height: 30px;
@@ -153,26 +153,26 @@ const StatDescription = styled.p`
 
 const IndexPage = () => {
   const { messages } = useLanguage();
-  
+
   return (
     <Layout>
       <SEO 
         title="Die Cast Mexico" 
         description="Professional die casting services in Mexico for automotive, energy, telecommunications, and marine industries."
       />
-      
+
       <Hero messages={messages} />
-      
+
       <Services messages={messages} />
-      
+
       <FacilityAbout />
-      
+
       <Capabilities />
-      
+
       <IndustriesTabsSimple />
-      
+
       <SupplyChainValues />
-      
+
       <KeyCollaborations />
     </Layout>
   );
