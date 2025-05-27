@@ -1,0 +1,129 @@
+2025-05-27T23:38:14Z info: Deployment: 81ff58b2-60a1-4d1b-ab0a-0847830b0a3f
+2025-05-27T23:38:14Z info: Build: 9d251b72-ecb5-47cb-9cc9-0cf81beb85bf
+2025-05-27T23:38:14Z info: Connecting to builder
+2025-05-27T23:38:17Z info: Builder connected
+2025-05-27T23:38:17Z info: Installing packages
+2025-05-27T23:38:18Z info: Starting Build
+
+removed 3 packages, and audited 1569 packages in 10s
+
+271 packages are looking for funding
+
+  run `npm fund` for details
+
+
+26 vulnerabilities (1 low, 6 moderate, 19 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+npm notice
+npm notice New major version of npm available! 10.8.2 -> 11.4.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.4.1
+npm notice To update run: npm install -g npm@11.4.1
+npm notice
+
+success compile gatsby files - 5.963s
+success load gatsby config - 0.026s
+success load plugins - 1.442s
+
+
+warn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying
+the document head. Learn more at https://gatsby.dev/gatsby-head
+
+
+info One or more of your plugins have changed since the last time you ran
+Gatsby. As
+a precaution, we're deleting your site's cache to ensure there's no stale data.
+
+
+success initialize cache - 0.235s
+success copy gatsby files - 0.158s
+
+
+success Compiling Gatsby Functions - 0.422s
+
+success onPreBootstrap - 0.444s
+
+success createSchemaCustomization - 0.024s
+
+success Checking for changed pages - 0.001s
+
+success source and transform nodes - 0.260s
+
+info Writing GraphQL type definitions to
+/home/runner/workspace/.cache/schema.gql
+
+success building schema - 0.311s
+
+success createPages - 0.003s
+
+success createPagesStatefully - 0.290s
+
+success Cleaning up stale page-data - 0.003s
+
+success onPreExtractQueries - 0.001s
+
+success extract queries from components - 3.334s
+
+success write out redirect data - 0.018s
+
+warn The icon(src/images/icon.png) you provided to 'gatsby-plugin-manifest' is
+not square.
+The icons we generate will be square and for the best results we recommend you
+provide a square icon.
+
+
+info bootstrap finished - 20.627s
+
+success write out requires - 0.006s
+
+warn `isModuleDeclaration` has been deprecated, please migrate to
+`isImportOrExportDeclaration`
+    at isModuleDeclaration (/home/runner/workspace/node_modules/@babel/types/lib
+/validators/generated/index.js:2766:35)
+    at PluginPass.Program
+(/home/runner/workspace/node_modules/babel-plugin-lodash/lib/index.js:102:44)
+
+success Building production JavaScript and CSS bundles - 9.232s
+
+success Building HTML renderer - 13.250s
+
+success Execute page configs - 0.042s
+
+success Caching Webpack compilations - 0.001s
+
+success run queries in workers - 0.026s - 7/7 272.50/s
+
+success Merge worker state - 0.001s
+
+
+2025-05-27T23:39:20Z info: Created hosting layer
+2025-05-27T23:39:21Z info: Created pid1 binary layer
+2025-05-27T23:40:00Z info: Created Repl layer
+2025-05-27T23:40:01Z info: Pushed image manifest
+2025-05-27T23:40:01Z info: Pushed soci index manifest
+2025-05-27T23:40:02Z info: Pushed referrer manifest
+2025-05-27T23:40:07Z info: Creating virtual machine
+2025-05-27T23:40:27Z info: Virtual machine created
+2025-05-27T23:40:27Z info: Waiting for deployment to be ready
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+forwarding local port 5000 to external port 80 (mapped as 1104)
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+sh: 1: npx: not found
+command finished with error [sh -c npx gatsby serve -p 5000 -H 0.0.0.0]: exit status 127
+crash loop detected
+2025-05-27T23:41:18Z error: The deployment is crash looping. This can happen if the run command fails or exits immediately after starting. Check the logs for more information.
