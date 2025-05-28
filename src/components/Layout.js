@@ -15,6 +15,11 @@ const Main = styled.main`
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  
+  @media (max-width: 768px) {
+    overflow-y: visible;
+    height: auto;
+  }
 `;
 
 const Content = styled.div`
@@ -22,6 +27,11 @@ const Content = styled.div`
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  
+  @media (max-width: 768px) {
+    overflow-y: visible;
+    height: auto;
+  }
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
@@ -34,23 +44,33 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
     const isMobile = window.innerWidth <= 768;
     
     AOS.init({
-      duration: isMobile ? 400 : 800,
+      duration: isMobile ? 300 : 800,
       once: true,
       mirror: false,
-      offset: isMobile ? 50 : 120,
+      offset: isMobile ? 30 : 120,
       easing: 'ease-out',
-      disable: isMobile ? false : false, // Keep animations on mobile but make them faster
-      throttleDelay: 99,
-      debounceDelay: 50
+      disable: false,
+      throttleDelay: 16,
+      debounceDelay: 16,
+      // Ensure AOS doesn't interfere with scroll
+      disableMutationObserver: isMobile,
+      startEvent: 'DOMContentLoaded'
     });
     
-    // Refresh AOS on window resize
+    // Refresh AOS on window resize with throttling
+    let resizeTimeout;
     const handleResize = () => {
-      AOS.refresh();
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        AOS.refresh();
+      }, 100);
     };
     
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      clearTimeout(resizeTimeout);
+    };
   }, []);
   
   // Track page views

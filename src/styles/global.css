@@ -137,10 +137,21 @@ img {
 
 /* Mobile performance optimizations */
 @media (max-width: 768px) {
-  html, body {
-    overflow-y: auto !important;
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    height: auto;
     -webkit-overflow-scrolling: touch;
     touch-action: pan-y;
+    position: relative;
   }
   
   /* Optimize touch interactions */
@@ -148,22 +159,27 @@ img {
     touch-action: manipulation;
   }
   
-  /* Remove any potential scroll blockers */
+  /* Ensure proper scrolling for main containers */
+  main, section, article {
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  
+  /* Remove problematic transforms and fixed positioning that can block scroll */
   * {
-    -webkit-transform: none;
-    transform: none;
     will-change: auto;
   }
   
-  /* Ensure all containers allow scrolling */
-  div, section, main, article {
-    overflow: visible;
-  }
-  
-  /* Override any fixed heights that might trap scroll */
+  /* Fix any containers that might trap scroll */
   .scroll-container {
     height: auto !important;
-    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Ensure AOS animations don't interfere with scrolling */
+  [data-aos] {
+    pointer-events: auto;
   }
 }
 
@@ -212,5 +228,33 @@ img, video, iframe {
     --container-padding: 0.5rem;
     --spacing-md: 0.75rem;
     --spacing-lg: 0.75rem;
+  }
+}
+
+/* Critical mobile scroll fixes */
+@media (max-width: 768px) {
+  /* Prevent any fixed/absolute elements from blocking scroll */
+  * {
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Ensure smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  /* Fix for iOS Safari scroll issues */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  
+  /* Prevent horizontal scroll issues */
+  * {
+    max-width: 100vw;
+    box-sizing: border-box;
   }
 }
