@@ -159,7 +159,7 @@ const IndexPage = () => {
       <SEO 
         title="Die Cast Mexico" 
         description="Professional die casting services in Mexico for automotive, energy, telecommunications, and marine industries."
-        image="/images/die_cast_opengraph_good.png"
+        image="/images/die_cast_opengraph_optimized.png"
       />
 
       <Hero messages={messages} />
