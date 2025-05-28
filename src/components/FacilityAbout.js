@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
+import { FacilityShowcase } from "./FacilityShowcase";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -136,14 +137,12 @@ const CertificationDivider = styled.div`
 `;
 
 const AchievementsBox = styled.div`
-  background-color: #ffffff;
-  color: #1e293b;
+  background-color: #0c1220;
+  color: white;
   border-radius: 0.75rem;
   padding: 2.5rem 4rem;
   position: relative;
   overflow: hidden;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 `;
 
 const AchievementsHeader = styled.div`
@@ -167,12 +166,12 @@ const AchievementsTitle = styled.h3`
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
-  color: #0f172a;
+  color: white;
 `;
 
 const AchievementsDescription = styled.p`
   max-width: 768px;
-  color: #64748b;
+  color: #b4c6e0;
   font-size: 1.1rem;
 `;
 
