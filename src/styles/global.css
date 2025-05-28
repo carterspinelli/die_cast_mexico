@@ -239,3 +239,55 @@ html, body {
     background-clip: padding-box;
   }
 }
+
+/* Safari-specific overscroll behavior */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  html, body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    -webkit-overscroll-behavior: none;
+    -webkit-overscroll-behavior-y: none;
+    -webkit-overscroll-behavior-x: none;
+  }
+  
+  /* Prevent Safari blue overscroll on mobile */
+  body {
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Additional Safari mobile fix */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    -webkit-overscroll-behavior: auto;
+    overscroll-behavior: auto;
+  }
+  
+  /* Force white background in Safari viewport area */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #ffffff;
+    z-index: -1;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: #ffffff;
+    z-index: -1;
+  }
+}
