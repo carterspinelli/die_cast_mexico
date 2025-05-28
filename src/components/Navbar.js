@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
-import CurvedMenu from "./ui/CurvedMenu";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 // Main navbar container with flex center layout
@@ -339,13 +339,99 @@ const Navbar = () => {
             <ContactButton to={localizedLink("/contact")}>
               {messages.contact}
             </ContactButton>
+            <MobileMenuButton 
+              onClick={toggleMobileMenu}
+              aria-label="Toggle Menu"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+            </MobileMenuButton>
           </RightSection>
         </NavbarInner>
       </NavbarContainer>
       
       
-      {/* Curved Mobile Menu */}
-      <CurvedMenu />
+      {/* Curved Mobile Menu Overlay */}
+      <AnimatePresence mode="wait">
+        {mobileMenuOpen && (
+          <motion.div
+            variants={{
+              initial: { x: "100%" },
+              enter: { x: "0", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+              exit: { x: "100%", transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } },
+            }}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            style={{
+              height: '100vh',
+              width: '100vw',
+              maxWidth: '28rem',
+              position: 'fixed',
+              right: 0,
+              top: 0,
+              zIndex: 1050,
+              backgroundColor: 'white',
+            }}
+          >
+            <div style={{ height: '100%', paddingTop: '2.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', fontSize: '3rem', gap: '0.75rem', marginTop: 0, padding: '0 2.5rem' }}>
+                <div style={{ color: 'black', borderBottom: '1px solid rgba(0, 0, 0, 0.3)', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: 0 }}>
+                  <p style={{ margin: 0, paddingBottom: '0.5rem' }}>Navigation</p>
+                </div>
+                <section style={{ backgroundColor: 'transparent', marginTop: 0 }}>
+                  <MobileNavLink to={localizedLink("/")} onClick={toggleMobileMenu}>
+                    1. {messages.home}
+                  </MobileNavLink>
+                  <MobileNavLink to={localizedLink("/#services")} onClick={toggleMobileMenu}>
+                    2. {messages.services}
+                  </MobileNavLink>
+                  <MobileNavLink to={localizedLink("/#industries")} onClick={toggleMobileMenu}>
+                    3. {messages.industries}
+                  </MobileNavLink>
+                  <MobileNavLink to={localizedLink("/#about")} onClick={toggleMobileMenu}>
+                    4. {messages.about}
+                  </MobileNavLink>
+                </section>
+              </div>
+              <div style={{ display: 'flex', width: '100%', fontSize: '0.875rem', justifyContent: 'space-between', alignItems: 'center', color: 'black', padding: '0 2.5rem', paddingBottom: '1.25rem' }}>
+                <LanguageSwitcher />
+                <MobileCTAButton to={localizedLink("/contact")} onClick={toggleMobileMenu}>
+                  {messages.contact}
+                </MobileCTAButton>
+              </div>
+            </div>
+            <svg
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: '-99px',
+                width: '100px',
+                stroke: 'none',
+                height: '100%',
+                fill: '#ffffff'
+              }}
+            >
+              <motion.path
+                d={typeof window !== 'undefined' ? 
+                  `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q100 ${window.innerHeight / 2} 100 0` : 
+                  'M100 0 L200 0 L200 800 L100 800 Q100 400 100 0'
+                }
+                initial={{ d: typeof window !== 'undefined' ? 
+                  `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q-100 ${window.innerHeight / 2} 100 0` : 
+                  'M100 0 L200 0 L200 800 L100 800 Q-100 400 100 0'
+                }}
+                animate={{ d: typeof window !== 'undefined' ? 
+                  `M100 0 L200 0 L200 ${window.innerHeight} L100 ${window.innerHeight} Q100 ${window.innerHeight / 2} 100 0` : 
+                  'M100 0 L200 0 L200 800 L100 800 Q100 400 100 0'
+                }}
+                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+              />
+            </svg>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
