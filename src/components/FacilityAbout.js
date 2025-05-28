@@ -180,13 +180,10 @@ const CapabilitiesGrid = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   justify-items: center;
-  align-items: start;
-  place-items: center start;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
-    place-items: stretch;
   }
   
   @media (min-width: 1024px) {
@@ -203,13 +200,9 @@ const CapabilityBox = styled.div`
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 350px;
-  margin: 0 auto;
-  justify-self: center;
   
   @media (min-width: 768px) {
     max-width: none;
-    margin: 0;
-    justify-self: stretch;
   }
   
   &:hover {
