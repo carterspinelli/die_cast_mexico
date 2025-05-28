@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const ProcessSection = styled.div`
   margin: 4rem 0;
   background: radial-gradient(30% 80% at 0% 70%, #4338ca 0%, #3730a3 22.92%, #312e81 42.71%, #0f172a 88.54%);
   border-radius: 1rem;
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 2rem;
   position: relative;
   overflow: hidden;
+  min-height: 120vh;
 `;
 
 const ProcessHeader = styled.div`
@@ -38,36 +40,45 @@ const ProcessSubtitle = styled.p`
   line-height: 1.6;
 `;
 
-const ProcessGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-  }
-  
-  @media (min-width: 1200px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-  }
+const StickyContainer = styled.div`
+  position: sticky;
+  top: 4rem;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 100%;
 `;
 
-const ProcessCard = styled.div`
+const ProcessCard = styled(motion.div)`
   background: rgba(15, 23, 42, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1rem;
   padding: 2rem;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  position: relative;
+  min-width: 70%;
+  max-width: 70%;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  
+  @media (max-width: 768px) {
+    min-width: 90%;
+    max-width: 90%;
+  }
   
   &:hover {
-    transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   }
+`;
+
+const ProcessCardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const ProcessNumber = styled.div`
@@ -81,14 +92,14 @@ const ProcessNumber = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 `;
 
 const ProcessCardTitle = styled.h3`
-  font-size: 1.25rem;
+  font-size: 1.875rem;
   font-weight: 600;
   color: #f8fafc;
-  margin: 0 0 1rem 0;
+  margin: 0;
   line-height: 1.3;
 `;
 
@@ -96,7 +107,8 @@ const ProcessDescription = styled.p`
   color: #cbd5e1;
   line-height: 1.6;
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  opacity: 0.8;
 `;
 
 const FACILITY_PROCESSES = [
@@ -137,17 +149,30 @@ export function FacilityProcess() {
         </ProcessSubtitle>
       </ProcessHeader>
 
-      <ProcessGrid>
-        {FACILITY_PROCESSES.map((process, index) => (
-          <ProcessCard key={process.id}>
-            <ProcessNumber>
-              {String(index + 1).padStart(2, "0")}
-            </ProcessNumber>
-            <ProcessCardTitle>{process.title}</ProcessCardTitle>
-            <ProcessDescription>{process.description}</ProcessDescription>
-          </ProcessCard>
-        ))}
-      </ProcessGrid>
+      <StickyContainer>
+        {FACILITY_PROCESSES.map((process, index) => {
+          return (
+            <ProcessCard
+              key={process.id}
+              initial={{ x: index > 0 ? 1200 : 0 }}
+              animate={{ x: 0 }}
+              transition={{ 
+                delay: index * 0.5,
+                duration: 0.8,
+                ease: "easeOut"
+              }}
+            >
+              <ProcessCardHeader>
+                <ProcessNumber>
+                  {String(index + 1).padStart(2, "0")}
+                </ProcessNumber>
+                <ProcessCardTitle>{process.title}</ProcessCardTitle>
+              </ProcessCardHeader>
+              <ProcessDescription>{process.description}</ProcessDescription>
+            </ProcessCard>
+          );
+        })}
+      </StickyContainer>
     </ProcessSection>
   );
 }
