@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
-import { FacilityProcess } from "./FacilityProcess";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -137,12 +136,14 @@ const CertificationDivider = styled.div`
 `;
 
 const AchievementsBox = styled.div`
-  background-color: #0c1220;
-  color: white;
+  background-color: #ffffff;
+  color: #1e293b;
   border-radius: 0.75rem;
   padding: 2.5rem 4rem;
   position: relative;
   overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 `;
 
 const AchievementsHeader = styled.div`
@@ -166,12 +167,12 @@ const AchievementsTitle = styled.h3`
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
-  color: white;
+  color: #0f172a;
 `;
 
 const AchievementsDescription = styled.p`
   max-width: 768px;
-  color: #b4c6e0;
+  color: #64748b;
   font-size: 1.1rem;
 `;
 
@@ -230,15 +231,14 @@ const CapabilityHeader = styled.div`
 const CapabilityIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #0c1220 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(12, 18, 32, 0.25);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
   transition: all 0.3s ease;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   
   svg {
     color: white;
@@ -248,7 +248,7 @@ const CapabilityIcon = styled.div`
   
   ${CapabilityBox}:hover & {
     transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(12, 18, 32, 0.35);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
   }
 `;
 
@@ -531,7 +531,7 @@ const FacilityAbout = () => {
               </CapabilityBox>
             </CapabilitiesGrid>
             
-            <FacilityProcess />
+
             
             <BasicInfoGrid>
               {achievements.map((achievement, idx) => (
