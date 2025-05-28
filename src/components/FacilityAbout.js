@@ -170,7 +170,7 @@ const AchievementsTitle = styled.h3`
 `;
 
 const AchievementsDescription = styled.p`
-  max-width: 380px;
+  max-width: 600px;
   color: #b4c6e0;
   font-size: 1.1rem;
   margin: 0 auto;
@@ -187,7 +187,7 @@ const CapabilitiesGrid = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   justify-items: center;
-  max-width: 380px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   
