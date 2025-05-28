@@ -8,7 +8,7 @@ import { useLanguage } from "../../context/LanguageContext";
 
 // Styled components for the contact form
 const Section = styled.section`
-  padding: 4rem 2rem;
+  padding: 8rem 2rem 4rem 2rem; /* Added top padding to account for fixed navbar */
   
   @media (min-width: 768px) {
     padding: 8rem 2rem;
