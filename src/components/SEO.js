@@ -32,7 +32,7 @@ function SEO({ description, lang, meta = [], title, image }) {
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
   const siteUrl = site.siteMetadata?.siteUrl;
-  const imageUrl = image ? `${siteUrl}${image}?v=4` : `${siteUrl}/images/opengraph_final.png?v=4`;
+  const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/images/opengraph_final.png`;
   const ogDescription = "Professional Die Casting Solutions in Mexico";
 
   return (
