@@ -22,7 +22,7 @@ const TopSection = styled.div`
   flex-direction: column;
   gap: 3rem;
   margin-bottom: 3rem;
-
+  
   @media (min-width: 1024px) {
     flex-direction: row;
   }
@@ -31,7 +31,7 @@ const TopSection = styled.div`
 const CompanySection = styled.div`
   flex: 1;
   max-width: 100%;
-
+  
   @media (min-width: 1024px) {
     max-width: 30%;
   }
@@ -59,11 +59,11 @@ const LinksSection = styled.div`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
-
+  
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -92,7 +92,7 @@ const NavLink = styled(Link)`
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s;
-
+  
   &:hover {
     color: #60a5fa;
   }
@@ -103,7 +103,7 @@ const ExternalLink = styled.a`
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.2s;
-
+  
   &:hover {
     color: #60a5fa;
   }
@@ -121,7 +121,7 @@ const BottomSection = styled.div`
   align-items: center;
   gap: 1.5rem;
   margin-top: 1rem;
-
+  
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -134,7 +134,7 @@ const Copyright = styled.p`
   font-size: 1rem;
   margin: 0;
   text-align: center;
-
+  
   @media (min-width: 768px) {
     text-align: left;
   }
@@ -146,7 +146,7 @@ const LegalLinks = styled.div`
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
-
+  
   @media (min-width: 768px) {
     justify-content: flex-end;
   }
@@ -156,7 +156,7 @@ const LegalLink = styled.a`
   color: #a1a1aa;
   font-size: 0.875rem;
   text-decoration: none;
-
+  
   &:hover {
     color: #60a5fa;
   }
@@ -166,7 +166,7 @@ const CertificationImage = styled.img`
   height: 70px;
   margin-right: 1rem;
   opacity: 0.9;
-
+  
   &:hover {
     opacity: 1;
   }
@@ -175,84 +175,34 @@ const CertificationImage = styled.img`
 const Footer = ({ messages }) => {
   const currentYear = new Date().getFullYear();
   const { language } = useLanguage();
-
+  
   // Helper function to create localized paths
   const localizedLink = (path) => getLocalizedPath(path, language);
-
+  
   // Use services from the translation files
   const services = [
-    {
-      name: language === "es" ? "Fundición a Presión" : "Die Casting",
-      path: "/#services",
-    },
-    {
-      name:
-        language === "es"
-          ? "Diseño de Moldes y Accesorios"
-          : "Mould & Fixture Design",
-      path: "/#services",
-    },
-    {
-      name:
-        language === "es"
-          ? "Mecanizado CNC de Precisión"
-          : "CNC Precision Machining",
-      path: "/#services",
-    },
-    {
-      name:
-        language === "es" ? "Tratamiento de Superficie" : "Surface Treatment",
-      path: "/#services",
-    },
-    {
-      name: language === "es" ? "Pruebas y Ensamblaje" : "Testing & Assembly",
-      path: "/#services",
-    },
+    { name: language === 'es' ? "Fundición a Presión" : "Die Casting", path: "/#services" },
+    { name: language === 'es' ? "Diseño de Moldes y Accesorios" : "Mould & Fixture Design", path: "/#services" },
+    { name: language === 'es' ? "Mecanizado CNC de Precisión" : "CNC Precision Machining", path: "/#services" },
+    { name: language === 'es' ? "Tratamiento de Superficie" : "Surface Treatment", path: "/#services" },
+    { name: language === 'es' ? "Pruebas y Ensamblaje" : "Testing & Assembly", path: "/#services" },
   ];
-
+  
   // Use industries from the translation files
   const industries = [
-    {
-      name: language === "es" ? "Telecomunicaciones" : "Telecommunications",
-      path: "/#industries",
-    },
-    {
-      name:
-        language === "es"
-          ? "Mecatrónica y Automatización"
-          : "Mechatronics & Automation",
-      path: "/#industries",
-    },
-    {
-      name: language === "es" ? "Herramientas Eléctricas" : "Power Tools",
-      path: "/#industries",
-    },
-    {
-      name: language === "es" ? "Automotriz" : "Automotive",
-      path: "/#industries",
-    },
-    {
-      name: language === "es" ? "Iluminación" : "Lighting",
-      path: "/#industries",
-    },
-    {
-      name: language === "es" ? "Instrumentación" : "Instrumentation",
-      path: "/#industries",
-    },
-    {
-      name:
-        language === "es" ? "Neumática e Hidráulica" : "Pneumatic & Hydraulic",
-      path: "/#industries",
-    },
-    {
-      name: language === "es" ? "Productos Marinos" : "Marine Products",
-      path: "/#industries",
-    },
+    { name: language === 'es' ? "Telecomunicaciones" : "Telecommunications", path: "/#industries" },
+    { name: language === 'es' ? "Mecatrónica y Automatización" : "Mechatronics & Automation", path: "/#industries" },
+    { name: language === 'es' ? "Herramientas Eléctricas" : "Power Tools", path: "/#industries" },
+    { name: language === 'es' ? "Automotriz" : "Automotive", path: "/#industries" },
+    { name: language === 'es' ? "Iluminación" : "Lighting", path: "/#industries" },
+    { name: language === 'es' ? "Instrumentación" : "Instrumentation", path: "/#industries" },
+    { name: language === 'es' ? "Neumática e Hidráulica" : "Pneumatic & Hydraulic", path: "/#industries" },
+    { name: language === 'es' ? "Productos Marinos" : "Marine Products", path: "/#industries" },
   ];
 
   // Removed terms and conditions and privacy policy links as requested
   const legalLinks = [];
-
+  
   return (
     <FooterContainer>
       <Container>
@@ -260,28 +210,20 @@ const Footer = ({ messages }) => {
           <CompanySection data-aos="fade-right" data-aos-delay="100">
             <Logo>
               <a href={localizedLink("/")}>
-                <LogoImg
-                  src="/images/die_cast_mx_footer_logo.png"
-                  alt="Die Cast Mexico"
-                />
+                <LogoImg src="/images/die_cast_mx_footer_logo.png" alt="Die Cast Mexico" />
               </a>
             </Logo>
             <Description>
-              {messages.footerDescription ||
-                "High-quality die casting solutions for automotive, telecommunications, and industrial applications. Precision manufacturing in Jalisco, Mexico."}
+              {messages.footerDescription || "High-quality die casting solutions for automotive, telecommunications, and industrial applications. Precision manufacturing in Guadalajara, Mexico."}
             </Description>
           </CompanySection>
-
+          
           <LinksSection>
             <LinksColumn data-aos="fade-up" data-aos-delay="200">
               <ColumnTitle>{messages.services}</ColumnTitle>
               <LinksList>
                 {services.map((service, idx) => (
-                  <LinkItem
-                    key={idx}
-                    data-aos="fade-up"
-                    data-aos-delay={250 + idx * 50}
-                  >
+                  <LinkItem key={idx} data-aos="fade-up" data-aos-delay={250 + (idx * 50)}>
                     <NavLink to={localizedLink(service.path)}>
                       {service.name}
                     </NavLink>
@@ -289,16 +231,12 @@ const Footer = ({ messages }) => {
                 ))}
               </LinksList>
             </LinksColumn>
-
+            
             <LinksColumn data-aos="fade-up" data-aos-delay="300">
               <ColumnTitle>{messages.industries}</ColumnTitle>
               <LinksList>
                 {industries.map((industry, idx) => (
-                  <LinkItem
-                    key={idx}
-                    data-aos="fade-up"
-                    data-aos-delay={350 + idx * 50}
-                  >
+                  <LinkItem key={idx} data-aos="fade-up" data-aos-delay={350 + (idx * 50)}>
                     <NavLink to={localizedLink(industry.path)}>
                       {industry.name}
                     </NavLink>
@@ -306,7 +244,7 @@ const Footer = ({ messages }) => {
                 ))}
               </LinksList>
             </LinksColumn>
-
+            
             <LinksColumn data-aos="fade-up" data-aos-delay="400">
               <ColumnTitle>{messages.contact}</ColumnTitle>
               <LinksList>
@@ -316,13 +254,7 @@ const Footer = ({ messages }) => {
                   </NavLink>
                 </LinkItem>
                 <LinkItem data-aos="fade-up" data-aos-delay="500">
-                  <span
-                    style={{
-                      color: "#a1a1aa",
-                      fontSize: "0.875rem",
-                      textDecoration: "none",
-                    }}
-                  >
+                  <span style={{ color: '#a1a1aa', fontSize: '0.875rem', textDecoration: 'none' }}>
                     Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
                   </span>
                 </LinkItem>
@@ -340,18 +272,15 @@ const Footer = ({ messages }) => {
             </LinksColumn>
           </LinksSection>
         </TopSection>
-
+        
         <Divider data-aos="fade-up" data-aos-delay="650" />
-
+        
         <BottomSection>
-          <Copyright>
-            © {currentYear} Die Cast Mexico.{" "}
-            {messages.footerRights || "All rights reserved"}.
-          </Copyright>
+          <Copyright>© {currentYear} Die Cast Mexico. {messages.footerRights || "All rights reserved"}.</Copyright>
           <LegalLinks>
-            <CertificationImage
-              src="/images/iso9001_diecast.webp"
-              alt={messages.isoLogoAlt || "ISO 9001:2015 Certified"}
+            <CertificationImage 
+              src="/images/iso9001_diecast.webp" 
+              alt={messages.isoLogoAlt || "ISO 9001:2015 Certified"} 
             />
             {legalLinks.map((link, idx) => (
               <LegalLink key={idx} href={link.href}>
