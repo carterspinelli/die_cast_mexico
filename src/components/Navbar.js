@@ -128,6 +128,13 @@ const ContactButton = styled(Link)`
 const RightSection = styled.div`
   display: flex;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    /* On mobile, only show the hamburger menu */
+    & > *:not(:last-child) {
+      display: none;
+    }
+  }
 `;
 
 // Mobile toggle button
