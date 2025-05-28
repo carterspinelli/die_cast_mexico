@@ -188,14 +188,14 @@ const CapabilitiesGrid = styled.div`
   margin-top: 3rem;
   justify-items: center;
   width: 100%;
-  max-width: calc(100% - 2rem);
+  padding: 0 0.5rem;
   margin-left: auto;
   margin-right: auto;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
-    max-width: 100%;
+    padding: 0;
   }
   
   @media (min-width: 1024px) {
@@ -209,12 +209,19 @@ const CapabilityBox = styled.div`
   padding: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+  max-width: none;
   border: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  
+  @media (max-width: 767px) {
+    width: calc(100vw - 1rem);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
   
   &:hover {
     transform: translateY(-2px);
