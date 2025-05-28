@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
-import { FacilityProcessTimeline } from "./FacilityProcessTimeline";
+import { FacilityProcess } from "./FacilityProcess";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -531,7 +531,7 @@ const FacilityAbout = () => {
               </CapabilityBox>
             </CapabilitiesGrid>
             
-            <FacilityProcessTimeline />
+            <FacilityProcess />
             
             <BasicInfoGrid>
               {achievements.map((achievement, idx) => (
