@@ -170,9 +170,15 @@ const AchievementsTitle = styled.h3`
 `;
 
 const AchievementsDescription = styled.p`
-  max-width: 768px;
+  max-width: 380px;
   color: #b4c6e0;
   font-size: 1.1rem;
+  margin: 0 auto;
+  
+  @media (min-width: 768px) {
+    max-width: 768px;
+    margin: 0;
+  }
 `;
 
 const CapabilitiesGrid = styled.div`
@@ -181,10 +187,14 @@ const CapabilitiesGrid = styled.div`
   gap: 2rem;
   margin-top: 3rem;
   justify-items: center;
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
+    max-width: 100%;
   }
   
   @media (min-width: 1024px) {
