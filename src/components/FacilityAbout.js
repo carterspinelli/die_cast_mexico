@@ -179,9 +179,11 @@ const CapabilitiesGrid = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 3rem;
+  justify-items: center;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
   }
   
   @media (min-width: 1024px) {
@@ -196,6 +198,12 @@ const CapabilityBox = styled.div`
   padding: 2rem;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+  
+  @media (min-width: 768px) {
+    max-width: none;
+  }
   
   &:hover {
     transform: translateY(-5px);
