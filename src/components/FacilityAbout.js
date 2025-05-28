@@ -530,38 +530,7 @@ const FacilityAbout = () => {
               </CapabilityBox>
             </CapabilitiesGrid>
             
-            <FacilityShowcase 
-              facilityHighlights={[
-                {
-                  id: 1,
-                  name: "Carlos Rodriguez",
-                  role: "Plant Manager",
-                  department: "Operations",
-                  content: "Our facility operates with the highest standards of precision and quality. We've invested in cutting-edge technology to ensure every part meets exact specifications.",
-                  rating: 5,
-                  avatar: "/static/images/team-member-1.jpg",
-                },
-                {
-                  id: 2,
-                  name: "Maria González",
-                  role: "Quality Director",
-                  department: "Quality Assurance",
-                  content: "IATF 16949 certification reflects our commitment to automotive industry standards. Our quality systems ensure zero-defect delivery to our customers.",
-                  rating: 5,
-                  avatar: "/static/images/team-member-2.jpg",
-                },
-                {
-                  id: 3,
-                  name: "Roberto Silva",
-                  role: "Production Engineer",
-                  department: "Engineering",
-                  content: "With over 50 die casting machines ranging from 125 to 3,000 tons, we handle projects of any scale while maintaining exceptional quality standards.",
-                  rating: 5,
-                  avatar: "/static/images/team-member-3.jpg",
-                },
-              ]}
-              certifications={["IATF 16949", "ISO 9001", "NADCA", "AIAG"]}
-            />
+
             
             <BasicInfoGrid>
               {achievements.map((achievement, idx) => (
