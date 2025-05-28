@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import CurvedMenu from "./ui/CurvedMenu";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 // Main navbar container with flex center layout
@@ -338,43 +339,13 @@ const Navbar = () => {
             <ContactButton to={localizedLink("/contact")}>
               {messages.contact}
             </ContactButton>
-            <MobileMenuButton 
-              onClick={toggleMobileMenu}
-              aria-label="Toggle Menu"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-              </svg>
-            </MobileMenuButton>
           </RightSection>
         </NavbarInner>
       </NavbarContainer>
       
-      {/* Mobile Menu */}
-      <MobileMenuOverlay isOpen={mobileMenuOpen}>
-        <CloseButton onClick={toggleMobileMenu}>×</CloseButton>
-        
-        <MobileNavLink to={localizedLink("/")} onClick={toggleMobileMenu}>
-          {messages.home}
-        </MobileNavLink>
-        <MobileNavLink to={localizedLink("/#services")} onClick={toggleMobileMenu}>
-          {messages.services}
-        </MobileNavLink>
-        <MobileNavLink to={localizedLink("/#industries")} onClick={toggleMobileMenu}>
-          {messages.industries}
-        </MobileNavLink>
-        <MobileNavLink to={localizedLink("/#about")} onClick={toggleMobileMenu}>
-          {messages.about}
-        </MobileNavLink>
-        
-        <MobileLanguageSection>
-          <LanguageSwitcher />
-        </MobileLanguageSection>
-        
-        <MobileCTAButton to={localizedLink("/contact")} onClick={toggleMobileMenu}>
-          {messages.contact}
-        </MobileCTAButton>
-      </MobileMenuOverlay>
+      
+      {/* Curved Mobile Menu */}
+      <CurvedMenu />
     </>
   );
 };

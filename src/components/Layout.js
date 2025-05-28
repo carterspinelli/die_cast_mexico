@@ -21,7 +21,7 @@ const Content = styled.div`
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   // Get language and messages from our custom context
   const { messages } = useLanguage();
-  const [useModernNav, setUseModernNav] = useState(true);
+  const [useModernNav, setUseModernNav] = useState(false);
   
   // Initialize AOS animation library
   useEffect(() => {
