@@ -18,7 +18,7 @@ const HamburgerButton = styled.div`
   position: fixed;
   right: 1rem;
   top: 1.25rem;
-  z-index: 50;
+  z-index: 1100;
   width: 3rem;
   height: 3rem;
   border-radius: 0;
@@ -28,6 +28,7 @@ const HamburgerButton = styled.div`
   cursor: pointer;
   background-color: white;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   
   @media (max-width: 768px) {
     display: flex;
@@ -66,7 +67,7 @@ const MenuOverlay = styled(motion.div)`
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 40;
+  z-index: 1050;
   background-color: white;
 `;
 
