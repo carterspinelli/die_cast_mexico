@@ -141,10 +141,21 @@ const AchievementsBox = styled.div`
   color: white;
   border-radius: 0;
   padding: 4rem 0;
-  margin: 4rem calc(-50vw + 50%) 0;
+  margin: 4rem 0 0;
   position: relative;
   overflow: hidden;
-  width: 100vw;
+  
+  /* Create full-width background */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    right: -100vw;
+    bottom: 0;
+    background-color: #0c1220;
+    z-index: -1;
+  }
   
   /* Inner container to maintain proper content width */
   > * {
@@ -153,6 +164,8 @@ const AchievementsBox = styled.div`
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    position: relative;
+    z-index: 1;
   }
   
   @media (min-width: 1200px) {
