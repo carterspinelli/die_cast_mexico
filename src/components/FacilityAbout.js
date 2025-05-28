@@ -139,10 +139,32 @@ const CertificationDivider = styled.div`
 const AchievementsBox = styled.div`
   background-color: #0c1220;
   color: white;
-  border-radius: 0.75rem;
-  padding: 2.5rem 4rem;
+  border-radius: 0;
+  padding: 4rem 0;
+  margin: 4rem -100vw 0 -100vw;
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  /* Inner container to maintain proper content width */
+  > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    > * {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 `;
 
 const AchievementsHeader = styled.div`
@@ -195,28 +217,24 @@ const CapabilitiesGrid = styled.div`
 `;
 
 const CapabilityBox = styled.div`
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   padding: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 130%; /* 30% increase in width */
-  max-width: 130%; /* Ensure it can grow 30% larger */
-  border: 1px solid #e2e8f0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
-    border-color: #cbd5e1;
-  }
-  
-  @media (max-width: 768px) {
-    width: 130%; /* 30% increase for mobile as well */
-    max-width: 130%;
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 `;
 
@@ -262,7 +280,7 @@ const CapabilityIcon = styled.div`
 const CapabilityTitle = styled.h4`
   font-size: 1.125rem;
   font-weight: 600;
-  color: #0f172a;
+  color: #ffffff;
   margin: 0;
   letter-spacing: -0.01em;
   line-height: 1.4;
@@ -286,15 +304,15 @@ const CapabilityContent = styled.div`
 `;
 
 const CapabilityItem = styled.div`
-  background: #f9fafb;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 0.5rem;
   padding: 1.125rem;
   transition: all 0.2s ease;
-  border: 1px solid #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   
   &:hover {
-    background: #f3f4f6;
-    border-color: #e5e7eb;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
   }
   
   @media (max-width: 640px) {
@@ -304,7 +322,7 @@ const CapabilityItem = styled.div`
 
 const CapabilityLabel = styled.div`
   font-size: 0.75rem;
-  color: #6b7280;
+  color: #94a3b8;
   margin-bottom: 0.25rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -312,7 +330,7 @@ const CapabilityLabel = styled.div`
 `;
 
 const CapabilityValue = styled.div`
-  color: #111827;
+  color: #e2e8f0;
   font-size: 0.875rem;
   line-height: 1.5;
   font-weight: 400;
