@@ -39,7 +39,8 @@
 }
 
 html {
-  background-color: var(--background);
+  background-color: #ffffff;
+  background: #ffffff;
 }
 
 body {
@@ -47,8 +48,13 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: var(--gray-dark);
-  background-color: var(--background);
+  background-color: #ffffff;
+  background: #ffffff;
   min-height: 100vh;
+  
+  /* Ensure white background for mobile overscroll areas */
+  overscroll-behavior: contain;
+  -webkit-overscroll-behavior: contain;
 }
 
 a {
@@ -194,4 +200,29 @@ p, h1, h2, h3, h4, h5, h6, span, div, a {
 .container {
   max-width: 100vw;
   box-sizing: border-box;
+}
+
+/* Force white background for all mobile overscroll areas */
+@media (max-width: 768px) {
+  html {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  #___gatsby {
+    background-color: #ffffff;
+    background: #ffffff;
+    min-height: 100vh;
+  }
+  
+  /* Webkit specific overscroll handling */
+  html, body {
+    -webkit-overscroll-behavior-y: contain;
+    overscroll-behavior-y: contain;
+  }
 }
