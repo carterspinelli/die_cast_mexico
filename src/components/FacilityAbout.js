@@ -203,24 +203,10 @@ const CapabilitiesGrid = styled.div`
 `;
 
 const CapabilityBox = styled.div`
-  background: #ffffff;
-  border-radius: 1.25rem;
-  padding: 2rem;
-  transition: all 0.3s ease;
   width: 100%;
-  border: 1px solid #e2e8f0;
-  position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-    border-color: rgba(59, 130, 246, 0.2);
-  }
 `;
 
 const CapabilityHeader = styled.div`
@@ -248,17 +234,12 @@ const CapabilityIcon = styled.div`
     width: 1rem;
     height: 1rem;
   }
-  
-  ${CapabilityBox}:hover & {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(12, 18, 32, 0.35);
-  }
 `;
 
 const CapabilityTitle = styled.h4`
   font-size: 1rem;
   font-weight: 600;
-  color: #0f172a;
+  color: white;
   margin: 0;
   letter-spacing: -0.01em;
   line-height: 1.4;
@@ -275,21 +256,21 @@ const CapabilityContent = styled.div`
 `;
 
 const CapabilityItem = styled.div`
-  background: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 0.5rem;
   padding: 0.875rem;
   transition: all 0.2s ease;
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   &:hover {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 `;
 
 const CapabilityLabel = styled.div`
   font-size: 0.75rem;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 0.25rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -297,7 +278,7 @@ const CapabilityLabel = styled.div`
 `;
 
 const CapabilityValue = styled.div`
-  color: #1e293b;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.825rem;
   line-height: 1.4;
   font-weight: 500;
