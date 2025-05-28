@@ -185,10 +185,12 @@ const CapabilitiesGrid = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     justify-items: stretch;
+    gap: 2.6rem; /* 30% increase from 2rem */
   }
   
   @media (min-width: 1024px) {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.6rem; /* 30% increase from 2rem */
   }
 `;
 
@@ -197,7 +199,8 @@ const CapabilityBox = styled.div`
   border-radius: 1rem;
   padding: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  width: 130%; /* 30% increase in width */
+  max-width: 130%; /* Ensure it can grow 30% larger */
   border: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
@@ -209,6 +212,11 @@ const CapabilityBox = styled.div`
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
     border-color: #cbd5e1;
+  }
+  
+  @media (max-width: 768px) {
+    width: 130%; /* 30% increase for mobile as well */
+    max-width: 130%;
   }
 `;
 
