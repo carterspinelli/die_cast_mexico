@@ -106,8 +106,8 @@ const SecondaryButton = styled(Link)`
 `;
 
 const Hero = () => {
-  // Use the die_cast_cnc.png image as the background
-  const backgroundImage = "/images/die_cast_cnc.png";
+  // Use the hpfe.jpg image as the background
+  const backgroundImage = "/images/hpfe.jpg";
   const { language, messages } = useLanguage();
   
   // Helper function to create localized paths

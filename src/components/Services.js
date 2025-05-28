@@ -123,7 +123,7 @@ const Services = () => {
       title: messages.serviceCastingTitle || "Die Casting",
       summary: messages.serviceCastingSummary || "Die Cast Mexico deploys automatic cold chamber die-casting machines ranging from 400 ton to 1900 ton dedicated to aluminum and magnesium alloy.",
       label: messages.serviceCastingLabel || "Manufacturing",
-      image: "/images/die_casting_service.jpeg",
+      image: "/images/hpfe_card.jpg",
     },
     {
       id: "mould",
