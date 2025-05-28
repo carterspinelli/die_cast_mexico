@@ -127,10 +127,23 @@ img {
   box-sizing: border-box;
 }
 
-/* Prevent horizontal overflow */
+/* Prevent horizontal overflow and improve mobile performance */
 * {
   max-width: 100%;
   box-sizing: border-box;
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  * {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  /* Optimize touch interactions */
+  a, button, [role="button"] {
+    touch-action: manipulation;
+  }
 }
 
 img, video, iframe {

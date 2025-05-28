@@ -27,15 +27,28 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   const { messages } = useLanguage();
   const [useModernNav, setUseModernNav] = useState(false);
   
-  // Initialize AOS animation library
+  // Initialize AOS animation library with mobile optimizations
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
+    
     AOS.init({
-      duration: 800,
-      once: true,  // Set to true to make animations occur only once
+      duration: isMobile ? 400 : 800,
+      once: true,
       mirror: false,
-      offset: 120,
-      easing: 'ease-in-out'
+      offset: isMobile ? 50 : 120,
+      easing: 'ease-out',
+      disable: isMobile ? false : false, // Keep animations on mobile but make them faster
+      throttleDelay: 99,
+      debounceDelay: 50
     });
+    
+    // Refresh AOS on window resize
+    const handleResize = () => {
+      AOS.refresh();
+    };
+    
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   
   // Track page views

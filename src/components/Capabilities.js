@@ -61,9 +61,20 @@ const StatsCard = styled.div`
   transition: transform 0.3s ease;
   width: 100%;
   max-width: 400px;
+  will-change: transform;
   
   @media (min-width: 768px) {
     max-width: none;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    transition: none;
+    will-change: auto;
+    
+    &:hover {
+      transform: none;
+    }
   }
   
   &:hover {

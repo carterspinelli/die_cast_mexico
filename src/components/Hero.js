@@ -17,6 +17,12 @@ const HeroSection = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1e293b;
+  
+  @media (max-width: 768px) {
+    min-height: 500px;
+    background-attachment: scroll;
+    will-change: transform;
+  }
 `;
 
 const HeroContent = styled.div`
@@ -54,6 +60,7 @@ const ButtonContainer = styled.div`
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+    gap: 1rem;
   }
 `;
 

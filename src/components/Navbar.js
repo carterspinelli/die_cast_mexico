@@ -153,6 +153,8 @@ const MobileMenuButton = styled.button`
   padding: 0.5rem;
   margin-left: 1rem;
   transition: transform 0.2s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   
   @media (max-width: 768px) {
     display: flex !important;
