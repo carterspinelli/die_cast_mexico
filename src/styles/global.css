@@ -238,4 +238,46 @@ html, body {
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
   }
+  
+  /* Fix Safari mobile overscroll blue color */
+  html {
+    -webkit-overscroll-behavior: none;
+    overscroll-behavior: none;
+  }
+  
+  body {
+    -webkit-overscroll-behavior: none;
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior-y: none;
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Additional Safari mobile overscroll color fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  html {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  
+  /* Prevent bounce scrolling and blue overscroll */
+  html, body {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #___gatsby, #gatsby-focus-wrapper {
+    overflow: auto;
+    height: 100vh;
+    -webkit-overflow-scrolling: touch;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
 }
