@@ -376,184 +376,184 @@ const FacilityAbout = () => {
   ];
   
   return (
-    <Section id="about">
-      <Container>
-        <HeaderGrid data-aos="fade-up">
-          <Title data-aos="fade-up" data-aos-delay="100">{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
-          <Description data-aos="fade-up" data-aos-delay="200">
-            {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
-          </Description>
-        </HeaderGrid>
-        
-        <ContentGrid>
-          <MainImage 
-            src="/images/plant_2_diecast.png" 
-            alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
-            data-aos="fade-right"
-            data-aos-delay="300"
-          />
+    <>
+      <Section id="about">
+        <Container>
+          <HeaderGrid data-aos="fade-up">
+            <Title data-aos="fade-up" data-aos-delay="100">{translate(messages, 'facilityAboutTitle', "Our Facility & Company Profile")}</Title>
+            <Description data-aos="fade-up" data-aos-delay="200">
+              {translate(messages, 'facilityAboutDescription', "Die Cast Mexico's state-of-the-art facility located in Monterrey, Mexico opened in Q4 2018. With 30,000 square meters of land and a 15,000 square meter facility, we have the capacity to handle large production runs while maintaining the highest quality standards.")}
+            </Description>
+          </HeaderGrid>
           
-          <SideContent data-aos="fade-left" data-aos-delay="400">
-            <InfoBox style={{ height: '100%' }}>
-              <CertificationLogos>
-                <InfoBoxLogo 
-                  src="/images/iso9001_diecast.webp" 
-                  alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
-                  style={{ height: '3.5rem' }}
-                  data-aos="zoom-in"
-                  data-aos-delay="500"
-                />
-                <InfoBoxLogo 
-                  src="/images/iatf_16949_logo.png" 
-                  alt={translate(messages, 'iatfLogoAlt', "IATF 16949 Certification")}
-                  style={{ height: '3.5rem' }}
-                  data-aos="zoom-in"
-                  data-aos-delay="550"
-                />
-              </CertificationLogos>
-              <CertificationContent>
-                <CertificationItem data-aos="fade-up" data-aos-delay="600">
-                  <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
-                  <InfoBoxText>
-                    {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
-                  </InfoBoxText>
-                </CertificationItem>
-                
-                <CertificationDivider />
-                
-                <CertificationItem data-aos="fade-up" data-aos-delay="700">
-                  <InfoBoxTitle>{translate(messages, 'iatf16949Title', "IATF 16949 Certification")}</InfoBoxTitle>
-                  <InfoBoxText>
-                    {translate(messages, 'iatf16949Description', "Our goal is to be certified in IATF 16949 by 1st Quarter 2026")}
-                  </InfoBoxText>
-                </CertificationItem>
-              </CertificationContent>
-              <Button 
-                variant="outline" 
-                as="a" 
-                href="/contact"
-                data-aos="fade-up"
-                data-aos-delay="800"
-              >
-                {translate(messages, 'contactUsBtn', "Contact Us")}
-              </Button>
-            </InfoBox>
-          </SideContent>
-        </ContentGrid>
-        
-        <AchievementsBox data-aos="fade-up" data-aos-delay="200">
-          <FacilityContainer>
-            <AchievementsHeader>
-              <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Manufacturing Capabilities")}</AchievementsTitle>
-              <AchievementsDescription data-aos="fade-up" data-aos-delay="400">
-                {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
-              </AchievementsDescription>
-            </AchievementsHeader>
+          <ContentGrid>
+            <MainImage 
+              src="/images/plant_2_diecast.png" 
+              alt={translate(messages, 'facilityImageAlt', "Die Cast Mexico Facility")}
+              data-aos="fade-right"
+              data-aos-delay="300"
+            />
             
-            <CapabilitiesGrid>
-              <CapabilityBox data-aos="fade-up" data-aos-delay="500">
-                <CapabilityHeader>
-                  <CapabilityIcon>
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/>
-                    </svg>
-                  </CapabilityIcon>
-                  <CapabilityTitle>{translate(messages, 'overviewTitle', 'Overview')}</CapabilityTitle>
-                </CapabilityHeader>
-                <CapabilityContent>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'workforceLabel', 'Workforce')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'workforceValue', '125+')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'materialCapacityLabel', 'Material Capacity')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'materialCapacityValue', 'Up to 250ton/month aluminum ingots')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'aluminumAlloysLabel', 'Aluminum Alloys')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'aluminumAlloysValue', 'AlSi12(Fe), A380, A360, A413, ADC12')}</CapabilityValue>
-                  </CapabilityItem>
-                </CapabilityContent>
-              </CapabilityBox>
-
-              <CapabilityBox data-aos="fade-up" data-aos-delay="600">
-                <CapabilityHeader>
-                  <CapabilityIcon>
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                      <path d="M9 12l2 2 4-4"/>
-                    </svg>
-                  </CapabilityIcon>
-                  <CapabilityTitle>{translate(messages, 'manufacturingTitle', 'Manufacturing')}</CapabilityTitle>
-                </CapabilityHeader>
-                <CapabilityContent>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'dieCastingLabel', 'Die Casting')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'dieCastingValue', '8 full automatic manufacturing cells')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'cncMachiningLabel', 'CNC Machining')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'cncMachiningValue', '19 horizontal 4 axis machines')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'fipGasketLabel', 'FIP Gasket')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'fipGasketValue', 'Precision gasket application')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'mechanicalAssemblyLabel', 'Mechanical Assembly')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'mechanicalAssemblyValue', 'Dowel pins, labels, helicoils, plugs, etc.')}</CapabilityValue>
-                  </CapabilityItem>
-                </CapabilityContent>
-              </CapabilityBox>
-
-              <CapabilityBox data-aos="fade-up" data-aos-delay="700">
-                <CapabilityHeader>
-                  <CapabilityIcon>
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                  </CapabilityIcon>
-                  <CapabilityTitle>{translate(messages, 'surfaceFinishingTitle', 'Surface Finishing')}</CapabilityTitle>
-                </CapabilityHeader>
-                <CapabilityContent>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'powderPaintingLabel', 'Powder Painting')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'powderPaintingValue', 'Akzo Nobel, Cardinal, Sherwin Williams, and more')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'liquidPaintingLabel', 'Liquid Painting')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'liquidPaintingValue', 'Custom color solutions')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'nickelPlatingLabel', 'Nickel Plating')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'nickelPlatingValue', 'High-quality surface finish')}</CapabilityValue>
-                  </CapabilityItem>
-                  <CapabilityItem>
-                    <CapabilityLabel>{translate(messages, 'surfaceTreatmentLabel', 'Surface Treatment')}</CapabilityLabel>
-                    <CapabilityValue>{translate(messages, 'surfaceTreatmentValue', 'Tri-chrome passivation on Aluminum: Surtec 650®')}</CapabilityValue>
-                  </CapabilityItem>
-                </CapabilityContent>
-              </CapabilityBox>
-            </CapabilitiesGrid>
-            
-
-            
-            <BasicInfoGrid>
-              {achievements.map((achievement, idx) => (
-                <Achievement 
-                  key={achievement.label + idx}
-                  data-aos="fade-up" 
-                  data-aos-delay={800 + (idx * 100)}
+            <SideContent data-aos="fade-left" data-aos-delay="400">
+              <InfoBox style={{ height: '100%' }}>
+                <CertificationLogos>
+                  <InfoBoxLogo 
+                    src="/images/iso9001_diecast.webp" 
+                    alt={translate(messages, 'isoLogoAlt', "ISO 9001 Certification")}
+                    style={{ height: '3.5rem' }}
+                    data-aos="zoom-in"
+                    data-aos-delay="500"
+                  />
+                  <InfoBoxLogo 
+                    src="/images/iatf_16949_logo.png" 
+                    alt={translate(messages, 'iatfLogoAlt', "IATF 16949 Certification")}
+                    style={{ height: '3.5rem' }}
+                    data-aos="zoom-in"
+                    data-aos-delay="550"
+                  />
+                </CertificationLogos>
+                <CertificationContent>
+                  <CertificationItem data-aos="fade-up" data-aos-delay="600">
+                    <InfoBoxTitle>{translate(messages, 'iso9001Title', "ISO 9001:2015 Certified")}</InfoBoxTitle>
+                    <InfoBoxText>
+                      {translate(messages, 'iso9001Description', "Our quality management system is certified to ISO 9001:2015 standards, ensuring consistent quality and continuous improvement in all our processes.")}
+                    </InfoBoxText>
+                  </CertificationItem>
+                  
+                  <CertificationDivider />
+                  
+                  <CertificationItem data-aos="fade-up" data-aos-delay="700">
+                    <InfoBoxTitle>{translate(messages, 'iatf16949Title', "IATF 16949 Certification")}</InfoBoxTitle>
+                    <InfoBoxText>
+                      {translate(messages, 'iatf16949Description', "Our goal is to be certified in IATF 16949 by 1st Quarter 2026")}
+                    </InfoBoxText>
+                  </CertificationItem>
+                </CertificationContent>
+                <Button 
+                  variant="outline" 
+                  as="a" 
+                  href="/contact"
+                  data-aos="fade-up"
+                  data-aos-delay="800"
                 >
-                  <AchievementLabel>{achievement.label}</AchievementLabel>
-                  <AchievementValue>{achievement.value}</AchievementValue>
-                </Achievement>
-              ))}
-            </BasicInfoGrid>
-          </FacilityContainer>
-        </AchievementsBox>
-      </Container>
-    </Section>
+                  {translate(messages, 'contactUsBtn', "Contact Us")}
+                </Button>
+              </InfoBox>
+            </SideContent>
+          </ContentGrid>
+        </Container>
+      </Section>
+
+      <AchievementsBox id="facility" data-aos="fade-up" data-aos-delay="200">
+        <FacilityContainer>
+          <AchievementsHeader>
+            <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Manufacturing Capabilities")}</AchievementsTitle>
+            <AchievementsDescription data-aos="fade-up" data-aos-delay="400">
+              {translate(messages, 'achievementsDesc', "Since our founding in 2018, we've quickly established a reputation for excellence in high-pressure die casting, delivering precision components across multiple industries.")}
+            </AchievementsDescription>
+          </AchievementsHeader>
+          
+          <CapabilitiesGrid>
+            <CapabilityBox data-aos="fade-up" data-aos-delay="500">
+              <CapabilityHeader>
+                <CapabilityIcon>
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+                  </svg>
+                </CapabilityIcon>
+                <CapabilityTitle>{translate(messages, 'overviewTitle', 'Overview')}</CapabilityTitle>
+              </CapabilityHeader>
+              <CapabilityContent>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'workforceLabel', 'Workforce')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'workforceValue', '125+')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'materialCapacityLabel', 'Material Capacity')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'materialCapacityValue', 'Up to 250ton/month aluminum ingots')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'aluminumAlloysLabel', 'Aluminum Alloys')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'aluminumAlloysValue', 'AlSi12(Fe), A380, A360, A413, ADC12')}</CapabilityValue>
+                </CapabilityItem>
+              </CapabilityContent>
+            </CapabilityBox>
+
+            <CapabilityBox data-aos="fade-up" data-aos-delay="600">
+              <CapabilityHeader>
+                <CapabilityIcon>
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    <path d="M9 12l2 2 4-4"/>
+                  </svg>
+                </CapabilityIcon>
+                <CapabilityTitle>{translate(messages, 'manufacturingTitle', 'Manufacturing')}</CapabilityTitle>
+              </CapabilityHeader>
+              <CapabilityContent>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'dieCastingLabel', 'Die Casting')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'dieCastingValue', '8 full automatic manufacturing cells')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'cncMachiningLabel', 'CNC Machining')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'cncMachiningValue', '19 horizontal 4 axis machines')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'fipGasketLabel', 'FIP Gasket')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'fipGasketValue', 'Precision gasket application')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'mechanicalAssemblyLabel', 'Mechanical Assembly')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'mechanicalAssemblyValue', 'Dowel pins, labels, helicoils, plugs, etc.')}</CapabilityValue>
+                </CapabilityItem>
+              </CapabilityContent>
+            </CapabilityBox>
+
+            <CapabilityBox data-aos="fade-up" data-aos-delay="700">
+              <CapabilityHeader>
+                <CapabilityIcon>
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </CapabilityIcon>
+                <CapabilityTitle>{translate(messages, 'surfaceFinishingTitle', 'Surface Finishing')}</CapabilityTitle>
+              </CapabilityHeader>
+              <CapabilityContent>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'powderPaintingLabel', 'Powder Painting')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'powderPaintingValue', 'Akzo Nobel, Cardinal, Sherwin Williams, and more')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'liquidPaintingLabel', 'Liquid Painting')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'liquidPaintingValue', 'Custom color solutions')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'nickelPlatingLabel', 'Nickel Plating')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'nickelPlatingValue', 'High-quality surface finish')}</CapabilityValue>
+                </CapabilityItem>
+                <CapabilityItem>
+                  <CapabilityLabel>{translate(messages, 'surfaceTreatmentLabel', 'Surface Treatment')}</CapabilityLabel>
+                  <CapabilityValue>{translate(messages, 'surfaceTreatmentValue', 'Tri-chrome passivation on Aluminum: Surtec 650®')}</CapabilityValue>
+                </CapabilityItem>
+              </CapabilityContent>
+            </CapabilityBox>
+          </CapabilitiesGrid>
+          
+          <BasicInfoGrid>
+            {achievements.map((achievement, idx) => (
+              <Achievement 
+                key={achievement.label + idx}
+                data-aos="fade-up" 
+                data-aos-delay={800 + (idx * 100)}
+              >
+                <AchievementLabel>{achievement.label}</AchievementLabel>
+                <AchievementValue>{achievement.value}</AchievementValue>
+              </Achievement>
+            ))}
+          </BasicInfoGrid>
+        </FacilityContainer>
+      </AchievementsBox>
+    </>
   );
 };
 
