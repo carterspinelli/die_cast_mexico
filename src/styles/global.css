@@ -202,27 +202,40 @@ p, h1, h2, h3, h4, h5, h6, span, div, a {
   box-sizing: border-box;
 }
 
-/* Force white background for all mobile overscroll areas */
-@media (max-width: 768px) {
-  html {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-  }
-  
-  body {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-  }
-  
-  #___gatsby {
-    background-color: #ffffff;
-    background: #ffffff;
-    min-height: 100vh;
-  }
-  
-  /* Webkit specific overscroll handling */
+/* Force white background for all overscroll areas - all devices */
+html {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+body {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+/* Gatsby root container */
+#___gatsby, #gatsby-focus-wrapper {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  min-height: 100vh;
+}
+
+/* All overscroll handling for all devices */
+html, body {
+  -webkit-overscroll-behavior: contain;
+  overscroll-behavior: contain;
+  -webkit-overscroll-behavior-y: contain;
+  overscroll-behavior-y: contain;
+  -webkit-overscroll-behavior-x: contain;
+  overscroll-behavior-x: contain;
+}
+
+/* iOS Safari specific overscroll fix */
+@supports (-webkit-overflow-scrolling: touch) {
   html, body {
-    -webkit-overscroll-behavior-y: contain;
-    overscroll-behavior-y: contain;
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
   }
 }
