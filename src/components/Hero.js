@@ -12,6 +12,7 @@ const HeroSection = styled.section`
   justify-content: center;
   color: var(--white);
   text-align: center;
+  background-color: #1e293b;
   
   &::before {
     content: '';
@@ -23,7 +24,15 @@ const HeroSection = styled.section`
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(${props => props.backgroundImage});
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     z-index: -1;
+  }
+  
+  @media (max-width: 768px) {
+    &::before {
+      background-attachment: scroll;
+    }
   }
 `;
 
