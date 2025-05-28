@@ -51,7 +51,7 @@ body {
   background-color: #ffffff;
   background: #ffffff;
   min-height: 100vh;
-  
+
   /* Ensure white background for mobile overscroll areas */
   overscroll-behavior: contain;
   -webkit-overscroll-behavior: contain;
@@ -142,7 +142,7 @@ img {
     --container-padding: 1rem;
     --spacing-2xl: 3rem;
   }
-  
+
   body {
     font-size: 15px;
   }
@@ -156,7 +156,7 @@ img {
     --spacing-2xl: 2.5rem;
     --spacing-lg: 1rem;
   }
-  
+
   body {
     font-size: 14px;
     line-height: 1.4;
@@ -237,5 +237,29 @@ html, body {
     background: #ffffff !important;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
+  }
+}
+
+/* Safari overscroll color fix using background-image trick */
+html {
+  background-color: #ffffff;
+  background-image: linear-gradient(transparent, transparent);
+  background-repeat: repeat;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+/* Additional Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  html {
+    background-color: #ffffff !important;
+    background-image: linear-gradient(transparent, transparent) !important;
+    background-repeat: repeat !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
   }
 }
