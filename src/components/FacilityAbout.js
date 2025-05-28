@@ -258,29 +258,23 @@ const CapabilityValue = styled.div`
 `;
 
 const BasicInfoGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2.5rem;
   margin-top: 3rem;
   text-align: center;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  justify-items: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const AchievementsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   gap: 2.5rem;
   margin-top: 2.5rem;
   text-align: center;
-  justify-items: center;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 const Achievement = styled.div`
