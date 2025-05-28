@@ -136,44 +136,15 @@ const CertificationDivider = styled.div`
   margin: 0.5rem 0;
 `;
 
-const AchievementsBox = styled.div`
+const AchievementsBox = styled.section`
+  padding: 5rem 1rem;
   background-color: #0c1220;
   color: white;
-  border-radius: 0;
-  padding: 4rem 0;
-  margin: 4rem 0 0;
-  position: relative;
-  overflow: hidden;
-  
-  /* Create full-width background */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100vw;
-    right: -100vw;
-    bottom: 0;
-    background-color: #0c1220;
-    z-index: -1;
-  }
-  
-  /* Inner container to maintain proper content width */
-  > * {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    position: relative;
-    z-index: 1;
-  }
-  
-  @media (min-width: 1200px) {
-    > * {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-  }
+`;
+
+const FacilityContainer = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
 const AchievementsHeader = styled.div`
@@ -470,8 +441,8 @@ const FacilityAbout = () => {
           </SideContent>
         </ContentGrid>
         
-        <div style={{ marginTop: '4rem' }} data-aos="fade-up" data-aos-delay="200">
-          <AchievementsBox>
+        <AchievementsBox data-aos="fade-up" data-aos-delay="200">
+          <FacilityContainer>
             <AchievementsHeader>
               <AchievementsTitle data-aos="fade-up" data-aos-delay="300">{translate(messages, 'achievementsTitle', "Manufacturing Capabilities")}</AchievementsTitle>
               <AchievementsDescription data-aos="fade-up" data-aos-delay="400">
@@ -579,8 +550,8 @@ const FacilityAbout = () => {
                 </Achievement>
               ))}
             </BasicInfoGrid>
-          </AchievementsBox>
-        </div>
+          </FacilityContainer>
+        </AchievementsBox>
       </Container>
     </Section>
   );
