@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { motion, useAnimation, useInView } from 'framer-motion';
-import { FaIndustry, FaCog, FaShield, FaStar, FaQuoteLeft } from 'react-icons/fa';
+import { motion, useAnimation } from 'framer-motion';
+import { FaShieldAlt, FaStar, FaQuoteLeft } from 'react-icons/fa';
 import { Separator } from './ui/separator';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
@@ -256,7 +256,6 @@ export function FacilityShowcase({
 
   // Refs for scroll animations
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const controls = useAnimation();
 
   // Animation variants
@@ -283,12 +282,10 @@ export function FacilityShowcase({
     },
   };
 
-  // Trigger animations when section comes into view
+  // Trigger animations when component mounts
   useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
+    controls.start("visible");
+  }, [controls]);
 
   // Auto rotate highlights
   useEffect(() => {
@@ -318,7 +315,7 @@ export function FacilityShowcase({
             <ContentSpace>
               {badgeText && (
                 <Badge>
-                  <FaShield />
+                  <FaShieldAlt />
                   <span>{badgeText}</span>
                 </Badge>
               )}
