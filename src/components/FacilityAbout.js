@@ -192,20 +192,18 @@ const CapabilitiesGrid = styled.div`
 `;
 
 const CapabilityBox = styled.div`
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-  border-radius: 1rem;
-  padding: 2.5rem;
+  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 1.5rem;
+  padding: 0;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   width: 100%;
-  max-width: 380px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
-  
-  @media (min-width: 768px) {
-    max-width: none;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
   
   &::before {
     content: '';
@@ -213,45 +211,94 @@ const CapabilityBox = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 4px;
     background: linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
   
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
     
     &::before {
+      opacity: 1;
+    }
+    
+    &::after {
       opacity: 1;
     }
   }
 `;
 
 const CapabilityHeader = styled.div`
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+  padding: 2rem 2.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2.5rem;
+    right: 2.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  }
 `;
 
 const CapabilityIcon = styled.div`
-  font-size: 1.5rem;
-  width: 3.5rem;
-  height: 3.5rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(139, 92, 246, 0.8));
-  border-radius: 1rem;
+  font-size: 1.75rem;
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
   transition: all 0.3s ease;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f59e0b);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
   
   svg {
     color: white;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+  }
+  
+  ${CapabilityBox}:hover & {
+    transform: rotate(5deg) scale(1.1);
+    
+    &::before {
+      opacity: 1;
+    }
   }
 `;
 
@@ -265,26 +312,42 @@ const CapabilityTitle = styled.h4`
 `;
 
 const CapabilityContent = styled.div`
+  flex: 1;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 `;
 
 const CapabilityItem = styled.div`
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
   
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
   &:hover {
-    border-bottom-color: rgba(59, 130, 246, 0.4);
-    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(6px);
+    
+    &::before {
+      opacity: 1;
+    }
   }
 `;
 
