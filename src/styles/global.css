@@ -40,7 +40,6 @@
 
 html {
   background-color: var(--background);
-  overflow-x: hidden;
 }
 
 body {
@@ -50,8 +49,6 @@ body {
   color: var(--gray-dark);
   background-color: var(--background);
   min-height: 100vh;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 a {
@@ -124,18 +121,6 @@ img {
   margin: 0 auto;
   padding: 0 var(--container-padding);
   width: 100%;
-  box-sizing: border-box;
-}
-
-/* Prevent horizontal overflow */
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
 }
 
 /* Large screens */
