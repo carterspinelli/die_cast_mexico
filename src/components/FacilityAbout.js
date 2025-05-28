@@ -236,12 +236,12 @@ const CapabilityHeader = styled.div`
 const CapabilityIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   flex-shrink: 0;
   
@@ -253,7 +253,8 @@ const CapabilityIcon = styled.div`
   
   ${CapabilityBox}:hover & {
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 `;
 
