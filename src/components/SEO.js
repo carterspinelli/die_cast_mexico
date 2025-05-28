@@ -108,6 +108,23 @@ function SEO({ description, lang, meta = [], title, image }) {
           name: `twitter:image`,
           content: imageUrl,
         },
+        // Safari-specific meta tags for overscroll control
+        {
+          name: `theme-color`,
+          content: `#ffffff`,
+        },
+        {
+          name: `msapplication-navbutton-color`,
+          content: `#ffffff`,
+        },
+        {
+          name: `apple-mobile-web-app-status-bar-style`,
+          content: `default`,
+        },
+        {
+          name: `viewport`,
+          content: `width=device-width, initial-scale=1, viewport-fit=cover`,
+        },
         // Concatenate additional meta props
       ].concat(meta)}
     />
