@@ -12,15 +12,21 @@ const NavbarContainer = styled.nav`
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
   padding: 1.5rem 1rem;
   z-index: 1000;
   display: flex;
   justify-content: center;
   transition: padding 0.3s ease;
+  box-sizing: border-box;
   
   ${props => props.scrolled && `
     padding: 0.75rem 1rem;
   `}
+  
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+  }
 `;
 
 // Inner rounded container with shadow
@@ -36,6 +42,7 @@ const NavbarInner = styled.div`
   max-width: var(--container-max-width);
   backdrop-filter: blur(8px);
   transition: all 0.3s ease;
+  box-sizing: border-box;
   
   @media (max-width: 768px) {
     padding: 0.5rem 0.75rem;
@@ -44,6 +51,7 @@ const NavbarInner = styled.div`
   
   @media (max-width: 480px) {
     padding: 0.5rem;
+    margin: 0 0.25rem;
   }
 `;
 

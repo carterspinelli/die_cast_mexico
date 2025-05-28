@@ -12,10 +12,14 @@ const Main = styled.main`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 const Content = styled.div`
   flex: 1;
+  width: 100%;
+  overflow-x: hidden;
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
