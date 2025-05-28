@@ -61,6 +61,13 @@ const NavLinks = styled.div`
   }
 `;
 
+// Desktop language switcher wrapper
+const DesktopLanguageSwitcher = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 // Individual nav link styling
 const NavLink = styled(Link)`
   color: var(--gray-dark);
@@ -207,6 +214,13 @@ const MobileNavLink = styled(Link)`
   }
 `;
 
+// Mobile language switcher wrapper
+const MobileLanguageSection = styled.div`
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 1rem;
+`;
+
 // Mobile CTA Button
 const MobileCTAButton = styled(Link)`
   margin-top: 2rem;
@@ -316,7 +330,9 @@ const Navbar = () => {
           </NavLinks>
           
           <RightSection>
-            <LanguageSwitcher />
+            <DesktopLanguageSwitcher>
+              <LanguageSwitcher />
+            </DesktopLanguageSwitcher>
             <ContactButton to={localizedLink("/contact")}>
               {messages.contact}
             </ContactButton>
@@ -348,6 +364,10 @@ const Navbar = () => {
         <MobileNavLink to={localizedLink("/#about")} onClick={toggleMobileMenu}>
           {messages.about}
         </MobileNavLink>
+        
+        <MobileLanguageSection>
+          <LanguageSwitcher />
+        </MobileLanguageSection>
         
         <MobileCTAButton to={localizedLink("/contact")} onClick={toggleMobileMenu}>
           {messages.contact}
