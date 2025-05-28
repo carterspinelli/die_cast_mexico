@@ -141,14 +141,10 @@ const AchievementsBox = styled.div`
   color: white;
   border-radius: 0;
   padding: 4rem 0;
-  margin: 4rem -100vw 0 -100vw;
+  margin: 4rem calc(-50vw + 50%) 0;
   position: relative;
   overflow: hidden;
   width: 100vw;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   
   /* Inner container to maintain proper content width */
   > * {
@@ -239,7 +235,7 @@ const CapabilityBox = styled.div`
 `;
 
 const CapabilityHeader = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(37, 99, 235, 0.15);
   padding: 2rem;
   display: flex;
   align-items: center;
