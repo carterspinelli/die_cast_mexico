@@ -134,7 +134,7 @@
   "footerPhone": "Teléfono",
   "footerEmail": "Correo",
   "footerEmailValue": "info@diecastmexico.com",
-  "footerDescription": "Soluciones de fundición e inyección a presión de alta calidad para aplicaciones automotrices, telecomunicaciones e industriales. Fabricación de precisión en Guadalajara, México.",
+  "footerDescription": "Soluciones de fundición e inyección a presión de alta calidad para aplicaciones automotrices, telecomunicaciones, industriales, náuticas, y más. Fabricación de precisión en Jalisco, México.",
   "footerRights": "Todos los derechos reservados",
 
   "notFoundTitle": "Página No Encontrada",
@@ -225,23 +225,23 @@
   "contactUsBtn": "Contáctanos",
   "requiredField": "Este campo es obligatorio",
   "invalidEmail": "Por favor, ingrese una dirección de correo electrónico válida",
-  
+
   "tonnageCapacity": "Capacidad de Tonelaje",
   "tonnageUnit": "Toneladas",
   "partWeight": "Peso de Pieza",
   "partWeightUnit": "kg",
-  
+
   "overviewTitle": "Resumen",
   "manufacturingTitle": "Fabricación",
   "surfaceFinishingTitle": "Acabado de Superficies",
-  
+
   "workforceLabel": "Personal",
   "workforceValue": "125+",
   "materialCapacityLabel": "Capacidad de Material",
   "materialCapacityValue": "Hasta 250ton/mes lingotes de aluminio",
   "aluminumAlloysLabel": "Aleaciones de Aluminio",
   "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
-  
+
   "dieCastingLabel": "Fundición a Presión",
   "dieCastingValue": "8 células de fabricación completamente automáticas",
   "cncMachiningLabel": "Maquinado CNC",
@@ -250,7 +250,7 @@
   "fipGasketValue": "Aplicación de juntas de precisión",
   "mechanicalAssemblyLabel": "Ensamble Mecánico",
   "mechanicalAssemblyValue": "Pasadores, etiquetas, helicoils, tapones, etc.",
-  
+
   "powderPaintingLabel": "Pintura en Polvo",
   "powderPaintingValue": "Akzo Nobel, Cardinal, Sherwin Williams, y más",
   "liquidPaintingLabel": "Pintura Líquida",
