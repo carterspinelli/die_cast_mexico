@@ -12,17 +12,29 @@ const Main = styled.main`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  max-width: 100vw;
 `;
 
 const Content = styled.div`
   flex: 1;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+
+  @media (max-width: 768px) {
+    overflow-y: visible;
+    overflow-x: hidden;
+    height: auto;
+  }
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   // Get language and messages from our custom context
   const { messages } = useLanguage();
   const [useModernNav, setUseModernNav] = useState(false);
-  
+
   // Initialize AOS animation library
   useEffect(() => {
     AOS.init({
@@ -33,10 +45,10 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
       easing: 'ease-in-out'
     });
   }, []);
-  
+
   // Track page views
   usePageTracking();
-  
+
   return (
     <Main>
       {!hideNav && (
