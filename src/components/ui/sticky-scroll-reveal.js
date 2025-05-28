@@ -11,13 +11,6 @@ const ScrollContainer = styled.div`
   padding: 2.5rem;
   border-radius: 0.375rem;
   transition: background-color 0.5s ease;
-  
-  @media (max-width: 768px) {
-    height: auto;
-    overflow-y: visible;
-    overflow: visible;
-    touch-action: pan-y;
-  }
 `;
 
 const ContentColumn = styled.div`
@@ -65,11 +58,6 @@ const PreviewPanel = styled.div`
   
   @media (min-width: 1024px) {
     display: block;
-  }
-  
-  @media (max-width: 768px) {
-    position: relative;
-    display: none;
   }
 `;
 

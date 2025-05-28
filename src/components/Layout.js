@@ -14,24 +14,12 @@ const Main = styled.main`
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
-  position: relative;
-  
-  @media (max-width: 768px) {
-    overflow-y: visible;
-    height: auto;
-  }
 `;
 
 const Content = styled.div`
   flex: 1;
   width: 100%;
   overflow-x: hidden;
-  position: relative;
-  
-  @media (max-width: 768px) {
-    overflow-y: visible;
-    height: auto;
-  }
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
@@ -39,38 +27,15 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
   const { messages } = useLanguage();
   const [useModernNav, setUseModernNav] = useState(false);
   
-  // Initialize AOS animation library with mobile optimizations
+  // Initialize AOS animation library
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
-    
     AOS.init({
-      duration: isMobile ? 300 : 800,
-      once: true,
+      duration: 800,
+      once: true,  // Set to true to make animations occur only once
       mirror: false,
-      offset: isMobile ? 30 : 120,
-      easing: 'ease-out',
-      disable: false,
-      throttleDelay: 16,
-      debounceDelay: 16,
-      // Ensure AOS doesn't interfere with scroll
-      disableMutationObserver: isMobile,
-      startEvent: 'DOMContentLoaded'
+      offset: 120,
+      easing: 'ease-in-out'
     });
-    
-    // Refresh AOS on window resize with throttling
-    let resizeTimeout;
-    const handleResize = () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        AOS.refresh();
-      }, 100);
-    };
-    
-    window.addEventListener('resize', handleResize, { passive: true });
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(resizeTimeout);
-    };
   }, []);
   
   // Track page views

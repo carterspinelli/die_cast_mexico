@@ -68,7 +68,6 @@ const ServiceGrid = styled.div`
   
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
   }
   
   @media (min-width: 1200px) {
@@ -94,12 +93,6 @@ const ServiceImage = styled.img`
   object-fit: cover;
   object-position: center;
   transition: transform 0.3s ease;
-  will-change: transform;
-  
-  @media (max-width: 768px) {
-    transition: none;
-    will-change: auto;
-  }
 `;
 
 const ReadMoreLink = styled.a`

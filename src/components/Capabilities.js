@@ -36,15 +36,10 @@ const StatsGrid = styled.div`
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-top: 4rem;
-  justify-items: center;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
   
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    justify-items: stretch;
   }
 `;
 
@@ -59,23 +54,6 @@ const StatsCard = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.1);
   transform: translateY(0);
   transition: transform 0.3s ease;
-  width: 100%;
-  max-width: 400px;
-  will-change: transform;
-  
-  @media (min-width: 768px) {
-    max-width: none;
-  }
-  
-  @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
-    transition: none;
-    will-change: auto;
-    
-    &:hover {
-      transform: none;
-    }
-  }
   
   &:hover {
     transform: translateY(-10px);
