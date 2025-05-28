@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
-import { FacilityShowcase } from "./FacilityShowcase";
+import { FacilityMetrics } from "./FacilityMetrics";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -530,8 +530,6 @@ const FacilityAbout = () => {
               </CapabilityBox>
             </CapabilitiesGrid>
             
-
-            
             <BasicInfoGrid>
               {achievements.map((achievement, idx) => (
                 <Achievement 
@@ -547,6 +545,8 @@ const FacilityAbout = () => {
           </AchievementsBox>
         </div>
       </Container>
+      
+      <FacilityMetrics />
     </Section>
   );
 };
