@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
-import { AnimatedFacilityShowcase } from "./AnimatedFacilityShowcase";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -446,38 +445,91 @@ const FacilityAbout = () => {
               </AchievementsDescription>
             </AchievementsHeader>
             
-            <AnimatedFacilityShowcase 
-              facilityHighlights={[
-                {
-                  id: 1,
-                  name: "Carlos Rodriguez",
-                  role: "Plant Manager",
-                  department: "Operations",
-                  content: "Our facility operates with the highest standards of precision and quality. We've invested in cutting-edge technology to ensure every part meets exact specifications.",
-                  rating: 5,
-                  avatar: "/images/team-member-1.jpg",
-                },
-                {
-                  id: 2,
-                  name: "Maria González",
-                  role: "Quality Director",
-                  department: "Quality Assurance",
-                  content: "IATF 16949 certification reflects our commitment to automotive industry standards. Our quality systems ensure zero-defect delivery to our customers.",
-                  rating: 5,
-                  avatar: "/images/team-member-2.jpg",
-                },
-                {
-                  id: 3,
-                  name: "Roberto Silva",
-                  role: "Production Engineer",
-                  department: "Engineering",
-                  content: "With over 50 die casting machines ranging from 125 to 3,000 tons, we handle projects of any scale while maintaining exceptional quality standards.",
-                  rating: 5,
-                  avatar: "/images/team-member-3.jpg",
-                },
-              ]}
-              certifications={["IATF 16949", "ISO 9001", "NADCA", "AIAG"]}
-            />
+            <CapabilitiesGrid>
+              <CapabilityBox data-aos="fade-up" data-aos-delay="500">
+                <CapabilityHeader>
+                  <CapabilityIcon>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+                    </svg>
+                  </CapabilityIcon>
+                  <CapabilityTitle>{translate(messages, 'overviewTitle', 'Overview')}</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'workforceLabel', 'Workforce')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'workforceValue', '125+')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'materialCapacityLabel', 'Material Capacity')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'materialCapacityValue', 'Up to 250ton/month aluminum ingots')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'aluminumAlloysLabel', 'Aluminum Alloys')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'aluminumAlloysValue', 'AlSi12(Fe), A380, A360, A413, ADC12')}</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+
+              <CapabilityBox data-aos="fade-up" data-aos-delay="600">
+                <CapabilityHeader>
+                  <CapabilityIcon>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                      <path d="M9 12l2 2 4-4"/>
+                    </svg>
+                  </CapabilityIcon>
+                  <CapabilityTitle>{translate(messages, 'manufacturingTitle', 'Manufacturing')}</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'dieCastingLabel', 'Die Casting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'dieCastingValue', '8 full automatic manufacturing cells')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'cncMachiningLabel', 'CNC Machining')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'cncMachiningValue', '19 horizontal 4 axis machines')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'fipGasketLabel', 'FIP Gasket')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'fipGasketValue', 'Precision gasket application')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'mechanicalAssemblyLabel', 'Mechanical Assembly')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'mechanicalAssemblyValue', 'Dowel pins, labels, helicoils, plugs, etc.')}</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+
+              <CapabilityBox data-aos="fade-up" data-aos-delay="700">
+                <CapabilityHeader>
+                  <CapabilityIcon>
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </CapabilityIcon>
+                  <CapabilityTitle>{translate(messages, 'surfaceFinishingTitle', 'Surface Finishing')}</CapabilityTitle>
+                </CapabilityHeader>
+                <CapabilityContent>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'powderPaintingLabel', 'Powder Painting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'powderPaintingValue', 'Akzo Nobel, Cardinal, Sherwin Williams, and more')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'liquidPaintingLabel', 'Liquid Painting')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'liquidPaintingValue', 'Custom color solutions')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'nickelPlatingLabel', 'Nickel Plating')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'nickelPlatingValue', 'High-quality surface finish')}</CapabilityValue>
+                  </CapabilityItem>
+                  <CapabilityItem>
+                    <CapabilityLabel>{translate(messages, 'surfaceTreatmentLabel', 'Surface Treatment')}</CapabilityLabel>
+                    <CapabilityValue>{translate(messages, 'surfaceTreatmentValue', 'Tri-chrome passivation on Aluminum: Surtec 650®')}</CapabilityValue>
+                  </CapabilityItem>
+                </CapabilityContent>
+              </CapabilityBox>
+            </CapabilitiesGrid>
             
 
             
