@@ -154,6 +154,17 @@ img {
     transform: none;
     will-change: auto;
   }
+  
+  /* Ensure all containers allow scrolling */
+  div, section, main, article {
+    overflow: visible;
+  }
+  
+  /* Override any fixed heights that might trap scroll */
+  .scroll-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
 }
 
 img, video, iframe {
