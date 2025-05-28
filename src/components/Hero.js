@@ -17,11 +17,14 @@ const HeroSection = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   background-color: #1e293b;
+  width: 100%;
   
   @media (max-width: 768px) {
     min-height: 500px;
+    height: 100vh;
     background-attachment: scroll;
-    will-change: transform;
+    overflow: visible;
+    touch-action: pan-y;
   }
 `;
 

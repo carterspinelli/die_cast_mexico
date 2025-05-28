@@ -41,6 +41,7 @@
 html {
   background-color: var(--background);
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -52,6 +53,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+  position: relative;
 }
 
 a {
@@ -135,14 +137,22 @@ img {
 
 /* Mobile performance optimizations */
 @media (max-width: 768px) {
-  * {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
+  html, body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
   
   /* Optimize touch interactions */
   a, button, [role="button"] {
     touch-action: manipulation;
+  }
+  
+  /* Remove any potential scroll blockers */
+  * {
+    -webkit-transform: none;
+    transform: none;
+    will-change: auto;
   }
 }
 

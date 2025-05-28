@@ -14,12 +14,14 @@ const Main = styled.main`
   flex-direction: column;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
 `;
 
 const Content = styled.div`
   flex: 1;
   width: 100%;
   overflow-x: hidden;
+  position: relative;
 `;
 
 const Layout = ({ children, hideNav = false, hideFooter = false }) => {
