@@ -61,8 +61,10 @@ const NavLinks = styled.div`
   }
 `;
 
-// Desktop language switcher wrapper
+// Desktop language switcher wrapper - hide on mobile
 const DesktopLanguageSwitcher = styled.div`
+  display: flex;
+  
   @media (max-width: 768px) {
     display: none;
   }
