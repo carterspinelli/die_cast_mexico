@@ -236,25 +236,57 @@ const CapabilityHeader = styled.div`
 const CapabilityIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #0a0f1b 0%, #1a2332 25%, #2c3e50 75%, #4a5568 100%);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(10, 15, 27, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   flex-shrink: 0;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    opacity: 0.4;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+  }
   
   svg {
     color: white;
     width: 1.25rem;
     height: 1.25rem;
+    position: relative;
+    z-index: 1;
   }
   
   ${CapabilityBox}:hover & {
     transform: scale(1.1);
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 35px 60px rgba(10, 15, 27, 0.4);
   }
 `;
 
