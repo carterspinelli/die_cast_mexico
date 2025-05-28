@@ -203,7 +203,11 @@ const CapabilityBox = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 380px;
+  min-height: 300px;
+  
+  @media (min-width: 768px) {
+    min-height: 380px;
+  }
   
   &::before {
     content: '';
@@ -247,35 +251,54 @@ const CapabilityBox = styled.div`
 
 const CapabilityHeader = styled.div`
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-  padding: 2rem 2.5rem;
+  padding: 1.5rem 1.75rem;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
   position: relative;
+  
+  @media (min-width: 768px) {
+    padding: 2rem 2.5rem;
+    gap: 1.25rem;
+  }
   
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 2.5rem;
-    right: 2.5rem;
+    left: 1.75rem;
+    right: 1.75rem;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    
+    @media (min-width: 768px) {
+      left: 2.5rem;
+      right: 2.5rem;
+    }
   }
 `;
 
 const CapabilityIcon = styled.div`
-  font-size: 1.75rem;
-  width: 4rem;
-  height: 4rem;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
   background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  border-radius: 1.25rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
   transition: all 0.3s ease;
   position: relative;
+  flex-shrink: 0;
+  
+  @media (min-width: 768px) {
+    font-size: 1.75rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.25rem;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  }
   
   &::before {
     content: '';
@@ -291,6 +314,13 @@ const CapabilityIcon = styled.div`
   svg {
     color: white;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+    width: 1.25rem;
+    height: 1.25rem;
+    
+    @media (min-width: 768px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
   
   ${CapabilityBox}:hover & {
@@ -303,30 +333,44 @@ const CapabilityIcon = styled.div`
 `;
 
 const CapabilityTitle = styled.h4`
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: white;
   margin: 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   letter-spacing: -0.02em;
+  
+  @media (min-width: 768px) {
+    font-size: 1.35rem;
+  }
 `;
 
 const CapabilityContent = styled.div`
   flex: 1;
-  padding: 2.5rem;
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+    gap: 1.5rem;
+  }
 `;
 
 const CapabilityItem = styled.div`
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 0.75rem;
-  padding: 1.25rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  
+  @media (min-width: 768px) {
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+  }
   
   &::before {
     content: '';
@@ -343,7 +387,11 @@ const CapabilityItem = styled.div`
   &:hover {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(59, 130, 246, 0.3);
-    transform: translateX(6px);
+    transform: translateX(4px);
+    
+    @media (min-width: 768px) {
+      transform: translateX(6px);
+    }
     
     &::before {
       opacity: 1;
