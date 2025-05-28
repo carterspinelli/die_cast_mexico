@@ -180,7 +180,7 @@ export const FacilityMetrics = () => {
           <BentoCard
             title="Overview"
             value="125+"
-            subtitle="Workforce • Up to 250ton/month aluminum ingots • AlSi12(Fe), A380, A360, A413, ADC12 alloys"
+            subtitle="Workforce • 250 ton/month material capacity • AlSi12(Fe), A380, A360, A413, ADC12 aluminum alloys"
             colors={["#3B82F6", "#60A5FA", "#93C5FD"]}
             delay={0.2}
             large={true}
@@ -201,16 +201,16 @@ export const FacilityMetrics = () => {
           />
           <BentoCard
             title="Manufacturing"
-            value="FIP"
-            subtitle="Precision gasket application • Mechanical assembly with dowel pins, labels, helicoils, plugs"
+            value="Advanced"
+            subtitle="FIP gasket precision application • Mechanical assembly: dowel pins, labels, helicoils, plugs"
             colors={["#8B5CF6", "#A78BFA", "#C4B5FD"]}
             delay={0.8}
             large={true}
           />
           <BentoCard
             title="Surface Finishing"
-            value="Multi"
-            subtitle="Powder & liquid painting by Akzo Nobel, Cardinal, Sherwin Williams • Nickel plating • Tri-chrome passivation Surtec 650®"
+            value="Premium"
+            subtitle="Powder & liquid painting: Akzo Nobel, Cardinal, Sherwin Williams • Nickel plating • Tri-chrome passivation Surtec 650®"
             colors={["#EC4899", "#F472B6", "#F9A8D4"]}
             delay={1}
             large={true}
