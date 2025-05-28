@@ -261,33 +261,62 @@ html, body {
 
 /* Additional Safari mobile fix */
 @supports (-webkit-touch-callout: none) {
-  html, body {
+  html {
     background-color: #ffffff !important;
     background: #ffffff !important;
-    -webkit-overscroll-behavior: auto;
-    overscroll-behavior: auto;
+    -webkit-overscroll-behavior: none !important;
+    overscroll-behavior: none !important;
+    min-height: 100vh;
+    height: 100vh;
   }
   
-  /* Force white background in Safari viewport area */
-  body::before {
-    content: '';
-    position: fixed;
-    top: -100px;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: #ffffff;
-    z-index: -1;
+  body {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    -webkit-overscroll-behavior: none !important;
+    overscroll-behavior: none !important;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
   }
   
-  body::after {
+  /* Force white background in Safari viewport area with larger coverage */
+  html::before {
     content: '';
     position: fixed;
-    bottom: -100px;
+    top: -200vh;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 200vh;
     background: #ffffff;
-    z-index: -1;
+    z-index: -999;
+  }
+  
+  html::after {
+    content: '';
+    position: fixed;
+    bottom: -200vh;
+    left: 0;
+    right: 0;
+    height: 200vh;
+    background: #ffffff;
+    z-index: -999;
+  }
+}
+
+/* Safari-specific meta viewport override */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  html {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+  
+  body {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    -webkit-background-size: auto;
+    background-size: auto;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
   }
 }
