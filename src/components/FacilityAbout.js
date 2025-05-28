@@ -203,9 +203,17 @@ const CapabilityBox = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 300px;
+  min-height: 280px;
+  
+  @media (min-width: 640px) {
+    min-height: 320px;
+  }
   
   @media (min-width: 768px) {
+    min-height: 360px;
+  }
+  
+  @media (min-width: 1200px) {
     min-height: 380px;
   }
   
@@ -251,11 +259,16 @@ const CapabilityBox = styled.div`
 
 const CapabilityHeader = styled.div`
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-  padding: 1.5rem 1.75rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.875rem;
   position: relative;
+  
+  @media (min-width: 640px) {
+    padding: 1.5rem 1.75rem;
+    gap: 1rem;
+  }
   
   @media (min-width: 768px) {
     padding: 2rem 2.5rem;
@@ -347,10 +360,15 @@ const CapabilityTitle = styled.h4`
 
 const CapabilityContent = styled.div`
   flex: 1;
-  padding: 1.75rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.875rem;
+  
+  @media (min-width: 640px) {
+    padding: 1.75rem;
+    gap: 1rem;
+  }
   
   @media (min-width: 768px) {
     padding: 2.5rem;
