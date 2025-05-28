@@ -192,247 +192,123 @@ const CapabilitiesGrid = styled.div`
 `;
 
 const CapabilityBox = styled.div`
-  background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
-  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.25rem;
   padding: 0;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 280px;
-  
-  @media (min-width: 640px) {
-    min-height: 320px;
-  }
-  
-  @media (min-width: 768px) {
-    min-height: 360px;
-  }
-  
-  @media (min-width: 1200px) {
-    min-height: 380px;
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #f59e0b);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    pointer-events: none;
-  }
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   
   &:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-    
-    &::before {
-      opacity: 1;
-    }
-    
-    &::after {
-      opacity: 1;
-    }
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
   }
 `;
 
 const CapabilityHeader = styled.div`
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
-  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
-  gap: 0.875rem;
+  gap: 1rem;
   position: relative;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
   
-  @media (min-width: 640px) {
-    padding: 1.5rem 1.75rem;
-    gap: 1rem;
-  }
-  
-  @media (min-width: 768px) {
-    padding: 2rem 2.5rem;
-    gap: 1.25rem;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 1.75rem;
-    right: 1.75rem;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    
-    @media (min-width: 768px) {
-      left: 2.5rem;
-      right: 2.5rem;
-    }
+  @media (max-width: 640px) {
+    padding: 1.25rem 1.5rem;
+    gap: 0.875rem;
   }
 `;
 
 const CapabilityIcon = styled.div`
-  font-size: 1.5rem;
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
   border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
   transition: all 0.3s ease;
-  position: relative;
   flex-shrink: 0;
-  
-  @media (min-width: 768px) {
-    font-size: 1.75rem;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #f59e0b);
-    border-radius: inherit;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
   
   svg {
     color: white;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
-    width: 1.25rem;
-    height: 1.25rem;
-    
-    @media (min-width: 768px) {
-      width: 1.5rem;
-      height: 1.5rem;
-    }
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
   }
   
   ${CapabilityBox}:hover & {
-    transform: rotate(5deg) scale(1.1);
-    
-    &::before {
-      opacity: 1;
-    }
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
   }
 `;
 
 const CapabilityTitle = styled.h4`
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: white;
+  color: #1e293b;
   margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   
-  @media (min-width: 768px) {
-    font-size: 1.35rem;
+  @media (max-width: 640px) {
+    font-size: 1.1rem;
   }
 `;
 
 const CapabilityContent = styled.div`
   flex: 1;
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 1.25rem;
   
-  @media (min-width: 640px) {
-    padding: 1.75rem;
+  @media (max-width: 640px) {
+    padding: 1.5rem;
     gap: 1rem;
-  }
-  
-  @media (min-width: 768px) {
-    padding: 2.5rem;
-    gap: 1.5rem;
   }
 `;
 
 const CapabilityItem = styled.div`
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  overflow: hidden;
-  
-  @media (min-width: 768px) {
-    border-radius: 0.75rem;
-    padding: 1.25rem;
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 3px;
-    height: 100%;
-    background: linear-gradient(180deg, #3b82f6, #8b5cf6);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(59, 130, 246, 0.3);
-    transform: translateX(4px);
-    
-    @media (min-width: 768px) {
-      transform: translateX(6px);
-    }
-    
-    &::before {
-      opacity: 1;
-    }
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 640px) {
+    padding: 1rem;
+    border-radius: 0.5rem;
   }
 `;
 
 const CapabilityLabel = styled.div`
-  font-size: 0.95rem;
-  color: #cbd5e1;
-  margin-bottom: 0.4rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.375rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.85rem;
 `;
 
 const CapabilityValue = styled.div`
-  color: #f8fafc;
-  font-size: 1rem;
+  color: #334155;
+  font-size: 0.95rem;
   line-height: 1.5;
   font-weight: 500;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 `;
 
 const BasicInfoGrid = styled.div`
