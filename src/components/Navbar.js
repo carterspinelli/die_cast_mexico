@@ -38,7 +38,12 @@ const NavbarInner = styled.div`
   transition: all 0.3s ease;
   
   @media (max-width: 768px) {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem;
   }
 `;
 
