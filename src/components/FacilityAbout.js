@@ -239,13 +239,13 @@ const CapabilityBox = styled.div`
 `;
 
 const CapabilityHeader = styled.div`
-  background: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   display: flex;
   align-items: center;
   gap: 1.25rem;
   position: relative;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   
   @media (max-width: 640px) {
     padding: 1.5rem;
@@ -256,12 +256,12 @@ const CapabilityHeader = styled.div`
 const CapabilityIcon = styled.div`
   width: 3rem;
   height: 3rem;
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
   transition: all 0.3s ease;
   flex-shrink: 0;
   
@@ -272,8 +272,8 @@ const CapabilityIcon = styled.div`
   }
   
   ${CapabilityBox}:hover & {
-    transform: scale(1.02);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5);
   }
 `;
 
