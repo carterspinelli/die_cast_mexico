@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const sparkleAnimation = keyframes`
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 const SpotlightCard = styled(motion.div)`
   position: relative;
-  background: linear-gradient(135deg, #0c1220 0%, #1e293b 100%);
-  border-radius: 1.25rem;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: #000000;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  border: 1px solid #262626;
   transition: all 0.3s ease;
   overflow: hidden;
   
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: #3b82f6;
   }
 `;
 
@@ -25,15 +33,48 @@ const SpotlightOverlay = styled(motion.div)`
   left: -1px;
   right: -1px;
   bottom: -1px;
-  border-radius: 1.25rem;
+  border-radius: 0.75rem;
   pointer-events: none;
   z-index: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
   
   &.active {
-    opacity: 0.6;
+    opacity: 1;
   }
+`;
+
+const DotsOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 2px 2px, rgba(59, 130, 246, 0.3) 1px, transparent 0);
+  background-size: 20px 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+  
+  &.active {
+    opacity: 1;
+  }
+`;
+
+const SparkleEffect = styled.div`
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 50%;
+  animation: ${sparkleAnimation} 2s infinite;
+  pointer-events: none;
+  z-index: 2;
+  
+  &:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+  &:nth-child(2) { top: 60%; left: 70%; animation-delay: 0.5s; }
+  &:nth-child(3) { top: 40%; left: 20%; animation-delay: 1s; }
+  &:nth-child(4) { top: 80%; left: 50%; animation-delay: 1.5s; }
+  &:nth-child(5) { top: 15%; left: 80%; animation-delay: 0.25s; }
+  &:nth-child(6) { top: 70%; left: 25%; animation-delay: 0.75s; }
 `;
 
 const ContentWrapper = styled.div`
@@ -44,8 +85,8 @@ const ContentWrapper = styled.div`
 
 export const CardSpotlight = ({
   children,
-  radius = 300,
-  color = "rgba(59, 130, 246, 0.15)",
+  radius = 350,
+  color = "#262626",
   className,
   ...props
 }) => {
@@ -68,7 +109,7 @@ export const CardSpotlight = ({
   
   return (
     <SpotlightCard
-      className={className}
+      className={`group/spotlight ${className || ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -86,6 +127,17 @@ export const CardSpotlight = ({
           `,
         }}
       />
+      <DotsOverlay className={isHovering ? 'active' : ''} />
+      {isHovering && (
+        <>
+          <SparkleEffect />
+          <SparkleEffect />
+          <SparkleEffect />
+          <SparkleEffect />
+          <SparkleEffect />
+          <SparkleEffect />
+        </>
+      )}
       <ContentWrapper>
         {children}
       </ContentWrapper>
