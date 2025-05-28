@@ -178,39 +178,39 @@ export const FacilityMetrics = () => {
         
         <MetricsGrid>
           <BentoCard
-            title="Annual Production"
-            value="10M+"
-            subtitle="High-precision aluminum parts manufactured yearly with zero-defect quality"
+            title="Overview"
+            value="125+"
+            subtitle="Workforce • Up to 250ton/month aluminum ingots • AlSi12(Fe), A380, A360, A413, ADC12 alloys"
             colors={["#3B82F6", "#60A5FA", "#93C5FD"]}
             delay={0.2}
             large={true}
           />
           <BentoCard
-            title="Quality Rating"
-            value="99.8%"
-            subtitle="First-pass yield rate"
+            title="Die Casting"
+            value="8"
+            subtitle="Full automatic manufacturing cells"
             colors={["#10B981", "#34D399", "#6EE7B7"]}
             delay={0.4}
           />
           <BentoCard
-            title="IATF Certified"
-            value="16949"
-            subtitle="Automotive quality management standard"
+            title="CNC Machining"
+            value="19"
+            subtitle="Horizontal 4-axis machines"
             colors={["#F59E0B", "#FBBF24", "#FCD34D"]}
             delay={0.6}
           />
           <BentoCard
-            title="Production Capacity"
-            value="3,000"
-            subtitle="Maximum tonnage per die casting machine"
+            title="Manufacturing"
+            value="FIP"
+            subtitle="Precision gasket application • Mechanical assembly with dowel pins, labels, helicoils, plugs"
             colors={["#8B5CF6", "#A78BFA", "#C4B5FD"]}
             delay={0.8}
             large={true}
           />
           <BentoCard
-            title="Customer Satisfaction"
-            value="4.9/5"
-            subtitle="Based on 500+ reviews from automotive and industrial clients worldwide"
+            title="Surface Finishing"
+            value="Multi"
+            subtitle="Powder & liquid painting by Akzo Nobel, Cardinal, Sherwin Williams • Nickel plating • Tri-chrome passivation Surtec 650®"
             colors={["#EC4899", "#F472B6", "#F9A8D4"]}
             delay={1}
             large={true}
