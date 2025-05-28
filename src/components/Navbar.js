@@ -376,30 +376,147 @@ const Navbar = () => {
             }}
           >
             <div style={{ height: '100%', paddingTop: '2.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', fontSize: '3rem', gap: '0.75rem', marginTop: 0, padding: '0 2.5rem' }}>
-                <div style={{ color: 'black', borderBottom: '1px solid rgba(0, 0, 0, 0.3)', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: 0 }}>
+              {/* Close Button */}
+              <button 
+                onClick={toggleMobileMenu}
+                style={{
+                  position: 'absolute',
+                  top: '2rem',
+                  right: '2rem',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  color: 'black',
+                  width: '40px',
+                  height: '40px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  borderRadius: '50%',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = 'rgba(0,0,0,0.1)'}
+                onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
+              >
+                ×
+              </button>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 0, padding: '0 2.5rem' }}>
+                <div style={{ color: 'black', borderBottom: '1px solid rgba(0, 0, 0, 0.3)', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '1rem' }}>
                   <p style={{ margin: 0, paddingBottom: '0.5rem' }}>Navigation</p>
                 </div>
-                <section style={{ backgroundColor: 'transparent', marginTop: 0 }}>
-                  <MobileNavLink to={localizedLink("/")} onClick={toggleMobileMenu}>
-                    1. {messages.home}
-                  </MobileNavLink>
-                  <MobileNavLink to={localizedLink("/#services")} onClick={toggleMobileMenu}>
-                    2. {messages.services}
-                  </MobileNavLink>
-                  <MobileNavLink to={localizedLink("/#industries")} onClick={toggleMobileMenu}>
-                    3. {messages.industries}
-                  </MobileNavLink>
-                  <MobileNavLink to={localizedLink("/#about")} onClick={toggleMobileMenu}>
-                    4. {messages.about}
-                  </MobileNavLink>
-                </section>
+                
+                <Link 
+                  to={localizedLink("/")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: 'black',
+                    fontSize: '2.5rem',
+                    fontWeight: '200',
+                    textDecoration: 'none',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#0c1220'}
+                  onMouseOut={(e) => e.target.style.color = 'black'}
+                >
+                  <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>1.</span>
+                  {messages.home}
+                </Link>
+
+                <Link 
+                  to={localizedLink("/#services")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: 'black',
+                    fontSize: '2.5rem',
+                    fontWeight: '200',
+                    textDecoration: 'none',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#0c1220'}
+                  onMouseOut={(e) => e.target.style.color = 'black'}
+                >
+                  <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>2.</span>
+                  {messages.services}
+                </Link>
+
+                <Link 
+                  to={localizedLink("/#industries")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: 'black',
+                    fontSize: '2.5rem',
+                    fontWeight: '200',
+                    textDecoration: 'none',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#0c1220'}
+                  onMouseOut={(e) => e.target.style.color = 'black'}
+                >
+                  <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>3.</span>
+                  {messages.industries}
+                </Link>
+
+                <Link 
+                  to={localizedLink("/#about")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: 'black',
+                    fontSize: '2.5rem',
+                    fontWeight: '200',
+                    textDecoration: 'none',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#0c1220'}
+                  onMouseOut={(e) => e.target.style.color = 'black'}
+                >
+                  <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>4.</span>
+                  {messages.about}
+                </Link>
               </div>
+
               <div style={{ display: 'flex', width: '100%', fontSize: '0.875rem', justifyContent: 'space-between', alignItems: 'center', color: 'black', padding: '0 2.5rem', paddingBottom: '1.25rem' }}>
                 <LanguageSwitcher />
-                <MobileCTAButton to={localizedLink("/contact")} onClick={toggleMobileMenu}>
+                <Link
+                  to={localizedLink("/contact")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    backgroundColor: '#0c1220',
+                    color: 'white',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '0.375rem',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.backgroundColor = '#172b49';
+                    e.target.style.color = 'white';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.backgroundColor = '#0c1220';
+                    e.target.style.color = 'white';
+                  }}
+                >
                   {messages.contact}
-                </MobileCTAButton>
+                </Link>
               </div>
             </div>
             <svg
