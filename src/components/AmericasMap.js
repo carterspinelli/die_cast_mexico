@@ -127,6 +127,10 @@ const BadgeText = styled.span`
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  
+  @media (max-width: 768px) {
+    font-size: 0.7rem;
+  }
 `;
 
 const StrategicBadge = styled(Badge)`
@@ -140,9 +144,10 @@ const StrategicBadge = styled(Badge)`
   }
   
   @media (max-width: 768px) {
-    top: 5%;
-    left: 5%;
-    padding: 0.5rem 1rem;
+    top: 8%;
+    left: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -152,9 +157,10 @@ const GatewayBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 2s;
   
   @media (max-width: 768px) {
-    top: 5%;
-    right: 5%;
-    padding: 0.5rem 1rem;
+    top: 35%;
+    right: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -164,9 +170,10 @@ const AccessBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 4s;
   
   @media (max-width: 768px) {
-    bottom: 10%;
-    left: 5%;
-    padding: 0.5rem 1rem;
+    bottom: 35%;
+    left: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -176,9 +183,10 @@ const MarketsBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 1s;
   
   @media (max-width: 768px) {
-    bottom: 15%;
-    right: 5%;
-    padding: 0.5rem 1rem;
+    bottom: 8%;
+    right: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
