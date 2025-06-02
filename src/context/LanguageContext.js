@@ -22,12 +22,14 @@ export const LanguageProvider = ({ children }) => {
           }
         }
 
-        // Use ipapi.co for geolocation (free tier available)
-        const response = await fetch('https://ipapi.co/json/');
-        const data = await response.json();
+        // Read country from Cloudflare Worker cookie
+        const countryCode = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('cf-country='))
+          ?.split('=')[1];
         
         // If user is from Mexico, set Spanish; otherwise English
-        const detectedLang = data.country_code === 'MX' ? 'es' : 'en';
+        const detectedLang = countryCode === 'MX' ? 'es' : 'en';
         setLanguage(detectedLang);
         setMessages(translations[detectedLang]);
         
@@ -37,7 +39,7 @@ export const LanguageProvider = ({ children }) => {
         }
         
       } catch (error) {
-        console.log('IP geolocation failed, falling back to browser language');
+        console.log('Country detection failed, falling back to browser language');
         
         // Fallback to browser language detection
         const browserLang = typeof navigator !== "undefined" 
