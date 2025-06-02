@@ -244,5 +244,14 @@
   "nickelPlatingValue": "High-quality surface finish",
   "surfaceTreatmentLabel": "Surface Treatment",
   "surfaceTreatmentValue": "Tri-chrome passivation on Aluminum: Surtec 650®",
-  "supplyChainCommitmentTitle": "Our Commitment to Excellence"
+  "supplyChainCommitmentTitle": "Our Commitment to Excellence",
+
+  "strategicLocationTitle": "Strategic Location",
+  "strategicLocationDesc": "Strategically positioned in Jalisco, Mexico, we serve as your gateway to the Americas with unparalleled access to both North and South American markets.",
+  "facilityLocationTitle": "Facility Location",
+  "stateLabel": "State",
+  "cityLabel": "City",
+  "regionLabel": "Region",
+  "regionValue": "North America",
+  "timeZoneLabel": "Time Zone"
 }

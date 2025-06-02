@@ -257,5 +257,14 @@
   "nickelPlatingValue": "Acabado de superficie de alta calidad",
   "surfaceTreatmentLabel": "Tratamiento de Superficie",
   "surfaceTreatmentValue": "Surtec 650®, un pasivado exento de cromo hexavalente que brinda protección contra la corrosión y proporciona excelente adherencia para aplicaciones posteriores de pintura",
-  "supplyChainCommitmentTitle": "Nuestro Compromiso con la Excelencia"
+  "supplyChainCommitmentTitle": "Nuestro Compromiso con la Excelencia",
+
+  "strategicLocationTitle": "Ubicación Estratégica",
+  "strategicLocationDesc": "Estratégicamente posicionados en Jalisco, México, servimos como su puerta de entrada a las Américas con acceso incomparable a los mercados de América del Norte y del Sur.",
+  "facilityLocationTitle": "Ubicación de la Instalación",
+  "stateLabel": "Estado",
+  "cityLabel": "Ciudad",
+  "regionLabel": "Región",
+  "regionValue": "América del Norte",
+  "timeZoneLabel": "Zona Horaria"
 }
