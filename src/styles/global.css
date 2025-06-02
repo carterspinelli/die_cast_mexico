@@ -1,7 +1,7 @@
 /* Base CSS Variables */
 :root {
   /* Colors */
-  --primary: #ffffff;        /* Blue 500 */
+  --primary: #3b82f6;        /* Blue 500 */
   --primary-light: #60a5fa;  /* Blue 400 */
   --primary-dark: #1e3a8a;   /* Blue 900 */
   --secondary: #475569;      /* Slate 600 */
@@ -51,7 +51,7 @@ body {
   background-color: #ffffff;
   background: #ffffff;
   min-height: 100vh;
-
+  
   /* Ensure white background for mobile overscroll areas */
   overscroll-behavior: contain;
   -webkit-overscroll-behavior: contain;
@@ -142,7 +142,7 @@ img {
     --container-padding: 1rem;
     --spacing-2xl: 3rem;
   }
-
+  
   body {
     font-size: 15px;
   }
@@ -156,7 +156,7 @@ img {
     --spacing-2xl: 2.5rem;
     --spacing-lg: 1rem;
   }
-
+  
   body {
     font-size: 14px;
     line-height: 1.4;
@@ -240,26 +240,56 @@ html, body {
   }
 }
 
-/* Safari overscroll color fix using background-image trick */
-html {
-  background-color: #ffffff;
-  background-image: linear-gradient(transparent, transparent);
-  background-repeat: repeat;
-}
-
-body {
-  background-color: #ffffff;
-}
-
-/* Additional Safari-specific fixes */
-@supports (-webkit-touch-callout: none) {
-  html {
-    background-color: #ffffff !important;
-    background-image: linear-gradient(transparent, transparent) !important;
-    background-repeat: repeat !important;
+/* Additional Safari overscroll color fixes */
+@supports (-webkit-appearance: none) {
+  /* Force white background on overscroll areas */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #ffffff !important;
+    z-index: -9999;
+    pointer-events: none;
   }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: -100vh;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: #ffffff !important;
+    z-index: -9999;
+    pointer-events: none;
+  }
+  
+  html {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    -webkit-background-size: 100% 100% !important;
+    background-size: 100% 100% !important;
+  }
+}
 
+/* Meta viewport background fix for Safari */
+html {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* Safari mobile overscroll rubber band fix */
+@media only screen and (-webkit-min-device-pixel-ratio: 1) {
+  html {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+  }
+  
   body {
+    background: #ffffff !important;
     background-color: #ffffff !important;
   }
 }

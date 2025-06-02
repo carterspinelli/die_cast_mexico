@@ -108,6 +108,19 @@ function SEO({ description, lang, meta = [], title, image }) {
           name: `twitter:image`,
           content: imageUrl,
         },
+        // Safari theme color and viewport fixes
+        {
+          name: `theme-color`,
+          content: `#ffffff`,
+        },
+        {
+          name: `msapplication-navbutton-color`,
+          content: `#ffffff`,
+        },
+        {
+          name: `apple-mobile-web-app-status-bar-style`,
+          content: `default`,
+        },
         // Concatenate additional meta props
       ].concat(meta)}
     />
