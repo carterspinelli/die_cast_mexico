@@ -11,11 +11,11 @@ const ContactPage = () => {
     <Layout>
       <SEO 
         title={`${messages?.contactTitle || "Contáctanos"} | Die Cast Mexico`}
-        description={messages?.contactSubtitle || "Ponte en contacto con nuestro equipo para consultas, cotizaciones o soporte"}
+        description="Contacta Die Cast Mexico"
       />
       <Contact2 
         title={messages?.contactTitle || "Contáctanos"}
-        description={messages?.contactSubtitle || "Ponte en contacto con nuestro equipo para consultas, cotizaciones o soporte"}
+        description=""
         phone="+52 33 3968 3660"
         email="info@diecastmexico.com"
         web={{ 
@@ -34,7 +34,7 @@ export const Head = () => {
   return (
     <SEO 
       title="Contáctanos | Die Cast Mexico" 
-      description="Ponte en contacto con nuestro equipo para consultas, cotizaciones o soporte"
+      description="Contacta Die Cast Mexico"
     />
   );
 };
