@@ -198,6 +198,12 @@
   "value": "Value",
   "range": "Range",
 
+  "strategicLocationSubtitle": "Strategically located in Jalisco, Mexico",
+  "strategicLocationBadge": "Strategic Location",
+  "gatewayBadge": "Gateway to Americas",
+  "accessBadge": "Unparalleled Access",
+  "marketsBadge": "Global Markets",
+
   "facilityOverviewTitle": "Facility Overview",
   "overviewTabLabel": "Overview",
   "manufacturingTabLabel": "Manufacturing",

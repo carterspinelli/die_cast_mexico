@@ -194,6 +194,12 @@
   "value": "Valor",
   "range": "Rango",
 
+  "strategicLocationSubtitle": "Estratégicamente ubicada en Jalisco, México",
+  "strategicLocationBadge": "Ubicación Estratégica",
+  "gatewayBadge": "Puerta de las Américas",
+  "accessBadge": "Acceso Sin Igual",
+  "marketsBadge": "Mercados Globales",
+
   "facilityOverviewTitle": "Descripción de la Instalación",
   "overviewTabLabel": "Resumen",
   "manufacturingTabLabel": "Fabricación",

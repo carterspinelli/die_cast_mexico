@@ -22,6 +22,18 @@ const MapContainer = styled.div`
   gap: 2rem;
 `;
 
+const Subtitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
 const BadgesContainer = styled.div`
   position: absolute;
   top: 0;
@@ -196,6 +208,10 @@ const AmericasMap = () => {
     <MapSection>
       <Container>
         <MapContainer>
+          <Subtitle data-aos="fade-up">
+            {messages?.strategicLocationSubtitle || "Strategically located in Jalisco, Mexico"}
+          </Subtitle>
+          
           <MapWrapper data-aos="fade-up" data-aos-delay="200">
             <BadgesContainer>
               <StrategicBadge data-aos="fade-in" data-aos-delay="400">
