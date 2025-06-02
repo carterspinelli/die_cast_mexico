@@ -13,21 +13,16 @@ const Container = styled.div`
 `;
 
 const MapContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-  }
+  text-align: center;
+  gap: 3rem;
 `;
 
 const MapInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
 const Title = styled.h2`
@@ -48,100 +43,21 @@ const Description = styled.p`
   margin-bottom: 2rem;
 `;
 
-const LocationCard = styled.div`
-  background: linear-gradient(135deg, #0a0f1b 0%, #1a2332 25%, #2c3e50 75%, #4a5568 100%);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 25px 50px rgba(10, 15, 27, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
-    opacity: 0.4;
-  }
-  
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
-    animation: shimmer 3s ease-in-out infinite;
-  }
-  
-  @keyframes shimmer {
-    0% { transform: translateX(-100%); }
-    50% { transform: translateX(100%); }
-    100% { transform: translateX(100%); }
-  }
-`;
-
-const LocationContent = styled.div`
-  position: relative;
-  z-index: 1;
-  color: white;
-`;
-
-const LocationTitle = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 1rem;
-`;
-
-const LocationDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-`;
-
-const LocationItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-  &:last-child {
-    border-bottom: none;
-  }
-`;
-
-const LocationLabel = styled.span`
-  font-size: 0.9rem;
-  color: #94a3b8;
-  font-weight: 500;
-`;
-
-const LocationValue = styled.span`
-  font-size: 1rem;
-  color: white;
-  font-weight: 600;
-`;
-
 const MapWrapper = styled.div`
   position: relative;
   background: white;
   border-radius: 1.5rem;
-  padding: 2rem;
+  padding: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.05);
+  max-width: 700px;
+  margin: 0 auto;
 `;
 
 const SVGMap = styled.svg`
   width: 100%;
   height: auto;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   display: block;
 `;
@@ -153,41 +69,16 @@ const AmericasMap = () => {
     <MapSection>
       <Container>
         <MapContainer>
-          <MapInfo data-aos="fade-right">
+          <MapInfo data-aos="fade-up">
             <Title>
               {messages?.strategicLocationTitle || "Strategic Location"}
             </Title>
             <Description>
               {messages?.strategicLocationDesc || "Strategically positioned in Jalisco, Mexico, we serve as your gateway to the Americas with unparalleled access to both North and South American markets."}
             </Description>
-            <LocationCard>
-              <LocationContent>
-                <LocationTitle>
-                  {messages?.facilityLocationTitle || "Facility Location"}
-                </LocationTitle>
-                <LocationDetails>
-                  <LocationItem>
-                    <LocationLabel>{messages?.stateLabel || "State"}</LocationLabel>
-                    <LocationValue>Jalisco, México</LocationValue>
-                  </LocationItem>
-                  <LocationItem>
-                    <LocationLabel>{messages?.cityLabel || "City"}</LocationLabel>
-                    <LocationValue>Zapopan</LocationValue>
-                  </LocationItem>
-                  <LocationItem>
-                    <LocationLabel>{messages?.regionLabel || "Region"}</LocationLabel>
-                    <LocationValue>{messages?.regionValue || "North America"}</LocationValue>
-                  </LocationItem>
-                  <LocationItem>
-                    <LocationLabel>{messages?.timeZoneLabel || "Time Zone"}</LocationLabel>
-                    <LocationValue>UTC-6</LocationValue>
-                  </LocationItem>
-                </LocationDetails>
-              </LocationContent>
-            </LocationCard>
           </MapInfo>
           
-          <MapWrapper data-aos="fade-left">
+          <MapWrapper data-aos="fade-up" data-aos-delay="200">
             <SVGMap viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
               {/* Americas Outline */}
               <g id="americas">
