@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 import { Button } from "./ui/button";
 import { FacilityShowcase } from "./FacilityShowcase";
+import AmericasMap from "./AmericasMap";
 
 const Section = styled.section`
   padding: 5rem 1rem;
@@ -476,6 +477,8 @@ const FacilityAbout = () => {
           </ContentGrid>
         </Container>
       </Section>
+
+      <AmericasMap />
 
       <AchievementsBox id="facility" data-aos="fade-up" data-aos-delay="200">
         <FacilityContainer>
