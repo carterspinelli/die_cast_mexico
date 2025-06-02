@@ -35,15 +35,16 @@ const BadgesContainer = styled.div`
 const Badge = styled.div`
   position: absolute;
   background: linear-gradient(135deg, #0c1220 0%, #1e293b 25%, #334155 75%, #475569 100%);
-  border-radius: 2rem;
-  padding: 1rem 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   pointer-events: auto;
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: hidden;
+  min-width: 140px;
   
   &::before {
     content: '';
@@ -111,7 +112,7 @@ const DotLight = styled.div`
 
 const BadgeText = styled.span`
   color: white;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 `;
@@ -129,7 +130,7 @@ const StrategicBadge = styled(Badge)`
   @media (max-width: 768px) {
     top: 5%;
     left: 5%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -141,7 +142,7 @@ const GatewayBadge = styled(Badge)`
   @media (max-width: 768px) {
     top: 5%;
     right: 5%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -153,7 +154,7 @@ const AccessBadge = styled(Badge)`
   @media (max-width: 768px) {
     bottom: 10%;
     left: 5%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -165,7 +166,7 @@ const MarketsBadge = styled(Badge)`
   @media (max-width: 768px) {
     bottom: 15%;
     right: 5%;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
