@@ -167,9 +167,11 @@ export const Contact2 = ({
           <InfoContainer data-aos="fade-right" data-aos-delay="100">
             <TextCenter>
               <Title data-aos="fade-up" data-aos-delay="200">{title || messages?.contactTitle || "Contact Us"}</Title>
-              <Description data-aos="fade-up" data-aos-delay="300">
-                {description || messages?.contactSubtitle || "Get in touch with our team for inquiries, quotes, or support"}
-              </Description>
+              {description && (
+                <Description data-aos="fade-up" data-aos-delay="300">
+                  {description}
+                </Description>
+              )}
             </TextCenter>
             <ContactDetails data-aos="fade-up" data-aos-delay="400">
               <ContactHeading>

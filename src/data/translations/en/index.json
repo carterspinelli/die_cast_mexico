@@ -228,9 +228,9 @@
   "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
   
   "dieCastingLabel": "Die Casting",
-  "dieCastingValue": "8 full automatic manufacturing cells",
+  "dieCastingValue": "8 Full automatic manufacturing cells",
   "cncMachiningLabel": "CNC Machining",
-  "cncMachiningValue": "19 horizontal 4 axis machines",
+  "cncMachiningValue": "19 Horizontal 4 axis machines",
   "fipGasketLabel": "FIP Gasket",
   "fipGasketValue": "Precision gasket application",
   "mechanicalAssemblyLabel": "Mechanical Assembly",

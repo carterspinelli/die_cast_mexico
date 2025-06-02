@@ -15,7 +15,6 @@ const ContactPage = () => {
       />
       <Contact2 
         title={messages?.contactTitle || "Contáctanos"}
-        description=""
         phone="+52 33 3968 3660"
         email="info@diecastmexico.com"
         web={{ 
