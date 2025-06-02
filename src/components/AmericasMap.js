@@ -80,16 +80,16 @@ const AmericasMap = () => {
           </MapInfo>
           
           <MapWrapper data-aos="fade-up" data-aos-delay="200">
-            <SVGMap viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+            <SVGMap viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
               {/* Gradient definitions */}
               <defs>
                 <radialGradient id="jaliscoGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.8"/>
-                  <stop offset="70%" stopColor="#1d4ed8" stopOpacity="0.6"/>
-                  <stop offset="100%" stopColor="#1e40af" stopOpacity="0.9"/>
+                  <stop offset="0%" stopColor="#4472c4" stopOpacity="0.9"/>
+                  <stop offset="70%" stopColor="#2856a8" stopOpacity="0.8"/>
+                  <stop offset="100%" stopColor="#1e4084" stopOpacity="0.9"/>
                 </radialGradient>
                 <filter id="glow">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                   <feMerge> 
                     <feMergeNode in="coloredBlur"/>
                     <feMergeNode in="SourceGraphic"/>
@@ -97,63 +97,118 @@ const AmericasMap = () => {
                 </filter>
               </defs>
               
-              {/* Mexico Map */}
+              {/* Mexico Map - Based on reference image */}
               <g id="mexico">
-                {/* Mexico Border */}
+                {/* Mexico Main Territory */}
                 <path
-                  d="M 50 150 
-                     L 120 130 
-                     L 180 135 
-                     L 220 140 
-                     L 280 145 
-                     L 340 150 
-                     L 380 160 
-                     L 420 175 
-                     L 450 190 
-                     L 470 210 
-                     L 485 230 
-                     L 490 250 
-                     L 485 270 
-                     L 475 290 
-                     L 460 310 
-                     L 440 325 
-                     L 415 335 
-                     L 385 340 
-                     L 350 342 
-                     L 315 340 
-                     L 280 335 
-                     L 245 330 
-                     L 210 325 
-                     L 175 320 
-                     L 140 315 
-                     L 105 310 
-                     L 75 300 
-                     L 50 285 
-                     L 35 265 
-                     L 25 240 
-                     L 30 215 
-                     L 40 190 
-                     L 45 170 
+                  d="M 50 200 
+                     L 90 170 
+                     L 150 160 
+                     L 200 165 
+                     L 250 170 
+                     L 300 175 
+                     L 350 180 
+                     L 400 185 
+                     L 450 195 
+                     L 500 210 
+                     L 540 230 
+                     L 570 250 
+                     L 590 275 
+                     L 600 300 
+                     L 590 325 
+                     L 570 350 
+                     L 540 370 
+                     L 500 385 
+                     L 450 395 
+                     L 400 400 
+                     L 350 398 
+                     L 300 395 
+                     L 250 390 
+                     L 200 385 
+                     L 150 380 
+                     L 100 370 
+                     L 60 350 
+                     L 40 320 
+                     L 30 290 
+                     L 35 260 
+                     L 45 230 
                      Z"
-                  fill="#e2e8f0"
+                  fill="#cbd5e1"
                   stroke="#94a3b8"
-                  strokeWidth="1.5"
+                  strokeWidth="1"
                 />
                 
-                {/* Jalisco State - highlighted */}
+                {/* Baja California Peninsula */}
                 <path
-                  d="M 180 220 
-                     L 220 215 
-                     L 250 220 
-                     L 270 230 
-                     L 275 250 
-                     L 270 270 
-                     L 250 285 
-                     L 220 290 
-                     L 190 285 
-                     L 170 270 
-                     L 165 250 
-                     L 170 235 
+                  d="M 40 200 
+                     L 50 180 
+                     L 60 160 
+                     L 70 140 
+                     L 75 120 
+                     L 80 100 
+                     L 85 80 
+                     L 90 60 
+                     L 95 40 
+                     L 100 20 
+                     L 110 15 
+                     L 120 20 
+                     L 115 40 
+                     L 110 60 
+                     L 105 80 
+                     L 100 100 
+                     L 95 120 
+                     L 90 140 
+                     L 85 160 
+                     L 80 180 
+                     L 75 200 
+                     L 70 220 
+                     L 65 240 
+                     L 60 250 
+                     L 55 240 
+                     L 50 220 
+                     Z"
+                  fill="#cbd5e1"
+                  stroke="#94a3b8"
+                  strokeWidth="1"
+                />
+                
+                {/* Yucatan Peninsula */}
+                <path
+                  d="M 580 350 
+                     L 620 340 
+                     L 660 350 
+                     L 700 360 
+                     L 730 370 
+                     L 750 380 
+                     L 760 390 
+                     L 750 400 
+                     L 730 410 
+                     L 700 415 
+                     L 660 410 
+                     L 620 400 
+                     L 590 390 
+                     L 580 370 
+                     Z"
+                  fill="#cbd5e1"
+                  stroke="#94a3b8"
+                  strokeWidth="1"
+                />
+                
+                {/* Jalisco State - highlighted based on reference */}
+                <path
+                  d="M 220 280 
+                     L 260 275 
+                     L 290 285 
+                     L 310 300 
+                     L 320 320 
+                     L 315 340 
+                     L 300 355 
+                     L 280 365 
+                     L 250 360 
+                     L 220 350 
+                     L 200 335 
+                     L 195 315 
+                     L 205 295 
                      Z"
                   fill="url(#jaliscoGlow)"
                   stroke="#1e40af"
@@ -163,9 +218,9 @@ const AmericasMap = () => {
                 
                 {/* Jalisco Location Marker - Glowing Dot */}
                 <circle
-                  cx="220"
-                  cy="250"
-                  r="6"
+                  cx="260"
+                  cy="320"
+                  r="5"
                   fill="#ffffff"
                   stroke="#1e40af"
                   strokeWidth="2"
@@ -173,7 +228,7 @@ const AmericasMap = () => {
                 >
                   <animate
                     attributeName="r"
-                    values="6;10;6"
+                    values="5;8;5"
                     dur="3s"
                     repeatCount="indefinite"
                   />
@@ -187,23 +242,23 @@ const AmericasMap = () => {
                 
                 {/* Pulsing outer ring */}
                 <circle
-                  cx="220"
-                  cy="250"
-                  r="12"
+                  cx="260"
+                  cy="320"
+                  r="10"
                   fill="none"
-                  stroke="#3b82f6"
+                  stroke="#4472c4"
                   strokeWidth="2"
-                  opacity="0.4"
+                  opacity="0.5"
                 >
                   <animate
                     attributeName="r"
-                    values="12;20;12"
+                    values="10;18;10"
                     dur="3s"
                     repeatCount="indefinite"
                   />
                   <animate
                     attributeName="opacity"
-                    values="0.4;0.1;0.4"
+                    values="0.5;0.1;0.5"
                     dur="3s"
                     repeatCount="indefinite"
                   />
@@ -211,7 +266,7 @@ const AmericasMap = () => {
               </g>
               
               {/* Location Label */}
-              <text x="220" y="275" textAnchor="middle" fontSize="12" fontWeight="600" fill="#1e40af">
+              <text x="260" y="345" textAnchor="middle" fontSize="12" fontWeight="600" fill="#1e40af">
                 Jalisco
               </text>
             </SVGMap>
