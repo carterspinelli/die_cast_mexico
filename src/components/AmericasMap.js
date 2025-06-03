@@ -42,11 +42,6 @@ const BadgesContainer = styled.div`
   bottom: 0;
   pointer-events: none;
   z-index: 2;
-  
-  @media (max-width: 768px) {
-    /* Ensure badges don't overflow container */
-    overflow: hidden;
-  }
 `;
 
 const Badge = styled.div`
@@ -138,20 +133,6 @@ const BadgeText = styled.span`
   }
 `;
 
-const GatewayBadge = styled(Badge)`
-  top: 15%;
-  right: 15%;
-  animation: float 6s ease-in-out infinite 2s;
-  
-  @media (max-width: 768px) {
-    top: 12%;
-    left: 4%;
-    padding: 0.15rem 0.3rem;
-    font-size: 0.65rem;
-    white-space: nowrap;
-  }
-`;
-
 const StrategicBadge = styled(Badge)`
   top: 10%;
   left: 10%;
@@ -163,25 +144,23 @@ const StrategicBadge = styled(Badge)`
   }
   
   @media (max-width: 768px) {
-    top: 30%;
-    right: 4%;
-    padding: 0.15rem 0.3rem;
-    font-size: 0.65rem;
-    white-space: nowrap;
+    top: 8%;
+    left: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
-const MarketsBadge = styled(Badge)`
-  bottom: 25%;
-  right: 10%;
-  animation: float 6s ease-in-out infinite 1s;
+const GatewayBadge = styled(Badge)`
+  top: 15%;
+  right: 15%;
+  animation: float 6s ease-in-out infinite 2s;
   
   @media (max-width: 768px) {
-    bottom: 30%;
-    left: 4%;
-    padding: 0.15rem 0.3rem;
-    font-size: 0.65rem;
-    white-space: nowrap;
+    top: 35%;
+    right: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -191,11 +170,23 @@ const AccessBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 4s;
   
   @media (max-width: 768px) {
-    bottom: 12%;
-    right: 4%;
-    padding: 0.15rem 0.3rem;
-    font-size: 0.65rem;
-    white-space: nowrap;
+    bottom: 50%;
+    left: 15%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+`;
+
+const MarketsBadge = styled(Badge)`
+  bottom: 25%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite 1s;
+  
+  @media (max-width: 768px) {
+    bottom: 8%;
+    right: 8%;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
   }
 `;
 
@@ -208,12 +199,6 @@ const MapWrapper = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.05);
   max-width: 700px;
   margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
-    border-radius: 1rem;
-    margin: 0 0.5rem;
-  }
 `;
 
 const SVGMap = styled.svg`
