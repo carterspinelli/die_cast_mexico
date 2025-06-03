@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import TubelightNavbar from "./ui/tubelight-navbar";
 import Footer from "./Footer";
+import LanguageTestPanel from "./LanguageTestPanel";
 import { usePageTracking } from "../utils/hooks";
 import { useLanguage } from "../context/LanguageContext";
 import styled from "styled-components";
@@ -44,6 +45,7 @@ const Layout = ({ children, hideNav = false, hideFooter = false }) => {
       )}
       <Content>{children}</Content>
       {!hideFooter && <Footer messages={messages} />}
+      <LanguageTestPanel />
     </Main>
   );
 };
