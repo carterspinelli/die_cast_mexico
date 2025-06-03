@@ -1,5 +1,2 @@
-# Redirect rules for Gatsby client-side routing
+# Netlify redirects for Gatsby client-side routing
 /*    /index.html   200
-
-# Language-specific redirects
-/es/*  /es/index.html  200
