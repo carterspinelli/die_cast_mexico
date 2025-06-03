@@ -23,7 +23,7 @@ This guide explains how to set up the Cloudflare Worker for automatic language d
 - Click on your worker name
 - Go to **Settings** > **Triggers**
 - Click **Add route**
-- Add route: `carterspinelli-test-dev.com/*` (or your actual domain)
+- Add route: `diecastmexico.com/*`
 - Select your zone from the dropdown
 - Click **Save**
 

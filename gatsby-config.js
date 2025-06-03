@@ -3,7 +3,7 @@ module.exports = {
     title: "Die Cast Mexico",
     description: "Professional die casting services in Mexico for automotive, energy, telecommunications, and marine industries.",
     author: "@diecastmexico",
-    siteUrl: "https://carterspinelli-test-dev.com",
+    siteUrl: "https://diecastmexico.com",
     languages: {
       defaultLang: "en",
       langs: ["en", "es"]
