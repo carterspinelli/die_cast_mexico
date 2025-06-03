@@ -176,7 +176,7 @@
   "achievementsYearsValue": "Desde 2018",
   "achievementsLandLabel": "Área Total del Terreno",
   "achievementsLandValue": "30,000 m²",
-  "achievementsBuildingLabel": "Tamaño del Edificio",
+  "achievementsBuildingLabel": "Área Total del Edificio",
   "achievementsBuildingValue": "15,000 m²",
   "achievementsQualityLabel": "Aprobación de Calidad",
   "achievementsQualityValue": "99.9%",
@@ -229,40 +229,40 @@
   "contactUsBtn": "Contáctanos",
   "requiredField": "Este campo es obligatorio",
   "invalidEmail": "Por favor, ingrese una dirección de correo electrónico válida",
-  
+
   "tonnageCapacity": "Capacidad de Tonelaje",
   "tonnageUnit": "Toneladas",
   "partWeight": "Peso de Pieza",
   "partWeightUnit": "kg",
-  
+
   "overviewTitle": "Resumen",
   "manufacturingTitle": "Fabricación",
   "surfaceFinishingTitle": "Acabado de Superficies",
-  
+
   "workforceLabel": "Personal",
   "workforceValue": "125+",
   "materialCapacityLabel": "Capacidad de Material",
-  "materialCapacityValue": "Hasta 250ton/mes lingotes de aluminio",
+  "materialCapacityValue": "Hasta 250ton/mes Lingotes de Aluminio",
   "aluminumAlloysLabel": "Aleaciones de Aluminio",
   "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
-  
+
   "dieCastingLabel": "Fundición a Presión",
-  "dieCastingValue": "8 Celdas de fabricación completamente automáticas",
+  "dieCastingValue": "8 Celdas de Fabricación Completamente Automáticas",
   "cncMachiningLabel": "Maquinado CNC",
-  "cncMachiningValue": "19 Máquinas horizontales de 4 ejes",
+  "cncMachiningValue": "19 Máquinas Horizontales de 4 Ejes",
   "fipGasketLabel": "FIP Gasket FIP",
-  "fipGasketValue": "Aplicación de gasket",
+  "fipGasketValue": "Aplicación de Gasket",
   "mechanicalAssemblyLabel": "Ensamble Mecánico",
-  "mechanicalAssemblyValue": "Pines, etiquetas, helicoils, tapones, etc.",
-  
+  "mechanicalAssemblyValue": "Pines, Etiquetas, Tapones, etc.",
+
   "powderPaintingLabel": "Pintura en Polvo",
   "powderPaintingValue": "Akzo Nobel, Cardinal, Sherwin Williams, y más",
   "liquidPaintingLabel": "Pintura Líquida",
-  "liquidPaintingValue": "Soluciones de color personalizadas",
+  "liquidPaintingValue": "Soluciones de Color Personalizadas",
   "nickelPlatingLabel": "Chapado de Níquel",
-  "nickelPlatingValue": "Acabado de superficie de alta calidad",
+  "nickelPlatingValue": "Acabado de Superficie de Alta Calidad",
   "surfaceTreatmentLabel": "Tratamiento de Superficie",
-  "surfaceTreatmentValue": "Surtec 650®, un pasivado exento de cromo hexavalente que brinda protección contra la corrosión y proporciona excelente adherencia para aplicaciones posteriores de pintura",
+  "surfaceTreatmentValue": "Surtec 650®: Pasivado Exento de Cromo Hexavalente con Protección Anticorrosiva y Excelente Adherencia",
   "supplyChainCommitmentTitle": "Nuestro Compromiso con la Excelencia",
 
   "strategicLocationTitle": "Ubicación Estratégica",
@@ -273,6 +273,6 @@
   "regionLabel": "Región",
   "regionValue": "América del Norte",
   "timeZoneLabel": "Zona Horaria",
-  
+
   "footerDescription": "Servicios de fundición e inyección a presión de aluminio de alta calidad para las industrias automotriz, energética, telecomunicaciones, náutica, y más."
 }

@@ -180,7 +180,7 @@
   "achievementsYearsValue": "Since 2018",
   "achievementsLandLabel": "Total Land Area",
   "achievementsLandValue": "30,000 m²",
-  "achievementsBuildingLabel": "Building Size",
+  "achievementsBuildingLabel": "Total Building Area",
   "achievementsBuildingValue": "15,000 m²",
   "achievementsQualityLabel": "Quality Approval",
   "achievementsQualityValue": "99.9%",
@@ -221,35 +221,35 @@
   "contactUsBtn": "Contact Us",
   "requiredField": "This field is required",
   "invalidEmail": "Please enter a valid email address",
-  
+
   "overviewTitle": "Overview",
   "manufacturingTitle": "Manufacturing",
   "surfaceFinishingTitle": "Surface Finishing",
-  
+
   "workforceLabel": "Workforce",
   "workforceValue": "125+",
   "materialCapacityLabel": "Material Capacity",
-  "materialCapacityValue": "Up to 250ton/month aluminum ingots",
+  "materialCapacityValue": "Up to 250ton/Month Aluminum Ingots",
   "aluminumAlloysLabel": "Aluminum Alloys",
   "aluminumAlloysValue": "AlSi12(Fe), A380, A360, A413, ADC12",
-  
+
   "dieCastingLabel": "Die Casting",
-  "dieCastingValue": "8 Full automatic manufacturing cells",
+  "dieCastingValue": "8 Full Automatic Manufacturing Cells",
   "cncMachiningLabel": "CNC Machining",
-  "cncMachiningValue": "19 Horizontal 4 axis machines",
+  "cncMachiningValue": "19 Horizontal 4 Axis Machines",
   "fipGasketLabel": "FIP Gasket",
-  "fipGasketValue": "Precision gasket application",
+  "fipGasketValue": "Precision Gasket Application",
   "mechanicalAssemblyLabel": "Mechanical Assembly",
-  "mechanicalAssemblyValue": "Dowel pins, labels, helicoils, plugs, etc.",
-  
+  "mechanicalAssemblyValue": "Dowel Pins, Labels, Helicoils, Plugs, etc.",
+
   "powderPaintingLabel": "Powder Painting",
   "powderPaintingValue": "Akzo Nobel, Cardinal, Sherwin Williams, and more",
   "liquidPaintingLabel": "Liquid Painting",
-  "liquidPaintingValue": "Custom color solutions",
+  "liquidPaintingValue": "Custom Color Solutions",
   "nickelPlatingLabel": "Nickel Plating",
-  "nickelPlatingValue": "High-quality surface finish",
+  "nickelPlatingValue": "High-quality Surface Finish",
   "surfaceTreatmentLabel": "Surface Treatment",
-  "surfaceTreatmentValue": "Tri-chrome passivation on Aluminum: Surtec 650®",
+  "surfaceTreatmentValue": "Tri-chrome Passivation on Aluminum: Surtec 650®",
   "supplyChainCommitmentTitle": "Our Commitment to Excellence",
 
   "strategicLocationTitle": "Strategic Location",
@@ -260,6 +260,6 @@
   "regionLabel": "Region",
   "regionValue": "North America",
   "timeZoneLabel": "Time Zone",
-  
+
   "footerDescription": "High-quality aluminum die casting services for automotive, energy, telecommunications, marine industries, and more."
 }
