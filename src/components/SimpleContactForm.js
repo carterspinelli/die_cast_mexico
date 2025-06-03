@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
+import { trackEvent } from "../utils/analytics";
 
 const ContactContainer = styled.div`
   max-width: 1200px;
@@ -86,6 +87,29 @@ const SubmitButton = styled.button`
   &:hover {
     background-color: #172b49;
   }
+  
+  &:disabled {
+    background-color: #64748b;
+    cursor: not-allowed;
+  }
+`;
+
+const FormSuccess = styled.div`
+  background-color: #10b981;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+`;
+
+const FormError = styled.div`
+  background-color: #ef4444;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
 `;
 
 const MapWrapper = styled.div`
@@ -96,7 +120,74 @@ const MapWrapper = styled.div`
 `;
 
 const SimpleContactForm = () => {
-  const { messages } = useLanguage();
+  const { messages, language } = useLanguage();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setSubmitStatus("error");
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('lastName', formData.lastName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('language', language);
+      formDataToSend.append('_subject', `New inquiry from ${formData.firstName} ${formData.lastName}`);
+      
+      const response = await fetch('https://formspree.io/f/movwqzpr', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        trackEvent("simple_contact_form_submit", "engagement", "contact_page");
+        setSubmitStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   
   return (
     <ContactContainer>
@@ -118,20 +209,36 @@ const SimpleContactForm = () => {
         </ContactDetail>
       </ContactInfo>
       
-      <ContactForm>
+      {submitStatus === "success" && (
+        <FormSuccess>{messages?.thankYouMessage || "Thank you! Your message has been sent successfully."}</FormSuccess>
+      )}
+      
+      {submitStatus === "error" && (
+        <FormError>{messages?.errorMessage || "There was an error sending your message. Please try again."}</FormError>
+      )}
+      
+      <ContactForm onSubmit={handleSubmit}>
         <FormRow>
           <FormGroup>
             <FormLabel>{messages?.formFirstNameLabel || "First Name"}</FormLabel>
             <FormInput 
               type="text" 
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
               placeholder={messages?.formFirstNamePlaceholder || "Enter your first name"} 
+              required
             />
           </FormGroup>
           <FormGroup>
             <FormLabel>{messages?.formLastNameLabel || "Last Name"}</FormLabel>
             <FormInput 
               type="text" 
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
               placeholder={messages?.formLastNamePlaceholder || "Enter your last name"} 
+              required
             />
           </FormGroup>
         </FormRow>
@@ -140,7 +247,11 @@ const SimpleContactForm = () => {
           <FormLabel>{messages?.formEmailLabel || "Email Address"}</FormLabel>
           <FormInput 
             type="email" 
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder={messages?.formEmailPlaceholder || "Enter your email address"} 
+            required
           />
         </FormGroup>
         
@@ -148,6 +259,9 @@ const SimpleContactForm = () => {
           <FormLabel>{messages?.formSubjectLabel || "Subject"}</FormLabel>
           <FormInput 
             type="text" 
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
             placeholder={messages?.formSubjectPlaceholder || "Enter the subject"} 
           />
         </FormGroup>
@@ -155,12 +269,16 @@ const SimpleContactForm = () => {
         <FormGroup>
           <FormLabel>{messages?.formProjectLabel || "Project Details"}</FormLabel>
           <FormTextarea 
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder={messages?.formProjectPlaceholder || "Tell us about your project requirements"} 
+            required
           />
         </FormGroup>
         
-        <SubmitButton type="submit">
-          {messages?.formSubmit || "Submit Inquiry"}
+        <SubmitButton type="submit" disabled={isSubmitting}>
+          {isSubmitting ? (messages?.formSubmitting || "Sending...") : (messages?.formSubmit || "Submit Inquiry")}
         </SubmitButton>
       </ContactForm>
       

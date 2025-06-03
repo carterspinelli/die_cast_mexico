@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { trackEvent } from "../utils/analytics";
+import { useLanguage } from "../context/LanguageContext";
 
 const FormContainer = styled.div`
   max-width: 600px;
@@ -102,6 +103,7 @@ const FormError = styled.div`
 `;
 
 const ContactForm = ({ messages }) => {
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -162,23 +164,43 @@ const ContactForm = ({ messages }) => {
     }
     
     setIsSubmitting(true);
+    setSubmitStatus(null);
     
     try {
-      // In a real scenario, we would submit the form data to a server here
-      // For now, we'll simulate a successful form submission after a delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Prepare form data for Formspree
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('language', language);
+      formDataToSend.append('_subject', `New contact form submission from ${formData.name}`);
       
-      // Track form submission event
-      trackEvent("contact_form_submit", "engagement", "contact_page");
-      
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        message: ""
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/movwqzpr', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
+      
+      if (response.ok) {
+        // Track successful form submission
+        trackEvent("contact_form_submit", "engagement", "contact_page");
+        
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: ""
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
 import { Textarea } from "./textarea";
 import styled from "styled-components";
 import { useLanguage } from "../../context/LanguageContext";
+import { trackEvent } from "../../utils/analytics";
 
 // Styled components for the contact form
 const Section = styled.section`
