@@ -253,7 +253,6 @@ const ContactForm = () => {
   const t = messages && Object.keys(messages).length > 0 
     ? messages 
     : fallbackTranslations[currentLang];
-  const globalT = translations || fallbackTranslations[currentLang];
   
   // Use your Formspree endpoint with reCAPTCHA v2
   const [state, handleSubmit] = useForm("mwpbkdyr");
@@ -413,7 +412,7 @@ const ContactForm = () => {
             <FormRow>
               <FormGroup>
                 <Label htmlFor="firstName">
-                  {messages?.firstNameLabel || "First Name"}
+                  {t.firstNameLabel}
                 </Label>
                 <Input
                   type="text"
@@ -421,13 +420,13 @@ const ContactForm = () => {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  placeholder={messages?.firstNamePlaceholder || "First Name"}
+                  placeholder={t.firstNamePlaceholder}
                 />
                 {errors.firstName && <ErrorMessage>{errors.firstName}</ErrorMessage>}
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="lastName">
-                  {messages?.lastNameLabel || "Last Name"}
+                  {t.lastNameLabel}
                 </Label>
                 <Input
                   type="text"
@@ -435,7 +434,7 @@ const ContactForm = () => {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  placeholder={messages?.lastNamePlaceholder || "Last Name"}
+                  placeholder={t.lastNamePlaceholder}
                 />
                 {errors.lastName && <ErrorMessage>{errors.lastName}</ErrorMessage>}
               </FormGroup>
@@ -443,7 +442,7 @@ const ContactForm = () => {
             
             <FormGroup>
               <Label htmlFor="email">
-                {messages?.emailLabel || "Email"}
+                {t.emailLabel}
               </Label>
               <Input
                 type="email"
@@ -451,14 +450,14 @@ const ContactForm = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                placeholder={messages?.emailPlaceholder || "Email"}
+                placeholder={t.emailPlaceholder}
               />
               {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
             </FormGroup>
             
             <FormGroup>
               <Label htmlFor="subject">
-                {messages?.subjectLabel || "Subject"}
+                {t.subjectLabel}
               </Label>
               <Input
                 type="text"
@@ -466,21 +465,21 @@ const ContactForm = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleInputChange}
-                placeholder={messages?.subjectPlaceholder || "Subject"}
+                placeholder={t.subjectPlaceholder}
               />
               {errors.subject && <ErrorMessage>{errors.subject}</ErrorMessage>}
             </FormGroup>
             
             <FormGroup>
               <Label htmlFor="message">
-                {messages?.messageLabel || "Message"}
+                {t.messageLabel}
               </Label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder={messages?.messagePlaceholder || "Type your message here."}
+                placeholder={t.messagePlaceholder}
               />
               {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
             </FormGroup>
@@ -498,15 +497,12 @@ const ContactForm = () => {
               disabled={state.submitting}
               style={{ width: '100%' }}
             >
-              {state.submitting 
-                ? (messages?.submitting || "Sending...") 
-                : (messages?.submitButton || "Send Message")
-              }
+              {state.submitting ? t.submitting : t.submitButton}
             </Button>
             
             {state.errors && state.errors.length > 0 && (
               <ErrorMessage>
-                {messages?.submitError || "There was an error sending your message. Please try again."}
+                {t.submitError}
               </ErrorMessage>
             )}
           </form>
