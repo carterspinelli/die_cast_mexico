@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection Test - Die Cast Mexico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .warning { background-color: #fff3cd; border-color: #ffeaa7; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .test-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Die Cast Mexico - Language Detection Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Instructions</h2>
+        <p>This page will test your language detection system:</p>
+        <ol>
+            <li>Click "Run All Tests" to check the system</li>
+            <li>Check if your Cloudflare Worker is working</li>
+            <li>Verify language detection logic</li>
+            <li>Test manual language switching</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>Quick Tests</h2>
+        <button class="test-button" onclick="testWorker()">Test Cloudflare Worker</button>
+        <button class="test-button" onclick="testCookies()">Check Cookies</button>
+        <button class="test-button" onclick="testLanguageDetection()">Test Language Detection</button>
+        <button class="test-button" onclick="runAllTests()">Run All Tests</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Manual Tests</h2>
+        <p>Test language switching:</p>
+        <button class="test-button" onclick="window.open('https://diecastmexico.com/', '_blank')">Open English Site</button>
+        <button class="test-button" onclick="window.open('https://diecastmexico.com/es/', '_blank')">Open Spanish Site</button>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        async function testWorker() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<div class="test-section"><h3>Testing Cloudflare Worker...</h3></div>';
+            
+            try {
+                const response = await fetch('https://country-detection.carter-spinelli.workers.dev/', {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                const text = await response.text();
+                const country = response.headers.get('x-visitor-country');
+                
+                if (country) {
+                    results.innerHTML += `<div class="test-section success">
+                        <h4>✓ Cloudflare Worker Working</h4>
+                        <p><strong>Detected Country:</strong> ${country}</p>
+                        <p><strong>Response:</strong> ${text}</p>
+                    </div>`;
+                } else {
+                    results.innerHTML += `<div class="test-section warning">
+                        <h4>⚠ Worker Response Unclear</h4>
+                        <p>Response: ${text}</p>
+                    </div>`;
+                }
+            } catch (error) {
+                results.innerHTML += `<div class="test-section error">
+                    <h4>✗ Worker Test Failed</h4>
+                    <p>Error: ${error.message}</p>
+                </div>`;
+            }
+        }
+
+        function testCookies() {
+            const results = document.getElementById('results');
+            const cookies = document.cookie.split(';');
+            const countryCookie = cookies.find(c => c.trim().startsWith('cf-country='));
+            const langCookie = cookies.find(c => c.trim().startsWith('diecastmexico-language='));
+            
+            let html = '<div class="test-section"><h3>Cookie Analysis</h3>';
+            
+            if (countrycookie) {
+                const country = countryookie.split('=')[1].trim();
+                html += `<p class="success">✓ Country Cookie Found: ${country}</p>`;
+            } else {
+                html += `<p class="warning">⚠ No country cookie found</p>`;
+            }
+            
+            if (langCookie) {
+                const lang = langCookie.split('=')[1].trim();
+                html += `<p class="success">✓ Language Cookie Found: ${lang}</p>`;
+            } else {
+                html += `<p class="warning">⚠ No language preference saved</p>`;
+            }
+            
+            html += '</div>';
+            results.innerHTML = html;
+        }
+
+        async function testLanguageDetection() {
+            const results = document.getElementById('results');
+            results.innerHTML = '<div class="test-section"><h3>Testing Language Detection Logic...</h3></div>';
+            
+            // Test the same logic as your Gatsby site
+            let detectedLang = 'en'; // default
+            
+            // Check for saved preference
+            const savedLang = localStorage.getItem('diecastmexico-language');
+            if (savedLang) {
+                detectedLang = savedLang;
+                results.innerHTML += `<div class="test-section success">
+                    <h4>✓ Using Saved Language Preference</h4>
+                    <p>Language: ${detectedLang}</p>
+                </div>`;
+                return;
+            }
+            
+            // Check for country cookie
+            const cookies = document.cookie.split(';');
+            const countryCookie = cookies.find(c => c.trim().startsWith('cf-country='));
+            
+            if (countryCookie) {
+                const country = countryCookie.split('=')[1].trim();
+                detectedLang = country === 'MX' ? 'es' : 'en';
+                results.innerHTML += `<div class="test-section success">
+                    <h4>✓ Language Detected from Country</h4>
+                    <p>Country: ${country} → Language: ${detectedLang}</p>
+                </div>`;
+            } else {
+                // Try fetching from worker
+                try {
+                    const response = await fetch('https://country-detection.carter-spinelli.workers.dev/', {
+                        credentials: 'include'
+                    });
+                    const country = response.headers.get('x-visitor-country');
+                    if (country) {
+                        detectedLang = country === 'MX' ? 'es' : 'en';
+                        results.innerHTML += `<div class="test-section success">
+                            <h4>✓ Language Detected from Worker</h4>
+                            <p>Country: ${country} → Language: ${detectedLang}</p>
+                        </div>`;
+                    }
+                } catch (error) {
+                    // Fallback to browser language
+                    const browserLang = navigator.language.split('-')[0];
+                    detectedLang = browserLang === 'es' ? 'es' : 'en';
+                    results.innerHTML += `<div class="test-section warning">
+                        <h4>⚠ Using Browser Language Fallback</h4>
+                        <p>Browser Language: ${browserLang} → Language: ${detectedLang}</p>
+                    </div>`;
+                }
+            }
+        }
+
+        async function runAllTests() {
+            document.getElementById('results').innerHTML = '<div class="test-section"><h3>Running All Tests...</h3></div>';
+            await testWorker();
+            testCookies();
+            await testLanguageDetection();
+        }
+
+        // Auto-run tests on page load
+        window.onload = function() {
+            setTimeout(runAllTests, 1000);
+        };
+    </script>
+</body>
+</html>
