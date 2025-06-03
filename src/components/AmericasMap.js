@@ -144,8 +144,9 @@ const StrategicBadge = styled(Badge)`
   }
   
   @media (max-width: 768px) {
-    top: 8%;
-    left: 8%;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
@@ -157,8 +158,8 @@ const GatewayBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 2s;
   
   @media (max-width: 768px) {
-    top: 35%;
-    right: 8%;
+    top: 25%;
+    right: 5%;
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
@@ -170,8 +171,8 @@ const AccessBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 4s;
   
   @media (max-width: 768px) {
-    bottom: 50%;
-    left: 15%;
+    bottom: 25%;
+    left: 5%;
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
@@ -183,8 +184,9 @@ const MarketsBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 1s;
   
   @media (max-width: 768px) {
-    bottom: 8%;
-    right: 8%;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
