@@ -60,11 +60,7 @@ const ContactTitle = styled.h1`
   }
 `;
 
-const ContactDescription = styled.p`
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  font-size: 1.125rem;
-`;
+
 
 const ContactDetails = styled.div`
   margin: 0 auto;
@@ -451,18 +447,18 @@ const ContactForm = () => {
             </FormGroup>
             
             <FormGroup>
-              <Label htmlFor="subject">
-                {t.subjectLabel}
+              <Label htmlFor="company">
+                {t.companyLabel}
               </Label>
               <Input
                 type="text"
-                id="subject"
-                name="subject"
-                value={formData.subject}
+                id="company"
+                name="company"
+                value={formData.company}
                 onChange={handleInputChange}
-                placeholder={t.subjectPlaceholder}
+                placeholder={t.companyPlaceholder}
               />
-              {errors.subject && <ErrorMessage>{errors.subject}</ErrorMessage>}
+              {errors.company && <ErrorMessage>{errors.company}</ErrorMessage>}
             </FormGroup>
             
             <FormGroup>
