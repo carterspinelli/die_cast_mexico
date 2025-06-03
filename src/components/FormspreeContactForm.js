@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useForm } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
@@ -145,7 +145,21 @@ const FormspreeContactForm = () => {
     message: ""
   });
   const [errors, setErrors] = useState({});
+  const [recaptchaError, setRecaptchaError] = useState(false);
   const recaptchaRef = useRef();
+
+  // Handle reCAPTCHA errors
+  const handleRecaptchaError = () => {
+    console.error('reCAPTCHA error - check site key configuration');
+    setRecaptchaError(true);
+  };
+
+  const handleRecaptchaExpired = () => {
+    console.warn('reCAPTCHA expired - please verify again');
+    if (recaptchaRef.current) {
+      recaptchaRef.current.reset();
+    }
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -193,9 +207,9 @@ const FormspreeContactForm = () => {
       return;
     }
     
-    // Get reCAPTCHA token if reCAPTCHA is enabled
+    // Get reCAPTCHA token if reCAPTCHA is enabled and not in error state
     const recaptchaToken = recaptchaRef.current?.getValue();
-    if (process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaToken) {
+    if (process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaError && !recaptchaToken) {
       alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
       return;
     }
@@ -327,17 +341,31 @@ const FormspreeContactForm = () => {
           {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
         </FormGroup>
 
-        {process.env.GATSBY_RECAPTCHA_SITE_KEY && (
+        {process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaError && (
           <RecaptchaContainer>
             <ReCAPTCHA
               ref={recaptchaRef}
               sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
               theme="light"
               size="normal"
-              onError={() => console.error('reCAPTCHA error - check site key configuration')}
-              onExpired={() => console.warn('reCAPTCHA expired - please verify again')}
+              onError={handleRecaptchaError}
+              onExpired={handleRecaptchaExpired}
             />
           </RecaptchaContainer>
+        )}
+        
+        {recaptchaError && (
+          <div style={{
+            padding: '1rem',
+            background: '#fff3cd',
+            border: '1px solid #ffeaa7',
+            borderRadius: '6px',
+            color: '#856404',
+            textAlign: 'center',
+            fontSize: '0.875rem'
+          }}>
+            reCAPTCHA configuration issue detected. Form will work without verification.
+          </div>
         )}
 
         <SubmitButton 
