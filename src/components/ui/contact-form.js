@@ -137,7 +137,8 @@ const FormGroup = styled.div`
   display: grid;
   width: 100%;
   align-items: center;
-  gap: 0.375rem;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
 `;
 
 const ErrorMessage = styled.span`
@@ -322,7 +323,7 @@ const ContactForm = () => {
                 </a>
               </li>
               <li>
-                <span className="label">Web: </span>
+                <span className="label">{translations?.addressLabel || "Address"}: </span>
                 <a href="https://diecastmexico.com" target="_blank" rel="noopener noreferrer">
                   diecastmexico.com
                 </a>
