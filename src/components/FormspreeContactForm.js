@@ -339,17 +339,19 @@ const FormspreeContactForm = () => {
           <ValidationError prefix="Message" field="message" errors={state.errors} />
         </FormGroup>
 
-        <RecaptchaContainer>
-          <div className="recaptcha-container">
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-              onChange={handleRecaptchaChange}
-              onExpired={() => setRecaptchaToken(null)}
-              onError={() => setRecaptchaToken(null)}
-            />
-          </div>
-        </RecaptchaContainer>
+        {typeof window !== 'undefined' && process.env.GATSBY_RECAPTCHA_SITE_KEY && (
+          <RecaptchaContainer>
+            <div className="recaptcha-container">
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+                onChange={handleRecaptchaChange}
+                onExpired={() => setRecaptchaToken(null)}
+                onError={() => setRecaptchaToken(null)}
+              />
+            </div>
+          </RecaptchaContainer>
+        )}
         {errors.recaptcha && <ErrorMessage>{errors.recaptcha}</ErrorMessage>}
 
         <SubmitButton 
