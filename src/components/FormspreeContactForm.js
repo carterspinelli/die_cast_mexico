@@ -154,7 +154,8 @@ const FormspreeContactForm = () => {
       newErrors.message = messages.messageRequired || "Message is required";
     }
 
-    if (!recaptchaToken) {
+    // Only require reCAPTCHA if it's available
+    if (process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaToken) {
       newErrors.recaptcha = messages.recaptchaRequired || "Please complete the reCAPTCHA verification";
     }
 

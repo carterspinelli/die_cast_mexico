@@ -12,9 +12,6 @@ module.exports = {
   flags: {
     DEV_SSR: true,
   },
-  env: {
-    GATSBY_RECAPTCHA_SITE_KEY: process.env.REACT_APP_RECAPTCHA_SITE_KEY,
-  },
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
