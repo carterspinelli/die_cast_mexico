@@ -8,7 +8,10 @@ rm -rf public
 mkdir -p public
 
 # Install dependencies
-npm install --legacy-peer-deps --no-optional
+npm install --legacy-peer-deps
+
+# Rebuild native modules for deployment environment
+npm rebuild
 
 # Build for production with clean cache
 NODE_ENV=production npx gatsby clean

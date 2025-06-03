@@ -25,6 +25,9 @@ task = "shell.exec"
 args = "npm install && npx gatsby develop -p 5000 -H 0.0.0.0"
 waitForPort = 5000
 
+[env]
+REPLIT_KEEP_PACKAGE_DEV_DEPENDENCIES = "1"
+
 [deployment]
 publicDir = "public"
 build = ["sh", "-c", "./build-for-static.sh"]
