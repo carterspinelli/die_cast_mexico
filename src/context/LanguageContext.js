@@ -9,9 +9,31 @@ export const LanguageProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    const detectCountryFromIP = async () => {
+    const detectAndSetLanguage = async () => {
       try {
-        // Check if user has already set a language preference
+        // First priority: Check URL path for explicit language preference
+        if (typeof window !== "undefined") {
+          const currentPath = window.location.pathname;
+          if (currentPath.startsWith('/es/') || currentPath === '/es') {
+            setLanguage('es');
+            setMessages(translations.es);
+            localStorage.setItem("diecastmexico-language", 'es');
+            setIsLoading(false);
+            return;
+          } else if (currentPath === '/' || currentPath.startsWith('/en/')) {
+            // For root path, we'll determine based on location, not force English
+            // For /en/ paths, we force English
+            if (currentPath.startsWith('/en/')) {
+              setLanguage('en');
+              setMessages(translations.en);
+              localStorage.setItem("diecastmexico-language", 'en');
+              setIsLoading(false);
+              return;
+            }
+          }
+        }
+
+        // Second priority: Check if user has manually set a language preference
         if (typeof window !== "undefined") {
           const savedLang = localStorage.getItem("diecastmexico-language");
           if (savedLang) {
@@ -22,35 +44,56 @@ export const LanguageProvider = ({ children }) => {
           }
         }
 
-        // First try to read country from existing cookie
-        let countryCode = document.cookie
-          .split('; ')
-          .find(row => row.startsWith('cf-country='))
-          ?.split('=')[1];
+        // Third priority: Try IP-based detection
+        let countryCode = null;
+        
+        // Check for existing country cookie
+        if (typeof document !== "undefined") {
+          countryCode = document.cookie
+            .split('; ')
+            .find(row => row.startsWith('cf-country='))
+            ?.split('=')[1];
+        }
 
-        // If no cookie exists, fetch from Cloudflare Worker
+        // If no cookie, try to fetch from worker (both development and production)
         if (!countryCode) {
-          try {
-            const response = await fetch('https://country-detection.carter-spinelli.workers.dev/', {
-              method: 'GET',
-              credentials: 'include'
-            });
-            
-            if (response.ok) {
-              const countryHeader = response.headers.get('X-Visitor-Country');
-              if (countryHeader) {
-                countryCode = countryHeader;
-                // Set the cookie manually since the worker response includes it
-                document.cookie = `cf-country=${countryCode}; Max-Age=2592000; Path=/; Secure; SameSite=Lax`;
+          const workerUrls = [
+            'https://country-detection.carter-spinelli.workers.dev/',
+            '/api/country-detection' // This will work when the route is properly configured
+          ];
+          
+          for (const url of workerUrls) {
+            try {
+              const response = await fetch(url, {
+                method: 'GET',
+                credentials: 'include'
+              });
+              
+              if (response.ok) {
+                const countryHeader = response.headers.get('X-Visitor-Country') || 
+                                    response.headers.get('x-visitor-country');
+                if (countryHeader) {
+                  countryCode = countryHeader;
+                  // Set cookie manually
+                  if (typeof document !== "undefined") {
+                    document.cookie = `cf-country=${countryCode}; Max-Age=2592000; Path=/; Secure; SameSite=Lax`;
+                  }
+                  break;
+                }
               }
+            } catch (fetchError) {
+              console.log(`Could not fetch from ${url}:`, fetchError.message);
+              continue;
             }
-          } catch (fetchError) {
-            console.log('Could not fetch from Cloudflare Worker:', fetchError.message);
           }
         }
         
-        // Determine language based on country (Mexico = Spanish, others = English)
-        const detectedLang = countryCode === 'MX' ? 'es' : 'en';
+        // Determine language based on country
+        let detectedLang = 'en'; // Default to English
+        if (countryCode === 'MX') {
+          detectedLang = 'es';
+        }
+        
         setLanguage(detectedLang);
         setMessages(translations[detectedLang]);
         
@@ -60,9 +103,9 @@ export const LanguageProvider = ({ children }) => {
         }
         
       } catch (error) {
-        console.log('Country detection failed, falling back to browser language');
+        console.log('Language detection failed, using browser language fallback');
         
-        // Fallback to browser language detection
+        // Final fallback: browser language detection
         const browserLang = typeof navigator !== "undefined" 
           ? (navigator.language || navigator.userLanguage).split("-")[0] 
           : "en";
@@ -71,7 +114,6 @@ export const LanguageProvider = ({ children }) => {
         setLanguage(initialLang);
         setMessages(translations[initialLang]);
         
-        // Store the fallback language preference
         if (typeof window !== "undefined") {
           localStorage.setItem("diecastmexico-language", initialLang);
         }
@@ -80,7 +122,7 @@ export const LanguageProvider = ({ children }) => {
       }
     };
 
-    detectCountryFromIP();
+    detectAndSetLanguage();
   }, []);
   
   const changeLanguage = (lang) => {
