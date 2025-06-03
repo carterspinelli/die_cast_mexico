@@ -145,8 +145,8 @@ const FormspreeContactForm = () => {
   const { translations } = useLanguage();
   const messages = translations?.contact || {};
   
-  // Use your existing Formspree endpoint
-  const [state, handleSubmit] = useForm("movwqzpr");
+  // Use your new Formspree endpoint with reCAPTCHA v2
+  const [state, handleSubmit] = useForm("mwpbkdyr");
   
   const [formData, setFormData] = useState({
     name: "",
