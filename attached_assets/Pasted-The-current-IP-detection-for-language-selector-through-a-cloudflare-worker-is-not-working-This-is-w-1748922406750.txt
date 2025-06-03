@@ -1,0 +1,153 @@
+The current IP detection for language selector through a cloudflare worker is not working. This is what I think was happening:
+
+I see the issue! You're using the old Worker syntax (addEventListener) but the current Cloudflare Workers environment expects the new ES modules syntax (export default).
+
+The Problem:
+
+Your code uses the legacy format which isn't working in the current environment.
+
+This is what I did:
+
+Solution:
+
+Replace your current code with this updated ES modules version:
+
+javascript
+
+/**
+ * Cloudflare Worker for IP-based country detection
+ * This worker sets a cookie with the visitor's country code
+ * for automatic language detection on Die Cast Mexico website
+ */
+
+export default {
+  async fetch(request, env, ctx) {
+    // Get the country code from Cloudflare's CF object
+    const country = request.cf?.country || 'US'; // Default to US if country is not available
+    
+    // Fetch the original response
+    const response = await fetch(request);
+    
+    // Clone the response so we can modify headers
+    const newResponse = new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers
+    });
+    
+    // Set the country cookie
+    // Cookie expires in 30 days, secure, and httpOnly for security
+    const cookieValue = `cf-country=${country}; Max-Age=2592000; Path=/; Secure; SameSite=Lax`;
+    
+    // Add the Set-Cookie header
+    newResponse.headers.set('Set-Cookie', cookieValue);
+    
+    // Optional: Add country as a custom header for debugging
+    newResponse.headers.set('X-Visitor-Country', country);
+    
+    return newResponse;
+  }
+};
+
+I think this is what you need to do:
+
+You'll need to update your Gatsby site to read the cookie that the Cloudflare Worker is now setting. Here's what you need to add:
+
+1. Create a Language Detection Hook/Utility
+
+Add this to your Gatsby site (e.g., in src/utils/languageDetection.js):
+
+javascript
+
+// Get country from Cloudflare Worker cookie
+export const getCountryFromCookie = () => {
+  if (typeof document !== 'undefined') {
+    const cookies = document.cookie.split(';');
+    const countryCookie = cookies.find(c => c.trim().startsWith('cf-country='));
+    return countryCookie ? countryCookie.split('=')[1].trim() : null;
+  }
+  return null;
+};
+
+// Determine language based on country
+export const getLanguageFromCountry = (country) => {
+  return country === 'MX' ? 'es' : 'en';
+};
+
+// Get stored language preference or detect from country
+export const detectLanguage = () => {
+  // Check for stored preference first
+  if (typeof localStorage !== 'undefined') {
+    const storedLang = localStorage.getItem('language');
+    if (storedLang) return storedLang;
+  }
+  
+  // Fall back to country detection
+  const country = getCountryFromCookie();
+  if (country) {
+    return getLanguageFromCountry(country);
+  }
+  
+  // Final fallback to browser language
+  if (typeof navigator !== 'undefined') {
+    return navigator.language.startsWith('es') ? 'es' : 'en';
+  }
+  
+  return 'en'; // Default fallback
+};
+
+2. Use in Your Components
+
+In your main layout or pages:
+
+javascript
+
+import { detectLanguage } from '../utils/languageDetection';
+import { useEffect, useState } from 'react';
+
+const YourComponent = () => {
+  const [language, setLanguage] = useState('en');
+  
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      const detectedLang = detectLanguage();
+      setLanguage(detectedLang);
+      
+      // Optionally redirect to language-specific path
+      if (detectedLang === 'es' && !window.location.pathname.startsWith('/es')) {
+        window.location.href = `/es${window.location.pathname}`;
+      }
+    }
+  }, []);
+  
+  // Your component JSX
+};
+
+3. Or Use in gatsby-browser.js (Global)
+
+javascript
+
+// gatsby-browser.js
+export const onClientEntry = async () => {
+  // Wait a moment for cookie to be available
+  setTimeout(() => {
+    const cookies = document.cookie.split(';');
+    const countryCookie = cookies.find(c => c.trim().startsWith('cf-country='));
+    
+    if (countryCookie) {
+      const country = countryCookie.split('=')[1].trim();
+      const language = country === 'MX' ? 'es' : 'en';
+      
+      // Store the detected language
+      localStorage.setItem('detected-language', language);
+      
+      // Redirect if needed
+      if (language === 'es' && !window.location.pathname.startsWith('/es')) {
+        window.location.href = `/es${window.location.pathname}`;
+      }
+    }
+  }, 100);
+};
+
+The key is reading the cf-country cookie that your Cloudflare Worker is now setting and using that to determine the language. Choose the approach that fits best with your current Gatsby setup!
