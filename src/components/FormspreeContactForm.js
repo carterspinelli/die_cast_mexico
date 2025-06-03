@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "@formspree/react";
-import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -10,23 +9,23 @@ const FormContainer = styled.div`
   padding: 2rem;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 `;
 
 const FormTitle = styled.h2`
-  font-size: 1.875rem;
+  color: #1a365d;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #1a202c;
+  margin-bottom: 1.5rem;
   text-align: center;
 `;
 
-const FormSubtitle = styled.p`
-  color: #64748b;
-  text-align: center;
+const FormDescription = styled.p`
+  color: #4a5568;
+  font-size: 1.1rem;
   margin-bottom: 2rem;
-  font-size: 1rem;
+  text-align: center;
+  line-height: 1.6;
 `;
 
 const Form = styled.form`
@@ -41,102 +40,114 @@ const FormGroup = styled.div`
   gap: 0.5rem;
 `;
 
-const FormLabel = styled.label`
+const Label = styled.label`
+  color: #2d3748;
   font-weight: 600;
-  color: #374151;
-  font-size: 0.875rem;
+  font-size: 0.95rem;
 `;
 
-const FormInput = styled.input`
-  padding: 0.75rem;
-  border: 2px solid ${props => props.hasError ? '#ef4444' : '#e2e8f0'};
-  border-radius: 6px;
+const Input = styled.input`
+  padding: 0.875rem 1rem;
+  border: 2px solid ${props => props.hasError ? '#e53e3e' : '#e2e8f0'};
+  border-radius: 8px;
   font-size: 1rem;
-  transition: border-color 0.2s ease;
-  
+  transition: all 0.2s ease;
+  background: #ffffff;
+
   &:focus {
     outline: none;
-    border-color: ${props => props.hasError ? '#ef4444' : '#3b82f6'};
-    box-shadow: 0 0 0 3px ${props => props.hasError ? 'rgba(239, 68, 68, 0.1)' : 'rgba(59, 130, 246, 0.1)'};
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
   }
-  
+
   &::placeholder {
-    color: #9ca3af;
+    color: #a0aec0;
   }
 `;
 
-const FormTextarea = styled.textarea`
-  padding: 0.75rem;
-  border: 2px solid ${props => props.hasError ? '#ef4444' : '#e2e8f0'};
-  border-radius: 6px;
+const TextArea = styled.textarea`
+  padding: 0.875rem 1rem;
+  border: 2px solid ${props => props.hasError ? '#e53e3e' : '#e2e8f0'};
+  border-radius: 8px;
   font-size: 1rem;
   min-height: 120px;
   resize: vertical;
+  transition: all 0.2s ease;
+  background: #ffffff;
   font-family: inherit;
-  transition: border-color 0.2s ease;
-  
+
   &:focus {
     outline: none;
-    border-color: ${props => props.hasError ? '#ef4444' : '#3b82f6'};
-    box-shadow: 0 0 0 3px ${props => props.hasError ? 'rgba(239, 68, 68, 0.1)' : 'rgba(59, 130, 246, 0.1)'};
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
   }
-  
+
   &::placeholder {
-    color: #9ca3af;
+    color: #a0aec0;
   }
 `;
 
 const ErrorMessage = styled.span`
-  color: #ef4444;
+  color: #e53e3e;
   font-size: 0.875rem;
   margin-top: 0.25rem;
 `;
 
-const SuccessMessage = styled.div`
-  background-color: #10b981;
-  color: white;
-  padding: 1rem;
-  border-radius: 6px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-`;
-
 const SubmitButton = styled.button`
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
   color: white;
+  padding: 1rem 2rem;
   border: none;
-  padding: 0.875rem 2rem;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   margin-top: 1rem;
-  
+
   &:hover:not(:disabled) {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #2c5aa0 0%, #2a4a84 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
   }
-  
+
   &:disabled {
-    background: #9ca3af;
+    background: #a0aec0;
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
   }
 `;
 
-const RecaptchaContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+const SuccessMessage = styled.div`
+  background: #f0fff4;
+  border: 2px solid #68d391;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: #22543d;
+`;
+
+const SuccessTitle = styled.h3`
+  color: #22543d;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+`;
+
+const SuccessText = styled.p`
+  color: #2f855a;
+  font-size: 1.1rem;
+  line-height: 1.6;
 `;
 
 const FormspreeContactForm = () => {
-  const { messages } = useLanguage();
-  const [state, handleSubmit] = useForm("movwqzpr"); // Your Formspree endpoint ID
+  const { translations } = useLanguage();
+  const messages = translations?.contact || {};
+  
+  // Use your existing Formspree endpoint
+  const [state, handleSubmit] = useForm("movwqzpr");
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -145,21 +156,6 @@ const FormspreeContactForm = () => {
     message: ""
   });
   const [errors, setErrors] = useState({});
-  const [recaptchaError, setRecaptchaError] = useState(false);
-  const recaptchaRef = useRef();
-
-  // Handle reCAPTCHA errors
-  const handleRecaptchaError = () => {
-    console.error('reCAPTCHA error - check site key configuration');
-    setRecaptchaError(true);
-  };
-
-  const handleRecaptchaExpired = () => {
-    console.warn('reCAPTCHA expired - please verify again');
-    if (recaptchaRef.current) {
-      recaptchaRef.current.reset();
-    }
-  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -171,20 +167,18 @@ const FormspreeContactForm = () => {
     if (!formData.email.trim()) {
       newErrors.email = messages?.emailRequired || "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = messages?.emailInvalid || "Please enter a valid email address";
+      newErrors.email = messages?.emailInvalid || "Please enter a valid email";
     }
     
     if (!formData.message.trim()) {
       newErrors.message = messages?.messageRequired || "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = messages?.messageMinLength || "Message must be at least 10 characters long";
     }
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -207,28 +201,8 @@ const FormspreeContactForm = () => {
       return;
     }
     
-    // Get reCAPTCHA token if reCAPTCHA is enabled and not in error state
-    const recaptchaToken = recaptchaRef.current?.getValue();
-    if (process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaError && !recaptchaToken) {
-      alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
-      return;
-    }
-    
-    // Prepare form data for Formspree
-    const formSubmissionData = new FormData();
-    formSubmissionData.append("name", formData.name);
-    formSubmissionData.append("email", formData.email);
-    formSubmissionData.append("phone", formData.phone);
-    formSubmissionData.append("company", formData.company);
-    formSubmissionData.append("message", formData.message);
-    
-    // Only add reCAPTCHA token if it exists
-    if (recaptchaToken) {
-      formSubmissionData.append("g-recaptcha-response", recaptchaToken);
-    }
-    
     // Submit to Formspree
-    await handleSubmit(formSubmissionData);
+    await handleSubmit(e);
     
     // Reset form on successful submission
     if (state.succeeded) {
@@ -239,7 +213,6 @@ const FormspreeContactForm = () => {
         company: "",
         message: ""
       });
-      recaptchaRef.current?.reset();
     }
   };
 
@@ -247,7 +220,12 @@ const FormspreeContactForm = () => {
     return (
       <FormContainer>
         <SuccessMessage>
-          {messages?.thankYouMessage || "Thank you for your message! We'll get back to you soon."}
+          <SuccessTitle>
+            {messages?.successTitle || "Thank you for your message!"}
+          </SuccessTitle>
+          <SuccessText>
+            {messages?.successMessage || "We have received your inquiry and will get back to you as soon as possible."}
+          </SuccessText>
         </SuccessMessage>
       </FormContainer>
     );
@@ -256,117 +234,90 @@ const FormspreeContactForm = () => {
   return (
     <FormContainer>
       <FormTitle>
-        {messages?.contactTitle || "Contact Us"}
+        {messages?.title || "Contact Us"}
       </FormTitle>
-      <FormSubtitle>
-        {messages?.contactSubtitle || "Get in touch with our team for inquiries, quotes, or support"}
-      </FormSubtitle>
+      <FormDescription>
+        {messages?.description || "Get in touch with our team for more information about our die casting services."}
+      </FormDescription>
       
       <Form onSubmit={onSubmit}>
         <FormGroup>
-          <FormLabel htmlFor="name">
+          <Label htmlFor="name">
             {messages?.nameLabel || "Full Name"} *
-          </FormLabel>
-          <FormInput
+          </Label>
+          <Input
             type="text"
             id="name"
             name="name"
             value={formData.name}
-            onChange={handleChange}
-            hasError={!!errors.name}
+            onChange={handleInputChange}
             placeholder={messages?.namePlaceholder || "Enter your full name"}
+            hasError={!!errors.name}
             required
           />
           {errors.name && <ErrorMessage>{errors.name}</ErrorMessage>}
         </FormGroup>
 
         <FormGroup>
-          <FormLabel htmlFor="email">
+          <Label htmlFor="email">
             {messages?.emailLabel || "Email Address"} *
-          </FormLabel>
-          <FormInput
+          </Label>
+          <Input
             type="email"
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
-            hasError={!!errors.email}
+            onChange={handleInputChange}
             placeholder={messages?.emailPlaceholder || "Enter your email address"}
+            hasError={!!errors.email}
             required
           />
           {errors.email && <ErrorMessage>{errors.email}</ErrorMessage>}
         </FormGroup>
 
         <FormGroup>
-          <FormLabel htmlFor="phone">
+          <Label htmlFor="phone">
             {messages?.phoneLabel || "Phone Number"}
-          </FormLabel>
-          <FormInput
+          </Label>
+          <Input
             type="tel"
             id="phone"
             name="phone"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder={messages?.phonePlaceholder || "Enter your phone number"}
           />
         </FormGroup>
 
         <FormGroup>
-          <FormLabel htmlFor="company">
+          <Label htmlFor="company">
             {messages?.companyLabel || "Company"}
-          </FormLabel>
-          <FormInput
+          </Label>
+          <Input
             type="text"
             id="company"
             name="company"
             value={formData.company}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder={messages?.companyPlaceholder || "Enter your company name"}
           />
         </FormGroup>
 
         <FormGroup>
-          <FormLabel htmlFor="message">
+          <Label htmlFor="message">
             {messages?.messageLabel || "Message"} *
-          </FormLabel>
-          <FormTextarea
+          </Label>
+          <TextArea
             id="message"
             name="message"
             value={formData.message}
-            onChange={handleChange}
+            onChange={handleInputChange}
+            placeholder={messages?.messagePlaceholder || "Tell us about your project or inquiry"}
             hasError={!!errors.message}
-            placeholder={messages?.messagePlaceholder || "Tell us about your project requirements"}
             required
           />
           {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
         </FormGroup>
-
-        {process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaError && (
-          <RecaptchaContainer>
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
-              theme="light"
-              size="normal"
-              onError={handleRecaptchaError}
-              onExpired={handleRecaptchaExpired}
-            />
-          </RecaptchaContainer>
-        )}
-        
-        {recaptchaError && (
-          <div style={{
-            padding: '1rem',
-            background: '#fff3cd',
-            border: '1px solid #ffeaa7',
-            borderRadius: '6px',
-            color: '#856404',
-            textAlign: 'center',
-            fontSize: '0.875rem'
-          }}>
-            reCAPTCHA configuration issue detected. Form will work without verification.
-          </div>
-        )}
 
         <SubmitButton 
           type="submit" 
@@ -377,7 +328,7 @@ const FormspreeContactForm = () => {
             : (messages?.submitButton || "Send Message")
           }
         </SubmitButton>
-
+        
         {state.errors && state.errors.length > 0 && (
           <ErrorMessage>
             {messages?.submitError || "There was an error sending your message. Please try again."}
