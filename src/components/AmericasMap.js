@@ -170,8 +170,8 @@ const AccessBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 4s;
   
   @media (max-width: 768px) {
-    bottom: 35%;
-    left: 8%;
+    bottom: 50%;
+    left: 15%;
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
