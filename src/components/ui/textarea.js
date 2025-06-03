@@ -3,21 +3,23 @@ import styled from "styled-components";
 
 const StyledTextarea = styled.textarea`
   display: flex;
-  min-height: 5rem;
+  min-height: 80px;
   width: 100%;
   border-radius: 0.375rem;
-  border: 1px solid #e2e8f0;
-  background-color: white;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
   padding: 0.5rem 0.75rem;
   font-size: 0.875rem;
+  transition: all 0.2s ease;
+  
+  &::placeholder {
+    color: #9ca3af;
+  }
   
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
-  }
-  
-  &::placeholder {
-    color: #a0aec0;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
   }
   
   &:disabled {
@@ -26,7 +28,7 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-export const Textarea = React.forwardRef(({ className, ...props }, ref) => {
+const Textarea = React.forwardRef(({ className, ...props }, ref) => {
   return (
     <StyledTextarea
       className={className}
@@ -37,3 +39,5 @@ export const Textarea = React.forwardRef(({ className, ...props }, ref) => {
 });
 
 Textarea.displayName = "Textarea";
+
+export { Textarea };
