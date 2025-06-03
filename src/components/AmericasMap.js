@@ -146,7 +146,7 @@ const GatewayBadge = styled(Badge)`
   @media (max-width: 768px) {
     top: 12%;
     left: 4%;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.3rem;
     font-size: 0.65rem;
     white-space: nowrap;
   }
@@ -165,7 +165,7 @@ const StrategicBadge = styled(Badge)`
   @media (max-width: 768px) {
     top: 30%;
     right: 4%;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.3rem;
     font-size: 0.65rem;
     white-space: nowrap;
   }
@@ -179,7 +179,7 @@ const MarketsBadge = styled(Badge)`
   @media (max-width: 768px) {
     bottom: 30%;
     left: 4%;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.3rem;
     font-size: 0.65rem;
     white-space: nowrap;
   }
@@ -193,7 +193,7 @@ const AccessBadge = styled(Badge)`
   @media (max-width: 768px) {
     bottom: 12%;
     right: 4%;
-    padding: 0.25rem 0.5rem;
+    padding: 0.15rem 0.3rem;
     font-size: 0.65rem;
     white-space: nowrap;
   }
