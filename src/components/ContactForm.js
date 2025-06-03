@@ -167,23 +167,22 @@ const ContactForm = ({ messages }) => {
     setSubmitStatus(null);
     
     try {
-      // Prepare form data for Formspree
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('company', formData.company);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('language', language);
-      formDataToSend.append('_subject', `New contact form submission from ${formData.name}`);
-      
-      // Submit to Formspree
+      // Prepare form data for Formspree (JSON format is more reliable)
       const response = await fetch('https://formspree.io/f/movwqzpr', {
         method: 'POST',
-        body: formDataToSend,
         headers: {
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+          language: language,
+          _subject: `New contact form submission from ${formData.name}`
+        })
       });
       
       if (response.ok) {
@@ -199,7 +198,14 @@ const ContactForm = ({ messages }) => {
           message: ""
         });
       } else {
-        throw new Error('Form submission failed');
+        // Log detailed error information
+        const errorText = await response.text();
+        console.error('Formspree response error:', {
+          status: response.status,
+          statusText: response.statusText,
+          body: errorText
+        });
+        throw new Error(`Form submission failed: ${response.status}`);
       }
     } catch (error) {
       console.error("Form submission error:", error);

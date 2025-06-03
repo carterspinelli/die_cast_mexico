@@ -151,21 +151,21 @@ const SimpleContactForm = () => {
     setSubmitStatus(null);
     
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('firstName', formData.firstName);
-      formDataToSend.append('lastName', formData.lastName);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('language', language);
-      formDataToSend.append('_subject', `New inquiry from ${formData.firstName} ${formData.lastName}`);
-      
       const response = await fetch('https://formspree.io/f/movwqzpr', {
         method: 'POST',
-        body: formDataToSend,
         headers: {
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          language: language,
+          _subject: `New inquiry from ${formData.firstName} ${formData.lastName}`
+        })
       });
       
       if (response.ok) {
