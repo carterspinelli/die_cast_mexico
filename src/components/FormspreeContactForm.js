@@ -193,11 +193,19 @@ const FormspreeContactForm = () => {
       return;
     }
     
-    // Get reCAPTCHA token
-    const recaptchaToken = recaptchaRef.current?.getValue();
-    if (!recaptchaToken) {
-      alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
-      return;
+    // Check if reCAPTCHA is available and get token
+    let recaptchaToken = null;
+    if (recaptchaRef.current && process.env.GATSBY_RECAPTCHA_SITE_KEY) {
+      try {
+        recaptchaToken = recaptchaRef.current.getValue();
+        if (!recaptchaToken) {
+          alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
+          return;
+        }
+      } catch (error) {
+        console.warn("reCAPTCHA error:", error);
+        // Continue without reCAPTCHA if there's an error
+      }
     }
     
     // Prepare form data for Formspree
@@ -207,7 +215,11 @@ const FormspreeContactForm = () => {
     formSubmissionData.append("phone", formData.phone);
     formSubmissionData.append("company", formData.company);
     formSubmissionData.append("message", formData.message);
-    formSubmissionData.append("g-recaptcha-response", recaptchaToken);
+    
+    // Only add reCAPTCHA token if we have one
+    if (recaptchaToken) {
+      formSubmissionData.append("g-recaptcha-response", recaptchaToken);
+    }
     
     // Submit to Formspree
     await handleSubmit(formSubmissionData);
@@ -221,7 +233,9 @@ const FormspreeContactForm = () => {
         company: "",
         message: ""
       });
-      recaptchaRef.current?.reset();
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
     }
   };
 
