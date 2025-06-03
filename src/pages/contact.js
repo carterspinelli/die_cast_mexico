@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import FormspreeContactForm from "../components/FormspreeContactForm";
+import SimpleFormspreeForm from "../components/SimpleFormspreeForm";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 

@@ -1,6 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useForm } from "@formspree/react";
-import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -128,15 +127,9 @@ const SubmitButton = styled.button`
   }
 `;
 
-const RecaptchaContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-`;
-
-const FormspreeContactForm = () => {
+const SimpleFormspreeForm = () => {
   const { messages } = useLanguage();
-  const [state, handleSubmit] = useForm("movwqzpr"); // Your Formspree endpoint ID
+  const [state, handleSubmit] = useForm("movwqzpr");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -145,7 +138,6 @@ const FormspreeContactForm = () => {
     message: ""
   });
   const [errors, setErrors] = useState({});
-  const recaptchaRef = useRef();
 
   const validateForm = () => {
     const newErrors = {};
@@ -193,28 +185,8 @@ const FormspreeContactForm = () => {
       return;
     }
     
-    // Get reCAPTCHA token if reCAPTCHA is enabled
-    const recaptchaToken = recaptchaRef.current?.getValue();
-    if (process.env.GATSBY_RECAPTCHA_SITE_KEY && !recaptchaToken) {
-      alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
-      return;
-    }
-    
-    // Prepare form data for Formspree
-    const formSubmissionData = new FormData();
-    formSubmissionData.append("name", formData.name);
-    formSubmissionData.append("email", formData.email);
-    formSubmissionData.append("phone", formData.phone);
-    formSubmissionData.append("company", formData.company);
-    formSubmissionData.append("message", formData.message);
-    
-    // Only add reCAPTCHA token if it exists
-    if (recaptchaToken) {
-      formSubmissionData.append("g-recaptcha-response", recaptchaToken);
-    }
-    
     // Submit to Formspree
-    await handleSubmit(formSubmissionData);
+    await handleSubmit(e);
     
     // Reset form on successful submission
     if (state.succeeded) {
@@ -225,7 +197,6 @@ const FormspreeContactForm = () => {
         company: "",
         message: ""
       });
-      recaptchaRef.current?.reset();
     }
   };
 
@@ -327,19 +298,6 @@ const FormspreeContactForm = () => {
           {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
         </FormGroup>
 
-        {process.env.GATSBY_RECAPTCHA_SITE_KEY && (
-          <RecaptchaContainer>
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
-              theme="light"
-              size="normal"
-              onError={() => console.error('reCAPTCHA error - check site key configuration')}
-              onExpired={() => console.warn('reCAPTCHA expired - please verify again')}
-            />
-          </RecaptchaContainer>
-        )}
-
         <SubmitButton 
           type="submit" 
           disabled={state.submitting}
@@ -360,4 +318,4 @@ const FormspreeContactForm = () => {
   );
 };
 
-export default FormspreeContactForm;
+export default SimpleFormspreeForm;
