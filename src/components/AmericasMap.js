@@ -138,6 +138,20 @@ const BadgeText = styled.span`
   }
 `;
 
+const GatewayBadge = styled(Badge)`
+  top: 15%;
+  right: 15%;
+  animation: float 6s ease-in-out infinite 2s;
+  
+  @media (max-width: 768px) {
+    top: 12%;
+    left: 4%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
+  }
+`;
+
 const StrategicBadge = styled(Badge)`
   top: 10%;
   left: 10%;
@@ -149,36 +163,11 @@ const StrategicBadge = styled(Badge)`
   }
   
   @media (max-width: 768px) {
-    top: 8%;
-    right: 8%;
-    padding: 0.3rem 0.6rem;
+    top: 30%;
+    right: 4%;
+    padding: 0.25rem 0.5rem;
     font-size: 0.65rem;
-  }
-`;
-
-const GatewayBadge = styled(Badge)`
-  top: 15%;
-  right: 15%;
-  animation: float 6s ease-in-out infinite 2s;
-  
-  @media (max-width: 768px) {
-    top: 35%;
-    right: 8%;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.65rem;
-  }
-`;
-
-const AccessBadge = styled(Badge)`
-  bottom: 20%;
-  left: 15%;
-  animation: float 6s ease-in-out infinite 4s;
-  
-  @media (max-width: 768px) {
-    bottom: 35%;
-    left: 8%;
-    padding: 0.3rem 0.6rem;
-    font-size: 0.65rem;
+    white-space: nowrap;
   }
 `;
 
@@ -188,10 +177,25 @@ const MarketsBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 1s;
   
   @media (max-width: 768px) {
-    bottom: 8%;
-    left: 8%;
-    padding: 0.3rem 0.6rem;
+    bottom: 30%;
+    left: 4%;
+    padding: 0.25rem 0.5rem;
     font-size: 0.65rem;
+    white-space: nowrap;
+  }
+`;
+
+const AccessBadge = styled(Badge)`
+  bottom: 20%;
+  left: 15%;
+  animation: float 6s ease-in-out infinite 4s;
+  
+  @media (max-width: 768px) {
+    bottom: 12%;
+    right: 4%;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.65rem;
+    white-space: nowrap;
   }
 `;
 
