@@ -176,8 +176,84 @@ const RecaptchaContainer = styled.div`
 `;
 
 const ContactForm = () => {
-  const { translations } = useLanguage();
+  const { translations, language } = useLanguage();
   const messages = translations?.contact || {};
+  
+  // Fallback translations for when context is not available
+  const fallbackTranslations = {
+    en: {
+      title: "Contact Us",
+      description: "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!",
+      contactInfo: "Contact Details",
+      firstNameLabel: "First Name",
+      lastNameLabel: "Last Name",
+      emailLabel: "Email Address",
+      subjectLabel: "Subject",
+      messageLabel: "Message",
+      firstNamePlaceholder: "First Name",
+      lastNamePlaceholder: "Last Name",
+      emailPlaceholder: "Email",
+      subjectPlaceholder: "Subject",
+      messagePlaceholder: "Type your message here.",
+      submitButton: "Send Message",
+      submitting: "Sending...",
+      phoneLabel: "Phone",
+      addressLabel: "Address",
+      successTitle: "Thank you for your message!",
+      successMessage: "We have received your inquiry and will get back to you as soon as possible.",
+      firstNameRequired: "First name is required",
+      lastNameRequired: "Last name is required",
+      emailRequired: "Email is required",
+      subjectRequired: "Subject is required",
+      messageRequired: "Message is required",
+      emailInvalid: "Please enter a valid email address",
+      recaptchaRequired: "Please complete the reCAPTCHA verification"
+    },
+    es: {
+      title: "Contáctanos",
+      description: "Estamos disponibles para preguntas, comentarios u oportunidades de colaboración. ¡Déjanos saber cómo podemos ayudarte!",
+      contactInfo: "Detalles de Contacto",
+      firstNameLabel: "Nombre",
+      lastNameLabel: "Apellido",
+      emailLabel: "Correo Electrónico",
+      subjectLabel: "Asunto",
+      messageLabel: "Mensaje",
+      firstNamePlaceholder: "Nombre",
+      lastNamePlaceholder: "Apellido",
+      emailPlaceholder: "Correo electrónico",
+      subjectPlaceholder: "Asunto",
+      messagePlaceholder: "Escribe tu mensaje aquí.",
+      submitButton: "Enviar Mensaje",
+      submitting: "Enviando...",
+      phoneLabel: "Teléfono",
+      addressLabel: "Dirección",
+      successTitle: "¡Gracias por tu mensaje!",
+      successMessage: "Hemos recibido tu consulta y te responderemos lo antes posible.",
+      firstNameRequired: "El nombre es requerido",
+      lastNameRequired: "El apellido es requerido",
+      emailRequired: "El correo electrónico es requerido",
+      subjectRequired: "El asunto es requerido",
+      messageRequired: "El mensaje es requerido",
+      emailInvalid: "Por favor ingresa un correo electrónico válido",
+      recaptchaRequired: "Por favor completa la verificación reCAPTCHA"
+    }
+  };
+  
+  // Determine current language from URL if context is not available
+  const getCurrentLanguage = () => {
+    if (language) return language;
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname;
+      return path.startsWith('/es') ? 'es' : 'en';
+    }
+    return 'en';
+  };
+  
+  const currentLang = getCurrentLanguage();
+  const t = messages && Object.keys(messages).length > 0 
+    ? messages 
+    : fallbackTranslations[currentLang];
+  const globalT = translations || fallbackTranslations[currentLang];
   
   // Use your Formspree endpoint with reCAPTCHA v2
   const [state, handleSubmit] = useForm("mwpbkdyr");
@@ -198,25 +274,25 @@ const ContactForm = () => {
     const newErrors = {};
     
     if (!formData.firstName.trim()) {
-      newErrors.firstName = messages?.firstNameRequired || "First name is required";
+      newErrors.firstName = t.firstNameRequired;
     }
     
     if (!formData.lastName.trim()) {
-      newErrors.lastName = messages?.lastNameRequired || "Last name is required";
+      newErrors.lastName = t.lastNameRequired;
     }
     
     if (!formData.email.trim()) {
-      newErrors.email = messages?.emailRequired || "Email is required";
+      newErrors.email = t.emailRequired;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = messages?.emailInvalid || "Please enter a valid email";
+      newErrors.email = t.emailInvalid;
     }
     
     if (!formData.subject.trim()) {
-      newErrors.subject = messages?.subjectRequired || "Subject is required";
+      newErrors.subject = t.subjectRequired;
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = messages?.messageRequired || "Message is required";
+      newErrors.message = t.messageRequired;
     }
     
     setErrors(newErrors);
@@ -249,7 +325,7 @@ const ContactForm = () => {
     // Get reCAPTCHA token
     const recaptchaToken = recaptchaRef.current?.getValue();
     if (!recaptchaToken) {
-      alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
+      alert(t.recaptchaRequired);
       return;
     }
     
@@ -283,10 +359,10 @@ const ContactForm = () => {
         <Container>
           <SuccessMessage>
             <h3>
-              {messages?.successTitle || "Thank you for your message!"}
+              {t.successTitle}
             </h3>
             <p>
-              {messages?.successMessage || "We have received your inquiry and will get back to you as soon as possible."}
+              {t.successMessage}
             </p>
           </SuccessMessage>
         </Container>
@@ -300,30 +376,30 @@ const ContactForm = () => {
         <ContactInfo>
           <ContactHeader>
             <ContactTitle>
-              {messages?.title || "Contact Us"}
+              {t.title}
             </ContactTitle>
             <ContactDescription>
-              {messages?.description || "We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!"}
+              {t.description}
             </ContactDescription>
           </ContactHeader>
           
           <ContactDetails>
             <ContactDetailsTitle>
-              {translations?.contactInfo || "Contact Details"}
+              {t.contactInfo}
             </ContactDetailsTitle>
             <ContactDetailsList>
               <li>
-                <span className="label">{translations?.phoneLabel || "Phone"}: </span>
+                <span className="label">{t.phoneLabel}: </span>
                 +52 33 3968 3660
               </li>
               <li>
-                <span className="label">{translations?.emailLabel || "Email"}: </span>
+                <span className="label">{t.emailLabel}: </span>
                 <a href="mailto:info@diecastmexico.com">
                   info@diecastmexico.com
                 </a>
               </li>
               <li>
-                <span className="label">{translations?.addressLabel || "Address"}: </span>
+                <span className="label">{t.addressLabel}: </span>
                 <a href="https://diecastmexico.com" target="_blank" rel="noopener noreferrer">
                   diecastmexico.com
                 </a>
