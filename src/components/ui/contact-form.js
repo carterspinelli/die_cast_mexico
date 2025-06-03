@@ -188,12 +188,12 @@ const ContactForm = () => {
       firstNameLabel: "First Name",
       lastNameLabel: "Last Name",
       emailLabel: "Email Address",
-      subjectLabel: "Subject",
+      companyLabel: "Company",
       messageLabel: "Message",
       firstNamePlaceholder: "First Name",
       lastNamePlaceholder: "Last Name",
       emailPlaceholder: "Email",
-      subjectPlaceholder: "Subject",
+      companyPlaceholder: "Company Name",
       messagePlaceholder: "Type your message here.",
       submitButton: "Send Message",
       submitting: "Sending...",
@@ -204,7 +204,7 @@ const ContactForm = () => {
       firstNameRequired: "First name is required",
       lastNameRequired: "Last name is required",
       emailRequired: "Email is required",
-      subjectRequired: "Subject is required",
+      companyRequired: "Company is required",
       messageRequired: "Message is required",
       emailInvalid: "Please enter a valid email address",
       recaptchaRequired: "Please complete the reCAPTCHA verification"
@@ -216,12 +216,12 @@ const ContactForm = () => {
       firstNameLabel: "Nombre",
       lastNameLabel: "Apellido",
       emailLabel: "Correo Electrónico",
-      subjectLabel: "Asunto",
+      companyLabel: "Empresa",
       messageLabel: "Mensaje",
       firstNamePlaceholder: "Nombre",
       lastNamePlaceholder: "Apellido",
       emailPlaceholder: "Correo electrónico",
-      subjectPlaceholder: "Asunto",
+      companyPlaceholder: "Nombre de la Empresa",
       messagePlaceholder: "Escribe tu mensaje aquí.",
       submitButton: "Enviar Mensaje",
       submitting: "Enviando...",
@@ -232,7 +232,7 @@ const ContactForm = () => {
       firstNameRequired: "El nombre es requerido",
       lastNameRequired: "El apellido es requerido",
       emailRequired: "El correo electrónico es requerido",
-      subjectRequired: "El asunto es requerido",
+      companyRequired: "La empresa es requerida",
       messageRequired: "El mensaje es requerido",
       emailInvalid: "Por favor ingresa un correo electrónico válido",
       recaptchaRequired: "Por favor completa la verificación reCAPTCHA"
@@ -261,7 +261,7 @@ const ContactForm = () => {
     firstName: "",
     lastName: "",
     email: "",
-    subject: "",
+    company: "",
     message: ""
   });
   const [errors, setErrors] = useState({});
@@ -286,8 +286,8 @@ const ContactForm = () => {
       newErrors.email = t.emailInvalid;
     }
     
-    if (!formData.subject.trim()) {
-      newErrors.subject = t.subjectRequired;
+    if (!formData.company.trim()) {
+      newErrors.company = t.companyRequired;
     }
     
     if (!formData.message.trim()) {
@@ -332,7 +332,7 @@ const ContactForm = () => {
     const formSubmissionData = new FormData();
     formSubmissionData.append("name", `${formData.firstName} ${formData.lastName}`);
     formSubmissionData.append("email", formData.email);
-    formSubmissionData.append("subject", formData.subject);
+    formSubmissionData.append("company", formData.company);
     formSubmissionData.append("message", formData.message);
     formSubmissionData.append("g-recaptcha-response", recaptchaToken);
     
@@ -345,7 +345,7 @@ const ContactForm = () => {
         firstName: "",
         lastName: "",
         email: "",
-        subject: "",
+        company: "",
         message: ""
       });
       recaptchaRef.current?.reset();
@@ -377,9 +377,6 @@ const ContactForm = () => {
             <ContactTitle>
               {t.title}
             </ContactTitle>
-            <ContactDescription>
-              {t.description}
-            </ContactDescription>
           </ContactHeader>
           
           <ContactDetails>
@@ -399,9 +396,7 @@ const ContactForm = () => {
               </li>
               <li>
                 <span className="label">{t.addressLabel}: </span>
-                <a href="https://diecastmexico.com" target="_blank" rel="noopener noreferrer">
-                  diecastmexico.com
-                </a>
+                Av. Aviación 4376-LOCAL 5, Jardín Real, 45136 Zapopan, Jal.
               </li>
             </ContactDetailsList>
           </ContactDetails>
