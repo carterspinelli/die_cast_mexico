@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { useForm } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguage } from "../../context/LanguageContext";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
