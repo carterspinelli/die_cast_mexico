@@ -42,6 +42,11 @@ const BadgesContainer = styled.div`
   bottom: 0;
   pointer-events: none;
   z-index: 2;
+  
+  @media (max-width: 768px) {
+    /* Ensure badges don't overflow container */
+    overflow: hidden;
+  }
 `;
 
 const Badge = styled.div`
@@ -144,11 +149,11 @@ const StrategicBadge = styled(Badge)`
   }
   
   @media (max-width: 768px) {
-    top: 5%;
+    top: 2%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 
@@ -158,10 +163,10 @@ const GatewayBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 2s;
   
   @media (max-width: 768px) {
-    top: 25%;
-    right: 5%;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
+    top: 15%;
+    right: 2%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 
@@ -171,10 +176,10 @@ const AccessBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 4s;
   
   @media (max-width: 768px) {
-    bottom: 25%;
-    left: 5%;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
+    top: 15%;
+    left: 2%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 
@@ -184,11 +189,11 @@ const MarketsBadge = styled(Badge)`
   animation: float 6s ease-in-out infinite 1s;
   
   @media (max-width: 768px) {
-    bottom: 5%;
+    bottom: 2%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.65rem;
   }
 `;
 
@@ -201,6 +206,12 @@ const MapWrapper = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.05);
   max-width: 700px;
   margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    margin: 0 0.5rem;
+  }
 `;
 
 const SVGMap = styled.svg`
