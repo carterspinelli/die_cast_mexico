@@ -22,13 +22,34 @@ export const LanguageProvider = ({ children }) => {
           }
         }
 
-        // Read country from Cloudflare Worker cookie
-        const countryCode = document.cookie
+        // First try to read country from existing cookie
+        let countryCode = document.cookie
           .split('; ')
           .find(row => row.startsWith('cf-country='))
           ?.split('=')[1];
+
+        // If no cookie exists, fetch from Cloudflare Worker
+        if (!countryCode) {
+          try {
+            const response = await fetch('https://country-detection.carter-spinelli.workers.dev/', {
+              method: 'GET',
+              credentials: 'include'
+            });
+            
+            if (response.ok) {
+              const countryHeader = response.headers.get('X-Visitor-Country');
+              if (countryHeader) {
+                countryCode = countryHeader;
+                // Set the cookie manually since the worker response includes it
+                document.cookie = `cf-country=${countryCode}; Max-Age=2592000; Path=/; Secure; SameSite=Lax`;
+              }
+            }
+          } catch (fetchError) {
+            console.log('Could not fetch from Cloudflare Worker:', fetchError.message);
+          }
+        }
         
-        // If user is from Mexico, set Spanish; otherwise English
+        // Determine language based on country (Mexico = Spanish, others = English)
         const detectedLang = countryCode === 'MX' ? 'es' : 'en';
         setLanguage(detectedLang);
         setMessages(translations[detectedLang]);
