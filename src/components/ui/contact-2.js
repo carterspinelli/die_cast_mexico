@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Label } from "./label";
 import { Textarea } from "./textarea";
 import styled from "styled-components";
 import { useLanguage } from "../../context/LanguageContext";
-import { trackEvent } from "../../utils/analytics";
 
 // Styled components for the contact form
 const Section = styled.section`
@@ -144,24 +143,6 @@ const FormGroup = styled.div`
   gap: 0.375rem;
 `;
 
-const FormSuccess = styled.div`
-  background-color: #10b981;
-  color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-`;
-
-const FormError = styled.div`
-  background-color: #ef4444;
-  color: white;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  text-align: center;
-  margin-bottom: 1rem;
-`;
-
 export const Contact2 = ({
   title,
   description,
@@ -169,91 +150,15 @@ export const Contact2 = ({
   email,
   web,
 }) => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
-
   let messages = {};
-  let language = 'en';
   try {
     // Try to use the language context, but provide a fallback if it's not available
     const langContext = useLanguage();
     messages = langContext?.messages || {};
-    language = langContext?.language || 'en';
   } catch (error) {
     // Fallback if the context is not available (e.g., during SSR)
     console.warn("Language context not available, using default text");
   }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
-      setSubmitStatus("error");
-      return;
-    }
-    
-    setIsSubmitting(true);
-    setSubmitStatus(null);
-    
-    try {
-      const response = await fetch('https://formspree.io/f/movwqzpr', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          language: language,
-          _subject: `New contact inquiry from ${formData.firstName} ${formData.lastName}`
-        })
-      });
-      
-      if (response.ok) {
-        trackEvent("contact2_form_submit", "engagement", "contact_page");
-        setSubmitStatus("success");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          subject: "",
-          message: ""
-        });
-      } else {
-        const errorText = await response.text();
-        console.error('Formspree response error:', {
-          status: response.status,
-          statusText: response.statusText,
-          body: errorText
-        });
-        throw new Error(`Form submission failed: ${response.status}`);
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
   
   return (
     <Section>
@@ -294,92 +199,52 @@ export const Contact2 = ({
           </InfoContainer>
           
           <FormContainer data-aos="fade-left" data-aos-delay="100">
-            {submitStatus === "success" && (
-              <FormSuccess>
-                {messages?.formSuccessMessage || "Message sent successfully! We'll get back to you soon."}
-              </FormSuccess>
-            )}
-            
-            {submitStatus === "error" && (
-              <FormError>
-                {messages?.formErrorMessage || "Failed to send message. Please try again or contact us directly."}
-              </FormError>
-            )}
-            
-            <form onSubmit={handleSubmit}>
-              <FormRow data-aos="fade-up" data-aos-delay="200">
-                <FormGroup>
-                  <Label htmlFor="firstName">{messages?.formFirstNameLabel || "First Name"}</Label>
-                  <Input 
-                    type="text" 
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    placeholder={messages?.formFirstNamePlaceholder || "Enter your first name"} 
-                    required
-                  />
-                </FormGroup>
-                <FormGroup>
-                  <Label htmlFor="lastName">{messages?.formLastNameLabel || "Last Name"}</Label>
-                  <Input 
-                    type="text" 
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    placeholder={messages?.formLastNamePlaceholder || "Enter your last name"} 
-                    required
-                  />
-                </FormGroup>
-              </FormRow>
-              
-              <FormGroup data-aos="fade-up" data-aos-delay="300">
-                <Label htmlFor="email">{messages?.formEmailLabel || "Email"}</Label>
-                <Input 
-                  type="email" 
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder={messages?.formEmailPlaceholder || "Enter your email address"} 
-                  required
-                />
-              </FormGroup>
-              
-              <FormGroup data-aos="fade-up" data-aos-delay="400">
-                <Label htmlFor="subject">{messages?.formSubjectLabel || "Subject"}</Label>
+            <FormRow data-aos="fade-up" data-aos-delay="200">
+              <FormGroup>
+                <Label htmlFor="firstname">{messages?.formFirstNameLabel || "First Name"}</Label>
                 <Input 
                   type="text" 
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder={messages?.formSubjectPlaceholder || "Enter the subject"} 
+                  id="firstname" 
+                  placeholder={messages?.formFirstNamePlaceholder || "Enter your first name"} 
                 />
               </FormGroup>
-              
-              <FormGroup data-aos="fade-up" data-aos-delay="500">
-                <Label htmlFor="message">{messages?.formProjectLabel || "Message"}</Label>
-                <Textarea 
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder={messages?.formProjectPlaceholder || "Tell us about your project requirements"} 
-                  required
+              <FormGroup>
+                <Label htmlFor="lastname">{messages?.formLastNameLabel || "Last Name"}</Label>
+                <Input 
+                  type="text" 
+                  id="lastname" 
+                  placeholder={messages?.formLastNamePlaceholder || "Enter your last name"} 
                 />
               </FormGroup>
-              
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                data-aos="fade-up" 
-                data-aos-delay="600"
-              >
-                {isSubmitting ? (messages?.formSubmitting || "Sending...") : (messages?.formSubmit || "Send Message")}
-              </Button>
-            </form>
+            </FormRow>
+            
+            <FormGroup data-aos="fade-up" data-aos-delay="300">
+              <Label htmlFor="email">{messages?.formEmailLabel || "Email"}</Label>
+              <Input 
+                type="email" 
+                id="email" 
+                placeholder={messages?.formEmailPlaceholder || "Enter your email address"} 
+              />
+            </FormGroup>
+            
+            <FormGroup data-aos="fade-up" data-aos-delay="400">
+              <Label htmlFor="subject">{messages?.formSubjectLabel || "Subject"}</Label>
+              <Input 
+                type="text" 
+                id="subject" 
+                placeholder={messages?.formSubjectPlaceholder || "Enter the subject"} 
+              />
+            </FormGroup>
+            
+            <FormGroup data-aos="fade-up" data-aos-delay="500">
+              <Label htmlFor="message">{messages?.formProjectLabel || "Message"}</Label>
+              <Textarea 
+                id="message" 
+                placeholder={messages?.formProjectPlaceholder || "Tell us about your project requirements"} 
+              />
+            </FormGroup>
+            
+            <Button data-aos="fade-up" data-aos-delay="600">{messages?.formSubmit || "Send Message"}</Button>
           </FormContainer>
         </FlexContainer>
       </Container>
