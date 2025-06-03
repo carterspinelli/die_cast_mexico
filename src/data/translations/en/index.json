@@ -220,6 +220,8 @@
   "messageRequired": "Message is required",
   "messageMinLength": "Message must be at least 10 characters long",
   "recaptchaRequired": "Please complete the reCAPTCHA verification",
+  "successTitle": "Thank you for your message!",
+  "successMessage": "We have received your inquiry and will get back to you as soon as possible.",
 
   "strategicLocationSubtitle": "Facility located in Jalisco, Mexico",
   "strategicLocationBadge": "Strategic Location",

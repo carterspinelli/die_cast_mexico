@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useForm } from "@formspree/react";
+import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -156,6 +157,9 @@ const FormspreeContactForm = () => {
     message: ""
   });
   const [errors, setErrors] = useState({});
+  const recaptchaRef = useRef();
+
+  const RECAPTCHA_SITE_KEY = "6Leb41QrAAAAAPscoTeqxm6ci9xdLJovmyAzKoGs";
 
   const validateForm = () => {
     const newErrors = {};
@@ -201,8 +205,24 @@ const FormspreeContactForm = () => {
       return;
     }
     
+    // Get reCAPTCHA token
+    const recaptchaToken = recaptchaRef.current?.getValue();
+    if (!recaptchaToken) {
+      alert(messages?.recaptchaRequired || "Please complete the reCAPTCHA verification");
+      return;
+    }
+    
+    // Prepare form data with reCAPTCHA token
+    const formSubmissionData = new FormData();
+    formSubmissionData.append("name", formData.name);
+    formSubmissionData.append("email", formData.email);
+    formSubmissionData.append("phone", formData.phone);
+    formSubmissionData.append("company", formData.company);
+    formSubmissionData.append("message", formData.message);
+    formSubmissionData.append("g-recaptcha-response", recaptchaToken);
+    
     // Submit to Formspree
-    await handleSubmit(e);
+    await handleSubmit(formSubmissionData);
     
     // Reset form on successful submission
     if (state.succeeded) {
@@ -213,6 +233,7 @@ const FormspreeContactForm = () => {
         company: "",
         message: ""
       });
+      recaptchaRef.current?.reset();
     }
   };
 
@@ -317,6 +338,14 @@ const FormspreeContactForm = () => {
             required
           />
           {errors.message && <ErrorMessage>{errors.message}</ErrorMessage>}
+        </FormGroup>
+
+        <FormGroup>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={RECAPTCHA_SITE_KEY}
+            theme="light"
+          />
         </FormGroup>
 
         <SubmitButton 
