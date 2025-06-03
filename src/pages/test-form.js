@@ -185,6 +185,26 @@ const TestFormPage = () => {
           </Button>
         </Form>
 
+        <div style={{ marginTop: '2rem', padding: '1rem', background: '#fff3cd' }}>
+          <h3>Alternative: Direct HTML Form (For Initial Verification)</h3>
+          <p>If the above form fails, use this basic HTML form to verify your endpoint:</p>
+          <form action="https://formspree.io/f/movwqzpr" method="POST" style={{ background: 'white', padding: '1rem', borderRadius: '4px' }}>
+            <div style={{ marginBottom: '1rem' }}>
+              <label>Name: <input type="text" name="name" required style={{ marginLeft: '0.5rem', padding: '0.5rem' }} /></label>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <label>Email: <input type="email" name="email" required style={{ marginLeft: '0.5rem', padding: '0.5rem' }} /></label>
+            </div>
+            <div style={{ marginBottom: '1rem' }}>
+              <label>Message: <textarea name="message" required style={{ marginLeft: '0.5rem', padding: '0.5rem' }}></textarea></label>
+            </div>
+            <input type="hidden" name="_subject" value="Formspree Verification Test" />
+            <button type="submit" style={{ background: '#28a745', color: 'white', padding: '0.5rem 1rem', border: 'none', borderRadius: '4px' }}>
+              Submit Verification Form
+            </button>
+          </form>
+        </div>
+
         <div style={{ marginTop: '2rem', padding: '1rem', background: '#f8f9fa' }}>
           <h3>Troubleshooting Steps:</h3>
           <ol>
