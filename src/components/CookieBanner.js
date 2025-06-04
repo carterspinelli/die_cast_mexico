@@ -182,12 +182,7 @@ const CookieBanner = () => {
     setIsVisible(false);
     
     // Enable all cookies/tracking here if needed
-    if (typeof gtag !== 'undefined') {
-      gtag('consent', 'update', {
-        'analytics_storage': 'granted',
-        'ad_storage': 'granted'
-      });
-    }
+    // Analytics integration can be added when tracking is implemented
   };
   
   const handleDecline = () => {
@@ -195,12 +190,7 @@ const CookieBanner = () => {
     setIsVisible(false);
     
     // Disable non-essential cookies/tracking here if needed
-    if (typeof gtag !== 'undefined') {
-      gtag('consent', 'update', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied'
-      });
-    }
+    // Analytics integration can be added when tracking is implemented
   };
   
   const handleSettings = () => {
