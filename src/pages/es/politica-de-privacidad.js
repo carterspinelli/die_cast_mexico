@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { navigate } from "gatsby";
 import Layout from "../../components/Layout";
 import SEO from "../../components/SEO";
+import { useLanguage } from "../../context/LanguageContext";
 import styled from "styled-components";
 
 const PolicySection = styled.section`
@@ -84,6 +86,15 @@ const PolicyContent = styled.div`
 `;
 
 const PoliticaPrivacidadPage = () => {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    // Redirect English users to English privacy policy
+    if (language === 'en' && typeof window !== 'undefined') {
+      navigate('/privacy-policy/');
+    }
+  }, [language]);
+
   return (
     <Layout>
       <SEO 

@@ -157,11 +157,10 @@ const LegalLink = styled(Link)`
   font-size: 0.875rem;
   text-decoration: none;
   padding: 0.5rem;
-  border: 1px solid transparent;
+  transition: color 0.2s;
   
   &:hover {
     color: #60a5fa;
-    border-color: #60a5fa;
   }
 `;
 
