@@ -132,6 +132,31 @@ export const LanguageProvider = ({ children }) => {
     // Store language preference
     if (typeof window !== "undefined") {
       localStorage.setItem("diecastmexico-language", lang);
+      
+      // Navigate to the appropriate language version of current page
+      const currentPath = window.location.pathname;
+      let newPath = '';
+      
+      // Handle specific page mappings
+      if (currentPath.includes('privacy-policy') || currentPath.includes('politica-de-privacidad')) {
+        newPath = lang === 'es' ? '/es/politica-de-privacidad' : '/privacy-policy';
+      } else if (currentPath.includes('terms-of-service') || currentPath.includes('terminos-del-servicio')) {
+        newPath = lang === 'es' ? '/es/terminos-del-servicio' : '/terms-of-service';
+      } else if (currentPath.includes('contact') || currentPath.includes('contacto')) {
+        newPath = lang === 'es' ? '/es/contacto' : '/contact';
+      } else {
+        // For other pages, use standard localized path
+        if (lang === 'es') {
+          newPath = currentPath.startsWith('/es/') ? currentPath : `/es${currentPath === '/' ? '' : currentPath}`;
+        } else {
+          newPath = currentPath.startsWith('/es/') ? currentPath.replace('/es', '') || '/' : currentPath;
+        }
+      }
+      
+      // Navigate to new path
+      if (newPath !== currentPath) {
+        window.location.pathname = newPath;
+      }
     }
   };
   
@@ -145,7 +170,38 @@ export const LanguageProvider = ({ children }) => {
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    console.warn("Language context not available, using default language");
+    // Return default values when context is not available
+    return {
+      language: "en",
+      messages: translations.en,
+      changeLanguage: (lang) => {
+        if (typeof window !== "undefined") {
+          localStorage.setItem("diecastmexico-language", lang);
+          const currentPath = window.location.pathname;
+          let newPath = '';
+          
+          if (currentPath.includes('privacy-policy') || currentPath.includes('politica-de-privacidad')) {
+            newPath = lang === 'es' ? '/es/politica-de-privacidad' : '/privacy-policy';
+          } else if (currentPath.includes('terms-of-service') || currentPath.includes('terminos-del-servicio')) {
+            newPath = lang === 'es' ? '/es/terminos-del-servicio' : '/terms-of-service';
+          } else if (currentPath.includes('contact') || currentPath.includes('contacto')) {
+            newPath = lang === 'es' ? '/es/contacto' : '/contact';
+          } else {
+            if (lang === 'es') {
+              newPath = currentPath.startsWith('/es/') ? currentPath : `/es${currentPath === '/' ? '' : currentPath}`;
+            } else {
+              newPath = currentPath.startsWith('/es/') ? currentPath.replace('/es', '') || '/' : currentPath;
+            }
+          }
+          
+          if (newPath !== currentPath) {
+            window.location.pathname = newPath;
+          }
+        }
+      },
+      isLoading: false
+    };
   }
   return context;
 };
