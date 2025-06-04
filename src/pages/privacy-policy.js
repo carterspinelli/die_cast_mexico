@@ -184,12 +184,65 @@ const PrivacyPolicyPage = () => {
               We retain your personal information only for as long as necessary to fulfill the purposes outlined in this Privacy Policy, comply with legal obligations, resolve disputes, and enforce our agreements.
             </p>
 
-            <h2>8. Children's Privacy</h2>
+            <h2>8. Cookie Policy</h2>
+            <p>
+              Our website uses cookies and similar technologies to enhance your browsing experience, analyze website traffic, and provide personalized content. Below is detailed information about the cookies we use:
+            </p>
+
+            <h3>8.1 Types of Cookies We Use</h3>
+            
+            <h4>Essential Cookies</h4>
+            <p>These cookies are necessary for the website to function properly and cannot be disabled:</p>
+            <ul>
+              <li><strong>cookieConsent:</strong> Stores your cookie preferences and consent status</li>
+              <li><strong>language:</strong> Remembers your preferred language setting (English/Spanish)</li>
+              <li><strong>diecastmexico-language:</strong> Additional language preference storage</li>
+            </ul>
+
+            <h4>Functional Cookies</h4>
+            <p>These cookies enhance website functionality and user experience:</p>
+            <ul>
+              <li><strong>cf-country:</strong> Country detection cookie set by Cloudflare for automatic language selection</li>
+              <li><strong>Session Storage:</strong> Temporary storage for form data and navigation state</li>
+            </ul>
+
+            <h4>Performance and Analytics Cookies</h4>
+            <p>These cookies help us understand how visitors interact with our website:</p>
+            <ul>
+              <li><strong>Website Analytics:</strong> Anonymous usage statistics and performance metrics</li>
+              <li><strong>reCAPTCHA:</strong> Google reCAPTCHA cookies for form security and spam prevention</li>
+            </ul>
+
+            <h3>8.2 Cookie Management</h3>
+            <p>You can manage your cookie preferences in the following ways:</p>
+            <ul>
+              <li><strong>Browser Settings:</strong> Most browsers allow you to refuse or delete cookies</li>
+              <li><strong>Website Banner:</strong> Use our cookie notice to acknowledge our cookie policy</li>
+              <li><strong>Contact Us:</strong> Email us at info@diecastmexico.com for cookie-related inquiries</li>
+            </ul>
+
+            <h3>8.3 Third-Party Cookies</h3>
+            <p>Our website may contain cookies from third-party services:</p>
+            <ul>
+              <li><strong>Google reCAPTCHA:</strong> For contact form security</li>
+              <li><strong>Cloudflare:</strong> For website performance and security</li>
+              <li><strong>Formspree:</strong> For contact form processing</li>
+            </ul>
+
+            <h3>8.4 Cookie Retention</h3>
+            <p>Cookie retention periods vary by type:</p>
+            <ul>
+              <li><strong>Session Cookies:</strong> Deleted when you close your browser</li>
+              <li><strong>Persistent Cookies:</strong> Stored for specific periods (typically 30 days to 1 year)</li>
+              <li><strong>Essential Cookies:</strong> Retained as long as necessary for website functionality</li>
+            </ul>
+
+            <h2>9. Children's Privacy</h2>
             <p>
               Our services are not directed to individuals under 18 years of age. We do not knowingly collect personal information from children under 18.
             </p>
 
-            <h2>9. Third-Party Services</h2>
+            <h2>10. Third-Party Services</h2>
             <p>Our website may contain links to third-party websites or use third-party services:</p>
             <ul>
               <li><strong>Google reCAPTCHA:</strong> Used for spam protection (subject to Google's Privacy Policy)</li>

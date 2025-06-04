@@ -42,99 +42,38 @@ const TextContent = styled.div`
   
   @media (max-width: 768px) {
     width: 100%;
+    padding-right: 1rem;
   }
 `;
 
-const Title = styled.h3`
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem 0;
-  color: #ffffff;
-`;
-
-const Description = styled.p`
+const Message = styled.p`
   font-size: 0.875rem;
   margin: 0;
   color: #e5e7eb;
   line-height: 1.5;
 `;
 
-const ButtonGroup = styled.div`
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  
-  @media (max-width: 768px) {
-    width: 100%;
-    justify-content: flex-end;
-  }
-  
-  @media (max-width: 480px) {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-  }
-`;
-
-const Button = styled.button`
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 600;
+const CloseButton = styled.button`
+  background: transparent;
   border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-  
-  @media (max-width: 480px) {
-    width: 100%;
-    padding: 0.875rem 1.5rem;
-  }
-`;
-
-const AcceptButton = styled(Button)`
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
   
   &:hover {
-    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    color: #60a5fa;
   }
   
   &:active {
-    transform: translateY(0);
-  }
-`;
-
-const DeclineButton = styled(Button)`
-  background: transparent;
-  color: #e5e7eb;
-  border: 1px solid rgba(229, 231, 235, 0.3);
-  
-  &:hover {
-    background: rgba(229, 231, 235, 0.1);
-    border-color: rgba(229, 231, 235, 0.5);
-    color: #ffffff;
-  }
-`;
-
-const SettingsButton = styled(Button)`
-  background: transparent;
-  color: #60a5fa;
-  border: 1px solid rgba(96, 165, 250, 0.3);
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
-  
-  &:hover {
-    background: rgba(96, 165, 250, 0.1);
-    border-color: rgba(96, 165, 250, 0.5);
-    color: #93c5fd;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
+    transform: scale(0.95);
   }
 `;
 
@@ -144,21 +83,13 @@ const CookieBanner = () => {
   
   const currentLanguage = language || 'en';
   
-  // Cookie banner text content
+  // Cookie notice text content
   const content = {
     en: {
-      title: "We Use Cookies",
-      description: "We use cookies to enhance your browsing experience, analyze site traffic, and provide personalized content. By continuing to use our site, you consent to our use of cookies.",
-      acceptAll: "Accept All",
-      decline: "Decline",
-      settings: "Settings"
+      message: "By continuing to browse our website, you acknowledge that you have read and agree to our Privacy Policy and Cookie Policy."
     },
     es: {
-      title: "Usamos Cookies",
-      description: "Utilizamos cookies para mejorar su experiencia de navegación, analizar el tráfico del sitio y proporcionar contenido personalizado. Al continuar usando nuestro sitio, acepta nuestro uso de cookies.",
-      acceptAll: "Aceptar Todo",
-      decline: "Rechazar",
-      settings: "Configuración"
+      message: "Al continuar navegando en nuestro sitio web, reconoce que ha leído y acepta nuestra Política de Privacidad y Política de Cookies."
     }
   };
   
@@ -166,37 +97,24 @@ const CookieBanner = () => {
   
   useEffect(() => {
     // Check if user has already made a choice
-    const cookieConsent = localStorage.getItem('cookieConsent');
-    if (!cookieConsent) {
-      // Show banner after a short delay for better UX
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 1500);
-      
-      return () => clearTimeout(timer);
+    if (typeof window !== 'undefined') {
+      const cookieConsent = localStorage.getItem('cookieConsent');
+      if (!cookieConsent) {
+        // Show banner after a short delay for better UX
+        const timer = setTimeout(() => {
+          setIsVisible(true);
+        }, 1500);
+        
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
   
-  const handleAcceptAll = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
+  const handleClose = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('cookieConsent', 'acknowledged');
+    }
     setIsVisible(false);
-    
-    // Enable all cookies/tracking here if needed
-    // Analytics integration can be added when tracking is implemented
-  };
-  
-  const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    setIsVisible(false);
-    
-    // Disable non-essential cookies/tracking here if needed
-    // Analytics integration can be added when tracking is implemented
-  };
-  
-  const handleSettings = () => {
-    // For now, we'll just accept all - in a full implementation,
-    // this would open a detailed settings modal
-    handleAcceptAll();
   };
   
   if (!isVisible) return null;
@@ -205,20 +123,11 @@ const CookieBanner = () => {
     <BannerContainer isVisible={isVisible}>
       <BannerContent>
         <TextContent>
-          <Title>{text.title}</Title>
-          <Description>{text.description}</Description>
+          <Message>{text.message}</Message>
         </TextContent>
-        <ButtonGroup>
-          <SettingsButton onClick={handleSettings}>
-            {text.settings}
-          </SettingsButton>
-          <DeclineButton onClick={handleDecline}>
-            {text.decline}
-          </DeclineButton>
-          <AcceptButton onClick={handleAcceptAll}>
-            {text.acceptAll}
-          </AcceptButton>
-        </ButtonGroup>
+        <CloseButton onClick={handleClose}>
+          ✕
+        </CloseButton>
       </BannerContent>
     </BannerContainer>
   );
