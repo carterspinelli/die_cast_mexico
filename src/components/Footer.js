@@ -152,7 +152,7 @@ const LegalLinks = styled.div`
   }
 `;
 
-const LegalLink = styled.a`
+const LegalLink = styled(Link)`
   color: #a1a1aa;
   font-size: 0.875rem;
   text-decoration: none;
@@ -200,8 +200,18 @@ const Footer = ({ messages }) => {
     { name: language === 'es' ? "Productos Marinos" : "Marine Products", path: "/#industries" },
   ];
 
-  // Removed terms and conditions and privacy policy links as requested
-  const legalLinks = [];
+  // Legal page links
+  const currentLanguage = language || 'en';
+  const legalLinks = [
+    { 
+      name: currentLanguage === 'es' ? "Política de Privacidad" : "Privacy Policy", 
+      to: currentLanguage === 'es' ? "/es/politica-de-privacidad/" : "/privacy-policy/" 
+    },
+    { 
+      name: currentLanguage === 'es' ? "Términos de Servicio" : "Terms of Service", 
+      to: currentLanguage === 'es' ? "/es/terminos-de-servicio/" : "/terms-of-service/" 
+    }
+  ];
   
   return (
     <FooterContainer>
@@ -283,7 +293,7 @@ const Footer = ({ messages }) => {
               alt={messages.isoLogoAlt || "ISO 9001:2015 Certified"} 
             />
             {legalLinks.map((link, idx) => (
-              <LegalLink key={idx} href={link.href}>
+              <LegalLink key={idx} to={link.to}>
                 {link.name}
               </LegalLink>
             ))}
