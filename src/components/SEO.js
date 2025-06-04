@@ -5,13 +5,16 @@ import { useLanguage } from "../context/LanguageContext";
 
 function SEO({ description, lang, meta = [], title, image }) {
   let language = 'en';
-  try {
-    // Try to use the language context, but provide a fallback if it's not available
-    const langContext = useLanguage();
-    language = langContext?.language || 'en';
-  } catch (error) {
-    // Fallback if the context is not available (e.g., during SSR)
-    console.warn("Language context not available, using default language");
+  
+  // Safely get language context with SSR protection
+  if (typeof window !== 'undefined') {
+    try {
+      const langContext = useLanguage();
+      language = langContext?.language || 'en';
+    } catch (error) {
+      // Fallback if the context is not available
+      language = 'en';
+    }
   }
   
   const { site } = useStaticQuery(
