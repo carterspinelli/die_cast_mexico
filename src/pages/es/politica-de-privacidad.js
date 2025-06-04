@@ -184,12 +184,65 @@ const PoliticaPrivacidadPage = () => {
               Conservamos tu información personal solo durante el tiempo necesario para cumplir los propósitos descritos en esta Política de Privacidad, cumplir obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos.
             </p>
 
-            <h2>8. Privacidad de Menores</h2>
+            <h2>8. Política de Cookies</h2>
+            <p>
+              Nuestro sitio web utiliza cookies y tecnologías similares para mejorar su experiencia de navegación, analizar el tráfico del sitio web y proporcionar contenido personalizado. A continuación se detalla la información sobre las cookies que utilizamos:
+            </p>
+
+            <h3>8.1 Tipos de Cookies que Utilizamos</h3>
+            
+            <h4>Cookies Esenciales</h4>
+            <p>Estas cookies son necesarias para que el sitio web funcione correctamente y no se pueden desactivar:</p>
+            <ul>
+              <li><strong>cookieConsent:</strong> Almacena sus preferencias de cookies y estado de consentimiento</li>
+              <li><strong>language:</strong> Recuerda su configuración de idioma preferido (inglés/español)</li>
+              <li><strong>diecastmexico-language:</strong> Almacenamiento adicional de preferencias de idioma</li>
+            </ul>
+
+            <h4>Cookies Funcionales</h4>
+            <p>Estas cookies mejoran la funcionalidad del sitio web y la experiencia del usuario:</p>
+            <ul>
+              <li><strong>cf-country:</strong> Cookie de detección de país establecida por Cloudflare para selección automática de idioma</li>
+              <li><strong>Almacenamiento de Sesión:</strong> Almacenamiento temporal para datos de formularios y estado de navegación</li>
+            </ul>
+
+            <h4>Cookies de Rendimiento y Análisis</h4>
+            <p>Estas cookies nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web:</p>
+            <ul>
+              <li><strong>Análisis del Sitio Web:</strong> Estadísticas de uso anónimas y métricas de rendimiento</li>
+              <li><strong>reCAPTCHA:</strong> Cookies de Google reCAPTCHA para seguridad de formularios y prevención de spam</li>
+            </ul>
+
+            <h3>8.2 Gestión de Cookies</h3>
+            <p>Puede gestionar sus preferencias de cookies de las siguientes maneras:</p>
+            <ul>
+              <li><strong>Configuración del Navegador:</strong> La mayoría de navegadores le permiten rechazar o eliminar cookies</li>
+              <li><strong>Banner del Sitio Web:</strong> Use nuestro aviso de cookies para reconocer nuestra política de cookies</li>
+              <li><strong>Contáctenos:</strong> Envíenos un email a info@diecastmexico.com para consultas relacionadas con cookies</li>
+            </ul>
+
+            <h3>8.3 Cookies de Terceros</h3>
+            <p>Nuestro sitio web puede contener cookies de servicios de terceros:</p>
+            <ul>
+              <li><strong>Google reCAPTCHA:</strong> Para seguridad de formularios de contacto</li>
+              <li><strong>Cloudflare:</strong> Para rendimiento y seguridad del sitio web</li>
+              <li><strong>Formspree:</strong> Para procesamiento de formularios de contacto</li>
+            </ul>
+
+            <h3>8.4 Retención de Cookies</h3>
+            <p>Los períodos de retención de cookies varían según el tipo:</p>
+            <ul>
+              <li><strong>Cookies de Sesión:</strong> Se eliminan cuando cierra su navegador</li>
+              <li><strong>Cookies Persistentes:</strong> Se almacenan por períodos específicos (típicamente 30 días a 1 año)</li>
+              <li><strong>Cookies Esenciales:</strong> Se conservan tanto como sea necesario para la funcionalidad del sitio web</li>
+            </ul>
+
+            <h2>9. Privacidad de Menores</h2>
             <p>
               Nuestros servicios no están dirigidos a personas menores de 18 años. No recopilamos conscientemente información personal de menores de 18 años.
             </p>
 
-            <h2>9. Servicios de Terceros</h2>
+            <h2>10. Servicios de Terceros</h2>
             <p>Nuestro sitio web puede contener enlaces a sitios web de terceros o usar servicios de terceros:</p>
             <ul>
               <li><strong>Google reCAPTCHA:</strong> Utilizado para protección contra spam (sujeto a la Política de Privacidad de Google)</li>
