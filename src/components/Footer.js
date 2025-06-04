@@ -156,9 +156,12 @@ const LegalLink = styled(Link)`
   color: #a1a1aa;
   font-size: 0.875rem;
   text-decoration: none;
+  padding: 0.5rem;
+  border: 1px solid transparent;
   
   &:hover {
     color: #60a5fa;
+    border-color: #60a5fa;
   }
 `;
 
@@ -212,6 +215,8 @@ const Footer = ({ messages }) => {
       to: currentLanguage === 'es' ? "/es/terminos-de-servicio/" : "/terms-of-service/" 
     }
   ];
+
+
   
   return (
     <FooterContainer>
@@ -297,6 +302,7 @@ const Footer = ({ messages }) => {
                 {link.name}
               </LegalLink>
             ))}
+
           </LegalLinks>
         </BottomSection>
       </Container>
