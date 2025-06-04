@@ -1,0 +1,254 @@
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn Found: react@17.0.2
+npm warn node_modules/react
+npm warn   react@"^17.0.2" from the root project
+npm warn   53 more (@floating-ui/react-dom, @formspree/react, ...)
+npm warn
+npm warn Could not resolve dependency:
+npm warn peer react@"0.0.0-experimental-c8b778b7f-20220825" from react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn node_modules/gatsby/node_modules/react-server-dom-webpack
+npm warn   react-server-dom-webpack@"0.0.0-experimental-c8b778b7f-20220825" from gatsby@4.25.9
+npm warn   node_modules/gatsby
+npm warn
+npm warn Conflicting peer dependency: react@0.0.0-experimental-c8b778b7f-20220825
+npm warn node_modules/react
+npm warn   peer react@"0.0.0-experimental-c8b778b7f-20220825" from react-server-dom-webpack@0.0.0-experimental-c8b778b7f-20220825
+npm warn   node_modules/gatsby/node_modules/react-server-dom-webpack
+npm warn     react-server-dom-webpack@"0.0.0-experimental-c8b778b7f-20220825" from gatsby@4.25.9
+npm warn     node_modules/gatsby
+
+up to date, audited 1578 packages in 4s
+
+271 packages are looking for funding
+  run `npm fund` for details
+
+32 vulnerabilities (1 low, 6 moderate, 25 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+success compile gatsby files - 1.572s
+info The following flags are active:
+- DEV_SSR · (Umbrella Issue (https://gatsby.dev/dev-ssr-feedback)) · Server Side Render (SSR) pages on full reloads during develop.
+ Helps you detect SSR bugs and fix them without needing to do full builds.
+
+There are 4 other flags available that you might be interested in:
+- FAST_DEV · Enable all experiments aimed at improving develop server start time.
+- PRESERVE_FILE_DOWNLOAD_CACHE · (Umbrella Issue (https://gatsby.dev/cache-clearing-feedback)) · Don't delete the downloaded files
+cache when changing gatsby-node.js & gatsby-config.js files.
+- PARALLEL_SOURCING · EXPERIMENTAL · (Umbrella Issue (https://gatsby.dev/parallel-sourcing-feedback)) · Run all source plugins at
+the same time instead of serially. For sites with multiple source plugins, this can speedup sourcing and transforming considerably.
+- DETECT_NODE_MUTATIONS · Diagnostic mode to log any attempts to mutate node directly. Helpful when debugging missing data
+problems. See https://gatsby.dev/debugging-missing-data for more details.
+
+success load gatsby config - 0.056s
+success load plugins - 0.463s
+warn gatsby-plugin-react-helmet: Gatsby now has built-in support for modifying the document head. Learn more at
+https://gatsby.dev/gatsby-head
+success onPreInit - 0.009s
+success initialize cache - 0.034s
+success copy gatsby files - 0.131s
+success Compiling Gatsby Functions - 0.195s
+success onPreBootstrap - 0.221s
+success createSchemaCustomization - 0.005s
+success Checking for changed pages - 0.002s
+success source and transform nodes - 0.126s
+success building schema - 0.363s
+success createPages - 0.004s
+success createPagesStatefully - 0.109s
+info Total nodes: 50, SitePage nodes: 12 (use --verbose for breakdown)
+success Checking for changed pages - 0.001s
+success write out redirect data - 0.002s
+success onPostBootstrap - 0.003s
+info bootstrap finished - 4.814s
+success onPreExtractQueries - 0.001s
+success extract queries from components - 4.581s
+success write out requires - 0.012s
+success run page queries - 0.022s - 1/1 45.23/s
+
+ ERROR #98124  WEBPACK
+
+Generating development SSR bundle failed
+
+Can't resolve '../../public/page-data/sq/d/764694655.json' in '/home/runner/workspace/src/components'
+
+If you're trying to use a package make sure that '../../public/page-data/sq/d/764694655.json' is installed. If you're trying to use
+ a local file make sure that the path is correct.
+
+File: src/components/SEO.js:1:0
+
+
+ ERROR #98123  WEBPACK
+
+Generating development SSR bundle failed
+
+Cannot read properties of null (reading 'getExportsType')
+
+File: src/components/SEO.js
+
+⠙ Building development bundle
+warn `isModuleDeclaration` has been deprecated, please migrate to `isImportOrExportDeclaration`
+    at isModuleDeclaration (/home/runner/workspace/node_modules/@babel/types/lib/validators/generated/index.js:2766:35)
+    at PluginPass.Program (/home/runner/workspace/node_modules/babel-plugin-lodash/lib/index.js:102:44)
+warn 
+/home/runner/workspace/src/components/AmericasMap.js
+  204:7  warning  'SVGMap' is assigned a value but never used  no-unused-vars
+
+/home/runner/workspace/src/components/Capabilities.js
+  183:32  warning  The ref value 'ref.current' will likely have changed by the time this effect cleanup function runs. If this ref
+points to a node rendered by React, copy 'ref.current' to a variable inside the effect, and use that variable in the cleanup
+function  react-hooks/exhaustive-deps
+
+/home/runner/workspace/src/components/FacilityAbout.js
+    5:10  warning  'FacilityShowcase' is defined but never used           no-unused-vars
+  364:7   warning  'AchievementsGrid' is assigned a value but never used  no-unused-vars
+
+/home/runner/workspace/src/components/LanguageTestPanel.js
+  76:13  warning  'text' is assigned a value but never used  no-unused-vars
+
+/home/runner/workspace/src/components/Layout.js
+  26:24  warning  'setUseModernNav' is assigned a value but never used  no-unused-vars
+
+/home/runner/workspace/src/components/Navbar.js
+  167:7   warning  'MobileMenuOverlay' is assigned a value but never used        no-unused-vars
+  184:7   warning  'CloseButton' is assigned a value but never used              no-unused-vars
+  211:7   warning  'MobileNavLink' is assigned a value but never used            no-unused-vars
+  226:7   warning  'MobileLanguageSection' is assigned a value but never used    no-unused-vars
+  233:7   warning  'MobileCTAButton' is assigned a value but never used          no-unused-vars
+  404:17  warning  onMouseOver must be accompanied by onFocus for accessibility  jsx-a11y/mouse-events-have-key-events
+  405:17  warning  onMouseOut must be accompanied by onBlur for accessibility    jsx-a11y/mouse-events-have-key-events
+
+/home/runner/workspace/src/components/Services.js
+   4:23  warning  'getLocalizedPath' is defined but never used       no-unused-vars
+  10:3   warning  'CardFooter' is defined but never used             no-unused-vars
+  98:7   warning  'ReadMoreLink' is assigned a value but never used  no-unused-vars
+
+/home/runner/workspace/src/pages/404.js
+  63:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/contact.js
+  13:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+  26:5  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/es/contact.js
+  13:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+  26:5  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/es/index.js
+  29:3  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/es/politica-de-privacidad.js
+   89:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+  293:5  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/es/terminos-de-servicio.js
+   89:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+  265:5  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/index.js
+   12:8  warning  'images' is defined but never used                     no-unused-vars
+   15:7  warning  'AboutSection' is assigned a value but never used      no-unused-vars
+   24:7  warning  'Container' is assigned a value but never used         no-unused-vars
+   30:7  warning  'SectionHeader' is assigned a value but never used     no-unused-vars
+   35:7  warning  'Title' is assigned a value but never used             no-unused-vars
+   40:7  warning  'Subtitle' is assigned a value but never used          no-unused-vars
+   47:7  warning  'AboutContent' is assigned a value but never used      no-unused-vars
+   58:7  warning  'AboutImage' is assigned a value but never used        no-unused-vars
+   72:7  warning  'AboutText' is assigned a value but never used         no-unused-vars
+   78:7  warning  'AboutDescription' is assigned a value but never used  no-unused-vars
+   84:7  warning  'AboutMission' is assigned a value but never used      no-unused-vars
+   94:7  warning  'FacilitySection' is assigned a value but never used   no-unused-vars
+  103:7  warning  'StatsGrid' is assigned a value but never used         no-unused-vars
+  114:7  warning  'StatCard' is assigned a value but never used          no-unused-vars
+  128:7  warning  'StatIcon' is assigned a value but never used          no-unused-vars
+  145:7  warning  'StatTitle' is assigned a value but never used         no-unused-vars
+  150:7  warning  'StatDescription' is assigned a value but never used   no-unused-vars
+  159:7  warning  Imported JSX component SEO must be in PascalCase       react/jsx-pascal-case
+
+/home/runner/workspace/src/pages/privacy-policy.js
+   89:7  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+  293:5  warning  Imported JSX component SEO must be in PascalCase  react/jsx-pascal-case
+
+/home/runner/workspace/src/utils/languageRedirect.js
+  11:9  warning  'currentUrl' is assigned a value but never used  no-unused-vars
+
+✖ 47 problems (0 errors, 47 warnings)
+
+
+ ERROR #98123  WEBPACK
+
+Generating development JavaScript bundle failed
+
+
+/home/runner/workspace/src/components/SEO.js
+  12:27  error  React Hook "useLanguage" is called conditionally. React Hooks must be called in the exact same order in every
+component render  react-hooks/rules-of-hooks
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+failed Building development bundle - 20.202s
+ERROR in 
+/home/runner/workspace/src/components/SEO.js
+  12:27  error  React Hook "useLanguage" is called conditionally. React Hooks must be called in the exact same order in every
+component render  react-hooks/rules-of-hooks
+
+✖ 1 problem (1 error, 0 warnings)
+
+
+develop compiled with 1 error
+success Writing page-data.json files to public directory - 0.224s - 1/9 40.15/s
+
+ ERROR #11615 
+
+There was an error while trying to load dev-404-page:
+TypeError: __webpack_modules__[moduleId].call is not a function
+
+File: webpack/bootstrap:19:1
+
+
+ ERROR 
+
+Error loading a result for the page query in "index" / "/". Query was not run and no cached result was found. Error loading a
+result for the page query in "/". Query was not run and no cached result was found.
+
+
+
+  Error: Error loading a result for the page query in "/". Query was not run and no cached result was found.
+  
+  - get-page-data.ts:118 readPageData
+    [workspace]/[gatsby]/src/utils/get-page-data.ts:118:11
+  
+  - start-server.ts:339 
+    [workspace]/[gatsby]/src/utils/start-server.ts:339:24
+  
+
+
+ ERROR 
+
+Error loading a result for the page query in "404.html" / "404.html". Query was not run and no cached result was found. Error
+loading a result for the page query in "/404.html". Query was not run and no cached result was found.
+
+
+
+  Error: Error loading a result for the page query in "/404.html". Query was not run and no cached result was found.
+  
+  - get-page-data.ts:118 readPageData
+    [workspace]/[gatsby]/src/utils/get-page-data.ts:118:11
+  
+  - start-server.ts:339 
+    [workspace]/[gatsby]/src/utils/start-server.ts:339:24
+  
+
+
+ ERROR #11615 
+
+There was an error while trying to load dev-404-page:
+TypeError: __webpack_modules__[moduleId].call is not a function
+
+File: webpack/bootstrap:19:1
