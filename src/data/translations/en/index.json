@@ -17,8 +17,8 @@
   "highPressureTitle": "High Pressure Die Casting",
   "highPressureDesc": "Our advanced HPDC process ensures high-quality castings with excellent surface finish and dimensional accuracy.",
 
-  "moldingTitle": "Tool & Die Design",
-  "moldingDesc": "We design and manufacture custom molds and tools tailored to your specific product requirements.",
+  "moldingTitle": "Mold and Tooling Design",
+  "moldingDesc": "We design and manufacture custom molds and tooling tailored to your specific product requirements.",
 
   "finishingTitle": "Surface Finishing",
   "finishingDesc": "We offer a variety of surface treatments including polishing, powder coating, and anodizing to enhance appearance and performance.",
@@ -153,7 +153,7 @@
   "servicesButtonText": "Get a Quote",
   "serviceReadMore": "Learn More",
 
-  "serviceDesignTitle": "Mould & Fixture Design and Fabrication",
+  "serviceDesignTitle": "Mold & Fixture Design and Fabrication",
   "serviceDesignSummary": "Using expert design and modern machining, Marchesi creates complex molds, rapid prototyping solutions, and high-efficiency CNC fixtures for customers.",
   "serviceDesignLabel": "Engineering",
 
