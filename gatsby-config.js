@@ -33,8 +33,12 @@ module.exports = {
         start_url: "/",
         background_color: "#0c1220",
         theme_color: "#1e3a8a",
-        display: "minimal-ui",
+        display: "browser",
         icon: "static/favicon.png",
+        cache_busting_mode: "none",
+        include_favicon: true,
+        legacy: true,
+        theme_color_in_head: false,
       },
     },
 
