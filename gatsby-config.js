@@ -25,6 +25,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "Die Cast Mexico",
+        short_name: "Die Cast MX",
+        start_url: "/",
+        background_color: "#0c1220",
+        theme_color: "#1e3a8a",
+        display: "minimal-ui",
+        icon: "static/favicon.png",
+      },
+    },
 
   ],
 };
