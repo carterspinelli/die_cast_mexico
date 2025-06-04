@@ -145,7 +145,13 @@ export const LanguageProvider = ({ children }) => {
 export const useLanguage = () => {
   const context = useContext(LanguageContext);
   if (!context) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
+    console.warn("Language context not available, using default language");
+    return {
+      language: "en",
+      messages: translations.en,
+      changeLanguage: () => {},
+      isLoading: false
+    };
   }
   return context;
 };
