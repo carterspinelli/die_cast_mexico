@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
-import { Button } from "./ui/button";
 
 const BannerContainer = styled.div`
   position: fixed;
@@ -54,13 +53,27 @@ const Message = styled.p`
   line-height: 1.5;
 `;
 
-const StyledCloseButton = styled(Button)`
+const CloseButton = styled.button`
+  background: transparent;
+  border: none;
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.2);
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
   
   &:hover {
-    background: rgba(255, 255, 255, 0.3);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+    color: #60a5fa;
+  }
+  
+  &:active {
+    transform: scale(0.95);
   }
 `;
 
@@ -112,9 +125,9 @@ const CookieBanner = () => {
         <TextContent>
           <Message>{text.message}</Message>
         </TextContent>
-        <StyledCloseButton onClick={handleClose} variant="ghost" size="icon">
+        <CloseButton onClick={handleClose}>
           ✕
-        </StyledCloseButton>
+        </CloseButton>
       </BannerContent>
     </BannerContainer>
   );

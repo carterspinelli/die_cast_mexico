@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
-import { Button } from "./ui/button";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -58,14 +57,33 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const StyledPrimaryButton = styled(Button)`
+const PrimaryButton = styled(Link)`
+  background-color: #0c1220;
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
   &:hover {
+    background-color: #172b49;
     transform: translateY(-2px);
+    color: var(--white);
   }
 `;
 
-const StyledSecondaryButton = styled(Button)`
+const SecondaryButton = styled(Link)`
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  border: 2px solid var(--white);
+  transition: all 0.3s ease;
+  
   &:hover {
+    background-color: var(--white);
+    color: #172b49;
     transform: translateY(-2px);
   }
 `;
@@ -84,12 +102,8 @@ const Hero = () => {
         <HeroTitle data-aos="fade-down" data-aos-delay="200">{messages.heroTitle}</HeroTitle>
         <HeroSubtitle data-aos="fade-up" data-aos-delay="400">{messages.heroSubtitle}</HeroSubtitle>
         <ButtonContainer data-aos="fade-up" data-aos-delay="600">
-          <StyledPrimaryButton asChild size="lg">
-            <Link to={localizedLink("/contact")}>{messages.cta}</Link>
-          </StyledPrimaryButton>
-          <StyledSecondaryButton asChild size="lg" variant="outline">
-            <Link to={localizedLink("/#services")}>{messages.learnMore}</Link>
-          </StyledSecondaryButton>
+          <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
+          <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
         </ButtonContainer>
       </HeroContent>
     </HeroSection>
