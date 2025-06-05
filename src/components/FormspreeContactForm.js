@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { useForm } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
+import { ArrowRight } from "react-icons/ai";
+import { Button } from "./ui/button";
 import { useLanguage } from "../context/LanguageContext";
 
 const FormContainer = styled.div`
@@ -348,15 +350,19 @@ const FormspreeContactForm = () => {
           />
         </FormGroup>
 
-        <SubmitButton 
+        <Button 
           type="submit" 
+          variant="expandIcon"
+          Icon={() => <ArrowRight />}
+          iconPlacement="right"
           disabled={state.submitting}
+          style={{ marginTop: '1rem' }}
         >
           {state.submitting 
             ? (messages?.submitting || "Sending...") 
             : (messages?.submitButton || "Send Message")
           }
-        </SubmitButton>
+        </Button>
         
         {state.errors && state.errors.length > 0 && (
           <ErrorMessage>
