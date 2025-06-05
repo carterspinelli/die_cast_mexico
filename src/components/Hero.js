@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { AiOutlineArrowRight, AiOutlineInfoCircle } from "react-icons/ai";
+import { Button } from "./ui/button";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const HeroSection = styled.section`

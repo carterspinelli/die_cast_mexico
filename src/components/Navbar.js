@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Button } from "./ui/button";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 // Main navbar container with flex center layout
@@ -341,9 +343,18 @@ const Navbar = () => {
             <DesktopLanguageSwitcher>
               <LanguageSwitcher />
             </DesktopLanguageSwitcher>
-            <ContactButton to={localizedLink("/contact")}>
-              {messages.contact}
-            </ContactButton>
+            <Button 
+              asChild
+              variant="expandIcon"
+              Icon={() => <AiOutlineArrowRight />}
+              iconPlacement="right"
+              size="sm"
+              style={{ marginLeft: '1rem' }}
+            >
+              <Link to={localizedLink("/contact")}>
+                {messages.contact}
+              </Link>
+            </Button>
             <MobileMenuButton 
               onClick={toggleMobileMenu}
               aria-label="Toggle Menu"
