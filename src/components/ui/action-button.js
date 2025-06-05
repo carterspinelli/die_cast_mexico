@@ -8,7 +8,7 @@ const ActionButtonContainer = styled(Button)`
   place-items: center;
   grid-template-areas: 'stack';
   position: relative;
-  border: none;
+  border: none !important;
   border-radius: 8px;
   background: #0c1220;
   color: #ffffff;
@@ -21,9 +21,10 @@ const ActionButtonContainer = styled(Button)`
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
   
-  &:focus:not(:disabled) {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(12, 18, 32, 0.3);
+  &:focus:not(:disabled), &:focus-visible, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
   }
   
   &:disabled {
