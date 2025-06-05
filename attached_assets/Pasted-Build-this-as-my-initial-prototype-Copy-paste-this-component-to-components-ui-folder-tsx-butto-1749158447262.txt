@@ -1,7 +1,12 @@
+Build this as my initial prototype
+
+Copy-paste this component to /components/ui folder:
+```tsx
+button.tsx
 import * as React from "react";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { cva } from "class-variance-authority";
-import { cn } from "../../lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -46,7 +51,28 @@ const buttonVariants = cva(
   }
 );
 
-const Button = React.forwardRef(
+interface IconProps {
+  Icon: React.ElementType;
+  iconPlacement: "left" | "right";
+}
+
+interface IconRefProps {
+  Icon?: never;
+  iconPlacement?: undefined;
+}
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+export type ButtonIconProps = IconProps | IconRefProps;
+
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  ButtonProps & ButtonIconProps
+>(
   (
     {
       className,
@@ -81,7 +107,54 @@ const Button = React.forwardRef(
     );
   }
 );
-
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
+        
+
+demo.tsx
+"use client"
+
+import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+function ButtonExpandIconRight() {
+  return (
+    <Button variant="expandIcon" Icon={() => <ArrowRight className="h-4 w-4" />} iconPlacement="right">
+      Icon right
+    </Button>
+  )
+}
+
+
+export {
+  ButtonExpandIconRight
+}
+```
+
+Install these NPM dependencies:
+```bash
+@radix-ui/react-slot, class-variance-authority
+```
+
+Extend existing tailwind.config.js with this code:
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      animation: {
+        shine: "shine 3s ease-out infinite",
+      },
+      keyframes: {
+        shine: {
+          "0%": { backgroundPosition: "200% 0" },
+          "25%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+      },
+    },
+  },
+};
+
+```

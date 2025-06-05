@@ -1,15 +1,36 @@
 /* Base CSS Variables */
 :root {
   /* Colors */
-  --primary: #3b82f6;        /* Blue 500 */
+  --primary: 24 96% 53%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 24 96% 53%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 24 96% 53%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 24 96% 53%;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+
+  /* Legacy Variables */
+  --primary-legacy: #3b82f6;        /* Blue 500 */
   --primary-light: #60a5fa;  /* Blue 400 */
   --primary-dark: #1e3a8a;   /* Blue 900 */
-  --secondary: #475569;      /* Slate 600 */
+  --secondary-legacy: #475569;      /* Slate 600 */
   --white: #ffffff;
   --gray-light: #f1f5f9;     /* Slate 100 */
   --gray: #94a3b8;           /* Slate 400 */
   --gray-dark: #1e293b;      /* Slate 800 */
-  --background: #ffffff;     /* Pure White */
 
   /* Spacing */
   --spacing-sm: 0.5rem;
