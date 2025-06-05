@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useLanguage } from "../context/LanguageContext";
+import { Button } from "./ui/button";
 
 const ContactContainer = styled.div`
   max-width: 1200px;
@@ -74,14 +75,9 @@ const FormTextarea = styled.textarea`
   min-height: 120px;
 `;
 
-const SubmitButton = styled.button`
+const StyledSubmitButton = styled(Button)`
   background-color: #0c1220;
   color: white;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 0.25rem;
-  font-weight: 600;
-  cursor: pointer;
   
   &:hover {
     background-color: #172b49;
@@ -159,9 +155,9 @@ const SimpleContactForm = () => {
           />
         </FormGroup>
         
-        <SubmitButton type="submit">
+        <StyledSubmitButton type="submit" size="lg">
           {messages?.formSubmit || "Submit Inquiry"}
-        </SubmitButton>
+        </StyledSubmitButton>
       </ContactForm>
       
       <MapWrapper>
