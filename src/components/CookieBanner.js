@@ -55,19 +55,12 @@ const Message = styled.p`
 `;
 
 const StyledCloseButton = styled(Button)`
-  background: transparent;
   color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.2);
   
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #60a5fa;
-  }
-  
-  &:active {
-    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
   }
 `;
 

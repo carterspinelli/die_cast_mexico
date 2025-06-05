@@ -76,12 +76,7 @@ const FormTextarea = styled.textarea`
 `;
 
 const StyledSubmitButton = styled(Button)`
-  background-color: #0c1220;
-  color: white;
-  
-  &:hover {
-    background-color: #172b49;
-  }
+  width: 100%;
 `;
 
 const MapWrapper = styled.div`

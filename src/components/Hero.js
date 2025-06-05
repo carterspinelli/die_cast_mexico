@@ -59,24 +59,13 @@ const ButtonContainer = styled.div`
 `;
 
 const StyledPrimaryButton = styled(Button)`
-  background-color: #0c1220;
-  color: var(--white);
-  
   &:hover {
-    background-color: #172b49;
     transform: translateY(-2px);
-    color: var(--white);
   }
 `;
 
 const StyledSecondaryButton = styled(Button)`
-  background-color: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
-  
   &:hover {
-    background-color: var(--white);
-    color: #172b49;
     transform: translateY(-2px);
   }
 `;

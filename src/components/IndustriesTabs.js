@@ -108,8 +108,6 @@ const ContentDescription = styled.p`
 const LearnMoreButton = styled(Button)`
   margin-top: 0.625rem;
   width: fit-content;
-  display: flex;
-  gap: 0.5rem;
 `;
 
 const ImageContainer = styled.div`
