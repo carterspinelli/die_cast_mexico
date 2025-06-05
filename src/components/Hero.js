@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { AiOutlineArrowRight, AiOutlineInfoCircle } from "react-icons/ai";
-import { Button } from "./ui/button";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const HeroSection = styled.section`
@@ -104,30 +102,8 @@ const Hero = () => {
         <HeroTitle data-aos="fade-down" data-aos-delay="200">{messages.heroTitle}</HeroTitle>
         <HeroSubtitle data-aos="fade-up" data-aos-delay="400">{messages.heroSubtitle}</HeroSubtitle>
         <ButtonContainer data-aos="fade-up" data-aos-delay="600">
-          <Button 
-            asChild
-            variant="expandIcon"
-            Icon={() => <AiOutlineArrowRight />}
-            iconPlacement="right"
-            size="lg"
-          >
-            <Link to={localizedLink("/contact")}>{messages.cta}</Link>
-          </Button>
-          <Button 
-            asChild
-            variant="outline"
-            Icon={() => <AiOutlineInfoCircle />}
-            iconPlacement="right"
-            size="lg"
-            style={{ 
-              backgroundColor: 'transparent',
-              color: 'white',
-              border: '2px solid white',
-              marginLeft: '1rem'
-            }}
-          >
-            <Link to={localizedLink("/#services")}>{messages.learnMore}</Link>
-          </Button>
+          <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
+          <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
         </ButtonContainer>
       </HeroContent>
     </HeroSection>
