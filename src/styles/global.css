@@ -11,6 +11,16 @@
   --gray-dark: #1e293b;      /* Slate 800 */
   --background: #ffffff;     /* Pure White */
 
+  /* Button Design System Variables */
+  --primary-foreground: #ffffff;
+  --secondary-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+  --ring: #3b82f6;
+  --input: #e2e8f0;
+
   /* Spacing */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -29,6 +39,45 @@
 
   /* Animation */
   --transition-duration: 0.3s;
+}
+
+/* Tailwind-compatible utility classes for button system */
+.bg-primary { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-destructive { background-color: var(--destructive); }
+.bg-accent { background-color: var(--accent); }
+.bg-background { background-color: var(--background); }
+
+.text-primary { color: var(--primary); }
+.text-primary-foreground { color: var(--primary-foreground); }
+.text-secondary-foreground { color: var(--secondary-foreground); }
+.text-destructive-foreground { color: var(--destructive-foreground); }
+.text-accent-foreground { color: var(--accent-foreground); }
+
+.border-input { border-color: var(--input); }
+
+.hover\:bg-primary\/90:hover { background-color: rgba(59, 130, 246, 0.9); }
+.hover\:bg-secondary\/80:hover { background-color: rgba(71, 85, 105, 0.8); }
+.hover\:bg-destructive\/90:hover { background-color: rgba(239, 68, 68, 0.9); }
+.hover\:bg-accent:hover { background-color: var(--accent); }
+.hover\:text-accent-foreground:hover { color: var(--accent-foreground); }
+
+.focus-visible\:ring-2:focus-visible { 
+  outline: 2px solid transparent; 
+  outline-offset: 2px; 
+  box-shadow: 0 0 0 2px var(--ring); 
+}
+
+.focus-visible\:ring-ring:focus-visible { 
+  box-shadow: 0 0 0 2px var(--ring); 
+}
+
+.focus-visible\:ring-offset-2:focus-visible { 
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--ring); 
+}
+
+.ring-offset-background { 
+  --tw-ring-offset-color: var(--background); 
 }
 
 /* Reset & Base Styles */

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
+import { Button } from "./ui/button";
 
 const HeroSection = styled.section`
   height: 100vh;
