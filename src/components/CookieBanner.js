@@ -28,12 +28,12 @@ const BannerContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
+  gap: 0.75rem;
   
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 `;
 
@@ -57,15 +57,17 @@ const CloseButton = styled.button`
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: bold;
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0.25rem;
   transition: all 0.2s ease;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
   
   &:hover {
     background: rgba(255, 255, 255, 0.1);
