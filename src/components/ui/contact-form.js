@@ -3,7 +3,7 @@ import { useForm } from "@formspree/react";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import { useLanguage } from "../../context/LanguageContext";
-import { Button } from "./button";
+import ActionButton from "./action-button";
 import { Input } from "./input";
 import { Label } from "./label";
 import { Textarea } from "./textarea";
@@ -483,13 +483,12 @@ const ContactForm = () => {
               />
             </RecaptchaContainer>
             
-            <Button 
-              type="submit" 
-              disabled={state.submitting}
+            <ActionButton 
+              isPending={state.submitting}
               style={{ width: '100%' }}
             >
-              {state.submitting ? t.submitting : t.submitButton}
-            </Button>
+              {t.submitButton}
+            </ActionButton>
             
             {state.errors && state.errors.length > 0 && (
               <ErrorMessage>
