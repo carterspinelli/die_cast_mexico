@@ -8,31 +8,29 @@ const ActionButtonContainer = styled(Button)`
   place-items: center;
   grid-template-areas: 'stack';
   position: relative;
-  border: 1px solid #e2e8f0;
+  border: none;
   border-radius: 8px;
-  background: #ffffff;
-  color: #374151;
+  background: #0c1220;
+  color: #ffffff;
   font-weight: 500;
   transition: all 0.2s ease;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   
   &:hover:not(:disabled) {
-    background: #f9fafb;
-    border-color: #d1d5db;
+    background: #172b49;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
   
   &:focus:not(:disabled) {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px rgba(12, 18, 32, 0.3);
   }
   
   &:disabled {
-    background: #f9fafb;
-    border-color: #e5e7eb;
+    background: #0c1220;
     color: #9ca3af;
     cursor: not-allowed;
+    opacity: 0.7;
   }
 `;
 
@@ -56,7 +54,7 @@ const LoaderContainer = styled.div`
 const StyledLoader = styled(LoaderCircle)`
   width: 1.25rem;
   height: 1.25rem;
-  color: #6b7280;
+  color: #ffffff;
   animation: spin 1s linear infinite;
   
   @keyframes spin {
