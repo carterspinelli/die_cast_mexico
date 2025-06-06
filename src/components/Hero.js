@@ -56,6 +56,12 @@ const ButtonContainer = styled.div`
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+    
+    > * {
+      width: 100%;
+      min-width: 0;
+      flex: 1;
+    }
   }
 `;
 
