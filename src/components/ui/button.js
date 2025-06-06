@@ -262,6 +262,8 @@ const IconContainer = styled.div`
 
 // Button wrapper that adds group class for expand icon variant
 const ButtonWrapper = styled.div`
+  display: inline-flex;
+  
   ${props => props.variant === "expandIcon" && css`
     &:hover ${IconContainer}[data-placement="left"] {
       width: 1.25rem;
