@@ -58,6 +58,7 @@ const NavLinks = styled.div`
 const RightSection = styled.div`
   display: flex;
   align-items: center;
+  gap: 1rem;
 `;
 
 const ContactButton = styled(Link)`

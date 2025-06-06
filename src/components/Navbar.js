@@ -136,6 +136,7 @@ const ContactButton = styled(Link)`
 const RightSection = styled.div`
   display: flex;
   align-items: center;
+  gap: 1rem;
 `;
 
 // Mobile toggle button
