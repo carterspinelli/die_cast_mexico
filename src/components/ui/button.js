@@ -27,6 +27,11 @@ const StyledButton = styled.button`
   position: relative;
   overflow: hidden;
   
+  @media (max-width: 480px) {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+  
   &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px rgba(12, 18, 32, 0.5), 0 0 0 4px rgba(12, 18, 32, 0.2);

@@ -403,7 +403,14 @@ const Navbar = () => {
             <div style={{ height: '100%', paddingTop: '2.75rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
               {/* Close Button */}
               <button 
-                onClick={toggleMobileMenu}
+                onClick={(e) => {
+                  // Add tap animation
+                  e.target.style.transform = 'scale(1.1)';
+                  setTimeout(() => {
+                    e.target.style.transform = 'scale(1)';
+                  }, 150);
+                  toggleMobileMenu();
+                }}
                 style={{
                   position: 'absolute',
                   top: '2rem',
@@ -419,9 +426,8 @@ const Navbar = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '50%',
-                  transition: 'all 0.2s ease'
+                  transition: 'transform 0.15s ease'
                 }}
-
               >
                 ×
               </button>
