@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Button } from "./ui/button";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 // Main navbar container with flex center layout
@@ -341,9 +343,16 @@ const Navbar = () => {
             <DesktopLanguageSwitcher>
               <LanguageSwitcher />
             </DesktopLanguageSwitcher>
-            <ContactButton to={localizedLink("/contact")}>
-              {messages.contact}
-            </ContactButton>
+            <Button 
+              variant="expandIcon" 
+              Icon={() => <ArrowRight size={16} />} 
+              iconPlacement="right"
+              asChild
+            >
+              <Link to={localizedLink("/contact")}>
+                {messages.contact}
+              </Link>
+            </Button>
             <MobileMenuButton 
               onClick={toggleMobileMenu}
               aria-label="Toggle Menu"
@@ -499,29 +508,17 @@ const Navbar = () => {
 
               <div style={{ display: 'flex', width: '100%', fontSize: '0.875rem', justifyContent: 'space-between', alignItems: 'center', color: 'black', padding: '0 2.5rem', paddingBottom: '1.25rem' }}>
                 <LanguageSwitcher />
-                <Link
-                  to={localizedLink("/contact")} 
+                <Button 
+                  variant="ringHover" 
+                  Icon={() => <ArrowRight size={16} />} 
+                  iconPlacement="right"
+                  asChild
                   onClick={toggleMobileMenu}
-                  style={{
-                    backgroundColor: '#0c1220',
-                    color: 'white',
-                    padding: '0.75rem 1.5rem',
-                    borderRadius: '0.375rem',
-                    fontWeight: '600',
-                    textDecoration: 'none',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseOver={(e) => {
-                    e.target.style.backgroundColor = '#172b49';
-                    e.target.style.color = 'white';
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.backgroundColor = '#0c1220';
-                    e.target.style.color = 'white';
-                  }}
                 >
-                  {messages.contact}
-                </Link>
+                  <Link to={localizedLink("/contact")}>
+                    {messages.contact}
+                  </Link>
+                </Button>
               </div>
             </div>
             <svg

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { ArrowRight, Play } from "lucide-react";
+import { Button } from "./ui/button";
 import { useLanguage, getLocalizedPath } from "../context/LanguageContext";
 
 const HeroSection = styled.section`

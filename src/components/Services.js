@@ -165,14 +165,16 @@ const Services = () => {
           <Title data-aos="fade-up" data-aos-delay="100">{messages.servicesTitle}</Title>
           <Description data-aos="fade-up" data-aos-delay="200">{messages.servicesSubtitle}</Description>
           <Button 
-            variant="default" 
-            as="a" 
-            href={`/${language === 'es' ? 'es/' : ''}contact`}
+            variant="expandIcon" 
+            Icon={() => <ArrowRight size={16} />} 
+            iconPlacement="right"
+            asChild
             data-aos="fade-up" 
             data-aos-delay="300"
           >
-            {messages.servicesButtonText}
-            <ArrowRight style={{ marginLeft: "0.5rem", width: "1rem", height: "1rem" }} />
+            <a href={`/${language === 'es' ? 'es/' : ''}contact`}>
+              {messages.servicesButtonText}
+            </a>
           </Button>
         </HeaderContent>
         

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { ArrowRight } from "lucide-react";
 import { useLanguage, getLocalizedPath } from "../../context/LanguageContext";
+import { Button } from "./button";
 import Logo from "../Logo";
 import LanguageSwitcher from "../LanguageSwitcher";
 
@@ -193,9 +195,16 @@ const TubelightNavbar = () => {
         
         <RightSection>
           <LanguageSwitcher />
-          <ContactButton to={localizedLink("/contact")}>
-            {messages.contact}
-          </ContactButton>
+          <Button 
+            variant="expandIcon" 
+            Icon={() => <ArrowRight size={16} />} 
+            iconPlacement="right"
+            asChild
+          >
+            <Link to={localizedLink("/contact")}>
+              {messages.contact}
+            </Link>
+          </Button>
         </RightSection>
       </NavbarInner>
     </NavbarContainer>
