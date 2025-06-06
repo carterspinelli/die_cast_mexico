@@ -171,6 +171,12 @@ const Services = () => {
             asChild
             data-aos="fade-up" 
             data-aos-delay="300"
+            style={{
+              height: '2.5rem',
+              fontSize: '0.875rem',
+              paddingLeft: '1rem',
+              paddingRight: '1rem'
+            }}
           >
             <a href={`/${language === 'es' ? 'es/' : ''}contact`}>
               {messages.servicesButtonText}
