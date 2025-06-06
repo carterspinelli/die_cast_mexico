@@ -104,8 +104,23 @@ const Hero = () => {
         <HeroTitle data-aos="fade-down" data-aos-delay="200">{messages.heroTitle}</HeroTitle>
         <HeroSubtitle data-aos="fade-up" data-aos-delay="400">{messages.heroSubtitle}</HeroSubtitle>
         <ButtonContainer data-aos="fade-up" data-aos-delay="600">
-          <PrimaryButton to={localizedLink("/contact")}>{messages.cta}</PrimaryButton>
-          <SecondaryButton to={localizedLink("/#services")}>{messages.learnMore}</SecondaryButton>
+          <Button 
+            variant="expandIcon" 
+            Icon={() => <ArrowRight size={16} />} 
+            iconPlacement="right"
+            asChild
+          >
+            <Link to={localizedLink("/contact")}>{messages.cta}</Link>
+          </Button>
+          <Button 
+            variant="outline" 
+            Icon={() => <Play size={16} />} 
+            iconPlacement="right"
+            asChild
+            style={{ color: 'white', borderColor: 'white' }}
+          >
+            <Link to={localizedLink("/#services")} style={{ color: 'white' }}>{messages.learnMore}</Link>
+          </Button>
         </ButtonContainer>
       </HeroContent>
     </HeroSection>
