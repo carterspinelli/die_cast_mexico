@@ -419,12 +419,9 @@ const Navbar = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '50%',
-                  transition: 'all 0.2s ease',
-                  transform: 'scale(1)'
+                  transition: 'all 0.2s ease'
                 }}
-                onMouseDown={(e) => e.target.style.transform = 'scale(0.95)'}
-                onMouseUp={(e) => e.target.style.transform = 'scale(1)'}
-                onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+
               >
                 ×
               </button>
