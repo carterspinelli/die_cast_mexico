@@ -137,6 +137,14 @@ const RightSection = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+  
+  .desktop-contact-btn {
+    display: flex !important;
+    
+    @media (max-width: 768px) {
+      display: none !important;
+    }
+  }
 `;
 
 // Mobile toggle button
@@ -349,6 +357,8 @@ const Navbar = () => {
               Icon={() => <ArrowRight size={16} />} 
               iconPlacement="right"
               asChild
+              style={{ display: 'none' }}
+              className="desktop-contact-btn"
             >
               <Link to={localizedLink("/contact")}>
                 {messages.contact}
@@ -411,16 +421,12 @@ const Navbar = () => {
                   borderRadius: '50%',
                   transition: 'all 0.2s ease'
                 }}
-                onMouseOver={(e) => e.target.style.backgroundColor = 'rgba(0,0,0,0.1)'}
-                onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
+
               >
                 ×
               </button>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: 0, padding: '0 2.5rem' }}>
-                <div style={{ color: 'black', borderBottom: '1px solid rgba(0, 0, 0, 0.3)', textTransform: 'uppercase', fontSize: '0.875rem', marginBottom: '1rem' }}>
-                  <p style={{ margin: 0, paddingBottom: '0.5rem' }}>Navigation</p>
-                </div>
                 
                 <Link 
                   to={localizedLink("/")} 
@@ -504,6 +510,27 @@ const Navbar = () => {
                 >
                   <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>4.</span>
                   {messages.about}
+                </Link>
+
+                <Link 
+                  to={localizedLink("/contact")} 
+                  onClick={toggleMobileMenu}
+                  style={{
+                    color: 'black',
+                    fontSize: '2.5rem',
+                    fontWeight: '200',
+                    textDecoration: 'none',
+                    padding: '1rem 0',
+                    borderBottom: '1px solid rgba(0, 0, 0, 0.3)',
+                    display: 'block',
+                    textTransform: 'uppercase',
+                    transition: 'color 0.3s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.color = '#0c1220'}
+                  onMouseOut={(e) => e.target.style.color = 'black'}
+                >
+                  <span style={{ fontSize: '2.5rem', fontWeight: '100', marginRight: '0.5rem' }}>5.</span>
+                  {messages.contact}
                 </Link>
               </div>
 
