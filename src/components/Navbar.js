@@ -540,19 +540,8 @@ const Navbar = () => {
                 </Link>
               </div>
 
-              <div style={{ display: 'flex', width: '100%', fontSize: '0.875rem', justifyContent: 'space-between', alignItems: 'center', color: 'black', padding: '0 2.5rem', paddingBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', width: '100%', fontSize: '0.875rem', justifyContent: 'center', alignItems: 'center', color: 'black', padding: '0 2.5rem', paddingBottom: '1.25rem' }}>
                 <LanguageSwitcher />
-                <Button 
-                  variant="ringHover" 
-                  Icon={() => <ArrowRight size={16} />} 
-                  iconPlacement="right"
-                  asChild
-                  onClick={toggleMobileMenu}
-                >
-                  <Link to={localizedLink("/contact")}>
-                    {messages.contact}
-                  </Link>
-                </Button>
               </div>
             </div>
             <svg
