@@ -45,6 +45,7 @@ const StyledButton = styled.button`
     
     &:hover:not(:disabled) {
       background-color: #172b49;
+      color: white;
     }
   `}
 
@@ -55,6 +56,7 @@ const StyledButton = styled.button`
     
     &:hover:not(:disabled) {
       background-color: #172b49;
+      color: white;
     }
   `}
 
@@ -185,6 +187,7 @@ const StyledButton = styled.button`
     
     &:hover:not(:disabled) {
       background-color: #f7fafc;
+      color: #0c1220;
     }
   `}
 

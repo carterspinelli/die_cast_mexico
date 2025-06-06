@@ -117,9 +117,21 @@ const Hero = () => {
             Icon={() => <Play size={16} />} 
             iconPlacement="right"
             asChild
-            style={{ color: 'white', borderColor: 'white' }}
+            style={{ 
+              color: 'white', 
+              borderColor: 'white',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = 'white';
+              e.target.style.color = '#0c1220';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = 'transparent';
+              e.target.style.color = 'white';
+            }}
           >
-            <Link to={localizedLink("/#services")} style={{ color: 'white' }}>{messages.learnMore}</Link>
+            <Link to={localizedLink("/#services")} style={{ color: 'inherit' }}>{messages.learnMore}</Link>
           </Button>
         </ButtonContainer>
       </HeroContent>
